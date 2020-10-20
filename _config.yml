@@ -10,7 +10,7 @@
 # -- replace "open-sdg-data-starter" with "my-awesome-data-repo"
 
 # Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
-remote_theme: open-sdg/open-sdg@0.10.0
+remote_theme: open-sdg/open-sdg@1.1.0
 
 # Replace this title as needed.
 title: Indicators For The Sustainable Development Goals
@@ -34,10 +34,10 @@ create_goals:
 create_pages: true
 
 analytics:
-  ga_prod: ''
+  ga_prod: ""
 
 # Social media accounts.
-twitter: 'MyTwitterAccount'
+twitter: "MyTwitterAccount"
 
 # Sticky share buttons (facebook, twitter and email)
 #sharethis_property: '5d279253faeee40012f195e1'
@@ -107,8 +107,7 @@ languages:
 
 # This makes sure that all pages have a language.
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
       language: "en"
