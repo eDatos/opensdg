@@ -30,7 +30,7 @@ build:
     - gem install bundler
     - bundle install
     - bundle exec jekyll build
-    - tar -cvzf opensdg.tar.gz _site/*
+    - tar -cvzf opensdg.tar.gz -C _site .
   artifacts:
     paths:
       - opensdg.tar.gz
