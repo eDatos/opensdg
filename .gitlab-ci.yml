@@ -30,10 +30,10 @@ build:
     - gem install bundler
     - bundle install
     - bundle exec jekyll build
-    - zip -r opensdg.zip _site
+    - tar -cvzf opensdg.tar.gz _site
   artifacts:
     paths:
-      - opensdg.zip
+      - opensdg.tar.gz
   only:
     - develop
 # release:
