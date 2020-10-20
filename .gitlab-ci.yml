@@ -24,7 +24,7 @@ stages:
 
 build:
   stage: build
-  tags: ["build"]
+  tags: ["build", "docker"]
   script:
     # - "mvn $MAVEN_CLI_OPTS deploy -s /tmp/settings.xml "
     - gem install bundler
