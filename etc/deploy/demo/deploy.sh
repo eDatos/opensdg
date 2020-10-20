@@ -15,7 +15,7 @@ ssh -o ProxyCommand="ssh -W %h:%p deploy@estadisticas.arte-consultores.com" depl
     
     # Update Process
     sudo rm -Rf $DEPLOY_TARGET_PATH/*
-    sudo tar -xf --strip-components=1 $TRANSFER_PATH/opensdg.tar.gz -C $DEPLOY_TARGET_PATH
+    sudo tar -xf $TRANSFER_PATH/opensdg.tar.gz --strip-components=1 -C $DEPLOY_TARGET_PATH
     
     # Restore Configuration
     # sudo cp -rf $ENV_CONF/* $DEPLOY_TARGET_PATH
