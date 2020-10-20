@@ -13,7 +13,7 @@ image: ruby:2.4
 # To keep cache across branches add 'key: "$CI_JOB_NAME"'
 cache:
   paths:
-    - .m2/repository
+    - .m2/repository # FIXME añadir la cache apropiada para ruby y los comandos gem y bundle
 
 stages:
   - build
@@ -30,9 +30,10 @@ build:
     - gem install bundler
     - bundle install
     - bundle exec jekyll build
+    - zip -r opensdg.zip _site
   artifacts:
     paths:
-      - target/*.jar
+      - opensdg.zip
   only:
     - develop
 # release:
