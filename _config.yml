@@ -15,7 +15,7 @@ remote_theme: open-sdg/open-sdg@1.1.0
 # Replace this title as needed.
 title: Indicators For The Sustainable Development Goals
 # Replace the baseurl with the name of this repository.
-baseurl: "/opensdg"
+baseurl: "/open-sdg-site-starter"
 url: ""
 data_dir: data
 environment: staging
