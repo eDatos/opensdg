@@ -1,11 +1,9 @@
 <script>
-    const CONFIGURATION_FILE = 'configuration.json';
-
     function setFooter(elementId) {
-        fetch(CONFIGURATION_FILE)
+        fetch('configuration.json')
             .then(res => res.json())
             .then(json => {
-                const apiUrl = `${json.metadata.endpoint}/properties/${json.metadata.footerPathKey}`;
+                const apiUrl = `${json.metadata.endpoint}/properties/${json.metadata.footerPathKey}.json`;
                 fetch(apiUrl)
                     .then(res => res.json())
                     .then(htmlUrl => {
@@ -15,7 +13,6 @@
                                 'Content-Type': 'text/html',
                             }
                         }
-
                         fetch(htmlUrl.value, fetchOptions)
                             .then(res => res.text())
                             .then(html => document.querySelector(elementId).innerHTML = html);
