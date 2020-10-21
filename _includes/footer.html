@@ -1,0 +1,25 @@
+<script>
+    function setElement(apiUrl, elementId) {
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(htmlUrl => {
+                fetchOptions = {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'text/html',
+                    }
+                }
+
+                fetch(htmlUrl.value, fetchOptions)
+                    .then(res => res.text())
+                    .then(html => document.querySelector(elementId).innerHTML = html);
+            });
+    }
+
+    // Insertamos el Footer
+    var footerUrl = 'https://estadisticas.arte-consultores.com/cmetadata/v1.0/properties/metamac.app.style.footer.url.json';
+    var elementId = "istac-footer";
+    setElement(footerUrl, elementId);
+</script>
+
+<div id="istac-footer"></div>

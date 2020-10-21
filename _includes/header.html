@@ -1,0 +1,25 @@
+<script>
+    function setElement(apiUrl, elementId) {
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(htmlUrl => {
+                fetchOptions = {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'text/html',
+                    }
+                }
+
+                fetch(htmlUrl.value, fetchOptions)
+                    .then(res => res.text())
+                    .then(html => document.querySelector(elementId).innerHTML = html);
+            });
+    }
+
+    // Insertamos el Header
+    var headerUrl = 'https://estadisticas.arte-consultores.com/cmetadata/v1.0/properties/metamac.app.style.header.url.json';
+    var elementId =  'istac-header';
+    setElement(headerUrl, elementId);
+</script>
+
+<div id="istac-header"></div>
