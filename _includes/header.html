@@ -1,28 +1,37 @@
-<script>
-    function setHeader(elementId) {
-        fetch('configuration.json')
-            .then(res => res.json())
-            .then(json => {
-                const apiUrl = `${json.metadata.endpoint}/properties/${json.metadata.navbarPathKey}.json`;
-                fetch(apiUrl)
-                    .then(res => res.json())
-                    .then(htmlUrl => {
-                        fetchOptions = {
-                            method: 'GET',
-                            //mode: 'cors',
-                            headers: {
-                                'Content-Type': 'text/html',
-                            }
-                        }
-                        fetch(htmlUrl.value, fetchOptions)
-                            .then(res => res.text())
-                            .then(html => document.getElementById(elementId).innerHTML = html);
-                    });
-            });
-    }
+{% include multilingual-js.html key="header" %}
+<div id="istac-header"></div>
 
+<script src="{{ site.baseurl }}/assets/js/setElement.js"></script>
+
+<script>
     // Insertamos el Header
-    setHeader('istac-header');
+    var configPath = '{{ site.baseurl }}/assets/configuration.json'
+    setElement(HEADER, "istac-header", configPath);
 </script>
 
-<div id="istac-header"></div>
+<header role="banner">
+    <div class="container">
+
+        <div class="logo-and-mobile-widgets">
+            <a class="navbar-brand" href="{{ page.baseurl }}" id="home">
+                <img src="{{ site.baseurl }}/assets/img/SDG_logo.png"
+                    alt="{{ page.t.general.sdg }} - {{ page.t.header.tag_line }}" />
+            </a>
+        </div>
+
+        <nav class="navbar navbar-default" id="main-nav">
+
+            <ul class="top-level">
+                <li id="menuToggle" aria-label="Menu toggle. Click to expand or collapse the menu."
+                    aria-haspopup="true">
+                    <button data-target="menu-mobile" aria-expanded="false">{{ page.t.menu.menu }}</button>
+                    {% include navigation.html id="menu-mobile" %}
+                </li>
+            </ul>
+
+            {% include navigation.html id="menu" %}
+
+        </nav>
+    </div>
+
+</header>

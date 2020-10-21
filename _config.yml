@@ -13,7 +13,7 @@
 remote_theme: open-sdg/open-sdg@1.1.0
 
 # Replace this title as needed.
-title: Indicators For The Sustainable Development Goals
+title: Indicadores para los Objetivos de Desarrollo Sostenible
 # Replace the baseurl with the name of this repository.
 baseurl: "/opensdg"
 url: ""
@@ -64,8 +64,8 @@ exclude: [vendor, scripts, remotedata]
 # International Support
 # Eg name: Australia and adjective: Australian
 country:
-  name: Australia
-  adjective: Australian
+  name: España
+  adjective: Español
 
 # Optionally uncomment and update the settings below to control the frontpage heading and instructions.
 #frontpage_heading: Australian data for Sustainable Development Goal indicators
@@ -103,6 +103,7 @@ non_global_metadata: indicator.national_metadata
 
 # The list of languages that are translated. The first one is the default.
 languages:
+  - es
   - en
 
 # This makes sure that all pages have a language.
@@ -110,7 +111,7 @@ defaults:
   - scope:
       path: ""
     values:
-      language: "en"
+      language: "es"
 
 # Set a base for all goal image URLs. Note that the full goal image path will be
 # the base below, completed with: /[language]/[number].png (eg, /fr/6.png).

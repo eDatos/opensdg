@@ -1,28 +1,44 @@
-<script>
-    function setFooter(elementId) {
-        fetch('configuration.json')
-            .then(res => res.json())
-            .then(json => {
-                const apiUrl = `${json.metadata.endpoint}/properties/${json.metadata.footerPathKey}.json`;
-                fetch(apiUrl)
-                    .then(res => res.json())
-                    .then(htmlUrl => {
-                        fetchOptions = {
-                            method: 'GET',
-                            //mode: 'cors',
-                            headers: {
-                                'Content-Type': 'text/html',
-                            }
-                        }
-                        fetch(htmlUrl.value, fetchOptions)
-                            .then(res => res.text())
-                            .then(html => document.getElementById(elementId).innerHTML = html);
-                    });
-            });
-    }
-
-    // Insertamos el Footer
-    setFooter("istac-footer");
-</script>
+<footer role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="footerLinks">
+                    <ul>
+                        <li><a href="https://open-sdg.org">{{ page.t.general.built_using_open_sdg }}</a></li>
+                        {% if site.footer_menu %}
+                        {% for item in site.footer_menu %}
+                        <li>
+                            {% if item.path contains ":" %}
+                            <a href="{{ item.path }}" target="_blank">{{ item.translation_key | t }}</a>
+                            {% else %}
+                            {%- assign item_path = item.path -%}
+                            {%- assign item_path_first = item_path | slice: 0 %}
+                            {%- if item_path_first == '/' -%}
+                            {%- assign item_path = item_path | slice: 1, item_path.size -%}
+                            {%- endif -%}
+                            <a href="{{ page.baseurl }}{{ item_path }}">{{ item.translation_key | t }}</a>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                        {% endif %}
+                        {%- if site.languages.size > 1 and site.footer_language_toggle and site.footer_language_toggle != 'none' -%}
+                        <li class="language-toggle-menu-footer">
+                            {% include components/language-toggle.html location="footer" %}
+                        </li>
+                        {%- endif -%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <div id="istac-footer"></div>
+
+<script>
+    // Insertamos el Header
+    var configPath = '{{ site.baseurl }}/assets/configuration.json'
+    setElement(FOOTER, "istac-footer", configPath);
+</script>
+
+{% include scripts.html %}
