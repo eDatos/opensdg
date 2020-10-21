@@ -1,0 +1,28 @@
+<script>
+    function setHeader(elementId) {
+        fetch('configuration.json')
+            .then(res => res.json())
+            .then(json => {
+                const apiUrl = `${json.metadata.endpoint}/properties/${json.metadata.navbarPathKey}.json`;
+                fetch(apiUrl)
+                    .then(res => res.json())
+                    .then(htmlUrl => {
+                        fetchOptions = {
+                            method: 'GET',
+                            //mode: 'cors',
+                            headers: {
+                                'Content-Type': 'text/html',
+                            }
+                        }
+                        fetch(htmlUrl.value, fetchOptions)
+                            .then(res => res.text())
+                            .then(html => document.getElementById(elementId).innerHTML = html);
+                    });
+            });
+    }
+
+    // Insertamos el Header
+    setHeader('istac-header');
+</script>
+
+<div id="istac-header"></div>

@@ -1,0 +1,28 @@
+<script>
+    function setFooter(elementId) {
+        fetch('configuration.json')
+            .then(res => res.json())
+            .then(json => {
+                const apiUrl = `${json.metadata.endpoint}/properties/${json.metadata.footerPathKey}.json`;
+                fetch(apiUrl)
+                    .then(res => res.json())
+                    .then(htmlUrl => {
+                        fetchOptions = {
+                            method: 'GET',
+                            //mode: 'cors',
+                            headers: {
+                                'Content-Type': 'text/html',
+                            }
+                        }
+                        fetch(htmlUrl.value, fetchOptions)
+                            .then(res => res.text())
+                            .then(html => document.getElementById(elementId).innerHTML = html);
+                    });
+            });
+    }
+
+    // Insertamos el Footer
+    setFooter("istac-footer");
+</script>
+
+<div id="istac-footer"></div>
