@@ -1,6 +1,6 @@
 const HEADER = "HEADER";
 const FOOTER = "FOOTER";
-const DEMO = true // Para pasar rápido de demo a normal. TODO: BORRAR
+const DEMO = false // Para pasar rápido de demo a normal. FIXME: BORRAR
 
 if (DEMO) {
     // Solo para demo local
