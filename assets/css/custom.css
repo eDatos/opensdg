@@ -1,5 +1,6 @@
 .navbar-brand {
-    height: 70px;
+    height: auto;
+    max-width: auto;
 }
 
 .navbar-collapse {
@@ -8,9 +9,15 @@
 }
 
 .navbar-brand img {
-    width: 228.906px;
+    width: auto;
 }
 
 .sustainable-brand img {
     width: 100%;
+}
+
+.footer {
+    height: auto;
+    font-size: 1rem;
+    font-weight: 300;
 }
