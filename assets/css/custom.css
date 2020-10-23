@@ -16,8 +16,11 @@
     width: 100%;
 }
 
-.footer {
-    height: auto;
-    font-size: 1rem;
-    font-weight: 300;
+#istac-footer footer {
+    height: auto !important;
+}
+
+.social a img {
+    float: none !important;
+    margin: 0px !important;
 }
