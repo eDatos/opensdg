@@ -15,7 +15,7 @@ function setElementRutineDemo(elementType, elementId, configPath) {
     fetch(configPath)
     .then(res => res.json())
     .then(json => {
-        fetchOptions = {
+        var fetchOptions = {
             method: 'GET',
             //mode: 'cors',
             headers: {
@@ -58,7 +58,7 @@ function setElementRutine(elementType, elementId, configPath) {
         fetch(apiUrl)
             .then(res => res.json())
             .then(htmlUrl => {
-                fetchOptions = {
+                var fetchOptions = {
                     method: 'GET',
                     //mode: 'cors',
                     headers: {

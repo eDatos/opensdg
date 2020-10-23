@@ -65,8 +65,8 @@ exclude: [vendor, scripts, remotedata]
 # International Support
 # Eg name: Australia and adjective: Australian
 country:
-  name: España
-  adjective: Español
+  name: Canarias
+  adjective: Canario
 
 # Optionally uncomment and update the settings below to control the frontpage heading and instructions.
 #frontpage_heading: Australian data for Sustainable Development Goal indicators
