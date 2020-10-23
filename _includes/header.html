@@ -1,12 +1,12 @@
 {% include multilingual-js.html key="header" %}
-<div id="istac-header"></div>
+<div id="istac-header-wrapper"></div>
 
 <script src="{{ site.baseurl }}/assets/js/setElement.js"></script>
 
 <script>
     // Insertamos el Header
     var configPath = '{{ site.baseurl }}/assets/configuration.json'
-    setElement(HEADER, "istac-header", configPath);
+    setElement(HEADER, "istac-header-wrapper", configPath);
 </script>
 
 <header role="banner">

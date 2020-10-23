@@ -6,6 +6,8 @@
 .navbar-collapse {
     padding-right: 0px;
     padding-left: 0px;
+    border-color: rgba(0, 0, 0, 0);
+    border-style: none;
 }
 
 .navbar-brand img {
@@ -16,11 +18,19 @@
     width: 100%;
 }
 
-#istac-footer footer {
-    height: auto !important;
+#istac-footer-wrapper footer {
+    height: auto
 }
 
 .social a img {
-    float: none !important;
-    margin: 0px !important;
+    float: none;
+    margin: 0px;
+}
+
+#istac-footer-wrapper {
+    display: inline;
+}
+
+#istacNavbarId div div ul.navbar-nav {
+    margin: 0px;
 }
