@@ -47,7 +47,7 @@
             {{ target.name }}
         </div>
         <!-- TODO: Escribir una Gema de Ruby para crear filtros custom y mejorar el rendimiento de esto. -->
-        <div class="indicator-cards col-md-8 row no-gutters">
+        <div class="indicator-cards col-md-8 row">
             {% for indicator in group.items %}
                 <!-- Comprobamos si tiene algún hijo. -->
                 {% assign has_child = false %}
@@ -78,57 +78,59 @@
                         {% endif %}
                     </div>
                     <!-- Mostramos todos los hijos del indicador en el que nos encontramos -->
-                    {% for subindicator in group.items %}
-                        {% if subindicator.target_id == indicator.number %}
-                            {% assign status_css = subindicator.reporting_status | slugify %}
-                            {% if subindicator.reporting_status == 'notapplicable' %}
-                                {% assign status_desc = page.t.status.not_applicable %}
-                            {% endif %}
-                            {% if subindicator.reporting_status == 'notstarted' %}
-                                {% assign status_desc = page.t.status.exploring_data_sources %}
-                            {% endif %}
-                            {% if subindicator.reporting_status == 'inprogress' %}
-                                {% assign status_desc = page.t.status.statistics_in_progress %}
-                            {% endif %}
-                            {% if subindicator.reporting_status == 'complete' %}
-                                {% assign status_desc = page.t.status.reported_online %}
-                            {% endif %}
-                            {% assign tag_classes = "" | split: "," %}
-                            {% if subindicator.tags %}
-                                {% for tag in subindicator.tags %}
-                                    {% assign tag_slug = "subindicator-" | append: tag | slugify %}
-                                    {% assign tag_classes = tag_classes | push: tag_slug %}
-                                {% endfor %}
-                            {% endif %}
-                            {% assign tag_classes = tag_classes | join: " " %}
-
-                            <div class="col-md-6 {{ tag_classes }} goal-indicator">
-                                <span>
-                                    {{ subindicator.number }}
-                                    <span class="status {{ status_css }}">
-                                        {{ status_desc }}
-                                    </span>
-                                </span>
-                                <a href="{{ subindicator.url }}">
-                                    {{ subindicator.name }}
-                                </a>
-                                {% if subindicator.tags %}
-                                    <ul class="tags">
-                                        {% for tag in subindicator.tags %}
-                                            {% assign tag_class = tag | slugify %}
-                                            <li class="tag-{{ tag_class }} warning">{{ tag | t }}</li>
-                                        {% endfor %}
-                                    </ul>
+                    <div class="col-md-6">
+                        {% for subindicator in group.items %}
+                            {% if subindicator.target_id == indicator.number %}
+                                {% assign status_css = subindicator.reporting_status | slugify %}
+                                {% if subindicator.reporting_status == 'notapplicable' %}
+                                    {% assign status_desc = page.t.status.not_applicable %}
                                 {% endif %}
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                                {% if subindicator.reporting_status == 'notstarted' %}
+                                    {% assign status_desc = page.t.status.exploring_data_sources %}
+                                {% endif %}
+                                {% if subindicator.reporting_status == 'inprogress' %}
+                                    {% assign status_desc = page.t.status.statistics_in_progress %}
+                                {% endif %}
+                                {% if subindicator.reporting_status == 'complete' %}
+                                    {% assign status_desc = page.t.status.reported_online %}
+                                {% endif %}
+                                {% assign tag_classes = "" | split: "," %}
+                                {% if subindicator.tags %}
+                                    {% for tag in subindicator.tags %}
+                                        {% assign tag_slug = "subindicator-" | append: tag | slugify %}
+                                        {% assign tag_classes = tag_classes | push: tag_slug %}
+                                    {% endfor %}
+                                {% endif %}
+                                {% assign tag_classes = tag_classes | join: " " %}
+
+                                <div class="col-md-12 {{ tag_classes }} goal-indicator">
+                                    <span>
+                                        {{ subindicator.number }}
+                                        <span class="status {{ status_css }}">
+                                            {{ status_desc }}
+                                        </span>
+                                    </span>
+                                    <a href="{{ subindicator.url }}">
+                                        {{ subindicator.name }}
+                                    </a>
+                                    {% if subindicator.tags %}
+                                        <ul class="tags">
+                                            {% for tag in subindicator.tags %}
+                                                {% assign tag_class = tag | slugify %}
+                                                <li class="tag-{{ tag_class }} warning">{{ tag | t }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 {% else %}
                     <!-- Comprobamos que el padre sea un Goal, en ese caso lo imprimos normalemente. -->
                     <!-- Esto se hace para evitar que aparezcan nodos hoja duplicados. -->
-                    <!-- <= 2 ya que el máximo número de un objetivo será de la forma X.Y siendo X e Y caracteres alfanuméricos. -->
+                    <!-- indicator_level.size <= 2 ya que el máximo número de un goal será de la forma X.Y siendo X e Y caracteres alfanuméricos. -->
                     {% assign indicator_level = indicator.target_id | split: '.' %}
-                    {% if indicator_level.size <= 2 %} 
+                    {% if indicator_level.size <= 2 %}
                         {% assign status_css = indicator.reporting_status | slugify %}
                         {% if indicator.reporting_status == 'notapplicable' %}
                             {% assign status_desc = page.t.status.not_applicable %}
