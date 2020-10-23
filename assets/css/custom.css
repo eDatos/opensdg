@@ -3,6 +3,10 @@
     max-width: auto;
 }
 
+.navbar-brand img {
+    width: auto;
+}
+
 .navbar-collapse {
     padding-right: 0px;
     padding-left: 0px;
@@ -10,16 +14,20 @@
     border-style: none;
 }
 
-.navbar-brand img {
-    width: auto;
-}
-
 .sustainable-brand img {
     width: 100%;
 }
 
+#istac-footer-wrapper {
+    display: inline;
+}
+
 #istac-footer-wrapper footer {
     height: auto
+}
+
+#istacNavbarId div div ul.navbar-nav {
+    margin: 0px;
 }
 
 .social a img {
@@ -27,10 +35,6 @@
     margin: 0px;
 }
 
-#istac-footer-wrapper {
-    display: inline;
-}
-
-#istacNavbarId div div ul.navbar-nav {
-    margin: 0px;
+body {
+    background: white;
 }
