@@ -18,7 +18,7 @@ title: Indicadores para los Objetivos de Desarrollo Sostenible
 baseurl: "/opensdg"
 url: ""
 data_dir: data
-environment: staging
+environment: production
 # Replace "open-sdg" with the name of your GitHub organization, and
 # "open-sdg-data-starter" with the name of your data repository.
 remote_data_prefix: "https://estadisticas.arte-consultores.com/opensdg-data"
