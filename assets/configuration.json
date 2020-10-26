@@ -1,0 +1,14 @@
+{
+    "metadata": {
+        "endpoint": "https://estadisticas.arte-consultores.com/cmetadata/v1.0",
+        "navbarPathKey": "metamac.app.style.header.url",
+        "footerPathKey": "metamac.app.style.footer.url",
+        "appName": "Indicadores de Objetivos de Desarrollo Sostenible"
+    },
+
+    "demo": {
+        "endpoint": "http://localhost:10000/",
+        "header": "header.html",
+        "footer": "footer.html"
+    }
+}

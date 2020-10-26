@@ -1,0 +1,40 @@
+.navbar-brand {
+    height: auto;
+    max-width: auto;
+}
+
+.navbar-brand img {
+    width: auto;
+}
+
+.navbar-collapse {
+    padding-right: 0px;
+    padding-left: 0px;
+    border-color: rgba(0, 0, 0, 0);
+    border-style: none;
+}
+
+.sustainable-brand img {
+    width: 100%;
+}
+
+#istac-footer-wrapper {
+    display: inline;
+}
+
+#istac-footer-wrapper footer {
+    height: auto
+}
+
+#istacNavbarId div div ul.navbar-nav {
+    margin: 0px;
+}
+
+.social a img {
+    float: none;
+    margin: 0px;
+}
+
+body {
+    background: white;
+}

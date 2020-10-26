@@ -1,0 +1,37 @@
+{% include multilingual-js.html key="header" %}
+<div id="istac-header-wrapper"></div>
+
+<script src="{{ site.baseurl }}/assets/js/setElement.js"></script>
+
+<script>
+    // Insertamos el Header
+    var configPath = '{{ site.baseurl }}/assets/configuration.json'
+    setElement(HEADER, "istac-header-wrapper", configPath);
+</script>
+
+<header role="banner">
+    <div class="container">
+
+        <div class="logo-and-mobile-widgets">
+            <a class="navbar-brand sustainable-brand" href="{{ page.baseurl }}" id="home">
+                <img src="{{ site.baseurl }}/assets/img/SDG_logo.png"
+                    alt="{{ page.t.general.sdg }} - {{ page.t.header.tag_line }}" />
+            </a>
+        </div>
+
+        <nav class="navbar navbar-default" id="main-nav">
+
+            <ul class="top-level">
+                <li id="menuToggle" aria-label="Menu toggle. Click to expand or collapse the menu."
+                    aria-haspopup="true">
+                    <button data-target="menu-mobile" aria-expanded="false">{{ page.t.menu.menu }}</button>
+                    {% include navigation.html id="menu-mobile" %}
+                </li>
+            </ul>
+
+            {% include navigation.html id="menu" %}
+
+        </nav>
+    </div>
+
+</header>
