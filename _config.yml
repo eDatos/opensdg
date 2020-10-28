@@ -23,7 +23,18 @@ environment: production
 # "open-sdg-data-starter" with the name of your data repository.
 remote_data_prefix: "https://estadisticas.arte-consultores.com/opensdg-data"
 remote_translations:
-  - https://open-sdg.github.io/sdg-translations/translations-0.8.1.json
+  - https://estadisticas.arte-consultores.com/opensdg-data/es/translations/translations.json
+  - https://estadisticas.arte-consultores.com/opensdg-data/en/translations/translations.json
+
+jekyll_get_json:
+  - data: meta
+    json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/meta/all.json'
+  - data: headlines
+    json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/headline/all.json'
+  - data: schema
+    json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/meta/schema.json'
+  - data: reporting
+    json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/stats/reporting.json'
 
 # Automatically create indicator pages, goal pages,
 # and some other required pages.
@@ -120,6 +131,7 @@ goal_image_base: https://open-sdg.github.io/sdg-translations/assets/img/goals
 # Tell Jekyll to use the Remote Theme plugin.
 plugins:
   - jekyll-remote-theme
+  - jekyll-get-json
   - jekyll-open-sdg-plugins
 
 # Apply any custom CSS.
