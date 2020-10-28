@@ -1,0 +1,10 @@
+<!--
+{% assign goal_indicators = page.indicators | where: 'goal_number', page.goal.number | group_by: 'target_number' %}
+-->
+<table class="table">
+    {% for s in page.indicators %}
+        {% if s.target_id == page.indicator.number %}
+            <tr><td><b><a href="{{ s.url }}">{{ s.number }} - {{ s.name }}</a></b></td></tr>
+        {% endif %}
+    {% endfor %}
+</table>

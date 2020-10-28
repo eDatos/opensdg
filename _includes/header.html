@@ -21,12 +21,20 @@
         <nav class="navbar navbar-default" id="main-nav">
 
             <ul class="top-level">
-                <li aria-haspopup="true" aria-label="Menu toggle. Click to expand or collapse the menu." id="menuToggle">
+                <li aria-label="Menu toggle. Click to expand or collapse the menu."
+                    aria-haspopup="true"
+                    id="menuToggle">
+
                     <button aria-expanded="false" data-target="menu-mobile">{{ page.t.menu.menu }}</button>
                     {% include navigation.html id="menu-mobile" %}
                 </li>
-                <li aria-haspopup="true" aria-label="Search toggle. Click to expand or collapse the search bar." id="searchToggle">
+
+                <li aria-label="Search toggle. Click to expand or collapse the search bar."
+                    aria-haspopup="true"
+                    id="searchToggle">
+
                     <button aria-expanded="false" data-target="search-mobile">{{ page.t.search.search }}</button>
+                    
                     {% include search.html id="search-mobile" %}
                 </li>
             </ul>
