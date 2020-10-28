@@ -10,6 +10,10 @@
 # -- replace "open-sdg-data-starter" with "my-awesome-data-repo"
 
 # Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
+data_edit_url: http://prose.io/#open-sdg/open-sdg-data-starter/edit/develop/data/indicator_[id].csv
+# URL for the "Edit Metadata" button on indicators.
+metadata_edit_url: http://prose.io/#open-sdg/open-sdg-data-starter/edit/develop/meta/[id].md
+
 remote_theme: open-sdg/open-sdg@1.1.0
 
 # Replace this title as needed.
@@ -35,6 +39,8 @@ jekyll_get_json:
     json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/meta/schema.json'
   - data: reporting
     json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/stats/reporting.json'
+  - data: translations
+    json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/translations/translations.json'
 
 # Automatically create indicator pages, goal pages,
 # and some other required pages.
@@ -61,10 +67,10 @@ email_contacts:
 
 # Github Repo for Data
 # Replace this value as needed.
-repo_name: open-sdg-data-starter
+repo_name: edatos-opensdg-web
 branch: develop
 # Replace this value as needed.
-org_name: my-github-org
+org_name: istac
 
 # Build settings
 markdown: kramdown
