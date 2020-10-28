@@ -366,18 +366,21 @@ var indicatorView = function (model, options) {
                         text.push('</span>');
                         */
                         // Cambiado a estilo alemán
+
                         if (dataset.label.normalize() === "Objetivo".normalize()) {
-                            text.push('<span class="swatchTgt left" style="background-color: ' + dataset.borderColor + '">');
-                            text.push('</span>');
+                            if (dataset.type != 'bar') {
+                                text.push('<span class="swatchTgt' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                            } else {
+                                text.push('<span class="swatchTgtBar' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                            }
+                        } else if (dataset.type != 'bar') {
+                            text.push('<span class="swatchLine' + (dataset.borderDash ? ' dashed' : '') + ' left" style="background-color: ' + dataset.pointBorderColor + '"></span>');
+                            text.push('<span class="swatchTsr' + (dataset.borderDash ? ' dashed' : '') + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                            text.push('<span class="swatchLine' + (dataset.borderDash ? ' dashed' : '') + ' right" style="background-color: ' + dataset.pointBorderColor + '"></span>');
                         } else {
-                            text.push('<span class="swatchLine left" style="background-color: ' + dataset.borderColor + '">');
-                            text.push('</span>');
-                            text.push('<span class="swatchTsr left" style="background-color: ' + dataset.borderColor + '">');
-                            text.push('</span>');
-                            text.push('<span class="swatchLine right" style="background-color: ' + dataset.borderColor + '">');
-                            text.push('</span>');
+                            text.push('<span class="swatchBar' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.pointBorderColor + '"></span>');
                         }
-                        
+
                         text.push("<i>" + translations.t(dataset.label) + "</i>");
                         text.push('</li>');
                     });
