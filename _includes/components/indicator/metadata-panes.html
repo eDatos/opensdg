@@ -29,9 +29,14 @@
     
     {% for s in page.indicators %}
         {% if s.target_id == page.indicator.number %}
-            <div class="tab-pane" id="subindicator{{ s.number | replace: ".", "" }}" role="tabpanel">
-                <p>{{ s.number }} - {{ s.name }}</p>
-                <br><a href="{{ s.url }}" class="btn btn-success">Datos</a>
+            <div class="tab-pane {% if forloop.first %}active{% endif %}" id="subindicator{{ s.number | replace: ".", "" }}" role="tabpanel">
+                <div class="chart">
+                    {% include components/subindicator/subindicator-chart.html scope=s %}
+                </div>
+                
+                <div class="metadata">
+                    {% include components/subindicator/subindicator-metadata.html scope=s %}
+                </div>
             </div>
         {% endif %}
     {% endfor %}

@@ -139,9 +139,10 @@ function getBorderDash(datasetIndex, colors) {
  */
 function makeDataset(years, rows, combination, labelFallback, color, background, border) {
   var dataset = getBaseDataset();
+  var labelName = getCombinationDescription(combination, labelFallback);
   return Object.assign(dataset, {
-    label: getCombinationDescription(combination, labelFallback),
-    pointStyle: getPointStyle(getCombinationDescription(combination, labelFallback)),
+    label: labelName,
+    pointStyle: getPointStyle(labelName),
     disaggregation: combination,
     borderColor: color,
     backgroundColor: background,
@@ -153,8 +154,14 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
   });
 }
 
+function isObjetivo(label) {
+  console.log(label);
+  let objetivoRegex = /.*Objetivo.*/;
+  return objetivoRegex.test(label);
+}
+
 function getPointStyle(label) {
-  if (label.normalize() === "Objetivo".normalize()) {
+  if (isObjetivo(label)) {
     return 'rect';
   } else {
     return 'circle';

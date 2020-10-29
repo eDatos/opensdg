@@ -10,8 +10,7 @@
             {% unless indicator_metadata.name contains "_url_text" or indicator_metadata.name contains "_link_text" %}
                 <tr>
                     <!-- Cambios para traducción manual -->
-                    <th scope="row">{{ site.data.translations.es.metadata_fields | map: metadata_label }} </th>
-
+                    <th scope="row">{{ site.data.translations.es.metadata_fields | map: metadata_label }}</th>
                     <td>
                         {% if indicator_metadata.name contains "_url" or indicator_metadata.name contains "_link" %}
                             {% assign url_text_name = indicator_metadata.name | replace_first:'_url','_url_text'  %}
@@ -43,5 +42,3 @@
         {% endif %}
     {% endfor %}
 </table>
-
-
