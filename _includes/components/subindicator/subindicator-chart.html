@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/Chart.min.js"></script>
 {% assign subindicator = include.scope %}
 
 {% assign show_data = false %}
@@ -7,26 +7,45 @@
 {% endif %}
 
 {% if show_data %}
-<canvas height="200" id="subindicator-chart-{{ subindicator.slug }}" width="400"></canvas>
+<canvas height="200" id="subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}" width="400"></canvas>
 <script>
-    // TODO: Añadir media y regresión lineal.
     fetch("{{ page.remote_data_prefix }}/data/{{ subindicator.slug }}.json")
         .then(res => res.json())
         .then(json => {
-            function media(datos) {
-                return datos.reduce((a, b) => a + b) / datos.length;
+            var ctx = document.getElementById(`subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}`).getContext('2d');
+            function media(valores) {
+                if (valores.length > 0){
+                    return Array.from(valores).reduce((a, b) => a + b) / valores.length;
+                } else {
+                    return 0;
+                }
             }
-        
-            var ctx = document.getElementById('subindicator-chart-{{ subindicator.slug }}').getContext('2d');
-            var media = media(json.Value);
+
+            function getColumnName(datos) {
+                // Comprueba si existe una columna que no sea alguna de las reservadas.
+                // Esto se hace para comprobar si se ha incluído una columna Objetivo.
+                for (var key in datos) {
+                    if (!["Year", "Units", "Value"].includes(key)) {
+                        return key;
+                    }
+                }
+                return null;
+            }
             
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: json.Year,
-                    datasets: [{
+            var columnName = getColumnName(json);
+
+            if (columnName != null) {
+                // En caso de tener un objetivo rellenamos los datasets para que respeten el formato con objetivo.
+                var regexObjetivo = /.*Objetivo.*/igm;
+                var numberOfData = json[columnName].filter(x => !regexObjetivo.test(x)).length - 1; // Número de valores que no son objetivos.
+                var notObjetiveData = json.Value.slice(0, numberOfData);
+                var media = media(notObjetiveData);
+                var objetiveData = json.Value.slice(numberOfData, json.Value.length);
+
+                var datasets = [
+                        {
                             label: "{{ subindicator.unidad_medida }}",
-                            data: json.Value,
+                            data: [...Array.from(notObjetiveData), ...Array(objetiveData.length).fill(0)],
                             backgroundColor: 'rgba(122,122,122,0.5)',
                             borderColor: 'rgba(77,77,77,1)',
                             borderWidth: 1
@@ -39,8 +58,50 @@
                             borderColor: 'rgb(255,0,0)',
                             backgroundColor: 'rgba(0,0,0,0)',
                             borderWidth: 2
+                        },
+                        {
+                            label: "Objetivo(s)",
+                            data: [...Array(notObjetiveData.length).fill(null), ...Array.from(objetiveData)],
+                            type: 'line',
+                            pointRadius: 10,
+                            borderColor: 'rgb(26,196,80)',
+                            backgroundColor: 'rgba(0,0,0,0)',
+                            orderWidth: 2,
+                            pointStyle: 'rect',
+                            tension: 0
                         }
-                    ]
+                ];
+            } else {
+                // En caso contrario rellenamos los datasets con todos los valores.
+                var media = media(json.Value);
+                var datasets = [
+                    {
+                        label: "{{ subindicator.unidad_medida }}",
+                        data: json.Value,
+                        backgroundColor: 'rgba(122,122,122,0.5)',
+                        borderColor: 'rgba(77,77,77,1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: `Media ${media.toFixed(2)} {{ subindicator.unidad_medida }}`,
+                        data: new Array(json.Value.length).fill(media),
+                        type: 'line',
+                        pointRadius: 0,
+                        borderColor: 'rgb(255,0,0)',
+                        backgroundColor: 'rgba(0,0,0,0)',
+                        borderWidth: 2,
+                        tension: 0
+                    },  
+                ];
+            }
+
+            
+            
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: json.Year,
+                    datasets: datasets,
                 },
                 options: {
                     scales: {
