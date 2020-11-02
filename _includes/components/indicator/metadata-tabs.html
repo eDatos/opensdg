@@ -19,17 +19,16 @@
         {% include components/indicator/metadata-tabs-default.html %}
     {% endif %}
 
-    {% for s in page.indicators %}
-        {% if s.target_id == page.indicator.number %}
-            <li class="nav-item" role="presentation">
-                <a aria-controls="subindicator{{ s.number | replace: ".", "" }}"
-                    class="nav-link" data-toggle="tab"
-                    href="#subindicator{{ s.number | replace: ".", "" }}"
-                    role="tab">
-                    {{ s.number }}
-                </a>
-            </li>
-        {% endif %}
+    {% assign sorted_indicators = page.indicators | where: 'target_id', page.indicator.number | sort: 'sort_order' %}
+    {% for s in sorted_indicators %}
+        <li class="nav-item" role="presentation">
+            <a aria-controls="subindicator{{ s.number | replace: '.', '' }}"
+                class="nav-link" data-toggle="tab"
+                href="#subindicator{{ s.number | replace: '.', '' }}"
+                role="tab">
+                {{ s.number }}
+            </a>
+        </li>
     {% endfor %}
 
     {% if site.environment == 'staging' %}
