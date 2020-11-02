@@ -1,20 +1,23 @@
 {% assign subindicator = include.scope %}
+<!--
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+-->
+<script id="MathJax-script" async src="{{ site.baseurl }}/assets/js/tex-mml-chtml.js"></script>
 
 <table class="table">
-    {% for indicator_metadata in site.data.schema %}
-        {% if indicator_metadata.field.scope == "subindicator" %}
-            <tr>
-                <th>{{ indicator_metadata.name | translate_metadata_field }}</th>
-                <td>
-                    {% if indicator_metadata.name == "formula_teorica" %}
-                        $${{ subindicator[indicator_metadata.name] }}$$
-                    {% else %}
-                        {{ subindicator[indicator_metadata.name] }}
-                    {% endif %}
-                </td>
-            </tr>
-        {% endif %}
+    {% for indicator_metadata in site.meta %}
+    {% if indicator_metadata.field.scope == "subindicator" %}
+    <tr>
+        <th>{{ site.translations | map: indicator_metadata.name }}</th>
+        <td>
+            {% if indicator_metadata.name == "formula_teorica" %}
+            $${{ subindicator[indicator_metadata.name] }}$$
+            {% else %}
+            {{ subindicator[indicator_metadata.name] }}
+            {% endif %}
+        </td>
+    </tr>
+    {% endif %}
     {% endfor %}
 </table>
