@@ -1,0 +1,58 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+{% assign subindicator = include.scope %}
+
+{% assign show_data = false %}
+{% if subindicator.reporting_status == "complete" and subindicator.data_non_statistical != true %}
+{% assign show_data = true %}
+{% endif %}
+
+{% if show_data %}
+<canvas height="200" id="subindicator-chart-{{ subindicator.slug }}" width="400"></canvas>
+<script>
+    // TODO: Añadir media y regresión lineal.
+    fetch("{{ page.remote_data_prefix }}/data/{{ subindicator.slug }}.json")
+        .then(res => res.json())
+        .then(json => {
+            function media(datos) {
+                return datos.reduce((a, b) => a + b) / datos.length;
+            }
+        
+            var ctx = document.getElementById('subindicator-chart-{{ subindicator.slug }}').getContext('2d');
+            var media = media(json.Value);
+            
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: json.Year,
+                    datasets: [{
+                            label: "{{ subindicator.unidad_medida }}",
+                            data: json.Value,
+                            backgroundColor: 'rgba(122,122,122,0.5)',
+                            borderColor: 'rgba(77,77,77,1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: `Media ${media.toFixed(2)} {{ subindicator.unidad_medida }}`,
+                            data: new Array(json.Value.length).fill(media),
+                            type: 'line',
+                            pointRadius: 0,
+                            borderColor: 'rgb(255,0,0)',
+                            backgroundColor: 'rgba(0,0,0,0)',
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+
+</script>
+{% endif %}

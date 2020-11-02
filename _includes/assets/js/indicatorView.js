@@ -361,13 +361,9 @@ var indicatorView = function (model, options) {
 
                     _.each(chart.data.datasets, function (dataset, datasetIndex) {
                         text.push('<li data-datasetindex="' + datasetIndex + '">');
-                        /*
-                        text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.borderColor + '">');
-                        text.push('</span>');
-                        */
                         // Cambiado a estilo alemán
-
-                        if (dataset.label.normalize() === "Objetivo".normalize()) {
+                        let objetivoRegex = /.*Objetivo.*/;
+                        if (objetivoRegex.test(dataset.label)) {
                             if (dataset.type != 'bar') {
                                 text.push('<span class="swatchTgt' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
                             } else {

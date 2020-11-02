@@ -1,47 +1,15 @@
 const HEADER = "HEADER";
 const FOOTER = "FOOTER";
-const DEMO = false // Para pasar rápido de demo a normal. FIXME: BORRAR
 
 function renderElement(elementId, htmlCode) {
     document.getElementById(elementId).innerHTML = htmlCode;
 }
 
-function cacheHtmlCode(id, code) {
-    sessionStorage.setItem(id, code);
+function cacheHtmlCode(elementId, htmlCode) {
+    sessionStorage.setItem(elementId, htmlCode);
 }
 
-// FIXME: BORRAR
-function setElementRutineDemo(elementType, elementId, configPath) {
-    fetch(configPath)
-    .then(res => res.json())
-    .then(json => {
-        var fetchOptions = {
-            method: 'GET',
-            //mode: 'cors',
-            headers: {
-                'Content-Type': 'text/html',
-            }
-        }
-        var element = null;
-        switch (elementType) {
-            case HEADER:
-                element = json.demo.header;
-                break;
-            case FOOTER:
-                element = json.demo.footer;
-                break;
-        }
-        var htmlUrl = json.demo.endpoint + element + "?appName=" + json.metadata.appName;
-        fetch(htmlUrl, fetchOptions)
-            .then(res => res.text())
-            .then(html => {
-                cacheHtmlCode(elementId, html);
-                document.getElementById(elementId).innerHTML = html;
-            })
-    })
-}
-
-function setElementRutine(elementType, elementId, configPath) {
+function setElementRutine(elementType, elementId, configPath, baseUrl = '') {
     fetch(configPath)
     .then(res => res.json())
     .then(json => {
@@ -69,22 +37,19 @@ function setElementRutine(elementType, elementId, configPath) {
                 fetch(appHtmlUrl, fetchOptions)
                     .then(res => res.text())
                     .then(html => {
+                        html.replace('<a href>', `<a href="${baseUrl}">`);
                         cacheHtmlCode(elementId, html);
-                        document.getElementById(elementId).innerHTML = html;
+                        renderElement(elementId, html);
                     });
             });
     });
 }
 
-function setElement(elementType, elementId, configPath) {
+function setElement(elementType, elementId, configPath, baseUrl = '') {
     var cachedData = sessionStorage.getItem(elementId);
     if (cachedData != null) {
         renderElement(elementId, cachedData);
     } else {
-        if (DEMO) {
-            setElementRutineDemo(elementType, elementId, configPath);
-        } else {
-            setElementRutine(elementType, elementId, configPath);
-        }
+        setElementRutine(elementType, elementId, configPath, baseUrl);
     }
 }
