@@ -319,8 +319,7 @@ var indicatorView = function (model, options) {
 
         var that = this;
         var gridColor = that.getGridColor();
-        var tickColor = that.getTickColor();
-
+        var tickColor = that.getTickColor();        
         var chartConfig = {
             type: this._model.graphType,
             data: chartInfo,
@@ -357,17 +356,86 @@ var indicatorView = function (model, options) {
                     }]
                 },
                 legendCallback: function (chart) {
-                    var text = ['<ul id="legend" style="text-align: left; padding-left: 0px">'];
+                    var text = []
+                    text.push('<h5 class="sr-only">Plot legend: list of lines included in chart</h5>');
+                    text.push('<ul id="legend" style="text-align: left; padding-left: 0px">');
 
+                    var temp = [];
                     _.each(chart.data.datasets, function (dataset, datasetIndex) {
+                        temp.push({
+                            label: dataset.label,
+                            borderDash: dataset.borderDash,
+                            backgroundColor: dataset.backgroundColor,
+                            borderColor: dataset.borderColor,
+                            pointBorderColor: dataset.pointBorderColor,
+                            datasetIndex: datasetIndex,
+                            type: dataset.type
+                        });
+                    });
+
+                    var sorted = temp.sort(function (a, b) {
+                        var resultA = /.*([a-z0-9])\).*/gm.exec(a.label)[1];
+                        var resultB = /.*([a-z0-9])\).*/gm.exec(b.label)[1];
+                        if (resultA < resultB) return -1;
+                        if (resultA > resultB) return 1;
+                        return 0;
+                    });
+
+                    /**
+                     * Función que implementa la intersección de conjuntos
+                     * @param {Set} otroSet 
+                     */
+                    Set.prototype.intersection = function(otroSet) {
+                        var intersectionSet = new Set();
+                        for (var elem of otroSet) {
+                            if (this.has(elem)) {
+                                intersectionSet.add(elem);
+                            }
+                        }
+                        return intersectionSet;
+                    }
+
+                    /**
+                     * Encontrar el dataset al que hace referencia un objetivo para luego poder utilizar su color.
+                     * 
+                     * @param {Array<Dataset>} datasets 
+                     * @param {Dataset} target 
+                     */
+                    function getRelatedDataset(datasets, target) {
+                        var targetSplited = target.label.split(', ');
+                        var targetSet = new Set(targetSplited);
+                        var selectedDataset = null;
+                        var coincidences = 0;
+                        _.each(datasets, function (d, i) {
+                            var dSet = new Set(d.label.split(', '));
+                            if (!dSet.has(targetSplited[0])) {
+                                var intersection = dSet.intersection(targetSet);
+                                if (intersection.size > coincidences) {
+                                    selectedDataset = d;
+                                    coincidences = intersection.size;
+                                }
+                            }
+                        })
+                        return selectedDataset;
+                    }
+
+                    _.each(sorted, function (dataset, datasetIndex) {
                         text.push('<li data-datasetindex="' + datasetIndex + '">');
                         // Cambiado a estilo alemán
                         let objetivoRegex = /.*Objetivo.*/;
                         if (objetivoRegex.test(dataset.label)) {
-                            if (dataset.type != 'bar') {
-                                text.push('<span class="swatchTgt' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                            var datasetRelacionado = getRelatedDataset(sorted, dataset);
+                            var colorObjetivo = null;
+                            if (datasetRelacionado != null) {
+                                colorObjetivo = datasetRelacionado.pointBorderColor;
                             } else {
-                                text.push('<span class="swatchTgtBar' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                                colorObjetivo = dataset.pointBorderColor;
+                            }
+
+                            if (dataset.type != 'bar') {
+                                text.push('<span class="swatchTgt' + '" style="border-color: ' + colorObjetivo + '"></span>');
+                            } else {
+                                text.push('<span class="swatchTgtBar' + '" style="border-color: ' + colorObjetivo + '"></span>');
                             }
                         } else if (dataset.type != 'bar') {
                             text.push('<span class="swatchLine' + (dataset.borderDash ? ' dashed' : '') + ' left" style="background-color: ' + dataset.pointBorderColor + '"></span>');

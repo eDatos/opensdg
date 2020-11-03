@@ -38,7 +38,8 @@
             }
             
             var columnName = getColumnName(json);
-
+            
+            //FIXME: Este sistema no funciona si existe un objetivo por cada año...
             if (columnName != null) {
                 // En caso de tener un objetivo rellenamos los datasets para que respeten el formato con objetivo.
                 var regexObjetivo = /.*Objetivo.*/igm;

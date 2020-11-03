@@ -2,9 +2,7 @@
     <div class="col-md-6">
         {% if page.indicator["prev_indicator"] %}
             <a href="{{ site.baseurl }}/{{ page.indicator['prev_indicator'] }}" class="prev_next_button btn btn-primary btn-block G{{ page.indicator['sdg_goal'] }}-background">
-                <b>
-                    <i class="fa fa-icon-arrow-left"></i> {{ page.indicator['prev_indicator'] | | replace: '-', '.' }}
-                </b>
+                <b><i class="glyphicon glyphicon-menu-left"></i> Indicador Previo [{{ page.indicator['prev_indicator'] | | replace: '-', '.' }}]</b>
             </a>
         {% endif %}
     </div>
@@ -12,9 +10,7 @@
     <div class="col-md-6">
         {% if page.indicator["next_indicator"] %}
             <a href="{{ site.baseurl }}/{{ page.indicator['next_indicator'] }}" class="prev_next_button btn btn-primary btn-block G{{ page.indicator['sdg_goal'] }}-background">
-                <b>
-                    {{ page.indicator['next_indicator'] | | replace: '-', '.' }} <i class="fa fa-icon-arrow-right"></i>
-                </b>
+                <b>Indicador Siguiente [{{ page.indicator['next_indicator'] | | replace: '-', '.' }}] <i class="glyphicon glyphicon-menu-right"></i></b>
             </a>
         {% endif %}
     </div>
