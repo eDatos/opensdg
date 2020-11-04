@@ -7,6 +7,11 @@
     // Insertamos el Header
     var configPath = '{{ site.baseurl }}/assets/configuration.json'
     setElement(HEADER, "istac-header-wrapper", configPath, "{{ site.baseurl }}");
+    fetch(configPath)
+        .then((res => res.json()))
+        .then(json => {
+            document.querySelector("#title-bar a").href = json.metadata.siteName;
+        });
 </script>
 
 <header role="banner">
