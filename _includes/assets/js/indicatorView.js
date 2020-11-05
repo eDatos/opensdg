@@ -425,7 +425,7 @@ var indicatorView = function (model, options) {
                             text.push('<span class="swatchBar' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.pointBorderColor + '"></span>');
                         }
 
-                        text.push("<i>" + dataset.label_serie + ") " + translations.t(dataset.label) + "</i>");
+                        text.push("<i>" + dataset.label_serie + ". " + translations.t(dataset.label) + "</i>");
                         text.push('</li>');
                     });
 

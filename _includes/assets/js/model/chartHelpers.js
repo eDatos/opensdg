@@ -60,7 +60,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   }, this);
 
   datasets.sort((a,b) => {
-      if (/Serie ([a-zA-Z])/igm.exec(a.label_serie) & /Serie ([a-zA-Z])/igm.exec(b.label_serie)) {
+      if (/Serie ([a-zA-Z])/igm.test(a.label_serie) & /Serie ([a-zA-Z])/igm.test(b.label_serie)) {
           var aValue = /Serie ([a-zA-Z])/igm.exec(a.label_serie)[1];
           var bValue = /Serie ([a-zA-Z])/igm.exec(b.label_serie)[1];
           if (aValue > bValue) return 1;
