@@ -59,17 +59,8 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       }
   }, this);
 
-  datasets.sort(function (a, b) {
-      var resultA = /.*([a-z0-9])\).*/gm.exec(a.label)[1];
-      var resultB = /.*([a-z0-9])\).*/gm.exec(b.label)[1];
-      if (resultA < resultB) return -1;
-      if (resultA > resultB) return 1;
-      return 0;
-  });
-
-  datasets.forEach(d => {
-      if (/.*Objetivo.*/igm.test(d.label)) {
-          console.log(d.label);
+    datasets.forEach(d => {
+        if (/.*Objetivo.*/igm.test(d.label)) {
           var relatedDataset = getRelatedDataset(datasets, d);
           if (relatedDataset != null) {
               d.pointBorderColor = relatedDataset.pointBorderColor;
