@@ -53,14 +53,25 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
           color = getColor(index, colors);
           background = getBackground(index, colors);
           border = getBorderDash(index, colors);
-          dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border);
+          dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, getLegendLabel(filteredData, index));
           datasets.push(dataset);
           index++;
       }
   }, this);
 
-    datasets.forEach(d => {
-        if (/.*Objetivo.*/igm.test(d.label)) {
+  datasets.sort((a,b) => {
+      if (/Serie ([a-zA-Z])/igm.exec(a.label_serie) & /Serie ([a-zA-Z])/igm.exec(b.label_serie)) {
+          var aValue = /Serie ([a-zA-Z])/igm.exec(a.label_serie)[1];
+          var bValue = /Serie ([a-zA-Z])/igm.exec(b.label_serie)[1];
+          if (aValue > bValue) return 1;
+          if (aValue < bValue) return -1;
+      }
+      
+      return 0;
+  });
+  
+  datasets.forEach(d => {
+      if (/.*Objetivo.*/igm.test(d.label)) {
           var relatedDataset = getRelatedDataset(datasets, d);
           if (relatedDataset != null) {
               d.pointBorderColor = relatedDataset.pointBorderColor;
@@ -75,6 +86,13 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       datasets.unshift(dataset);
   }
   return datasets;
+}
+
+function getLegendLabel(data, index) {
+  if (data[index].Serie != undefined) {
+      return data[index].Serie
+  }
+  return "Sin Serie";
 }
 
 /**
@@ -188,10 +206,11 @@ function getBorderDash(datasetIndex, colors) {
 * @param {Array} border
 * @return {Object} Dataset object for Chart.js
 */
-function makeDataset(years, rows, combination, labelFallback, color, background, border) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, label_serie) {
   var dataset = getBaseDataset();
   var labelName = getCombinationDescription(combination, labelFallback);
   return Object.assign(dataset, {
+      label_serie: label_serie,
       label: labelName,
       pointStyle: getPointStyle(labelName),
       disaggregation: combination,
