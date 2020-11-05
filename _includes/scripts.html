@@ -1,0 +1,95 @@
+<script src="{{ site.baseurl }}/assets/js/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="{{ site.baseurl }}/assets/js/tether.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/jquery.dataTables.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/dataTables.bootstrap.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/dataTables.fixedColumns.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/underscore-min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/Chart.bundle.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/patternomaly.js"></script>
+{% if page.indicator and page.indicator.graph_annotations %}
+<script src="{{ site.baseurl }}/assets/js/chartjs-plugin-annotation.min.js" integrity="sha512-9hzM/Gfa9KP1hSBlq3/zyNF/dfbcjAYwUTBWYX+xi8fzfAPHL3ILwS1ci0CTVeuXTGkRAWgRMZZwtSNV7P+nfw==" crossorigin="anonymous"></script>
+{% endif %}}
+{% if page.indicator and page.indicator.data_show_map %}
+<script src="{{ site.baseurl }}/assets/js/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="{{ site.baseurl }}/assets/js/leaflet-zoom-show-hide.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/chroma.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/iso8601.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/leaflet.timedimension.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/Leaflet.fullscreen.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/leaflet.zoomhome.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/leaflet-search.min.js"></script>
+{% endif %}
+<script src="{{ site.baseurl }}/assets/js/autotrack.js"></script>
+<script src="{{ site.baseurl }}/assets/js/html2canvas.js"></script>
+<script src="{{ site.baseurl }}/assets/js/FileSaver.min.js"></script>
+{% include multilingual-js.html key="general.hide" %}
+{% include multilingual-js.html key="search.search" %}
+<script src='{{ site.baseurl }}/assets/js/sdg.js?v={{ cache_bust }}'></script>
+{%- if site.custom_js -%}
+  {%- for custom_js_file in site.custom_js -%}
+    <script src="{{ site.baseurl }}{{ custom_js_file }}?v={{ cache_bust }}"></script>
+  {%- endfor -%}
+{%- endif -%}
+<script>
+$(function() {
+    if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+
+      if (domData.showdata) {
+
+        $('.async-loading').each(function(i, obj) {
+            $(obj).append($('<img />').attr('src', $(obj).data('img')).attr('alt', translations.indicator.loading));
+        });
+
+        var remoteUrl = '/comb/' + domData.id + '.json';
+        if (opensdg.remoteDataBaseUrl !== '/') {
+          remoteUrl = opensdg.remoteDataBaseUrl + remoteUrl;
+        }
+
+        $.ajax({
+          url: remoteUrl,
+          success: function(res) {
+
+            $('.async-loading').remove();
+            $('.async-loaded').show();
+
+            var model = new indicatorModel({
+              data: res.data,
+              edgesData: res.edges,
+              showMap: domData.showmap,
+              country: domData.country,
+              indicatorId: domData.indicatorid,
+              shortIndicatorId: domData.id,
+              chartTitle: domData.charttitle,
+              chartTitles: domData.charttitles,
+              measurementUnit: domData.measurementunit,
+              showData: domData.showdata,
+              graphType: domData.graphtype,
+              startValues: domData.startvalues,
+              graphLimits: domData.graphlimits,
+              stackedDisaggregation: domData.stackeddisaggregation,
+              graphAnnotations: domData.graphannotations
+            }),
+            view  = new indicatorView(model, {
+              rootElement: '#indicatorData',
+              legendElement: '#plotLegend',
+              maxChartHeight: 420,
+              tableColumnDefs: [
+                { maxCharCount: 25 }, // nowrap
+                { maxCharCount: 35, width: 200 },
+                { maxCharCount: Infinity, width: 250 }
+              ]
+            }),
+            controller = new indicatorController(model, view);
+            controller.initialise();
+          }
+        });
+      }
+    }
+
+    var switcher = new accessibilitySwitcher();
+
+
+});
+</script>

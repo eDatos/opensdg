@@ -360,27 +360,6 @@ var indicatorView = function (model, options) {
                     text.push('<h5 class="sr-only">Plot legend: list of lines included in chart</h5>');
                     text.push('<ul id="legend" style="text-align: left; padding-left: 0px">');
 
-                    var temp = [];
-                    _.each(chart.data.datasets, function (dataset, datasetIndex) {
-                        temp.push({
-                            label: dataset.label,
-                            borderDash: dataset.borderDash,
-                            backgroundColor: dataset.backgroundColor,
-                            borderColor: dataset.borderColor,
-                            pointBorderColor: dataset.pointBorderColor,
-                            datasetIndex: datasetIndex,
-                            type: dataset.type
-                        });
-                    });
-
-                    var sorted = temp.sort(function (a, b) {
-                        var resultA = /.*([a-z0-9])\).*/gm.exec(a.label)[1];
-                        var resultB = /.*([a-z0-9])\).*/gm.exec(b.label)[1];
-                        if (resultA < resultB) return -1;
-                        if (resultA > resultB) return 1;
-                        return 0;
-                    });
-
                     /**
                      * Función que implementa la intersección de conjuntos
                      * @param {Set} otroSet 
@@ -419,13 +398,25 @@ var indicatorView = function (model, options) {
                         return selectedDataset;
                     }
 
-                    _.each(sorted, function (dataset, datasetIndex) {
+                    /**
+                     * Devuelve la siguiente letra en el alfabeto. a -> b; A -> B...
+                     * @param {String} c //letra
+                     */
+                    function nextChar(c) {
+                        return String.fromCharCode(c.charCodeAt(0) + 1);
+                    }
+                    
+                    // TODO EDATOS-3208: Solucionar esto de una forma más elegante.
+                    var serie_tag = 'A';
+
+                    _.each(chart.data.datasets, function (dataset, datasetIndex) {
                         text.push('<li data-datasetindex="' + datasetIndex + '">');
                         // Cambiado a estilo alemán
                         let objetivoRegex = /.*Objetivo.*/;
                         if (objetivoRegex.test(dataset.label)) {
-                            var datasetRelacionado = getRelatedDataset(sorted, dataset);
+                            var datasetRelacionado = getRelatedDataset(chart.data.datasets, dataset);
                             var colorObjetivo = null;
+
                             if (datasetRelacionado != null) {
                                 colorObjetivo = datasetRelacionado.pointBorderColor;
                             } else {
@@ -445,7 +436,8 @@ var indicatorView = function (model, options) {
                             text.push('<span class="swatchBar' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.pointBorderColor + '"></span>');
                         }
 
-                        text.push("<i>" + translations.t(dataset.label) + "</i>");
+                        text.push("<i>Serie " + serie_tag + ") " + translations.t(dataset.label) + "</i>");
+                        serie_tag = nextChar(serie_tag);
                         text.push('</li>');
                     });
 

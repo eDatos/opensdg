@@ -1,8 +1,4 @@
-<!--
-    FIXME: Esto debería funcionar, mirar por qué no va...
 <script src="{{ site.baseurl }}/assets/js/Chart.min.js"></script>
--->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 {% assign subindicator = include.scope %}
 
@@ -39,7 +35,7 @@
             
             var columnName = getColumnName(json);
             
-            //FIXME: Este sistema no funciona si existe un objetivo por cada año...
+            //TODO EDATOS-3208: Este sistema no funciona si existe un objetivo por cada año...
             if (columnName != null) {
                 // En caso de tener un objetivo rellenamos los datasets para que respeten el formato con objetivo.
                 var regexObjetivo = /.*Objetivo.*/igm;
