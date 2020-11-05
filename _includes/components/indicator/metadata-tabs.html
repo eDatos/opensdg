@@ -21,7 +21,7 @@
 
     {% assign sorted_indicators = page.indicators | where: 'target_id', page.indicator.number | sort: 'sort_order' %}
     {% for s in sorted_indicators %}
-        <li class="nav-item" role="presentation">
+        <li class="nav-item {% if forloop.first %}active{% endif %}" role="presentation">
             <a aria-controls="subindicator{{ s.number | replace: '.', '' }}"
                 class="nav-link" data-toggle="tab"
                 href="#subindicator{{ s.number | replace: '.', '' }}"

@@ -319,8 +319,7 @@ var indicatorView = function (model, options) {
 
         var that = this;
         var gridColor = that.getGridColor();
-        var tickColor = that.getTickColor();
-
+        var tickColor = that.getTickColor();        
         var chartConfig = {
             type: this._model.graphType,
             data: chartInfo,
@@ -357,17 +356,77 @@ var indicatorView = function (model, options) {
                     }]
                 },
                 legendCallback: function (chart) {
-                    var text = ['<ul id="legend" style="text-align: left; padding-left: 0px">'];
+                    var text = []
+                    text.push('<h5 class="sr-only">Plot legend: list of lines included in chart</h5>');
+                    text.push('<ul id="legend" style="text-align: left; padding-left: 0px">');
+
+                    /**
+                     * Función que implementa la intersección de conjuntos
+                     * @param {Set} otroSet 
+                     */
+                    Set.prototype.intersection = function(otroSet) {
+                        var intersectionSet = new Set();
+                        for (var elem of otroSet) {
+                            if (this.has(elem)) {
+                                intersectionSet.add(elem);
+                            }
+                        }
+                        return intersectionSet;
+                    }
+
+                    /**
+                     * Encontrar el dataset al que hace referencia un objetivo para luego poder utilizar su color.
+                     * 
+                     * @param {Array<Dataset>} datasets 
+                     * @param {Dataset} target 
+                     */
+                    function getRelatedDataset(datasets, target) {
+                        var targetSplited = target.label.split(', ');
+                        var targetSet = new Set(targetSplited);
+                        var selectedDataset = null;
+                        var coincidences = 0;
+                        _.each(datasets, function (d, i) {
+                            var dSet = new Set(d.label.split(', '));
+                            if (!dSet.has(targetSplited[0])) {
+                                var intersection = dSet.intersection(targetSet);
+                                if (intersection.size > coincidences) {
+                                    selectedDataset = d;
+                                    coincidences = intersection.size;
+                                }
+                            }
+                        })
+                        return selectedDataset;
+                    }
+
+                    /**
+                     * Devuelve la siguiente letra en el alfabeto. a -> b; A -> B...
+                     * @param {String} c //letra
+                     */
+                    function nextChar(c) {
+                        return String.fromCharCode(c.charCodeAt(0) + 1);
+                    }
+                    
+                    // TODO EDATOS-3208: Solucionar esto de una forma más elegante.
+                    var serie_tag = 'A';
 
                     _.each(chart.data.datasets, function (dataset, datasetIndex) {
                         text.push('<li data-datasetindex="' + datasetIndex + '">');
                         // Cambiado a estilo alemán
                         let objetivoRegex = /.*Objetivo.*/;
                         if (objetivoRegex.test(dataset.label)) {
-                            if (dataset.type != 'bar') {
-                                text.push('<span class="swatchTgt' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                            var datasetRelacionado = getRelatedDataset(chart.data.datasets, dataset);
+                            var colorObjetivo = null;
+
+                            if (datasetRelacionado != null) {
+                                colorObjetivo = datasetRelacionado.pointBorderColor;
                             } else {
-                                text.push('<span class="swatchTgtBar' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                                colorObjetivo = dataset.pointBorderColor;
+                            }
+
+                            if (dataset.type != 'bar') {
+                                text.push('<span class="swatchTgt' + '" style="border-color: ' + colorObjetivo + '"></span>');
+                            } else {
+                                text.push('<span class="swatchTgtBar' + '" style="border-color: ' + colorObjetivo + '"></span>');
                             }
                         } else if (dataset.type != 'bar') {
                             text.push('<span class="swatchLine' + (dataset.borderDash ? ' dashed' : '') + ' left" style="background-color: ' + dataset.pointBorderColor + '"></span>');
@@ -377,7 +436,8 @@ var indicatorView = function (model, options) {
                             text.push('<span class="swatchBar' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.pointBorderColor + '"></span>');
                         }
 
-                        text.push("<i>" + translations.t(dataset.label) + "</i>");
+                        text.push("<i>Serie " + serie_tag + ") " + translations.t(dataset.label) + "</i>");
+                        serie_tag = nextChar(serie_tag);
                         text.push('</li>');
                     });
 
