@@ -3,6 +3,7 @@
  */
 var UNIT_COLUMN = 'Units';
 var SERIES_COLUMN = 'Series';
+var LABEL_SERIES = 'Serie';
 var GEOCODE_COLUMN = 'GeoCode';
 var YEAR_COLUMN = 'Year';
 var VALUE_COLUMN = 'Value';
