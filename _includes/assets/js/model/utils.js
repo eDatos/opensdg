@@ -68,6 +68,7 @@ function nonFieldColumns() {
     VALUE_COLUMN,
     UNIT_COLUMN,
     GEOCODE_COLUMN,
+    LABEL_SERIES,
     'Observation status',
     'Unit multiplier',
     'Unit measure',

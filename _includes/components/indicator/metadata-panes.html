@@ -30,6 +30,7 @@
     {% assign sorted_indicators = page.indicators | where: 'target_id', page.indicator.number | sort: 'sort_order' %}
     {% for s in sorted_indicators%}
         <div class="tab-pane {% if forloop.first %}active{% endif %}" id="subindicator{{ s.number | replace: '.', '' }}" role="tabpanel">
+            <div class="mb-2 text-center"><h3><b>{{ s.graph_title }}</b></h3></div>
             <div class="chart">
                 {% include components/subindicator/subindicator-chart.html scope=s %}
             </div>
