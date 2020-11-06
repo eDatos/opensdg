@@ -398,17 +398,6 @@ var indicatorView = function (model, options) {
                         return selectedDataset;
                     }
 
-                    /**
-                     * Devuelve la siguiente letra en el alfabeto. a -> b; A -> B...
-                     * @param {String} c //letra
-                     */
-                    function nextChar(c) {
-                        return String.fromCharCode(c.charCodeAt(0) + 1);
-                    }
-                    
-                    // TODO EDATOS-3208: Solucionar esto de una forma más elegante.
-                    var serie_tag = 'A';
-
                     _.each(chart.data.datasets, function (dataset, datasetIndex) {
                         text.push('<li data-datasetindex="' + datasetIndex + '">');
                         // Cambiado a estilo alemán
@@ -436,8 +425,7 @@ var indicatorView = function (model, options) {
                             text.push('<span class="swatchBar' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.pointBorderColor + '"></span>');
                         }
 
-                        text.push("<i>Serie " + serie_tag + ") " + translations.t(dataset.label) + "</i>");
-                        serie_tag = nextChar(serie_tag);
+                        text.push("<i>" + dataset.label_serie + ". " + translations.t(dataset.label) + "</i>");
                         text.push('</li>');
                     });
 

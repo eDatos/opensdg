@@ -17,6 +17,8 @@ var indicatorModel = function (options) {
   var that = this;
   this.data = helpers.convertJsonFormatToRows(options.data);
   this.edgesData = helpers.convertJsonFormatToRows(options.edgesData);
+  this.edgesData.splice(0, 1);
+  
   this.hasHeadline = true;
   this.country = options.country;
   this.indicatorId = options.indicatorId;
@@ -268,7 +270,6 @@ var indicatorModel = function (options) {
       // TODO: Why is selectionStates not used?
       selectionStates: []
     });
-
     this.onDataComplete.notify({
       datasetCountExceedsMax: datasetCountExceedsMax,
       datasets: datasetCountExceedsMax ? datasets.slice(0, this.maxDatasetCount) : datasets,
