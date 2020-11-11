@@ -275,43 +275,36 @@ Set.prototype.intersection = function(otroSet) {
 /**
  * Función que comprueba si una combinación es válida teniendo en cuenta 
  * los campos seleccionados
- * @param {Object} comb 
+ * @param {Object} combination 
  * @param {Array<Object>} fields 
  */
-function isValidComb(comb, fields) {
-  var result = true;
-  //var fieldFields = [];
+function isValidCombination(combination, fields) {
   var fieldValues = [];
-
-  fields.forEach(f => {
-    //fieldFields.push(f.field);
-    fieldValues.push(...f.values);
-  });
-
-  Object.keys(comb).forEach(c => {
-    if (!fieldValues.includes(comb[c])){
-      result = false;
-      return;
+  fields.forEach(f => fieldValues = fieldValues.concat(f.values));
+  var combinationKeys = Object.keys(combination);
+  for (var i = 0; i < combinationKeys.length; i++) {
+    if (!fieldValues.includes(combination[combinationKeys[i]])) {
+      return false;
     }
-  });
-
-  return result;
+  }
+  return true;
 }
 
 /**
  * @param {Array} fieldItems
+ * @param {Object} data
  * @return {Array} Objects representing disaggregation combinations
  */
 function getCombinationData(fieldItems, data) {
-  var combinaciones = {};
+  var combinations = {};
   for (var i = 0; i < data.length; i++) {
-    var comb = extractCombination(data[i]);
-    if (isValidComb(comb, fieldItems)) {
-      combinaciones[JSON.stringify(comb)] = comb;
+    var combination = extractCombination(data[i]);
+    if (isValidCombination(combination, fieldItems)) {
+      combinations[JSON.stringify(combination)] = combination;
     }
   }
 
-  return Object.values(combinaciones);
+  return Object.values(combinations);
 }
 //#endregion Modificaciones EDATOS-3208
 

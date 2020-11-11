@@ -18,12 +18,14 @@ var indicatorModel = function (options) {
    * Traduce todos los códigos NUTS2 de los datos a su valor correspondiente.
    * @param {Array<Dictionary>} data 
    */
-  function parseNuts(data) {
-    for (var i = 0; i < data.length; i++) {
-      if (data[i].Territorio) {
-        data[i].Territorio = translations.t('nuts.' + data[i].Territorio);
+  function translateNUTCodes(data) {
+    var auxData = [].concat(data);
+    for (var i = 0; i < auxData.length; i++) {
+      if (auxData[i].Territorio) {
+        auxData[i].Territorio = translations.t('nuts.' + auxData[i].Territorio);
       }
     }
+    return auxData;
   }
 
   /**
@@ -43,22 +45,25 @@ var indicatorModel = function (options) {
    * Corrige los edges para evitar inconsistencias al borrar la serie de los edges.
    * @param {Array} edgeArray 
    */
-  function correctEdges(edgeArray) {
-    for (var i = 0; i < edgeArray.length; i++) {
-      if (edgeArray[i].To == "Serie") {
-        edgeArray[i].To = edgeArray[i+1].From;
+  function fixEdges(edgeArray) {
+    var auxEdgeArray = [].concat(edgeArray);
+    for (var i = 0; i < auxEdgeArray.length; i++) {
+      if (auxEdgeArray[i].To == "Serie") {
+        auxEdgeArray[i].To = auxEdgeArray[i+1].From;
         break;
       }
     }
+
+    return auxEdgeArray;
   }
   
   // general members:
   var that = this;
   this.data = helpers.convertJsonFormatToRows(options.data);
-  parseNuts(this.data);
+  this.data = translateNUTCodes(this.data);
   this.edgesData = helpers.convertJsonFormatToRows(options.edgesData);
   this.edgesData.splice(getIndexOfEdgeFrom("Serie", this.edgesData), 1);
-  correctEdges(this.edgesData);
+  this.edgesData = fixEdges(this.edgesData);
 
   this.hasHeadline = true;
   this.country = options.country;
