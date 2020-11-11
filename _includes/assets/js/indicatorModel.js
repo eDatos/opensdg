@@ -13,12 +13,53 @@ var indicatorModel = function (options) {
   this.onFieldsCleared = new event(this);
   this.onSelectionUpdate = new event(this);
 
+
+  /**
+   * Traduce todos los códigos NUTS2 de los datos a su valor correspondiente.
+   * @param {Array<Dictionary>} data 
+   */
+  function parseNuts(data) {
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].Territorio) {
+        data[i].Territorio = translations.t('nuts.' + data[i].Territorio);
+      }
+    }
+  }
+
+  /**
+   * Devuelve el índice del edge que posea el from pasado dentro de un array de edges.
+   * @param {String} from 
+   * @param {Array} edgeArray 
+   */
+  function getIndexOfEdgeFrom(from, edgeArray) {
+    for(var i = 0; i < edgeArray.length; i++) {
+      if (edgeArray[i].From == from) {
+        return i;
+      }
+    }
+  }
+
+  /**
+   * Corrige los edges para evitar inconsistencias al borrar la serie de los edges.
+   * @param {Array} edgeArray 
+   */
+  function correctEdges(edgeArray) {
+    for (var i = 0; i < edgeArray.length; i++) {
+      if (edgeArray[i].To == "Serie") {
+        edgeArray[i].To = edgeArray[i+1].From;
+        break;
+      }
+    }
+  }
+  
   // general members:
   var that = this;
   this.data = helpers.convertJsonFormatToRows(options.data);
+  parseNuts(this.data);
   this.edgesData = helpers.convertJsonFormatToRows(options.edgesData);
-  this.edgesData.splice(0, 1);
-  
+  this.edgesData.splice(getIndexOfEdgeFrom("Serie", this.edgesData), 1);
+  correctEdges(this.edgesData);
+
   this.hasHeadline = true;
   this.country = options.country;
   this.indicatorId = options.indicatorId;

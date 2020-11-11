@@ -25,10 +25,14 @@ data_dir: data
 environment: production
 # Replace "open-sdg" with the name of your GitHub organization, and
 # "open-sdg-data-starter" with the name of your data repository.
+
 remote_data_prefix: "https://estadisticas.arte-consultores.com/opensdg-data"
+
+
 remote_translations:
   - https://estadisticas.arte-consultores.com/opensdg-data/es/translations/translations.json
   - https://estadisticas.arte-consultores.com/opensdg-data/en/translations/translations.json
+
 
 jekyll_get_json:
   - data: meta
@@ -41,6 +45,8 @@ jekyll_get_json:
     json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/stats/reporting.json'
   - data: translations
     json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/translations/translations.json'
+
+
 
 # Automatically create indicator pages, goal pages,
 # and some other required pages.
@@ -129,6 +135,9 @@ defaults:
       path: ""
     values:
       language: "es"
+      texto_serie: "Nostrud amet consectetur ut laborum quis."
+      imagen_serie : "imagen_serie.png"
+
 
 # Set a base for all goal image URLs. Note that the full goal image path will be
 # the base below, completed with: /[language]/[number].png (eg, /fr/6.png).

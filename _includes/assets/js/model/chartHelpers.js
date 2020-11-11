@@ -53,7 +53,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
           color = getColor(index, colors);
           background = getBackground(index, colors);
           border = getBorderDash(index, colors);
-          dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, getLegendLabel(filteredData, index));
+          dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, getLegendLabel(filteredData));
           datasets.push(dataset);
           index++;
       }
@@ -88,9 +88,9 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   return datasets;
 }
 
-function getLegendLabel(data, index) {
-  if (data[index].Serie != undefined) {
-      return data[index].Serie
+function getLegendLabel(data) {
+  if (data[0].Serie != undefined) {
+      return data[0].Serie
   }
   return "Sin Serie";
 }
