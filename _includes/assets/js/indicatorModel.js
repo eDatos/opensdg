@@ -13,12 +13,58 @@ var indicatorModel = function (options) {
   this.onFieldsCleared = new event(this);
   this.onSelectionUpdate = new event(this);
 
+
+  /**
+   * Traduce todos los códigos NUTS2 de los datos a su valor correspondiente.
+   * @param {Array<Dictionary>} data 
+   */
+  function translateNUTCodes(data) {
+    var auxData = [].concat(data);
+    for (var i = 0; i < auxData.length; i++) {
+      if (auxData[i].Territorio) {
+        auxData[i].Territorio = translations.t('nuts.' + auxData[i].Territorio);
+      }
+    }
+    return auxData;
+  }
+
+  /**
+   * Devuelve el índice del edge que posea el from pasado dentro de un array de edges.
+   * @param {String} from 
+   * @param {Array} edgeArray 
+   */
+  function getIndexOfEdgeFrom(from, edgeArray) {
+    for(var i = 0; i < edgeArray.length; i++) {
+      if (edgeArray[i].From == from) {
+        return i;
+      }
+    }
+  }
+
+  /**
+   * Corrige los edges para evitar inconsistencias al borrar la serie de los edges.
+   * @param {Array} edgeArray 
+   */
+  function fixEdges(edgeArray) {
+    var auxEdgeArray = [].concat(edgeArray);
+    for (var i = 0; i < auxEdgeArray.length; i++) {
+      if (auxEdgeArray[i].To == "Serie") {
+        auxEdgeArray[i].To = auxEdgeArray[i+1].From;
+        break;
+      }
+    }
+
+    return auxEdgeArray;
+  }
+  
   // general members:
   var that = this;
   this.data = helpers.convertJsonFormatToRows(options.data);
+  this.data = translateNUTCodes(this.data);
   this.edgesData = helpers.convertJsonFormatToRows(options.edgesData);
-  this.edgesData.splice(0, 1);
-  
+  this.edgesData.splice(getIndexOfEdgeFrom("Serie", this.edgesData), 1);
+  this.edgesData = fixEdges(this.edgesData);
+
   this.hasHeadline = true;
   this.country = options.country;
   this.indicatorId = options.indicatorId;
@@ -253,7 +299,7 @@ var indicatorModel = function (options) {
       headline = helpers.sortData(headline, this.selectedUnit);
     }
 
-    var combinations = helpers.getCombinationData(this.selectedFields);
+    var combinations = helpers.getCombinationData(this.selectedFields, this.data);
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, this.country, this.colors, this.selectableFields);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 

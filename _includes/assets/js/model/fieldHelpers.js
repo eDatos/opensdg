@@ -228,45 +228,85 @@ function fieldItemStatesForSeries(fieldItemStates, fieldsBySeries, selectedSerie
   });
 }
 
+//#region Modificaciones EDATOS-3208
+/**
+ * Devuelve un objeto sin algunas keys seleccionadas
+ * Extraído de https://stackoverflow.com/questions/34698905/how-can-i-clone-a-javascript-object-except-for-one-key/58206483
+ * @param {Object} obj 
+ * @param {Array<String>} keys 
+ */
+function _objectWithoutProperties(obj, keys) {
+  var target = {};
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+  return target;
+}
+
+/**
+ * Devuelve todas las combinaciones de un conjunto de datos.
+ * @param {Object} data 
+ */
+function extractCombination(data) {
+  var result = {};
+  var invalidKeys = ["Year", "Units", "Serie", "Value"];
+  Object.keys(_objectWithoutProperties(data, invalidKeys)).forEach(d => {
+    result[d] = data[d];
+  })
+  return result;
+}
+
+/**
+ * Función que implementa la intersección de conjuntos
+ * @param {Set} otroSet 
+ */
+Set.prototype.intersection = function(otroSet) {
+  var intersectionSet = new Set();
+  for (var elem of otroSet) {
+      if (this.has(elem)) {
+          intersectionSet.add(elem);
+      }
+  }
+  return intersectionSet;
+}
+
+/**
+ * Función que comprueba si una combinación es válida teniendo en cuenta 
+ * los campos seleccionados
+ * @param {Object} combination 
+ * @param {Array<Object>} fields 
+ */
+function isValidCombination(combination, fields) {
+  var fieldValues = [];
+  fields.forEach(f => fieldValues = fieldValues.concat(f.values));
+  var combinationKeys = Object.keys(combination);
+  for (var i = 0; i < combinationKeys.length; i++) {
+    if (!fieldValues.includes(combination[combinationKeys[i]])) {
+      return false;
+    }
+  }
+  return true;
+}
+
 /**
  * @param {Array} fieldItems
+ * @param {Object} data
  * @return {Array} Objects representing disaggregation combinations
  */
-function getCombinationData(fieldItems) {
+function getCombinationData(fieldItems, data) {
+  var combinations = {};
+  for (var i = 0; i < data.length; i++) {
+    var combination = extractCombination(data[i]);
+    if (isValidCombination(combination, fieldItems)) {
+      combinations[JSON.stringify(combination)] = combination;
+    }
+  }
 
-  // First get a list of all the single field/value pairs.
-  var fieldValuePairs = [];
-  fieldItems.forEach(function(fieldItem) {
-    fieldItem.values.forEach(function(value) {
-      var pair = {};
-      pair[fieldItem.field] = value;
-      fieldValuePairs.push(pair);
-    });
-  });
-
-  // Next get a list of each single pair combined with every other.
-  var fieldValuePairCombinations = {};
-  fieldValuePairs.forEach(function(fieldValuePair) {
-    var combinationsForCurrentPair = Object.assign({}, fieldValuePair);
-    fieldValuePairs.forEach(function(fieldValuePairToAdd) {
-      // The following conditional reflects that we're not interested in combinations
-      // within the same field. (Eg, not interested in combination of Female and Male).
-      if (Object.keys(fieldValuePair)[0] !== Object.keys(fieldValuePairToAdd)[0]) {
-        Object.assign(combinationsForCurrentPair, fieldValuePairToAdd);
-        var combinationKeys = Object.keys(combinationsForCurrentPair).sort();
-        var combinationValues = Object.values(combinationsForCurrentPair).sort();
-        var combinationUniqueId = JSON.stringify(combinationKeys.concat(combinationValues));
-        if (!(combinationUniqueId in fieldValuePairCombinations)) {
-          fieldValuePairCombinations[combinationUniqueId] = Object.assign({}, combinationsForCurrentPair);
-        }
-      }
-    });
-  });
-  fieldValuePairCombinations = Object.values(fieldValuePairCombinations);
-
-  // Return a combination of both.
-  return fieldValuePairs.concat(fieldValuePairCombinations);
+  return Object.values(combinations);
 }
+//#endregion Modificaciones EDATOS-3208
 
 /**
  * @param {Array} startValues Objects containing 'field' and 'value'

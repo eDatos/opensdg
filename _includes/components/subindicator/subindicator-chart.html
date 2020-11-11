@@ -10,112 +10,127 @@
 {% if show_data %}
 <canvas height="200" id="subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}" width="400"></canvas>
 <script>
-    fetch("{{ page.remote_data_prefix }}/data/{{ subindicator.slug }}.json")
-        .then(res => res.json())
-        .then(json => {
-            var ctx = document.getElementById(`subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}`).getContext('2d');
-            function media(valores) {
-                if (valores.length > 0){
-                    return Array.from(valores).reduce((a, b) => a + b) / valores.length;
-                } else {
-                    return 0;
-                }
-            }
 
-            function getColumnName(datos) {
-                // Comprueba si existe una columna que no sea alguna de las reservadas.
-                // Esto se hace para comprobar si se ha incluído una columna Objetivo.
-                for (var key in datos) {
-                    if (!["Year", "Units", "Value"].includes(key)) {
-                        return key;
-                    }
-                }
-                return null;
-            }
-            
-            var columnName = getColumnName(json);
-            
-            //TODO EDATOS-3208: Este sistema no funciona si existe un objetivo por cada año...
-            if (columnName != null) {
-                // En caso de tener un objetivo rellenamos los datasets para que respeten el formato con objetivo.
-                var regexObjetivo = /.*Objetivo.*/igm;
-                var numberOfData = json[columnName].filter(x => !regexObjetivo.test(x)).length - 1; // Número de valores que no son objetivos.
-                var notObjetiveData = json.Value.slice(0, numberOfData);
-                var media = media(notObjetiveData);
-                var objetiveData = json.Value.slice(numberOfData, json.Value.length);
+/**
+ * Comprueba si existen objetivos en los datos
+ * @param {JSON} data 
+ */
+function hasObjetivo(data) {
+    return "Objetivo" in data;
+}
 
-                var datasets = [
-                        {
-                            label: "{{ subindicator.unidad_medida }}",
-                            data: [...Array.from(notObjetiveData), ...Array(objetiveData.length).fill(0)],
-                            backgroundColor: 'rgba(122,122,122,0.5)',
-                            borderColor: 'rgba(77,77,77,1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: `Media ${media.toFixed(2)} {{ subindicator.unidad_medida }}`,
-                            data: new Array(json.Value.length).fill(media),
-                            type: 'line',
-                            pointRadius: 0,
-                            borderColor: 'rgb(255,0,0)',
-                            backgroundColor: 'rgba(0,0,0,0)',
-                            borderWidth: 2
-                        },
-                        {
-                            label: "Objetivo(s)",
-                            data: [...Array(notObjetiveData.length).fill(null), ...Array.from(objetiveData)],
-                            type: 'line',
-                            pointRadius: 10,
-                            borderColor: 'rgb(26,196,80)',
-                            backgroundColor: 'rgba(0,0,0,0)',
-                            orderWidth: 2,
-                            pointStyle: 'rect',
-                            tension: 0
+/**
+ * Comprueba si existen territorios en los datos
+ * @param {JSON} data 
+ */
+function hasTerritorio(data) {
+    return "Territorio" in data;
+}
+
+/**
+ * Devuelve el número de territorios. 
+ * Para el caso en que haya más de dos.
+ * @param {JSON} data 
+ */
+function getNumberOfTerritories(data) {
+    return [...new Set(data.Territorio)].length;
+}
+
+/**
+ * Devuelve el número de objetivos.
+ * @param {JSON} data 
+ */
+function getNumberOfObjetives(data) {
+    return [...new Set(data.Objetivo)].length;
+}
+
+function getCanariasDataset(data) {
+    var size = data.Value.length;
+    if (hasTerritorio(data)) {
+        size /= 2;
+    }
+    return {
+        label: "{{ subindicator.unidad_medida }} Canarias",
+        data: data.Value.slice(0, size),
+        backgroundColor: 'rgba(122,122,122,0.5)',
+        borderColor: 'rgba(77,77,77,1)',
+        borderWidth: 1
+    };
+}
+
+function getEspanaDataset(data) {
+    return {
+        label: "{{ subindicator.unidad_medida }} España",
+        data: data.Value.slice((data.Value.length / 2), data.Value.length),
+        type: 'line',
+        pointRadius: 3,
+        borderColor: 'rgb(0,0,255)',
+        backgroundColor: 'rgba(0,0,0,0)',
+        borderWidth: 1,
+        lineTension: 0
+    };
+}
+
+function getMeanDataset(data) {
+    /**
+     * Calcula la media
+     * @param {Array<Float>} value 
+     */
+    function mean(value) {
+        if (value.length > 0) {
+            return Array.from(value).reduce((a, b) => a + b) / value.length;
+        } else {
+            return 0;
+        }
+    }
+    var size = data.Value.length;
+    if (hasTerritorio(data)) {
+        size /= 2;
+    }
+    var meanQuant = mean(data.Value.slice(0, size));
+    return {
+        label: `Media ${meanQuant.toFixed(2)} {{ subindicator.unidad_medida }}`,
+        data: new Array(size).fill(meanQuant),
+        type: 'line',
+        pointRadius: 0,
+        borderColor: 'rgb(255,0,0)',
+        backgroundColor: 'rgba(0,0,0,0)',
+        borderWidth: 2
+    };
+}
+
+function getDatasets(data) {
+    var datasets = [];
+    // var numberOfTerritories = getNumberOfTerritories(data) ? hasTerritorio(data) : 0; // No se hará generalista por ahora
+    //var numberOfObjetives = getNumberOfObjetives(data) ? hasObjetivo(data) : 0; // Se evitarán los objetivos por ahora
+    datasets.push(getCanariasDataset(data));
+    if (hasTerritorio(data)) {
+        datasets.push(getEspanaDataset(data));
+    }
+    datasets.push(getMeanDataset(data));
+    return datasets;
+}
+
+fetch("{{ page.remote_data_prefix }}/data/{{ subindicator.slug }}.json")
+    .then(res => res.json())
+    .then(json => {
+        var ctx = document.getElementById(`subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}`).getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [...new Set(json.Year)],
+                datasets: getDatasets(json),
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
                         }
-                ];
-            } else {
-                // En caso contrario rellenamos los datasets con todos los valores.
-                var media = media(json.Value);
-                var datasets = [
-                    {
-                        label: "{{ subindicator.unidad_medida }}",
-                        data: json.Value,
-                        backgroundColor: 'rgba(122,122,122,0.5)',
-                        borderColor: 'rgba(77,77,77,1)',
-                        borderWidth: 1
-                    },
-                    {
-                        label: `Media ${media.toFixed(2)} {{ subindicator.unidad_medida }}`,
-                        data: new Array(json.Value.length).fill(media),
-                        type: 'line',
-                        pointRadius: 0,
-                        borderColor: 'rgb(255,0,0)',
-                        backgroundColor: 'rgba(0,0,0,0)',
-                        borderWidth: 2,
-                        tension: 0
-                    },  
-                ];
-            }
-
-            
-            
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: json.Year,
-                    datasets: datasets,
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
+                    }]
                 }
-            });
+            }
         });
-
+    });
 </script>
 {% endif %}

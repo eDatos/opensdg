@@ -16,4 +16,15 @@
     </tr>
     {% endif %}
     {% endfor %}
+    <tr>
+        <th>Nota</th>
+        <td>
+            <div class="pull-left">
+                <!-- TODO EDATOS-3208: Se deja un lorem en el alt de la imagen hasta que se elija el texto correcto.  -->
+                <img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie }}" alt="Irure culpa consectetur voluptate dolore enim enim non." />
+                {{ page.texto_serie }}
+            </div>
+        </td>
+    </tr>
 </table>
+
