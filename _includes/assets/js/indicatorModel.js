@@ -294,7 +294,7 @@ var indicatorModel = function (options) {
       headline = helpers.sortData(headline, this.selectedUnit);
     }
 
-    var combinations = helpers.getCombinationData(this.selectedFields);
+    var combinations = helpers.getCombinationData(this.selectedFields, this.data);
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, this.country, this.colors, this.selectableFields);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
