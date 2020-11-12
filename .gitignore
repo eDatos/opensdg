@@ -11,3 +11,17 @@ Gemfile.lock
 deploy_key*
 deploy_key*.pub
 *.keybase
+datos-opensdg/node_modules
+datos-opensdg/_site
+datos-opensdg/es
+datos-opensdg/en
+datos-opensdg/metadata_generated
+datos-opensdg/__pycache__
+# TODO EDATOS-3208: Incluir traducciones no necesarias en .gitignore
+#datos-opensdg/translations/ar
+#datos-opensdg/translations/de
+#datos-opensdg/translations/fr
+#datos-opensdg/translations/hy
+#datos-opensdg/translations/kk
+#datos-opensdg/translations/ru
+#datos-opensdg/translations/zh-Hans
