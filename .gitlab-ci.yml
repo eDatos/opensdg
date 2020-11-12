@@ -6,6 +6,7 @@ variables:
   # when running from the command line.
   # `installAtEnd` and `deployAtEnd` are only effective with recent version of the corresponding plugins.
   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
+  DATA_PATH: "datos-opensdg"
 
 image: ruby:2.4
 
@@ -14,14 +15,46 @@ image: ruby:2.4
 cache:
   paths:
     - .m2/repository # FIXME añadir la cache apropiada para ruby y los comandos gem y bundle
+    - .sass-cache
+    - $DATA_PATH/__pycache__
 
 stages:
+  - build-data
+  - deploy-data
   - build
   - release
   - demo
   - pre
   - pro
 
+# ######################################################################################
+# Data
+# ######################################################################################
+data build:
+  image: python:3.8
+  stage: build-data
+  tags: ["build", "data", "docker"]
+  script:
+    - cd $DATA_PATH
+    - pip install -r ./scripts/requirements.txt
+    - python ./scripts/build_data.py
+    - tar -cvzf opensdg-datos.tar.gz _site
+    - mv opensdg-datos.tar.gz ..
+  artifacts:
+    paths:
+      - opensdg-datos.tar.gz
+  only:
+    - develop
+
+data deploy:
+  script:
+    - bash ./etc/deploy/data/deploy.sh
+  only:
+    - develop
+
+# ######################################################################################
+# Web
+# ######################################################################################
 build:
   stage: build
   tags: ["build", "docker"]
@@ -36,6 +69,7 @@ build:
       - opensdg.tar.gz
   only:
     - develop
+
 # release:
 #     stage: release
 #     tags: ["build"]
@@ -115,4 +149,3 @@ demo deploy:
 #         - bash ./etc/deploy/scripts/pro/deploy.sh
 #     dependencies:
 #         - release
-
