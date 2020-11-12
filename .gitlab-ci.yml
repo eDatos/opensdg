@@ -33,7 +33,7 @@ stages:
 data build:
   image: python:3.8
   stage: build-data
-  tags: ["build", "data", "docker"]
+  tags: ["build", "docker"]
   script:
     - cd $DATA_PATH
     - pip install -r ./scripts/requirements.txt
