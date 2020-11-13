@@ -15,6 +15,7 @@ opensdg-web/src/deploy_key*.pub
 opensdg-web/src/*.keybase
 opensdg-datos/src/node_modules
 opensdg-datos/src/_site
+opensdg-datos/src/opensdg-datos
 opensdg-datos/src/es
 opensdg-datos/src/en
 opensdg-datos/src/metadata_generated

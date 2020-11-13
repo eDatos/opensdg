@@ -13,7 +13,9 @@ variables:
   DATA_TAR_FILE: "opensdg-datos.tar.gz"
   WEB_TAR_FILE: "opensdg.tar.gz"
 
-image: ruby:2.5.5 # Se necesita la última imagen estable de Ruby
+# Se necesita una imagen estable de Ruby que contenga la función delete_prefix()
+# https://apidock.com/ruby/String/delete_prefix%21
+image: ruby:2.5.5
 
 # Cache downloaded dependencies and plugins between builds.
 # To keep cache across branches add 'key: "$CI_JOB_NAME"'
@@ -61,18 +63,15 @@ web build:
     - mv $DATA_SRC_PATH/$DATA_TAR_FILE $WEB_SRC_PATH
     - cd $WEB_SRC_PATH
     - tar -xf $DATA_TAR_FILE
-    - ls
     - gem install bundler
     - bundle install
     - bundle exec jekyll build
     # Ahora creamos el artefacto que moveremos al server
-    - mv $DATA_FOLDER_NAME _site  # Introducimos los datos en la carpeta de web
     - mv _site $WEB_FOLDER_NAME   # Cambiamos el nombre a la carpeta de web
     - tar -cvzf $WEB_TAR_FILE $WEB_FOLDER_NAME
-    - mv $WEB_TAR_FILE ../..
   artifacts:
     paths:
-      - $WEB_TAR_FILE
+      - $WEB_SRC_PATH/$WEB_TAR_FILE
     expire_in: 1 hour
   only:
     - EDATOS-3216
