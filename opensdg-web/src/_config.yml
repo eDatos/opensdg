@@ -10,9 +10,9 @@
 # -- replace "open-sdg-data-starter" with "my-awesome-data-repo"
 
 # Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
-data_edit_url: http://prose.io/#open-sdg/open-sdg-data-starter/edit/develop/data/indicator_[id].csv
+#data_edit_url: http://prose.io/#open-sdg/open-sdg-data-starter/edit/develop/data/indicator_[id].csv
 # URL for the "Edit Metadata" button on indicators.
-metadata_edit_url: http://prose.io/#open-sdg/open-sdg-data-starter/edit/develop/meta/[id].md
+#metadata_edit_url: http://prose.io/#open-sdg/open-sdg-data-starter/edit/develop/meta/[id].md
 
 remote_theme: open-sdg/open-sdg@1.1.0
 
@@ -20,33 +20,15 @@ remote_theme: open-sdg/open-sdg@1.1.0
 title: Indicadores para los Objetivos de Desarrollo Sostenible
 # Replace the baseurl with the name of this repository.
 baseurl: "/opensdg"
-url: ""
+#url: ""
 data_dir: data
 environment: production
 # Replace "open-sdg" with the name of your GitHub organization, and
 # "open-sdg-data-starter" with the name of your data repository.
 
-remote_data_prefix: "https://estadisticas.arte-consultores.com/opensdg-data"
-
-
-remote_translations:
-  - https://estadisticas.arte-consultores.com/opensdg-data/es/translations/translations.json
-  - https://estadisticas.arte-consultores.com/opensdg-data/en/translations/translations.json
-
-
-jekyll_get_json:
-  - data: meta
-    json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/meta/all.json'
-  - data: headlines
-    json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/headline/all.json'
-  - data: schema
-    json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/meta/schema.json'
-  - data: reporting
-    json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/stats/reporting.json'
-  - data: translations
-    json: 'https://estadisticas.arte-consultores.com/opensdg-data/es/translations/translations.json'
-
-
+# remote_data_prefix: "https://estadisticas.arte-consultores.com/opensdg-data"
+# remote_data_prefix: "http://localhost:5000"
+remote_data_prefix: "./opensdg-datos"
 
 # Automatically create indicator pages, goal pages,
 # and some other required pages.
@@ -80,9 +62,6 @@ org_name: istac
 
 # Build settings
 markdown: kramdown
-
-# Travis Support
-exclude: [vendor, scripts, remotedata]
 
 # International Support
 # Eg name: Australia and adjective: Australian
@@ -152,3 +131,13 @@ plugins:
 # Apply any custom CSS.
 custom_css:
   - /assets/css/custom.css
+
+exclude:
+  - vendor
+  - scripts
+  - remotedata
+  - Gemfile
+  - Gemfile.lock
+  - README
+  - README.md
+  - LICENSE
