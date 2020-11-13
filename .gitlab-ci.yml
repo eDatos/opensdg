@@ -13,7 +13,7 @@ variables:
   DATA_TAR_FILE: "opensdg-datos.tar.gz"
   WEB_TAR_FILE: "opensdg.tar.gz"
 
-image: ruby:2.4
+image: ruby:2.5.5 # Se necesita la última imagen estable de Ruby
 
 # Cache downloaded dependencies and plugins between builds.
 # To keep cache across branches add 'key: "$CI_JOB_NAME"'
