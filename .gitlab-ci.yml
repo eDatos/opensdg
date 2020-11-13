@@ -6,22 +6,25 @@ variables:
   # when running from the command line.
   # `installAtEnd` and `deployAtEnd` are only effective with recent version of the corresponding plugins.
   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
-  DATA_PATH: "datos-opensdg"
+  DATA_SRC_PATH: "opensdg-datos/src"
+  WEB_SRC_PATH: "opensdg-web/src"
+  DATA_FOLDER_NAME: "opensdg-datos"
+  WEB_FOLDER_NAME: "web"
 
 image: ruby:2.4
 
 # Cache downloaded dependencies and plugins between builds.
 # To keep cache across branches add 'key: "$CI_JOB_NAME"'
 cache:
-  paths:
-    - .m2/repository # FIXME añadir la cache apropiada para ruby y los comandos gem y bundle
-    - .sass-cache
-    - $DATA_PATH/__pycache__
+  paths: # FIXME añadir la cache apropiada para ruby y los comandos gem y bundle
+    #- .m2/repository 
+    - $WEB_SRC_PATH/.sass-cache
+    - $DATA_SRC_PATH/__pycache__
 
 stages:
   - build-data
-  - deploy-data
-  - build
+  - build-web
+  - pre-deploy
   - release
   - demo
   - pre
@@ -35,36 +38,48 @@ data build:
   stage: build-data
   tags: ["build", "docker"]
   script:
-    - cd $DATA_PATH
+    - cd $DATA_SRC_PATH
     - pip install -r ./scripts/requirements.txt
     - python ./scripts/build_data.py
-    - tar -cvzf opensdg-datos.tar.gz _site
-    - mv opensdg-datos.tar.gz ..
-  artifacts:
-    paths:
-      - opensdg-datos.tar.gz
-  only:
-    - develop
-
-data deploy:
-  stage: deploy-data
-  script:
-    - bash ./etc/deploy/data/deploy.sh
+    - mv _site $DATA_FOLDER_NAME
+    - mv $DATA_FOLDER_NAME ../../$WEB_SRC_PATH
+    # - tar -cvzf opensdg-datos.tar.gz _site
+    # - mv opensdg-datos.tar.gz ..
   only:
     - develop
 
 # ######################################################################################
 # Web
 # ######################################################################################
-build:
-  stage: build
+web build:
+  stage: build-web
   tags: ["build", "docker"]
   script:
     # - "mvn $MAVEN_CLI_OPTS deploy -s /tmp/settings.xml "
+    - cd $WEB_SRC_PATH
     - gem install bundler
     - bundle install
     - bundle exec jekyll build
-    - tar -cvzf opensdg.tar.gz _site
+    #- tar -cvzf opensdg.tar.gz _site
+  only:
+    - develop
+
+
+# ######################################################################################
+# Pre-Deploy
+# ######################################################################################
+pre deploy:
+  stage: pre-deploy
+  tags: ["build", "docker"]
+  script:
+    - cd $WEB_SRC_PATH
+    - rm -Rf ../$WEB_FOLDER_NAME  # Borramos los datos previamente buildeados
+    - mv $DATA_FOLDER_NAME _site  # Introducimos los datos en la carpeta de web
+    - mv _site $WEB_FOLDER_NAME   # Cambiamos el nombre a la carpeta de web
+    - mv $WEB_FOLDER_NAME ..      # Ubicamos la carpeta web en su sitio
+    - cd ..
+    - tar -cvzf opensdg.tar.gz $WEB_FOLDER_NAME
+    - mv opensdg.tar.gz ..
   artifacts:
     paths:
       - opensdg.tar.gz
@@ -91,9 +106,9 @@ build:
 #       - master
 #     when: manual
 
-# ######################################################################################
+######################################################################################
 # DEMO
-# ######################################################################################
+######################################################################################
 demo deploy:
   stage: demo
   script:
