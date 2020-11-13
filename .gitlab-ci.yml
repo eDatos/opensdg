@@ -58,10 +58,9 @@ web build:
   stage: build-web
   tags: ["build", "docker"]
   script:
-    # - "mvn $MAVEN_CLI_OPTS deploy -s /tmp/settings.xml "
     - mv $DATA_TAR_FILE $WEB_SRC_PATH
     - cd $WEB_SRC_PATH
-    - tar -xf $DATA_TAR_FILE --strip-components=1
+    - tar -xf $DATA_TAR_FILE
     - gem install bundler
     - bundle install
     - bundle exec jekyll build
