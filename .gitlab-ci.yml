@@ -51,7 +51,7 @@ data build:
       - $DATA_SRC_PATH/$DATA_TAR_FILE
     expire_in: 1 hour
   only:
-    - EDATOS-3216
+    - develop
 
 # ######################################################################################
 # Web
@@ -74,7 +74,7 @@ web build:
       - $WEB_SRC_PATH/$WEB_TAR_FILE
     expire_in: 1 hour
   only:
-    - EDATOS-3216
+    - develop
 
 # release:
 #     stage: release
@@ -104,7 +104,7 @@ demo deploy:
   script:
     - bash ./etc/deploy/demo/deploy.sh
   only:
-    - EDATOS-3216
+    - develop
 
 # ######################################################################################
 # PRE
