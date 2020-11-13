@@ -43,13 +43,13 @@ data build:
     - python ./scripts/build_data.py
     - mv _site $DATA_FOLDER_NAME
     - tar -cvzf $DATA_TAR_FILE $DATA_FOLDER_NAME
-    - mv $DATA_TAR_FILE ../..
+    #- mv $DATA_TAR_FILE ../..
   artifacts:
     paths:
-      - $DATA_TAR_FILE
+      - $DATA_SRC_PATH/$DATA_TAR_FILE
     expire_in: 1 hour
   only:
-    - develop
+    - EDATOS-3216
 
 # ######################################################################################
 # Web
@@ -61,6 +61,7 @@ web build:
     - mv $DATA_TAR_FILE $WEB_SRC_PATH
     - cd $WEB_SRC_PATH
     - tar -xf $DATA_TAR_FILE
+    - ls
     - gem install bundler
     - bundle install
     - bundle exec jekyll build
@@ -74,7 +75,7 @@ web build:
       - $WEB_TAR_FILE
     expire_in: 1 hour
   only:
-    - develop
+    - EDATOS-3216
 
 # release:
 #     stage: release
@@ -104,7 +105,7 @@ demo deploy:
   script:
     - bash ./etc/deploy/demo/deploy.sh
   only:
-    - develop
+    - EDATOS-3216
 
 # ######################################################################################
 # PRE
