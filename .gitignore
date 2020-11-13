@@ -1,5 +1,6 @@
 opensdg-web/web
 opensdg-web/src/_site/
+opensdg-web/src/opensdg-datos
 opensdg-web/src/.sass-cache/
 opensdg-web/src/.jekyll-metadata
 opensdg-web/src/.DS_Store
