@@ -58,7 +58,7 @@ web build:
   stage: build-web
   tags: ["build", "docker"]
   script:
-    - mv $DATA_TAR_FILE $WEB_SRC_PATH
+    - mv $DATA_SRC_PATH/$DATA_TAR_FILE $WEB_SRC_PATH
     - cd $WEB_SRC_PATH
     - tar -xf $DATA_TAR_FILE
     - ls
