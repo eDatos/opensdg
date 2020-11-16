@@ -1,6 +1,4 @@
 {% assign subindicator = include.scope %}
-<script id="MathJax-script"  src="{{ site.baseurl }}/assets/js/tex-chtml.js"></script>
-
 <table class="table">
     {% for indicator_metadata in site.data.schema %}
     {% if indicator_metadata.field.scope == "subindicator" %}
@@ -8,7 +6,7 @@
         <th>{{ site.data.translations[page.language].metadata_fields[indicator_metadata.name] }}</th>
         <td>
             {% if indicator_metadata.name == "formula_teorica" %}
-            $${{ subindicator[indicator_metadata.name] }}$$
+            $${{ subindicator['formula_teorica'] }}$$
             {% else %}
             {{ subindicator[indicator_metadata.name] }}
             {% endif %}
@@ -27,4 +25,3 @@
         </td>
     </tr>
 </table>
-
