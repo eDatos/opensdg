@@ -6,7 +6,7 @@
         <th>{{ site.data.translations[page.language].metadata_fields[indicator_metadata.name] }}</th>
         <td>
             {% if indicator_metadata.name == "formula_teorica" %}
-            $${{ subindicator['formula_teorica'] }}$$
+            $${{ subindicator[indicator_metadata.name] }}$$
             {% else %}
             {{ subindicator[indicator_metadata.name] }}
             {% endif %}
