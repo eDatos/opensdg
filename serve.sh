@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Borramos el directorio web en caso de que existiese
-rm -fr web
-
 # Construimos los datos
 cd opensdg-datos/src
 echo "Construyendo datos"
@@ -12,5 +9,5 @@ mv opensdg-datos ../../opensdg-web/src
 
 # Construimos la web
 cd ../../opensdg-web/src
-echo "Sriviendo web"
+echo "Sirviendo web"
 bundle exec jekyll serve
