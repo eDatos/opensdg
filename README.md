@@ -43,7 +43,7 @@ $ gem install bundler
 
 ## Construcción y Despliegue
 
-![Diagrama de flujo de construcción](.docs/img/DiagramaConstruccion.png)
+![Diagrama de flujo de construcción](etc/readme/images/DiagramaConstruccion.png)
 
 El proceso para la construcción y despliegue del proyecto pasa por diversas fases entre las que se pueden destacar la <ins>construcción de los datos</ins> y la <ins>construcción de la web</ins>, esto se realiza siguiendo una serie de pasos que se detallaran a continuación.
 
