@@ -1,4 +1,5 @@
-# Open SDG - Site starter
+# Open SDG - Web
 
-This is a starter repository to help in implementing the [Open SDG](https://github.com/open-sdg/open-sdg) platform. [See here for documentation](https://open-sdg.readthedocs.io).
+Módulo que implementa la web para la visualización de los datos de los [Objetivos de Desarrollo Sostenible](https://www.un.org/sustainabledevelopment/sustainable-development-goals/) definidos por Naciones Unidas.
 
+Basado en el proyecto [open-sdg-site-starter](https://github.com/open-sdg/open-sdg-site-starter).
