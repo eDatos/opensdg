@@ -20,7 +20,7 @@ PENDIENTE DE REVISIÓN
 PENDIENTE DE REVISIÓN
 
 ## ¿Cómo de accesible es esta web?
-Nuestro objetivo es hacer esta web tan accesible y usable para cada usuario como sea posible. Estamos trabajando para conseguir un nivel AA de las [Guías de accesibilidad para contenido (WCAG 2.0)](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag-20).
+Nuestro objetivo es hacer esta web lo más "accesible" y "usable" posible. Estamos trabajando para conseguir un nivel AA de accesibilidad referenciado en las [Guías de accesibilidad para contenido (WCAG 2.0)](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag-20).
 
 ## ¿Qué exploradores puedo utilizar para ver esta web?
 Nuestra web funciona con la mayoría de las últimas versiones de los exploradores más utilizados. Existen algunas incidencias conocidas al utilizar versiones antíguas de exploradores, como por ejemplo IE8. Estamos trabajando para solucionar estas incidencias lo antes posible.
