@@ -1,22 +1,4 @@
 ---
-data_non_statistical: false
-goal_meta_link: https://unstats.un.org/sdgs/metadata/files/Metadata-01-01-01a.pdf
-goal_meta_link_text: United Nations Sustainable Development Goals Metadata (pdf 894kB)
-graph_title: Proporción de personas en riesgo de pobreza relativa, considerando el umbral autonómico de pobreza
-graph_type: line
-indicator_number: 1.2.1.1b
-indicator_name: Proporción de personas en riesgo de pobreza relativa, considerando el umbral autonómico de pobreza
-indicator_sort_order: 01-02-01-1b
-published: true
-reporting_status: complete
-sdg_goal: '1'
-target_name: global_targets.1-1-title
-target_id: '1.2.1'
-un_custodian_agency: World Bank
-un_designated_tier: '1'
----
-
----
 # Info genérica
 target_id: 1.2.1
 reporting_status: complete
