@@ -1,40 +1,40 @@
-Year,Units,Serie temporal,Umbral de pobreza,Value
-2010,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Nacional,29.70
-2011,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Nacional,30.10
-2012,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Nacional,33.60
-2013,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Nacional,28.40
-2014,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Nacional,27.60
-2015,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Nacional,28.50
-2016,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Nacional,35.00
-2017,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Nacional,30.50
-2018,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Nacional,32.10
-2010,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Autonómico,23.80
-2011,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Autonómico,20.60
-2012,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Autonómico,20.10
-2013,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Autonómico,21.10
-2014,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Autonómico,21.70
-2015,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Autonómico,24.40
-2016,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Autonómico,20.60
-2017,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Autonómico,22.90
-2018,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa,Autonómico,23.70
-2010,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Nacional,
-2011,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Nacional,
-2012,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Nacional,
-2013,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Nacional,
-2014,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Nacional,
-2015,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Nacional,
-2016,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Nacional,
-2017,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Nacional,
-2018,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Nacional,
-2010,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Autonómico,23.80
-2011,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Autonómico,20.60
-2012,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Autonómico,20.10
-2013,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Autonómico,21.10
-2014,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Autonómico,21.70
-2015,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Autonómico,24.40
-2016,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Autonómico,20.60
-2017,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Autonómico,22.90
-2018,porcentaje (%),a) Proporción de personas en riesgo de pobreza relativa con alquiler imputado,Autonómico,23.70
+Year,Units,Serie,Serie temporal,Umbral de pobreza,Value
+2010,Porcentaje,Serie A,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral nacional de pobreza,29.70
+2011,Porcentaje,Serie A,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral nacional de pobreza,30.10
+2012,Porcentaje,Serie A,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral nacional de pobreza,33.60
+2013,Porcentaje,Serie A,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral nacional de pobreza,28.40
+2014,Porcentaje,Serie A,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral nacional de pobreza,27.60
+2015,Porcentaje,Serie A,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral nacional de pobreza,28.50
+2016,Porcentaje,Serie A,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral nacional de pobreza,35.00
+2017,Porcentaje,Serie A,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral nacional de pobreza,30.50
+2018,Porcentaje,Serie A,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral nacional de pobreza,32.10
+2010,Porcentaje,Serie B,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral autonómico de pobreza,23.80
+2011,Porcentaje,Serie B,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral autonómico de pobreza,20.60
+2012,Porcentaje,Serie B,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral autonómico de pobreza,20.10
+2013,Porcentaje,Serie B,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral autonómico de pobreza,21.10
+2014,Porcentaje,Serie B,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral autonómico de pobreza,21.70
+2015,Porcentaje,Serie B,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral autonómico de pobreza,24.40
+2016,Porcentaje,Serie B,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral autonómico de pobreza,20.60
+2017,Porcentaje,Serie B,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral autonómico de pobreza,22.90
+2018,Porcentaje,Serie B,Proporción de personas en riesgo de pobreza relativa según umbral de pobreza,Umbral autonómico de pobreza,23.70
+2010,Porcentaje,Serie C,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral nacional de pobreza,25.00
+2011,Porcentaje,Serie C,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral nacional de pobreza,27.70
+2012,Porcentaje,Serie C,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral nacional de pobreza,31.60
+2013,Porcentaje,Serie C,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral nacional de pobreza,23.40
+2014,Porcentaje,Serie C,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral nacional de pobreza,25.20
+2015,Porcentaje,Serie C,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral nacional de pobreza,25.50
+2016,Porcentaje,Serie C,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral nacional de pobreza,28.10
+2017,Porcentaje,Serie C,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral nacional de pobreza,25.90
+2018,Porcentaje,Serie C,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral nacional de pobreza,29.00
+2010,Porcentaje,Serie D,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral autonómico de pobreza,20.40
+2011,Porcentaje,Serie D,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral autonómico de pobreza,13.40
+2012,Porcentaje,Serie D,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral autonómico de pobreza,19.70
+2013,Porcentaje,Serie D,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral autonómico de pobreza,20.40
+2014,Porcentaje,Serie D,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral autonómico de pobreza,19.20
+2015,Porcentaje,Serie D,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral autonómico de pobreza,21.30
+2016,Porcentaje,Serie D,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral autonómico de pobreza,18.70
+2017,Porcentaje,Serie D,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral autonómico de pobreza,20.00
+2018,Porcentaje,Serie D,Proporción de personas en riesgo de pobreza relativa con alquiler imputado según umbral de pobreza,Umbral autonómico de pobreza,21.20
 
 
 
