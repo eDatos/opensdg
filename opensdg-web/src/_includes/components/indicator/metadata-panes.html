@@ -26,20 +26,22 @@
     {% else %}
         {% include components/indicator/metadata-panes-default.html %}
     {% endif %}
-
-    {% assign sorted_indicators = page.indicators | where: 'target_id', page.indicator.number | sort: 'sort_order' %}
-    {% for s in sorted_indicators%}
-        <div class="tab-pane {% if forloop.first %}active{% endif %}" id="subindicator{{ s.number | replace: '.', '' }}" role="tabpanel">
-            <div class="mb-2 text-center"><h3><b>{{ s.graph_title }}</b></h3></div>
-            <div class="chart">
-                {% include components/subindicator/subindicator-chart.html scope=s %}
+    
+    {% if page.indicator.reporting_status != 'notstarted' %}
+        {% assign sorted_indicators = page.indicators | where: 'target_id', page.indicator.number | sort: 'sort_order' %}
+        {% for s in sorted_indicators%}
+            <div class="tab-pane {% if forloop.first %}active{% endif %}" id="subindicator{{ s.number | replace: '.', '' }}" role="tabpanel">
+                <div class="mb-2 text-center"><h3><b>{{ s.graph_title }}</b></h3></div>
+                <div class="chart">
+                    {% include components/subindicator/subindicator-chart.html scope=s %}
+                </div>
+                
+                <div class="metadata">
+                    {% include components/subindicator/subindicator-metadata.html scope=s %}
+                </div>
             </div>
-            
-            <div class="metadata">
-                {% include components/subindicator/subindicator-metadata.html scope=s %}
-            </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
 
     {% if site.environment == 'staging' %}
         <div class="tab-pane" id="edit" role="tabpanel">
