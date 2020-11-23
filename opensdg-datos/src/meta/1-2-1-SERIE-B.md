@@ -21,7 +21,7 @@ periodicidad: Anual
 observaciones: Los ingresos que se utilizan en el cálculo de este indicador corresponden al año anterior al de la encuesta.
 El número de unidades de consumo de un hogar se calcula utilizando la escala OCDE modificada, que asigna un peso de 1 a la primera persona de 14 o más años, un peso de 0,5 al resto de personas de 14 o más años y un peso de 0,3 a las personas de menos de 14 años.
 # Info de Gráficas
-graph_title: subindicator.1-2-1-2-graph-title
+graph_title: subindicator.1-2-1-1_1-graph-title
 graph_type: bar
 # Info para las tabs
 # Orden en que se mostrará esta tab...
