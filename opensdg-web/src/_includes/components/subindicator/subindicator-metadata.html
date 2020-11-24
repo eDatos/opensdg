@@ -14,8 +14,12 @@
             <div class="pull-left">
                 <!-- TODO EDATOS-3208: Hacer que el estilo de las imágenes se carge en un CSS -->
                 {% if subindicator['coordinado_con_ocecas'] == true %}
-                    <img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie_ocecas }}" alt="{{ page.texto_serie_ocecas }}" />
-                    {{ page.texto_serie_ocecas }}
+                    <table>
+                        <tr>
+                            <td><img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie_ocecas }}" alt="{{ page.texto_serie_ocecas }}" /></td>
+                            <td>{{ page.texto_serie_ocecas }}</td>
+                        </tr>
+                    </table>
                 {% else %}
                     <img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie }}" alt="ISTAC" />
                 {% endif %}
