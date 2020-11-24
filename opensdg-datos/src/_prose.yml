@@ -281,6 +281,13 @@ prose:
           label: "Observaciones"
           translation_key: subindicator.observaciones
           scope: subindicator
+      - name: "coordinado_con_ocecas"
+        field:
+          element: checkbox
+          label: Coordinado con Ocecas
+          translation_key: subindicator.coordinado_con_ocecas
+          scope: nota
+      
       ######### FIN Subindicator Metadata #########
       
       ######### Data Info #########

@@ -17,11 +17,16 @@
     <tr>
         <th>Nota</th>
         <td>
-            <div class="pull-left">
-                <!-- TODO EDATOS-3208: Se deja un lorem en el alt de la imagen hasta que se elija el texto correcto.  -->
-                <img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie }}" alt="Irure culpa consectetur voluptate dolore enim enim non." />
-                {{ page.texto_serie }}
-            </div>
+            {% if subindicator['coordinado_con_ocecas'] == true %}
+                <div class="pull-left">
+                    <img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie_ocecas }}" alt="{{ page.texto_serie_ocecas }}" />
+                    {{ page.texto_serie_ocecas }}
+                </div>
+            {% else %}
+                <div class="text-center">
+                    <img style="width: 240px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie }}" alt="ISTAC" />
+                </div>
+            {% endif %}
         </td>
     </tr>
 </table>

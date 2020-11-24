@@ -114,8 +114,10 @@ defaults:
       path: ""
     values:
       language: "es"
-      texto_serie: "Nostrud amet consectetur ut laborum quis." # TODO EDATOS-3208: Se dejará un lorem hasta que se elija el texto correcto.
-      imagen_serie : "imagen_serie.png" # TODO EDATOS-3208: Se dejará una imagen del ISTAC hasta que se elija la imagen correcta.
+      texto_serie_ocecas: "Indicador calculado utilizando una metodología armonizada entre los órganos centrales de estadística de las comunidades autónomas"
+      imagen_serie_ocecas: "logo_OCECAS_cubos_5_rbv_es.png"
+      texto_serie: "" # TODO EDATOS-3208: Se dejará esto en blanco hasta que se defina un texto.
+      imagen_serie : "ISTAC_ODS_4_es.png"
 
 
 # Set a base for all goal image URLs. Note that the full goal image path will be
