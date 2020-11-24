@@ -4,13 +4,7 @@
     {% if indicator_metadata.field.scope == "subindicator" %}
     <tr>
         <th>{{ site.data.translations[page.language].metadata_fields[indicator_metadata.name] }}</th>
-        <td>
-            {% if indicator_metadata.name == "formula_teorica" %}
-            $${{ subindicator[indicator_metadata.name] }}$$
-            {% else %}
-            {{ subindicator[indicator_metadata.name] }}
-            {% endif %}
-        </td>
+        <td>{{ subindicator[indicator_metadata.name] }}</td>
     </tr>
     {% endif %}
     {% endfor %}
@@ -18,6 +12,7 @@
         <th>Nota</th>
         <td>
             <div class="pull-left">
+                <!-- TODO EDATOS-3208: Hacer que el estilo de las imágenes se carge en un CSS -->
                 {% if subindicator['coordinado_con_ocecas'] == true %}
                     <img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie_ocecas }}" alt="{{ page.texto_serie_ocecas }}" />
                     {{ page.texto_serie_ocecas }}
