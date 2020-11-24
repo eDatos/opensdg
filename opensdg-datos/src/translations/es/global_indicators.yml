@@ -2,10 +2,10 @@
 1-1-1-graph-title: 
 1-1-1-definition:
 1-2-1-title: Proporción de personas en riesgo de pobreza relativa según umbral de pobreza
-1-2-1-graph-title: Proporción de personas en riesgo de pobreza relativa, considerando el umbral nacional y autonómico de pobreza 
+1-2-1-graph-title: Proporción de personas en riesgo de pobreza relativa según umbral de pobreza
 1-2-1-definition: 
 1-2-2-title: Proporción de hombres, mujeres y niños de todas las edades que viven en la pobreza, en todas sus dimensiones, con arreglo a las definiciones nacionales
-1-2-2-graph-title: Proporción de hombres, mujeres y niños de todas las edades que viven en la pobreza, en todas sus dimensiones, con arreglo a las definiciones nacionales 
+1-2-2-graph-title: Proporción de hombres, mujeres y niños de todas las edades que viven en la pobreza, en todas sus dimensiones, con arreglo a las definiciones nacionales
 1-2-2-definition:
 1-3-1-title: Proporción de la población cubierta por sistemas o niveles mínimos de protección social, desglosada por sexo, distinguiendo entre los niños, los desempleados, los ancianos, las personas con discapacidad, las mujeres embarazadas, los recién nacidos, las víctimas de accidentes de trabajo, los pobres y los vulnerables
 1-3-1-graph-title: 
@@ -44,7 +44,7 @@
 10-1-1-graph-title: Tasas de crecimiento per cápita de los gastos o ingresos de los hogares del 40% más pobre de la población y la población total
 10-1-1-definition:
 10-2-1-title: Proporción de personas que viven por debajo del 50% de la mediana de los ingresos, desglosada por sexo, edad y personas con discapacidad
-10-2-1-graph-title: Proporción de personas que viven por debajo del 50% de la mediana de los ingresos, desglosada por sexo, edad y personas con discapacidad
+10-2-1-graph-title: Proporción de personas que viven por debajo del 50% de la mediana de los ingresos según tipo de mediana
 10-2-1-definition:
 10-3-1-title: Proporción de la población que declara haberse sentido personalmente discriminada o acosada en los últimos 12 meses por motivos de discriminación prohibidos por el derecho internacional de los derechos humanos
 10-3-1-graph-title: 
@@ -74,7 +74,7 @@
 10-c-1-graph-title: 
 10-c-1-definition:
 11-1-1-title: Proporción de la población urbana que vive en barrios marginales, asentamientos informales o viviendas inadecuadas
-11-1-1-graph-title: Proporción de la población urbana que vive en barrios marginales, asentamientos informales o viviendas inadecuadas
+11-1-1-graph-title: Proporción de personas que viven en hogares con determinadas deficiencias en la vivienda
 11-1-1-definition:
 11-2-1-title: Proporción de la población que tiene fácil acceso al transporte público, desglosada por sexo, edad y personas con discapacidad
 11-2-1-graph-title: 
@@ -89,13 +89,13 @@
 11-4-1-graph-title: 
 11-4-1-definition:
 11-5-1-title: Número de personas muertas, desaparecidas y afectadas directamente atribuido a desastres por cada 100.000 personas
-11-5-1-graph-title: Número de personas muertas, desaparecidas y afectadas directamente atribuido a desastres por cada 100.000 personas
+11-5-1-graph-title: Número de personas muertas directamente atribuido a desastres por cada 100.000 habitantes
 11-5-1-definition:
 11-5-2-title: Pérdidas económicas directas en relación con el PIB mundial, daños en la infraestructura esencial y número de interrupciones de los servicios básicos atribuidos a desastres
 11-5-2-graph-title: 
 11-5-2-definition:
 11-6-1-title: Proporción de desechos sólidos urbanos recogidos periódicamente y con una descarga final adecuada respecto del total de desechos sólidos urbanos generados, desglosada por ciudad
-11-6-1-graph-title: Proporción de residuos sólidos municipales recogidos y administrados en instalaciones controladas con respecto al total de residuos municipales generados, desglosada por ciudad
+11-6-1-graph-title: Residuos urbanos recogidos per cápita y proporción de residuos urbanos en relación al total de residuos urbanos generados y tratados
 11-6-1-definition:
 11-6-2-title: Niveles medios anuales de partículas finas en suspensión (por ejemplo, PM2.5 y PM10) en las ciudades (ponderados según la población)
 11-6-2-graph-title: 
@@ -137,7 +137,7 @@
 12-4-2-graph-title: 
 12-4-2-definition:
 12-5-1-title: Tasa nacional de reciclado, en toneladas de material reciclado
-12-5-1-graph-title: Tasa nacional de reciclado, en toneladas de material reciclado
+12-5-1-graph-title: Residuos urbanos recogidos per cápita y día
 12-5-1-definition:
 12-6-1-title: Número de empresas que publican informes sobre sostenibilidad
 12-6-1-graph-title: 
@@ -158,7 +158,7 @@
 12-c-1-graph-title: 
 12-c-1-definition:
 13-1-1-title: Número de personas muertas, desaparecidas y afectadas directamente atribuido a desastres por cada 100.000 personas
-13-1-1-graph-title: Número de personas muertas, desaparecidas y afectadas directamente atribuido a desastres por cada 100.000 personas
+13-1-1-graph-title: Número de personas muertas directamente atribuido a desastres por cada 100.000 habitantes
 13-1-1-definition:
 13-1-2-title: Número de países que adoptan y aplican estrategias nacionales de reducción del riesgo de desastres en consonancia con el Marco de Sendái para la Reducción del Riesgo de Desastres 2015‐2030
 13-1-2-graph-title: 
@@ -266,7 +266,7 @@
 16-1-3-graph-title: 
 16-1-3-definition:
 16-1-4-title: Proporción de la población que se siente segura al caminar sola en su zona de residencia
-16-1-4-graph-title: Proporción de la población que se siente segura al caminar sola en su zona de residencia
+16-1-4-graph-title: Proporción de personas de 16 años y más que se sienten seguras al caminar solas en su zona de residencia
 16-1-4-definition:
 16-10-1-title: Número de casos verificados de asesinato, secuestro, desaparición forzada, detención arbitraria y tortura de periodistas, miembros asociados de los medios de comunicación, sindicalistas y defensores de los derechos humanos, en los últimos 12 meses
 16-10-1-graph-title: 
@@ -326,7 +326,7 @@
 16-b-1-graph-title: 
 16-b-1-definition:
 17-1-1-title: Total de ingresos del gobierno en proporción al PIB, desglosado por fuente
-17-1-1-graph-title: Total de ingresos del gobierno en proporción al PIB, desglosado por fuente
+17-1-1-graph-title: Total de ingresos de las Administraciones Públicas Autonómicas y Locales en proporción al PIB 
 17-1-1-definition:
 17-1-2-title: Proporción del presupuesto nacional financiado por impuestos internos
 17-1-2-graph-title: 
@@ -392,10 +392,10 @@
 17-6-2-graph-title: 
 17-6-2-definition:
 17-7-1-title: Total de los fondos aprobados para los países en desarrollo a fin de promover el desarrollo, la transferencia y la difusión de tecnologías ecológicamente racionales
-17-7-1-graph-title: 
+17-7-1-graph-title: Total de ingresos de las Administraciones Públicas Autonómicas y Locales en proporción al PIB
 17-7-1-definition:
 17-8-1-title: Proporción de personas que utilizan Internet
-17-8-1-graph-title: Proporción de personas que utilizan Internet
+17-8-1-graph-title: Proporción de personas entre 16 y 74 años que han utilizado Internet en los últimos tres meses
 17-8-1-definition:
 17-9-1-title: Valor en dólares de la asistencia financiera y técnica (incluso mediante la cooperación Norte-Sur, Sur‐Sur y triangular) prometida a los países en desarrollo
 17-9-1-graph-title: 
@@ -590,7 +590,7 @@
 5-a-2-graph-title: 
 5-a-2-definition:
 5-b-1-title: Proporción de personas que poseen un teléfono móvil, desglosada por sexo
-5-b-1-graph-title: Proporción de personas que poseen un teléfono móvil, desglosada por sexo
+5-b-1-graph-title: Proporción de personas entre 16 y 74 años que han usado el móvil en los últimos tres meses según sexo
 5-b-1-definition:
 5-c-1-title: Proporción de países con sistemas para el seguimiento de la igualdad de género y el empoderamiento de las mujeres y la asignación de fondos públicos para ese fin
 5-c-1-graph-title: 
@@ -656,7 +656,7 @@
 8-10-2-graph-title: 
 8-10-2-definition:
 8-2-1-title: Tasa de crecimiento anual del PIB real por persona empleada
-8-2-1-graph-title: Tasa de crecimiento anual del PIB real por persona empleada
+8-2-1-graph-title: "Tasa de crecimiento anual del PIB real según forma de medir el empleo
 8-2-1-definition:
 8-3-1-title: Proporción de empleo informal en el sector no agrícola, desglosada por sexo
 8-3-1-graph-title: 
@@ -668,13 +668,13 @@
 8-4-2-graph-title: 
 8-4-2-definition:
 8-5-1-title: Ingreso medio por hora de empleadas y empleados, desglosado por ocupación, edad y personas con discapacidad
-8-5-1-graph-title: Ingreso medio por hora de las personas empleadas, desglosado por sexo, edad, ocupación y personas con discapacidad
+8-5-1-graph-title: Ingreso medio por hora de trabajo según sexo
 8-5-1-definition:
 8-5-2-title: Tasa de desempleo, desglosada por sexo, edad y personas con discapacidad
-8-5-2-graph-title: Tasa de desempleo, desglosada por sexo, edad y personas con discapacidad
+8-5-2-graph-title: Tasa de desempleo según sexo
 8-5-2-definition:
 8-6-1-title: Proporción de jóvenes (entre 15 y 24 años) que no cursan estudios, no están empleados ni reciben capacitación
-8-6-1-graph-title: Proporción de jóvenes (entre 15 y 24 años) que no cursan estudios, no están empleados ni reciben capacitación
+8-6-1-graph-title: Proporción de jóvenes entre 15 y 24 años que no cursan estudios, no están empleados ni reciben formación
 8-6-1-definition:
 8-7-1-title: Proporción y número de niños de entre 5 y 17 años que realizan trabajo infantil, desglosados por sexo y edad
 8-7-1-graph-title: 
@@ -704,10 +704,10 @@
 9-1-2-graph-title: 
 9-1-2-definition:
 9-2-1-title: Valor añadido del sector manufacturo en proporción al PIB y per cápita
-9-2-1-graph-title: Valor añadido del sector manufacturo en proporción al PIB y per cápita
+9-2-1-graph-title: Valor añadido del sector manufacturero en proporción al PIB y per cápita
 9-2-1-definition:
 9-2-2-title: Empleo del sector manufacturero en proporción al empleo total
-9-2-2-graph-title: Empleo del sector manufacturero en proporción al empleo total
+9-2-2-graph-title: Proporción de personas ocupadas en el sector manufacturero y empleo del sector manufacturero en proporción al empleo total
 9-2-2-definition:
 9-3-1-title: Proporción del valor añadido total del sector industrial correspondiente a las pequeñas industrias
 9-3-1-graph-title: 
@@ -716,13 +716,13 @@
 9-3-2-graph-title: 
 9-3-2-definition:
 9-4-1-title: Emisiones de CO2 por unidad de valor añadido
-9-4-1-graph-title: Emisiones de CO2 por unidad de valor añadido
+9-4-1-graph-title: Emisiones de CO2 de las unidades residentes
 9-4-1-definition:
 9-5-1-title: Gastos en investigación y desarrollo en proporción al PIB
 9-5-1-graph-title: Gastos en investigación y desarrollo en proporción al PIB
 9-5-1-definition:
 9-5-2-title: Número de investigadores (en equivalente a tiempo completo) por cada millón de habitantes
-9-5-2-graph-title: Número de investigadores (en equivalente a tiempo completo) por cada millón de habitantes
+9-5-2-graph-title: Número de personas investigadoras (en equivalente a tiempo completo) por cada millón de habitantes
 9-5-2-definition:
 9-a-1-title: Total de apoyo internacional oficial (asistencia oficial para el desarrollo más otras corrientes oficiales de recursos) destinado a la infraestructura
 9-a-1-graph-title: 
