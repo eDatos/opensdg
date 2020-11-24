@@ -114,6 +114,7 @@ defaults:
       path: ""
     values:
       language: "es"
+      header_image: "ISTAC_ODS_3.png"
       texto_serie_ocecas: "Indicador calculado utilizando una metodología armonizada entre los órganos centrales de estadística de las comunidades autónomas"
       imagen_serie_ocecas: "logo_OCECAS_cubos_5_rbv_es.png"
       texto_serie: "" # TODO EDATOS-3208: Se dejará esto en blanco hasta que se defina un texto.
