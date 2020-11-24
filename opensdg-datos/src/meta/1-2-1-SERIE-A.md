@@ -16,7 +16,10 @@ definicion: subindicator.1-2-1-1-definicion
 
 # Fórmula teórica escrita en formato MathJax
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-formula_teorica: x^2 + y^2 = 1
+formula_teorica: "PRPR_{NAC}^{t} = \frac{PRPR_{NAC}^{t}}{P^{t}} \cdot 100 \\
+\text{donde:}
+PRPR_{NAC}^{t} = \text{población en riesgo de pobreza relativa considerando el umbral nacional de pobreza (60% de la mediana nacional de los ingresos por unidad de consumo (escala OCDE modificada)) en el año } t \\
+p^{t} = \text{población total en el año } t"
 unidad_medida: Porcentaje
 fuentes_informacion: Encuesta de condiciones de vida, Instituto Nacional de Estadística (INE)
 periodicidad: Anual
@@ -32,4 +35,7 @@ graph_type: bar
 sort_order: 1
 # Nombre que tendrá la tab
 tab_name: Serie A
+
+#Coordinación con OCECAS
+coordinado_con_ocecas: true
 ---
