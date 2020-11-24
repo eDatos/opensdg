@@ -30,7 +30,7 @@ graph_type: bar
 
 # Info para las tabs
 # Orden en que se mostrará esta tab...
-sort_order: Serie C
+sort_order: 3
 # Nombre que tendrá la tab
-tab_name: 3
+tab_name: Serie C
 ---
