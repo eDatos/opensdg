@@ -29,7 +29,7 @@ graph_type: bar
 
 # Info para las tabs
 # Orden en que se mostrará esta tab...
-sort_order: Serie B
+sort_order: 2
 # Nombre que tendrá la tab
-tab_name: 2
+tab_name: Serie B
 ---
