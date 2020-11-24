@@ -11,19 +11,19 @@
     <tr>
         <th>Nota</th>
         <td>
-            <div class="pull-left">
-                <!-- TODO EDATOS-3208: Hacer que el estilo de las imágenes se carge en un CSS -->
-                {% if subindicator['coordinado_con_ocecas'] == true %}
-                    <table>
-                        <tr>
-                            <td><img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie_ocecas }}" alt="{{ page.texto_serie_ocecas }}" /></td>
-                            <td>{{ page.texto_serie_ocecas }}</td>
-                        </tr>
-                    </table>
-                {% else %}
+            <!-- TODO EDATOS-3208: Hacer que el estilo de las imágenes se carge en un CSS -->
+            {% if subindicator['coordinado_con_ocecas'] == true %}
+                <div class="pull-left">
+                    <img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie_ocecas }}" alt="{{ page.texto_serie_ocecas }}" />
+                </div>
+                <div class="pull-right">
+                    {{ page.texto_serie_ocecas }}
+                </div>
+            {% else %}
+                <div class="pull-left">
                     <img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie }}" alt="ISTAC" />
-                {% endif %}
-            </div>
+                </div>
+            {% endif %}
         </td>
     </tr>
 </table>
