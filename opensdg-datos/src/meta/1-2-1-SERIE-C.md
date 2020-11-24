@@ -16,7 +16,7 @@ definicion: subindicator.1-2-1-1-definicion
 
 # Fórmula teórica escrita en formato MathJax
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-formula_teorica: '$$PRPRAI_{NAC}^{t} = \frac{PRPRAI_{NAC}^{t}}{P^{t}} \cdot 100$$ <br>
+formula_teorica: '$$PPRPRAI_{NAC}^{t} = \frac{PRPRAI_{NAC}^{t}}{P^{t}} \cdot 100$$ <br>
 donde: <br>
 $PRPRAI_{NAC}^{t} =$ población en riesgo de pobreza relativa con alquiler imputado considerando el umbral nacional de pobreza (60% de la mediana nacional de los ingresos con alquiler imputado por unidad de consumo (escala OCDE modificada)) en el año $t$ <br>
 $P^{t} =$ población total en el año  $t$'
