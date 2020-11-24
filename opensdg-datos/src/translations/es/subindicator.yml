@@ -1,7 +1,12 @@
-#Traducciones de los subindicadores.1-2-1-1-definicion: 
-1-2-1-1-graph-title: 
-1-2-1-1_1-definicion: 
-1-2-1-1_1-graph-title: 
+#Traducciones de los subindicadores
+1-2-1-1-definicion: Proporción de personas con ingresos por unidad de consumo por debajo del 60% de la mediana nacional de los ingresos por unidad de consumo (escala OCDE modificada). 
+1-2-1-1-graph-title: Proporción de personas en riesgo de pobreza relativa, considerando el umbral nacional de pobreza  
+1-2-1-1_1-definicion: Proporción de personas con ingresos por unidad de consumo por debajo del 60% de la mediana autonómica de los ingresos por unidad de consumo (escala OCDE modificada).
+1-2-1-1_1-graph-title: Proporción de personas en riesgo de pobreza relativa, considerando el umbral autonómico de pobreza
+1-2-1-2-definicion: Proporción de personas con ingresos con alquiler imputado por unidad de consumo por debajo del 60% de la mediana nacional de los ingresos con alquiler imputado por unidad de consumo (escala OCDE modificada).
+1-2-1-2-graph-title: Proporción de personas en riesgo de pobreza relativa con alquiler imputado, considerando el umbral nacional de pobreza
+1-2-1-2_1-definicion: Proporción de personas con ingresos con alquiler imputado por unidad de consumo por debajo del 60% de la mediana autonómica de los ingresos con alquiler imputado por unidad de consumo (escala OCDE modificada).
+1-2-1-2_1-graph-title: Proporción de personas en riesgo de pobreza relativa con alquiler imputado, considerando el umbral autonómico de pobreza
 1-2-2-1-definicion: 
 1-2-2-1-graph-title: 
 1-2-2-1_1-definicion: 
