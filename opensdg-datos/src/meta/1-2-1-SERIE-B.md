@@ -16,11 +16,14 @@ definicion: subindicator.1-2-1-1-definicion
 
 # Fórmula teórica escrita en formato MathJax
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-formula_teorica: x^2 + y^2 = 1
+formula_teorica: '$$PPRPR_{CCAA}^{t} = \frac{PRPR_{CCAA}^{t}}{P^{t}} \cdot 100$$ <br>
+donde: <br>
+$PRPR_{CCAA}^{t} =$ población en riesgo de pobreza relativa considerando el umbral autonómico de pobreza (60% de la mediana autonómica de los ingresos por unidad de consumo (escala OCDE modificada)) en el año $t$ <br>
+$P^{t} =$ población total en el año  $t$'
 unidad_medida: Porcentaje
 fuentes_informacion: Encuesta de condiciones de vida, Instituto Nacional de Estadística (INE)
 periodicidad: Anual
-observaciones: "Los ingresos que se utilizan en el cálculo de este indicador corresponden al año anterior al de la encuesta.
+observaciones: "Los ingresos que se utilizan en el cálculo de este indicador corresponden al año anterior al de la encuesta. <br>
 El número de unidades de consumo de un hogar se calcula utilizando la escala OCDE modificada, que asigna un peso de 1 a la primera persona de 14 o más años, un peso de 0,5 al resto de personas de 14 o más años y un peso de 0,3 a las personas de menos de 14 años."
 
 # Info de Gráficas
@@ -32,4 +35,7 @@ graph_type: bar
 sort_order: 2
 # Nombre que tendrá la tab
 tab_name: Serie B
+
+#Coordinación con OCECAS
+coordinado_con_ocecas: true
 ---
