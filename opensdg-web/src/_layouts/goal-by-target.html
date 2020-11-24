@@ -81,9 +81,9 @@
                             </span>
                         </span>
                         {% if indicator.reporting_status == 'notstarted' %}
-                            <a href="{{ indicator.url }}">{{ indicator.name }}</a>
-                        {% else %}
                             {{ indicator.name }}
+                        {% else %}
+                            <a href="{{ indicator.url }}">{{ indicator.name }}</a>
                         {% endif %}
                         
                         {% if indicator.tags %}
