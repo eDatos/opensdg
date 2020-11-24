@@ -19,7 +19,7 @@ definicion: subindicator.1-2-1-1-definicion
 formula_teorica: "PRPR_{NAC}^{t} = \frac{PRPR_{NAC}^{t}}{P^{t}} \cdot 100 \\
 \text{donde:}
 PRPR_{NAC}^{t} = \text{población en riesgo de pobreza relativa considerando el umbral nacional de pobreza (60% de la mediana nacional de los ingresos por unidad de consumo (escala OCDE modificada)) en el año } t \\
-p^{t} = \text{población total en el año } t"
+P^{t} = \text{población total en el año } t"
 unidad_medida: Porcentaje
 fuentes_informacion: Encuesta de condiciones de vida, Instituto Nacional de Estadística (INE)
 periodicidad: Anual
