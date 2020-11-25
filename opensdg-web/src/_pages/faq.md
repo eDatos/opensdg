@@ -14,11 +14,9 @@ Hemos utilizado tres tipos diferentes de estados de reporte para un indicador lo
 Cuando exista información adicional sobre el estado de la recopilación y presentación de informes de datos de indicadores, se mostrará en la parte superior de la página correspondiente al indicador.
 
 ## ¿Con qué frecuencia se añadirán datos nuevos a esta web?
-<!-- EDATOS-3222: Esto se completará cuando ISTAC pase el texto -->
 PENDIENTE DE REVISIÓN
 
 ## ¿Qué estáis haciendo para rellenar completar los sets de datos?
-<!-- EDATOS-3222: Esto se completará cuando ISTAC pase el texto -->
 PENDIENTE DE REVISIÓN
 
 ## ¿Cómo de accesible es esta web?
@@ -27,7 +25,6 @@ Nuestro objetivo es hacer esta web lo más "accesible" y "usable" posible. Estam
 ## ¿Qué exploradores puedo utilizar para ver esta web?
 Nuestra web funciona con la mayoría de las últimas versiones de los exploradores más utilizados. Existen algunas incidencias conocidas al utilizar versiones antíguas de exploradores, como por ejemplo IE8. Estamos trabajando para solucionar estas incidencias lo antes posible.
 
-<!-- EDATOS-3222: Esto se destapará a petición del cliente -->
 <!-- 
 ## Can other countries copy this website?
 Yes. This site is built and hosted using 100% free software and services, so other countries and localities can freely and easily reuse our code. Technical guidance on implementing this platform is available [here](https://open-sdg.readthedocs.io). Countries and localities exploring how to report their own SDGs data can also get support from the [Center for Open Data Enterprise (CODE)](http://www.opendataenterprise.org/) through their [SDG National Reporting Initiative](https://www.sdgreporting.org/).
