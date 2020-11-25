@@ -258,13 +258,21 @@ function getBaseDataset() {
 * @return {string} Human-readable description of combo
 */
 function getCombinationDescription(combination, fallback) {
-  var keys = Object.keys(combination).sort();
-  if (keys.length === 0) {
-      return fallback;
-  }
-  return keys.map(function (key) {
-      return translations.t(combination[key]);
-  }).join(', ');
+    var keys = Object.keys(combination).sort();
+    if (keys.length === 0) {
+        return fallback;
+    }
+    var label = keys.map(function (key) {
+        if (key != "Territorio") {
+            return translations.t(combination[key]);
+        }
+    }).join(', ');
+    
+    if ("Territorio" in combination) {
+        label += `, ${translations.t(combination["Territorio"])}`;
+        label = label.replace(/, ,/gi, ',');
+    }
+    return label;
 }
 
 /**
