@@ -3,7 +3,7 @@
 HOME_PATH=opensdg
 TRANSFER_PATH=$HOME_PATH/tmp
 ENV_CONF=$HOME_PATH/env
-DEPLOY_TARGET_PATH=/servers/estadisticas/opensdg
+DEPLOY_TARGET_PATH=/servers/estadisticas/ods
 OPENSDG_TAR_FILE=opensdg.tar.gz
 WEB_SRC_PATH=opensdg-web/src
 

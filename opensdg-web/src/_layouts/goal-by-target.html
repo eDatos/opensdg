@@ -80,9 +80,12 @@
                                 {{ status_desc }}
                             </span>
                         </span>
-                        <a href="{{ indicator.url }}">
+                        {% if indicator.reporting_status == 'notstarted' %}
                             {{ indicator.name }}
-                        </a>
+                        {% else %}
+                            <a href="{{ indicator.url }}">{{ indicator.name }}</a>
+                        {% endif %}
+                        
                         {% if indicator.tags %}
                             <ul class="tags">
                                 {% for tag in indicator.tags %}

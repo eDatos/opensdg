@@ -4,24 +4,24 @@
     {% if indicator_metadata.field.scope == "subindicator" %}
     <tr>
         <th>{{ site.data.translations[page.language].metadata_fields[indicator_metadata.name] }}</th>
-        <td>
-            {% if indicator_metadata.name == "formula_teorica" %}
-            $${{ subindicator[indicator_metadata.name] }}$$
-            {% else %}
-            {{ subindicator[indicator_metadata.name] }}
-            {% endif %}
-        </td>
+        <td>{{ subindicator[indicator_metadata.name] }}</td>
     </tr>
     {% endif %}
     {% endfor %}
     <tr>
         <th>Nota</th>
         <td>
-            <div class="pull-left">
-                <!-- TODO EDATOS-3208: Se deja un lorem en el alt de la imagen hasta que se elija el texto correcto.  -->
-                <img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie }}" alt="Irure culpa consectetur voluptate dolore enim enim non." />
-                {{ page.texto_serie }}
-            </div>
+            <!-- TODO EDATOS-3208: Hacer que el estilo de las imágenes se carge en un CSS -->
+            {% if subindicator['coordinado_con_ocecas'] == true %}
+                <div class="row pull-left">
+                    <img class="col-md-3" style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie_ocecas }}" alt="ISTAC/OCECAS" />
+                    <span class="col-md-9">{{ page.texto_serie_ocecas }}</span> 
+                </div>
+            {% else %}
+                <div class="pull-left">
+                    <img style="width: 120px;" id="imagen_serie" src="{{ site.baseurl }}/assets/img/{{ page.imagen_serie }}" alt="ISTAC" />
+                </div>
+            {% endif %}
         </td>
     </tr>
 </table>
