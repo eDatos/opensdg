@@ -1,29 +1,29 @@
 #Traducciones de los subindicadores
-1-2-1-1-definicion: Proporción de personas con ingresos por unidad de consumo por debajo del 60% de la mediana nacional de los ingresos por unidad de consumo (escala OCDE modificada). 
+1-2-1-1-definicion: "Proporción de personas con ingresos por unidad de consumo por debajo del 60% de la mediana nacional de los ingresos por unidad de consumo (escala OCDE modificada)"
 1-2-1-1-graph-title: "Proporción de personas en riesgo de pobreza relativa, considerando el umbral nacional de pobreza  "
-1-2-1-1_1-definicion: Proporción de personas con ingresos por unidad de consumo por debajo del 60% de la mediana autonómica de los ingresos por unidad de consumo (escala OCDE modificada).
+1-2-1-1_1-definicion: "Proporción de personas con ingresos por unidad de consumo por debajo del 60% de la mediana autonómica de los ingresos por unidad de consumo (escala OCDE modificada)"
 1-2-1-1_1-graph-title: "Proporción de personas en riesgo de pobreza relativa, considerando el umbral autonómico de pobreza"
-1-2-1-2-definicion: Proporción de personas con ingresos con alquiler imputado por unidad de consumo por debajo del 60% de la mediana nacional de los ingresos con alquiler imputado por unidad de consumo (escala OCDE modificada).
+1-2-1-2-definicion: "Proporción de personas con ingresos con alquiler imputado por unidad de consumo por debajo del 60% de la mediana nacional de los ingresos con alquiler imputado por unidad de consumo (escala OCDE modificada)"
 1-2-1-2-graph-title: "Proporción de personas en riesgo de pobreza relativa con alquiler imputado, considerando el umbral nacional de pobreza"
-1-2-1-2_1-definicion: Proporción de personas con ingresos con alquiler imputado por unidad de consumo por debajo del 60% de la mediana autonómica de los ingresos con alquiler imputado por unidad de consumo (escala OCDE modificada).
+1-2-1-2_1-definicion: "Proporción de personas con ingresos con alquiler imputado por unidad de consumo por debajo del 60% de la mediana autonómica de los ingresos con alquiler imputado por unidad de consumo (escala OCDE modificada)"
 1-2-1-2_1-graph-title: "Proporción de personas en riesgo de pobreza relativa con alquiler imputado, considerando el umbral autonómico de pobreza"
-1-2-2-1-definicion: 
+1-2-2-1-definicion: "Proporción de personas que están en al menos uno de los tres criterios del riesgo de pobreza o exclusión social: en riesgo de pobreza relativa (considerando el umbral nacional de pobreza), viviendo en hogares con carencia material severa o viviendo en hogares con baja intensidad de trabajo"
 1-2-2-1-graph-title: "Proporción de personas en riesgo de pobreza o exclusión social: indicador AROPE, considerando el umbral nacional de pobreza"
-1-2-2-1_1-definicion: 
+1-2-2-1_1-definicion: "Proporción de personas que están en al menos uno de los tres criterios del riesgo de pobreza o exclusión social: en riesgo de pobreza relativa (considerando el umbral autonómico de pobreza), viviendo en hogares con carencia material severa o viviendo en hogares con baja intensidad de trabajo"
 1-2-2-1_1-graph-title: "Proporción de personas en riesgo de pobreza o exclusión social: indicador AROPE, considerando el umbral autonómico de pobreza"
-1-2-2-2-definicion: 
+1-2-2-2-definicion: "Proporción de personas que viven en hogares con carencia en al menos cuatro de una lista de nueve conceptos"
 1-2-2-2-graph-title: "Proporción de personas viviendo en hogares con carencia material severa"
-1-2-2-3-definicion: 
+1-2-2-3-definicion: "Proporción de personas entre 0 y 59 años que viven en hogares sin empleo o con baja intensidad en el empleo (hogares en los que sus miembros en edad de trabajar lo hicieron menos del 20% del total de su potencial de trabajo durante el año anterior al de la encuesta)"
 1-2-2-3-graph-title: "Proporción de personas viviendo en hogares con baja intensidad de trabajo"
 1-5-1-1-definicion: "Defunciones atribuidas a desastres naturales por cada 100.000 habitantes"
 1-5-1-1-graph-title: "Número de personas muertas directamente atribuido a desastres por cada 100.000 habitantes"
-2-2-2-1-definicion: "Proporción de menores entre 2 y 17 años con obesidad, sobrepeso o peso insuficiente "
+2-2-2-1-definicion: "Proporción de menores entre 2 y 17 años con obesidad, sobrepeso o peso insuficiente"
 2-2-2-1-graph-title: "Proporción de menores entre 2 y 17 años con obesidad, sobrepeso o peso insuficiente"
-2-4-1-1-definicion: 
+2-4-1-1-definicion: "Proporción de la superficie agrícola (cultivos y prados y pastizales) destinada a la producción ecológica"
 2-4-1-1-graph-title: "Proporción de la superficie agrícola en que se practica una agricultura productiva y sostenible"
 3-1-1-1-definicion: "Defunciones de mujeres atribuidas a embarazo, parto y puerperio por cada 100.000 nacimientos"
 3-1-1-1-graph-title: "Tasa de mortalidad materna"
-3-1-2-1-definicion: "Proporción de partos atendidos por personal sanitario especializado "
+3-1-2-1-definicion: "Proporción de partos atendidos por personal sanitario especializado"
 3-1-2-1-graph-title: "Proporción de partos atendidos por personal sanitario especializado"
 3-2-1-1-definicion: "Defunciones de menores de 5 años por cada 1.000 nacimientos"
 3-2-1-1-graph-title: "Tasa de mortalidad de menores de 5 años"
@@ -45,43 +45,43 @@
 3-7-2-1-graph-title: "Tasa de fecundidad de las adolescentes entre 10 y 14 años por cada 1.000 mujeres de ese grupo de edad"
 3-7-2-2-definicion: "Nacimientos de madres entre 15 y 19 años por cada 1.000 mujeres de ese grupo de edad"
 3-7-2-2-graph-title: "Tasa de fecundidad de las adolescentes entre 15 y 19 años por cada 1.000 mujeres de ese grupo de edad"
-3-8-1-1-definicion: 
+3-8-1-1-definicion: "Proporción de personas de 16 años y más que informa sobre necesidades insatisfechas de atención médica debido a alguna de las siguientes razones: Razones financieras, lista de espera y demasiado lejos para viajar"
 3-8-1-1-graph-title: "Proporción de personas de 16 y más años con necesidad insatisfecha de atención médica"
 3-9-3-1-definicion: "Defunciones atribuidas a intoxicaciones involuntarias por cada 100.000 habitantes"
 3-9-3-1-graph-title: "Tasa de mortalidad atribuida a intoxicaciones involuntarias"
-3-a-1-1-definicion: "Proporción de personas de 15 y más años que fuman a diario "
+3-a-1-1-definicion: "Proporción de personas de 15 y más años que fuman a diario"
 3-a-1-1-graph-title: "Proporción de personas de 15 y más años que fuman a diario"
-3-c-1-1-definicion: 
+3-c-1-1-definicion: "Número de personas colegiadas en medicina respecto al número de habitantes"
 3-c-1-1-graph-title: "Número de personas colegiadas en medicina por cada 10.000 habitantes"
-3-c-1-2-definicion: 
+3-c-1-2-definicion: "Número de personas colegiadas en enfermería respecto al número de habitantes"
 3-c-1-2-graph-title: "Número de personas colegiadas en enfermería por cada 10.000 habitantes"
-3-c-1-3-definicion: 
+3-c-1-3-definicion: "Número de personas colegiadas en odontología y estomatología respecto al número de habitantes"
 3-c-1-3-graph-title: "Número de personas colegiadas en odontología y estomatología por cada 10.000 habitantes"
-3-c-1-4-definicion: 
+3-c-1-4-definicion: "Número de personas colegiadas en farmacia respecto al número de habitantes"
 3-c-1-4-graph-title: "Número de personas colegiadas en farmacia por cada 10.000 habitantes"
-4-3-1-1-definicion: 
+4-3-1-1-definicion: "Proporción de personas entre 18 y 64 años que han realizado actividades educativas (formales o no formales) en los últimos 12 meses respecto al total de personas entre 18 y 64 años"
 4-3-1-1-graph-title: "Proporción de personas entre 18 y 64 años que han realizado actividades educativas en los últimos 12 meses"
-4-3-1-4-definicion: 
+4-3-1-4-definicion: "Proporción de personas entre 15 y 64 años que han realizado estudios o formación (reglada o no reglada) en las últimas cuatro semanas respecto al total de personas entre 15 y 64 años"
 4-3-1-4-graph-title: "Proporción de personas entre 15 y 64 años que han realizado estudios o formación en las últimas cuatro semanas"
-4-3-1-3-definicion: 
+4-3-1-3-definicion: "Proporción de personas entre 15 y 24 años que han realizado estudios o formación (reglada o no reglada) en las últimas cuatro semanas respecto al total de personas entre 15 y 24 años"
 4-3-1-3-graph-title: "Proporción de personas entre 15 y 24 años que han realizado estudios o formación en las últimas cuatro semanas"
-4-3-1-2-definicion: 
+4-3-1-2-definicion: "Proporción de personas entre 25 y 64 años que han realizado estudios o formación (reglada o no reglada) en las últimas cuatro semanas respecto al total de personas entre 25 y 64 años"
 4-3-1-2-graph-title: "Proporción de personas entre 25 y 64 años que han realizado estudios o formación en las últimas cuatro semanas"
-4-4-1-1-definicion: 
+4-4-1-1-definicion: "Proporción de personas entre 16 y 74 años que en los últimos 12 meses han utilizado alguna de las siguientes habilidades informáticas: descargar un software o cambiar su configuración; transferir ficheros entre el ordenador y otros dispositivos; crear presentaciones que integren texto, imágenes o tablas; programar en un lenguaje de programación; copiar o mover ficheros o carpetas y usar funciones básicas de una hoja de cálculo"
 4-4-1-1-graph-title: "Proporción de personas entre 16 y 74 años que han utilizado alguna habilidad informática en los últimos 12 meses "
-4-4-1-2-definicion: 
+4-4-1-2-definicion: "Proporción de personas entre 16 y 24 años que en los últimos 12 meses han utilizado alguna de las siguientes habilidades informáticas: descargar un software o cambiar su configuración; transferir ficheros entre el ordenador y otros dispositivos; crear presentaciones que integren texto, imágenes o tablas; programar en un lenguaje de programación; copiar o mover ficheros o carpetas y usar funciones básicas de una hoja de cálculo"
 4-4-1-2-graph-title: "Proporción de personas entre 16 y 24 años que han utilizado alguna habilidad informática en los últimos 12 meses "
-4-4-1-3-definicion: 
+4-4-1-3-definicion: "Proporción de personas entre 25 y 74 años que en los últimos 12 meses han utilizado alguna de las siguientes habilidades informáticas: descargar un software o cambiar su configuración; transferir ficheros entre el ordenador y otros dispositivos; crear presentaciones que integren texto, imágenes o tablas; programar en un lenguaje de programación; copiar o mover ficheros o carpetas y usar funciones básicas de una hoja de cálculo"
 4-4-1-3-graph-title: "Proporción de personas entre 25 y 74 años  que han utilizado alguna habilidad informática en los últimos 12 meses"
-4-5-1-1-definicion: 
+4-5-1-1-definicion: "Relación entre las proporciones de mujeres y hombres entre 18 y 64 años que han realizado actividades educativas (formales o no formales) en los últimos 12 meses"
 4-5-1-1-graph-title: "Índice de paridad entre mujeres y hombres de la población entre 18 y 64 años que han realizado actividades educativas en los últimos 12 meses "
-4-5-1-4-definicion: 
+4-5-1-4-definicion: "Relación entre las proporciones de personas entre 18 y 64 años pertenecientes a hogares con ingresos mensuales netos de menos de 900 euros y de 2.500 o más euros que han realizado actividades educativas (formales o no formales) en los últimos 12 meses"
 4-5-1-4-graph-title: "Índice de paridad entre personas pertenecientes a hogares que se encuentran en el nivel de ingresos inferior y superior de la población entre 18 y 64 años que ha realizado actividades educativas en los últimos 12 meses"
-4-5-1-0-definicion: 
+4-5-1-0-definicion: "Relación entre las proporciones de personas entre 18 y 64 años con y sin limitaciones por problemas de salud (graves o no graves) que han realizado actividades educativas (formales o no formales) en los últimos 12 meses"
 4-5-1-0-graph-title: "Índice de paridad entre personas con y sin limitaciones por problemas de salud de la población entre 18 y 64 años que ha realizado actividades educativas en los últimos 12 meses"
-4-5-1-5-definicion: 
+4-5-1-5-definicion: "Relación entre las proporciones de mujeres y hombres entre 15 y 64 años que han realizado estudios o formación (reglada o no reglada) en las últimas cuatro semanas"
 4-5-1-5-graph-title: "Índice de paridad entre mujeres y hombres de la población entre 15 y 64 años que ha realizado estudios o formación en las últimas cuatro semanas "
-4-5-1-3-definicion: 
+4-5-1-3-definicion: "Relación entre las proporciones de personas entre 15 y 64 años residentes en municipios de 10.000 o menos habitantes y más de 10.000 habitantes que han realizado estudios o formación (reglada o no reglada) en las últimas cuatro semanas"
 4-5-1-3-graph-title: "Índice de paridad entre personas residentes en municipios de 10.000 o menos habitantes y residentes en municipios de más de 10.000 habitantes de la población entre 15 y 64 años que ha realizado estudios o formación en las últimas cuatro semanas"
 5-4-1-1-definicion: "Promedio diario de minutos dedicados a actividades destinadas al hogar y la familia por habitante"
 5-4-1-1-graph-title: "Tiempo dedicado al hogar y familia en un día promedio"
@@ -89,33 +89,33 @@
 5-4-1-3-graph-title: "Tiempo dedicado por los hombres al hogar y familia en un día promedio"
 5-4-1-2-definicion: "Promedio diario de minutos dedicados por las mujeres a actividades destinadas al hogar y la familia"
 5-4-1-2-graph-title: "Tiempo dedicado por las mujeres al hogar y familia en un día promedio"
-5-5-2-1-definicion: 
+5-5-2-1-definicion: "Proporción de mujeres ocupadas en cargos directivos respecto al total de personas ocupadas en cargos directivos"
 5-5-2-1-graph-title: "Proporción de mujeres en cargos directivos"
-5-5-2-2-definicion: 
+5-5-2-2-definicion: "Proporción de mujeres ocupadas en alta dirección respecto al total de personas ocupadas en alta dirección"
 5-5-2-2-graph-title: "Proporción de mujeres en alta dirección"
-5-a-1a-1-definicion: 
+5-a-1a-1-definicion: "Proporción de titulares de explotaciones agrícolas respecto al total de pesonas trabajadoras en la agricultura"
 5-a-1a-1-graph-title: "Proporción de titulares de explotaciones agrícolas, respecto al total de personas trabajadoras en la agricultura"
-5-a-1a-2-definicion: 
+5-a-1a-2-definicion: "Proporción de hombres titulares de explotaciones agrícolas respecto al total de hombres trabajadores en la agricultura"
 5-a-1a-2-graph-title: "Proporción de hombres titulares de explotaciones agrícolas, respecto al total de hombres trabajadores en la agricultura"
-5-a-1a-3-definicion: 
+5-a-1a-3-definicion: "Proporción de mujeres titulares de explotaciones agrícolas respecto al total de mujeres trabajadoras en la agricultura"
 5-a-1a-3-graph-title: "Proporción de mujeres titulares de explotaciones agrícolas, respecto al total de mujeres trabajadoras en la agricultura"
-5-a-1b-1-definicion: 
+5-a-1b-1-definicion: "Proporción de mujeres titulares de explotaciones agrícolas respecto al total de personas titulares de explotaciones agrícolas"
 5-a-1b-1-graph-title: "Proporción de mujeres titulares de explotaciones agrícolas, respecto al total de titulares de explotaciones agrícolas"
-5-a-1b-2-definicion: 
+5-a-1b-2-definicion: "Proporción de mujeres titulares de explotaciones agrícolas en propiedad respecto al total de personas titulares de explotaciones agrícolas en propiedad"
 5-a-1b-2-graph-title: "Proporción de mujeres titulares de explotaciones agrícolas en propiedad, respecto al total de titulares de explotaciones agrícolas en propiedad"
-5-a-1b-3-definicion: 
+5-a-1b-3-definicion: "Proporción de mujeres titulares de explotaciones agrícolas en arrendamiento respecto al total de personas titulares de explotaciones agrícolas en arrendamiento"
 5-a-1b-3-graph-title: "Proporción de mujeres titulares de explotaciones agrícolas en arrendamiento, respecto al total de titulares de explotaciones agrícolas en arrendamiento"
-5-b-1-1-definicion: 
+5-b-1-1-definicion: "Proporción de personas entre 16 y 74 años que han usado el móvil en los últimos tres meses"
 5-b-1-1-graph-title: "Proporción de personas entre 16 y 74 años que han usado el móvil en los últimos tres meses"
-5-b-1-3-definicion: 
+5-b-1-3-definicion: "Proporción de hombres entre 16 y 74 años que han usado el móvil en los últimos tres meses"
 5-b-1-3-graph-title: "Proporción de hombres entre 16 y 74 años que han usado el móvil en los últimos tres meses"
-5-b-1-2-definicion: 
+5-b-1-2-definicion: "Proporción de mujeres entre 16 y 74 años que han usado el móvil en los últimos tres meses"
 5-b-1-2-graph-title: "Proporción de mujeres entre 16 y 74 años que han usado el móvil en los últimos tres meses"
-8-1-1-1-definicion: 
+8-1-1-1-definicion: "Tasa de crecimiento anual del PIB real por persona"
 8-1-1-1-graph-title: "Tasa de crecimiento anual del PIB real per cápita"
-8-2-1-1-definicion: 
+8-2-1-1-definicion: "Tasa de crecimiento anual del PIB real por persona empleada"
 8-2-1-1-graph-title: "Tasa de crecimiento anual del PIB real por persona empleada"
-8-2-1-1-b-definicion: 
+8-2-1-1-b-definicion: "Tasa de crecimiento anual del PIB real por hora trabajada"
 8-2-1-1-b-graph-title: "Tasa de crecimiento anual del PIB real por hora trabajada"
 8-5-1-0-definicion: "Ganancia bruta por hora normal de trabajo del personal asalariado"
 8-5-1-0-graph-title: "Ingreso medio por hora de trabajo"
@@ -123,27 +123,27 @@
 8-5-1-3-graph-title: "Ingreso medio por hora de trabajo de los hombres"
 8-5-1-2-definicion: "Ganancia bruta por hora normal de trabajo de las mujeres asalariadas"
 8-5-1-2-graph-title: "Ingreso medio por hora de trabajo de las mujeres"
-8-5-2-0-definicion: 
+8-5-2-0-definicion: "Proporción de personas desempleadas respecto a las personas económicamente activas"
 8-5-2-0-graph-title: "Tasa de desempleo"
-8-5-2-2-definicion: 
+8-5-2-2-definicion: "Proporción de hombres desempleados respecto a los hombres económicamente activos"
 8-5-2-2-graph-title: "Tasa de desempleo de hombres"
-8-5-2-3-definicion: 
+8-5-2-3-definicion: "Proporción de mujeres desempleadas respecto a las mujeres económicamente activas"
 8-5-2-3-graph-title: "Tasa de desempleo de mujeres"
-8-6-1-1-definicion: 
+8-6-1-1-definicion: "Proporción de jóvenes entre 15 y 24 años que no tienen empleo ni han realizado estudios o formación (reglada o no reglada) en las últimas cuatro semanas respecto al total de jóvenes entre 15 y 24 años"
 8-6-1-1-graph-title: "Proporción de jóvenes entre 15 y 24 años que no cursan estudios, no están empleados ni reciben formación"
-9-2-1-1-definicion: 
+9-2-1-1-definicion: "Valor añadido bruto del sector manufacturero por persona a precios corrientes"
 9-2-1-1-graph-title: "Valor añadido del sector manufacturero per cápita"
-9-2-1-2-definicion: 
+9-2-1-2-definicion: "Valor añadido bruto del sector manufacturero en proporción al PIB a precios corrientes"
 9-2-1-2-graph-title: "Valor añadido del sector manufacturero en proporción al PIB"
-9-2-2-1-definicion: 
+9-2-2-1-definicion: "Proporción de personas ocupadas en el sector manufacturero respecto al total de personas ocupadas"
 9-2-2-1-graph-title: "Proporción de personas ocupadas en el sector manufacturero"
-9-2-2-2-definicion: 
+9-2-2-2-definicion: "Personas empleadas en el sector manufacturero en proporción al total de personas empleadas"
 9-2-2-2-graph-title: "Empleo del sector manufacturero en proporción al empleo total (personas empleadas)"
-9-2-2-2-b-definicion: 
+9-2-2-2-b-definicion: "Horas trabajadas en el sector manufacturero en proporción al total de horas trabajadas"
 9-2-2-2-b-graph-title: "Empleo del sector manufacturero en proporción al empleo total (horas trabajadas)"
-9-4-1-1-definicion: 
+9-4-1-1-definicion: "Emisiones de dióxido de carbono (CO2) de las unidades económicas residentes por unidad de PIB real, con independencia del lugar geográfico donde realmente ocurran"
 9-4-1-1-graph-title: "Emisiones de CO2 de las unidades residentes por unidad de PIB"
-9-4-1-2-definicion: 
+9-4-1-2-definicion: "Emisiones de dióxido de carbono (CO2) de las unidades económicas residentes del sector manufacturero por unidad de valor añadido bruto real, con independencia del lugar geográfico donde realmente ocurran"
 9-4-1-2-graph-title: "Emisiones de CO2 de las unidades residentes por unidad de valor añadido del sector manufacturero"
 9-5-1-1-definicion: "Proporción que representa el gasto en investigación y desarrollo respecto al PIB"
 9-5-1-1-graph-title: "Gastos en investigación y desarrollo en proporción al PIB"
@@ -153,39 +153,39 @@
 10-1-1-3-graph-title: "Tasa de crecimiento per cápita de los gastos de los hogares del 40% más pobre de la población"
 10-1-1-2-definicion: "Tasa de crecimiento promedio anualizada en un período de cinco años de los gastos por persona de los hogares de la población total"
 10-1-1-2-graph-title: "Tasa de crecimiento per cápita de los gastos de los hogares de la población total"
-10-1-1-1-definicion: 
+10-1-1-1-definicion: "Tasa de crecimiento promedio anualizada en un período de cinco años de los ingresos por persona de los hogares del 40% más pobre de la población de la comunidad autónoma (40% de las personas con menores ingresos por unidad de consumo (escala OCDE modificada))"
 10-1-1-1-graph-title: "Tasa de crecimiento per cápita de los ingresos de los hogares del 40% más pobre de la población"
-10-1-1-4-definicion: 
+10-1-1-4-definicion: "Tasa de crecimiento promedio anualizada en un período de cinco años de los ingresos por persona de los hogares de la población total"
 10-1-1-4-graph-title: "Tasa de crecimiento per cápita de los ingresos de los hogares de la población total"
-10-2-1-1-definicion: 
+10-2-1-1-definicion: "Proporción de personas que viven con unos ingresos por unidad de consumo por debajo del 50% de la mediana nacional de los ingresos por unidad de consumo (escala OCDE modificada)"
 10-2-1-1-graph-title: "Proporción de personas que viven por debajo del 50% de la mediana de los ingresos, considerando la mediana nacional"
-10-2-1-1_1-definicion: 
+10-2-1-1_1-definicion: "Proporción de personas que viven con unos ingresos por unidad de consumo por debajo del 50% de la mediana autonómica de los ingresos por unidad de consumo (escala OCDE modificada)"
 10-2-1-1_1-graph-title: "Proporción de personas que viven por debajo del 50% de la mediana de los ingresos, considerando la mediana autonómica"
-10-4-1-1_1-definicion: 
+10-4-1-1_1-definicion: "Remuneración de personas asalariadas en proporción al PIB a precios corrientes"
 10-4-1-1_1-graph-title: "Proporción del PIB generada por el trabajo asalariado"
-11-1-1-1-definicion: 
+11-1-1-1-definicion: "Proporción de personas que en sus viviendas tienen problemas de goteras, humedades en paredes, suelos, techos o cimientos, o podredumbre en suelos, marcos de ventanas o puertas"
 11-1-1-1-graph-title: "Proporción de personas que viven en hogares con determinadas deficiencias en la vivienda"
 11-5-1-1-definicion: "Defunciones atribuidas a desastres naturales por cada 100.000 habitantes"
 11-5-1-1-graph-title: "Número de personas muertas directamente atribuido a desastres por cada 100.000 habitantes"
-11-6-1-1-definicion: 
+11-6-1-1-definicion: "Residuos urbanos recogidos por las empresas gestoras por habitante"
 11-6-1-1-graph-title: "Residuos urbanos recogidos per cápita"
-11-6-1-2-definicion: 
+11-6-1-2-definicion: "Proporción de residuos municipales incinerados respecto del total de residuos municipales generados y tratados procedentes de los hogares y del sector servicios (comercios, oficinas e instituciones públicas o privadas), cuya gestión es asumida por las Entidades Locales"
 11-6-1-2-graph-title: "Proporción de residuos municipales incinerados en relación al total de residuos municipales generados y tratados"
-11-6-1-3-definicion: 
+11-6-1-3-definicion: "Proporción de residuos municipales vertidos respecto del total de residuos municipales generados y tratados procedentes de los hogares y del sector servicios (comercios, oficinas e instituciones públicas o privadas), cuya gestión es asumida por las Entidades Locales"
 11-6-1-3-graph-title: "Proporción de residuos municipales vertidos en relación al total de residuos municipales generados y tratados"
-11-6-1-4-definicion: 
+11-6-1-4-definicion: "Proporción de residuos municipales reciclados respecto del total de residuos municipales generados y tratados procedentes de los hogares y del sector servicios (comercios, oficinas e instituciones públicas o privadas), cuya gestión es asumida por las Entidades Locales"
 11-6-1-4-graph-title: "Proporción de residuos municipales reciclados en relación al total de residuos municipales generados y tratados"
-12-5-1-1-definicion: 
+12-5-1-1-definicion: "Residuos urbanos recogidos por las empresas gestoras por habitante y día"
 12-5-1-1-graph-title: "Residuos urbanos recogidos per cápita y día"
 13-1-1-1-definicion: "Defunciones atribuidas a desastres naturales por cada 100.000 habitantes"
 13-1-1-1-graph-title: "Número de personas muertas directamente atribuido a desastres por cada 100.000 habitantes"
-13-2-2-1-definicion: 
+13-2-2-1-definicion: "Emisiones totales de gases de efecto invernadero (GEI) de las unidades económicas residentes por unidad de PIB real, con independencia del lugar geográfico donde realmente ocurran"
 13-2-2-1-graph-title: "Emisiones totales de gases de efecto invernadero de las unidades residentes por unidad de PIB"
-13-2-2-2-definicion: 
+13-2-2-2-definicion: "Emisiones totales de gases de efecto invernadero (GEI) de las unidades económicas residentes por persona, con independencia del lugar geográfico donde realmente ocurran"
 13-2-2-2-graph-title: "Emisiones totales de gases de efecto invernadero de las unidades residentes per cápita"
-16-1-4-1-definicion: 
+16-1-4-1-definicion: "Proporción de personas de 16 y más años que se sienten seguras (muy o bastante seguras) al caminar solas en su zona de residencia"
 16-1-4-1-graph-title: "Proporción de personas de 16 años y más que se sienten seguras al caminar solas en su zona de residencia"
-17-1-1-1-definicion: 
+17-1-1-1-definicion: "Total de ingresos consolidades de las administraciones públicas autonómicas y locales en proporción al PIB a precios corrientes"
 17-1-1-1-graph-title: "Total de ingresos de las Administraciones Públicas Autonómicas y Locales en proporción al PIB "
-17-8-1-1-definicion: 
+17-8-1-1-definicion: "Proporción de personas entre 16 y 74 años que han utilizado Internet en los últimos tres meses"
 17-8-1-1-graph-title: "Proporción de personas entre 16 y 74 años que han utilizado Internet en los últimos tres meses"
