@@ -3,7 +3,7 @@
 target_id: 1.2.1
 reporting_status: complete
 data_non_statistical: false
-indicator_sort_order: 01-02-01-1b
+indicator_sort_order: 01-02-01-bb
 national_geographical_coverage: Canarias
 
 # Info de Subindicador
