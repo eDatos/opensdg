@@ -7,8 +7,8 @@ indicator_sort_order: 01-02-01-cc
 national_geographical_coverage: Canarias
 
 # Info de Subindicador
-indicator_name: Proporción de personas en riesgo de pobreza relativa con alquiler imputado, considerando el umbral nacional de pobreza
-nombre: Proporción de personas en riesgo de pobreza relativa con alquiler imputado, considerando el umbral nacional de pobreza
+indicator_name: "Proporción de personas en riesgo de pobreza relativa con alquiler imputado, considerando el umbral nacional de pobreza"
+nombre: "Proporción de personas en riesgo de pobreza relativa con alquiler imputado, considerando el umbral nacional de pobreza"
 indicador_onu_global: global_indicators.1-2-1-title
 meta_global: global_targets.1-2-title
 objetivo_global: global_goals.1-title
