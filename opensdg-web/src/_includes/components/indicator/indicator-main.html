@@ -30,13 +30,18 @@
         </div>
     </div>
 
-
-    <!-- TODO EDATOS-3208: Borar en caso de no necesitar que todas las series aparezcan marcadas por defecto. -->
-    <!--
     <script>
+        // Primero se desmarcan todos los checkboxes y luego se activan aquellos que queremos.
         window.onload = () => {
             $("input[type=checkbox]").prop("checked", false);
-            $("input[type=checkbox]").trigger("click");
+
+            $("input[type=checkbox]").each(function (index) {
+                var isTerritorio = $(this).attr("data-field") == "Territorio";
+                var isCanarias = $(this).attr("value") == "Canarias";
+                
+                if ((isTerritorio && isCanarias) || !isTerritorio) {
+                    $(this).trigger("click");
+                }
+            });
         }
     </script>
-    -->
