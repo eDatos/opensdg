@@ -3,7 +3,7 @@
 target_id: 1.2.2
 reporting_status: complete
 data_non_statistical: false
-indicator_sort_order: 01-02-02-1a
+indicator_sort_order: 01-02-02-01
 national_geographical_coverage: Canarias
 # Info de Subindicador
 indicator_name: Proporción de personas en riesgo de pobreza o exclusión social: indicador AROPE, considerando el umbral nacional de pobreza
@@ -44,4 +44,7 @@ graph_type: bar
 sort_order: 1
 # Nombre que tendrá la tab
 tab_name: Serie A
+
+#Coordinación con OCECAS
+coordinado_con_ocecas: true
 ---
