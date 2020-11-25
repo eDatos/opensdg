@@ -19,14 +19,13 @@ remote_theme: open-sdg/open-sdg@1.1.0
 # Replace this title as needed.
 title: Indicadores para los Objetivos de Desarrollo Sostenible
 # Replace the baseurl with the name of this repository.
-baseurl: "/opensdg"
+baseurl: "/ods"
 #url: ""
 data_dir: data
 environment: production
 # Replace "open-sdg" with the name of your GitHub organization, and
 # "open-sdg-data-starter" with the name of your data repository.
 
-# remote_data_prefix: "https://estadisticas.arte-consultores.com/opensdg-data"
 # remote_data_prefix: "http://localhost:5000"
 remote_data_prefix: "./opensdg-datos"
 
