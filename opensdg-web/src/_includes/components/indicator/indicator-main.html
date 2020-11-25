@@ -33,11 +33,12 @@
     <script>
         // Primero se desmarcan todos los checkboxes y luego se activan aquellos que queremos.
         window.onload = () => {
-            $("input[type=checkbox]").prop("checked", false);
+            var selectorDesagregaciones = ".variable-options label input[type=checkbox]";
 
-            $("input[type=checkbox]").each(function (index) {
-                var isTerritorio = $(this).attr("data-field") == "Territorio";
-                var isCanarias = $(this).attr("value") == "Canarias";
+            $(selectorDesagregaciones).prop("checked", false);
+            $(selectorDesagregaciones).each(function (index) {
+                var isTerritorio = $(this).data('field') == "Territorio";
+                var isCanarias = $(this).val() == "Canarias";
                 
                 if ((isTerritorio && isCanarias) || !isTerritorio) {
                     $(this).trigger("click");
