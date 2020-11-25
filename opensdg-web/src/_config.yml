@@ -93,8 +93,6 @@ menu:
     translation_key: menu.reporting_status
   - path: /about
     translation_key: menu.about
-  # - path: /guidance
-  #   translation_key: menu.guidance
   - path: /faq
     translation_key: menu.faq
 
@@ -128,10 +126,6 @@ goal_image_base: https://open-sdg.github.io/sdg-translations/assets/img/goals
 plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
-
-# Apply any custom CSS.
-custom_css:
-  - /assets/css/custom.css
 
 exclude:
   - vendor
