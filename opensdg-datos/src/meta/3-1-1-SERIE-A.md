@@ -1,3 +1,4 @@
+---
 # Info genérica
 target_id: 3.1.1
 reporting_status: complete
@@ -36,3 +37,4 @@ tab_name: Serie A
 
 #Coordinación con OCECAS
 coordinado_con_ocecas: true
+---
