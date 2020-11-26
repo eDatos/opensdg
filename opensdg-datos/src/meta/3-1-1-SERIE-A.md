@@ -19,7 +19,7 @@ formula_teorica: '$$TM_{materna}^{t} = \frac{D_{maternas}^{t}}{N^{t}} \cdot 100.
 donde: <br>
 $D_{maternas}^{t} =$ defunciones de mujeres atribuidas a embarazo, parto y puerperio (códigos O00-O99 de la CIE-10) en el año $t$ <br>
 $N^{t} =$ nacimientos en el año $t$'
-unidad_medida: "Tanto por 100.000"
+unidad_medida: "Por 100.000 nacidos vivos"
 fuentes_informacion: "Estadística de defunciones según la causa de muerte, Instituto Nacional de Estadística (INE)<br>
 Estadística de nacimientos, Instituto Nacional de Estadística (INE)"
 periodicidad: Anual
