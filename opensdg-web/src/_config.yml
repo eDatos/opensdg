@@ -19,7 +19,7 @@ remote_theme: open-sdg/open-sdg@1.1.0
 # Replace this title as needed.
 title: Indicadores para los Objetivos de Desarrollo Sostenible
 # Replace the baseurl with the name of this repository.
-baseurl: "/ods"
+baseurl: "/aplicaciones/appsistac/ods"
 #url: ""
 data_dir: data
 environment: production
