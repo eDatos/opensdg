@@ -263,6 +263,7 @@ function getCombinationDescription(combination, fallback) {
         return fallback;
     }
     var label = keys.map(function (key) {
+        // TODO EDATOS-3208: Usar una constante para la palabra Territorio.
         if (key != "Territorio") {
             return translations.t(combination[key]);
         }
