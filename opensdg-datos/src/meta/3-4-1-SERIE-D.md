@@ -30,4 +30,8 @@ graph_type: bar
 # Info de navegación
 sort_order: 4
 tab_name: Serie D
+
+#Coordinación con OCECAS
+coordinado_con_ocecas: true
+
 ---
