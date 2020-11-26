@@ -3,31 +3,33 @@
 target_id: 2.2.2
 reporting_status: complete
 data_non_statistical: false
-indicator_sort_order: 01-02-01-aa
+indicator_sort_order: 02-02-02-aa
 national_geographical_coverage: Canarias
 
 # Info de Subindicador
-indicator_name: Proporción de menores entre 2 y 17 años con obesidad, sobrepeso o peso insuficiente
-nombre: Proporción de menores entre 2 y 17 años con obesidad, sobrepeso o peso insuficiente
+nombre: subindicator.2-2-2-SERIE-A-nombre
 indicador_onu_global: global_indicators.2-2-2-title
 meta_global: global_targets.2-2-title
 objetivo_global: global_goals.2-title
-definicion: subindicator.2-2-2-1-definicion
+definicion: subindicator.2-2-2-SERIE-A-definicion
 
 # Fórmula teórica escrita en formato MathJax
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-formula_teorica: '$$PPRPR_{NAC}^{t} = \frac{PRPR_{NAC}^{t}}{P^{t}} \cdot 100$$ <br>
+formula_teorica: '$$PPM_{2-17}^{t} = \frac{PM_{2-17}^{t}}{P_{2-17}^{t}} \cdot 100$$ <br>
 donde: <br>
-$PRPR_{NAC}^{t} =$ población en riesgo de pobreza relativa considerando el umbral nacional de pobreza (60% de la mediana nacional de los ingresos por unidad de consumo (escala OCDE modificada)) en el año $t$ <br>
-$P^{t} =$ población total en el año  $t$'
-unidad_medida: Porcentaje
-fuentes_informacion: Encuesta de condiciones de vida, Instituto Nacional de Estadística (INE)
+$PPM_{2-17}^{t} =$ población entre 2 y 17 años con malnutrición en el año $t$ <br>
+$P_{2-17}^{t} =$ población entre 2 y 17 años en el año $t$'
+unidad_medida: "Porcentaje"
+fuentes_informacion: "Encuesta de condiciones de vida, Instituto Nacional de Estadística (INE)"
 periodicidad: Anual
-observaciones: "Los ingresos que se utilizan en el cálculo de este indicador corresponden al año anterior al de la encuesta. <br>
-El número de unidades de consumo de un hogar se calcula utilizando la escala OCDE modificada, que asigna un peso de 1 a la primera persona de 14 o más años, un peso de 0,5 al resto de personas de 14 o más años y un peso de 0,3 a las personas de menos de 14 años."
+observaciones: "La población malnutrida es aquella que tiene obesidad (IMC>=30), sobrepeso (25<=IMC<30) o peso insuficiente (IMC<18,5), donde IMC es el índice de masa corporal, que se obtiene dividiento el peso (kg) por el cuadrado de la estatura (m).<br>
+La nota siguiente es variable en función de los datos que se publiquen:<br>
+Los resultados de la Encuesta nacional de salud 2011-2012 se han imputado a ambos años.<br>
+El dato de 2011 corresponde a la Encuesta nacional de salud 2011-2012, que se llevó a cabo entre el segundo semestre de 2011 y el primer semestre de 2012.<br>
+El dato de 2012 corresponde a la Encuesta nacional de salud 2011-2012, que se llevó a cabo entre el segundo semestre de 2011 y el primer semestre de 2012."
 
 # Info de Gráficas
-graph_title: subindicator.2-2-2-1-graph-title
+graph_title: subindicator.2-2-2-SERIE-A-graph-title
 graph_type: bar
 
 # Info para las tabs

@@ -7,12 +7,11 @@ indicator_sort_order: 01-02-02-dd
 national_geographical_coverage: Canarias
 
 # Info de Subindicador
-indicator_name: "Proporción de personas viviendo en hogares con baja intensidad de trabajo"
-nombre: "Proporción de personas viviendo en hogares con baja intensidad de trabajo"
+nombre: subindicator.1-2-2-SERIE-D-nombre
 indicador_onu_global: global_indicators.1-2-2-title
 meta_global: global_targets.1-2-title
 objetivo_global: global_goals.1-title
-definicion: subindicator.1-2-2-3-definicion
+definicion: subindicator.1-2-2-SERIE-D-definicion
 
 # Fórmula teórica escrita en formato MathJax
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
@@ -26,7 +25,7 @@ periodicidad: Anual
 observaciones: 
 
 # Info de Gráficas
-graph_title: subindicator.1-2-2-3-graph-title
+graph_title: subindicator.1-2-2-SERIE-D-graph-title
 graph_type: bar
 
 # Info para las tabs
