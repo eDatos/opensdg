@@ -18,7 +18,7 @@ definicion: subindicator.3-2-1-SERIE-A-definicion
 formula_teorica:  '$$TM_{0-4}^{t} = \frac{D_{0-4}^{t}}{N^{t}} \cdot 1.000$$ <br>
 donde: <br>
 $D_{0-4}^{t} =$ defunciones de menores de 5 años cumplidos de vida en el año $t$ <br>
-$N^{t} =$ defunciones en el año $t$'
+$N^{t} =$ nacimientos en el año $t$'
 unidad_medida: "Tanto por 1.000"
 fuentes_informacion: "Estadística de defunciones, Instituto Nacional de Estadística (INE)<br>
 Estadística de nacimientos, Instituto Nacional de Estadística (INE)"
