@@ -20,7 +20,7 @@ donde: <br>
 $D_{neonatales}^{t} =$ defunciones de menores de 28 días cumplidos de vida en el año $t$ <br>
 $N^{t} =$ nacimientos en el año $t$'
 
-unidad_medida: "Tanto por 1.000"
+unidad_medida: "Tanto por 1.000 nacidos vivos"
 fuentes_informacion: "Estadística de defunciones, Instituto Nacional de Estadística (INE)<br>
 Estadística de nacimientos, Instituto Nacional de Estadística (INE)"
 periodicidad: "Anual"
