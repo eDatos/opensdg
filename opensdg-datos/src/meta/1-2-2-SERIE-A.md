@@ -7,12 +7,11 @@ indicator_sort_order: 01-02-02-aa
 national_geographical_coverage: Canarias
 
 # Info de Subindicador
-indicator_name: "Proporción de personas en riesgo de pobreza o exclusión social: indicador AROPE, considerando el umbral nacional de pobreza"
-nombre: "Proporción de personas en riesgo de pobreza o exclusión social: indicador AROPE, considerando el umbral nacional de pobreza"
+nombre: subindicator.1-2-2-SERIE-A-nombre
 indicador_onu_global: global_indicators.1-2-2-title
 meta_global: global_targets.1-2-title
 objetivo_global: global_goals.1-title
-definicion: subindicator.1-2-2-1-definicion
+definicion: subindicator.1-2-2-SERIE-A-definicion
 
 # Fórmula teórica escrita en formato MathJax
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
@@ -39,7 +38,7 @@ Viviendo en hogares con carencia material severa: con carencia en al menos cuatr
 Viviendo en hogares con baja intensidad en el trabajo: hogares en los que sus miembros en edad de trabajar lo hicieron menos del 20% del total de su potencial de trabajo durante el año anterior al de la encuesta."
 
 # Info de Gráficas
-graph_title: subindicator.1-2-2-1-graph-title
+graph_title: subindicator.1-2-2-SERIE-A-graph-title
 graph_type: bar
 
 # Info para las tabs
