@@ -19,7 +19,7 @@ formula_teorica: '$$PPAR_{atendidos}^{t} = \frac{PAR_{atendidos}^{t}}{PAR^{t}} \
 donde: <br>
 $PPAR_{atendidos}^{t} =$ partos atendidos por personal sanitario especializado en el año $t$ <br>
 $PAR^{t} =$ partos en el año $t$'
-unidad_medida: "Porciento"
+unidad_medida: "Porcentaje"
 fuentes_informacion: "Estadística de nacimientos, Instituto Nacional de Estadística (INE)"
 periodicidad: "Anual"
 observaciones: 
