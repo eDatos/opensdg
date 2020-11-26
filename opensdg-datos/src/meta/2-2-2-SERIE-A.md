@@ -17,7 +17,7 @@ definicion: subindicator.2-2-2-SERIE-A-definicion
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
 formula_teorica: '$$PPM_{2-17}^{t} = \frac{PM_{2-17}^{t}}{P_{2-17}^{t}} \cdot 100$$ <br>
 donde: <br>
-$PPM_{2-17} =$ población entre 2 y 17 años con malnutrición en el año $t$ <br>
+$PPM_{2-17}^{t} =$ población entre 2 y 17 años con malnutrición en el año $t$ <br>
 $P_{2-17}^{t} =$ población entre 2 y 17 años en el año $t$'
 unidad_medida: "Porcentaje"
 fuentes_informacion: "Encuesta de condiciones de vida, Instituto Nacional de Estadística (INE)"
