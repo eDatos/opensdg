@@ -34,4 +34,7 @@ sort_order: 1
 
 # Nombre que tendrá la tab
 tab_name: Serie A
+
+#Coordinación con OCECAS
+coordinado_con_ocecas: true
 ---
