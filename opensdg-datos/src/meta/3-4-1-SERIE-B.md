@@ -15,7 +15,7 @@ definicion: subindicator.3-4-1-SERIE-B-definicion
 
 formula_teorica: '$$TM_{cáncer}^{t} = \frac{D_{cáncer}^{t}}{P^{t}} \cdot 100.000$$ <br>
 donde: <br>
-$D_{cáncer}^{t} =$ defunciones atribuidas a enfermedades cardiovasculares (códigos C00-C97 de la CIE-10) en el año $t$ <br>
+$D_{cáncer}^{t} =$ defunciones atribuidas a cáncer (códigos C00-C97 de la CIE-10) en el año $t$ <br>
 $P^{t} =$ población a 1 de julio del año $t$'
 unidad_medida: "Tanto por 100.000"
 fuentes_informacion: "Estadística de defunciones según la causa de muerte, Instituto Nacional de Estadística (INE)<br>
