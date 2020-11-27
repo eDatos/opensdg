@@ -583,9 +583,12 @@
 5-6-2-title: "Número de países con leyes y reglamentos que garantizan a los hombres y las mujeres a partir de los 15 años de edad un acceso pleno e igualitario a los servicios de salud sexual y reproductiva y a la información y educación al respecto"
 5-6-2-graph-title: 
 5-6-2-definition:
-5-a-1-title: "a) Proporción del total de la población agrícola con derechos de propiedad o derechos seguros sobre tierras agrícolas, desglosada por sexo; y b) proporción de mujeres entre los propietarios o los titulares de derechos sobre tierras agrícolas, desglosada por tipo de tenencia"
-5-a-1-graph-title: "a) Proporción de titulares de explotaciones agrícolas, respecto al total de personas trabajadoras en la agricultura, según sexo; y b) Proporción de mujeres titulares de explotaciones agrícolas, respecto al total de titulares de explotaciones agrícolas, según tipo de tenencia"
-5-a-1-definition:
+5-a-1a-title: "Proporción del total de la población agrícola con derechos de propiedad o derechos seguros sobre tierras agrícolas, desglosada por sexo"
+5-a-1a-graph-title: "Proporción de titulares de explotaciones agrícolas, respecto al total de personas trabajadoras en la agricultura, según sexo"
+5-a-1a-definition:
+5-a-1b-title: "Proporción de mujeres entre los propietarios o los titulares de derechos sobre tierras agrícolas, desglosada por tipo de tenencia"
+5-a-1b-graph-title: "Proporción de mujeres titulares de explotaciones agrícolas, respecto al total de titulares de explotaciones agrícolas, según tipo de tenencia"
+5-a-1b-definition:
 5-a-2-title: "Proporción de países cuyo ordenamiento jurídico (incluido el derecho consuetudinario) garantiza la igualdad de derechos de la mujer a la propiedad o el control de las tierras"
 5-a-2-graph-title: 
 5-a-2-definition:
