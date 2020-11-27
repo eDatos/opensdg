@@ -14,10 +14,11 @@ Hemos utilizado tres tipos diferentes de estados de reporte para un indicador lo
 Cuando exista información adicional sobre el estado de la recopilación y presentación de informes de datos de indicadores, se mostrará en la parte superior de la página correspondiente al indicador.
 
 ## ¿Con qué frecuencia se añadirán datos nuevos a esta web?
-PENDIENTE DE REVISIÓN
+La actualización de las series disponibles se realizará de manera trimestral, en función de la actualización de cada una de las fuentes de datos de partida de cada indicador.
 
-## ¿Qué estáis haciendo para rellenar completar los sets de datos?
-PENDIENTE DE REVISIÓN
+## ¿Qué se está haciendo para completar los indicadores?
+Las series estadísticas mostradas están armonizadas y son comparables entre las distintas autonomías al ser fruto del trabajo conjunto de los diferentes Órganos Centrales de Estadística de las Comunidades Autónomas (OCECAS). A su vez, en línea con la política de datos abiertos del ISTAC, las series pueden descargase en formatos abiertos y reutilizarse según la licencia del Instituto.
+
 
 ## ¿Cómo de accesible es esta web?
 Nuestro objetivo es hacer esta web lo más "accesible" y "usable" posible. Estamos trabajando para conseguir un nivel AA de accesibilidad referenciado en las [Guías de accesibilidad para contenido (WCAG 2.0)](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag-20).

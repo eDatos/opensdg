@@ -1,5 +1,5 @@
-heading: "Datos de %name para los indicadores de los Objetivos de Desarrollo Sostenible"
-instructions: Haga clic en cada objetivo, o busque, para consultar las estadísticas de Canarias para los indicadores globales de los Objetivos de Desarrollo Sostenible.
+heading: "Indicadores de Desarrollo Sostenible de %name"
+instructions: "Haga clic en cada objetivo, o busque, para consultar las estadísticas de Canarias para los indicadores globales de los Objetivos de Desarrollo Sostenible. También se puede descargar todos los datos."
 download_all: Descargar todos los datos
 zip_file: 
 intro_title: 17 objetivos para transformar nuestro mundo
