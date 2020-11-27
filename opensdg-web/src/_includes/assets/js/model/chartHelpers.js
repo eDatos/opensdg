@@ -90,9 +90,9 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
 
 function getLegendLabel(data) {
   if (data[0].Serie != undefined) {
-      return data[0].Serie
+    return data[0].Serie + ". ";
   }
-  return "Sin Serie";
+  return "";
 }
 
 /**

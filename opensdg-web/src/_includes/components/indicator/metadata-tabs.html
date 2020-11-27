@@ -26,7 +26,11 @@
                 class="nav-link" data-toggle="tab"
                 href="#subindicator{{ s.number | replace: '.', '' }}"
                 role="tab">
-                {{ s.tab_name }}
+                {% if s.tab_name %}
+                    {{ s.tab_name }}
+                {% else %}
+                    Metadatos
+                {% endif %}
             </a>
         </li>
     {% endfor %}
