@@ -1,5 +1,5 @@
 ---
-title: About
+title: Acerca de esta web
 permalink: /about/
 layout: page
 ---
