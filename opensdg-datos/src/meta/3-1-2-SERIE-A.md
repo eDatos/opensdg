@@ -15,10 +15,13 @@ definicion: subindicator.3-1-2-SERIE-A-definicion
 
 # Fórmula teórica escrita en formato MathJax
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-formula_teorica: x^2 + y^2 = 1
-unidad_medida: Porciento (%)
-fuentes_informacion: 
-periodicidad: 
+formula_teorica: '$$PPAR_{atendidos}^{t} = \frac{PAR_{atendidos}^{t}}{PAR^{t}} \cdot 100$$ <br>
+donde: <br>
+$PPAR_{atendidos}^{t} =$ partos atendidos por personal sanitario especializado en el año $t$ <br>
+$PAR^{t} =$ partos en el año $t$'
+unidad_medida: "Porcentaje"
+fuentes_informacion: "Estadística de nacimientos, Instituto Nacional de Estadística (INE)"
+periodicidad: "Anual"
 observaciones: 
 
 # Info de Gráficas
@@ -31,4 +34,7 @@ sort_order: 1
 
 # Nombre que tendrá la tab
 tab_name: Serie A
+
+#Coordinación con OCECAS
+coordinado_con_ocecas: true
 ---

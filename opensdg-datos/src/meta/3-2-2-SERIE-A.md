@@ -15,10 +15,15 @@ definicion: subindicator.3-2-2-SERIE-A-definicion
 
 # Fórmula teórica escrita en formato MathJax
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-formula_teorica: x^2 + y^2 = 1
-unidad_medida: Porciento (%)
-fuentes_informacion: 
-periodicidad: 
+formula_teorica: '$$TM_{neonatal}^{t} = \frac{D_{neonatales}^{t}}{N^{t}} \cdot 1.000$$ <br>
+donde: <br>
+$D_{neonatales}^{t} =$ defunciones de menores de 28 días cumplidos de vida en el año $t$ <br>
+$N^{t} =$ nacimientos en el año $t$'
+
+unidad_medida: "Tanto por 1.000"
+fuentes_informacion: "Estadística de defunciones, Instituto Nacional de Estadística (INE)<br>
+Estadística de nacimientos, Instituto Nacional de Estadística (INE)"
+periodicidad: "Anual"
 observaciones: 
 
 # Info de Gráficas
@@ -31,4 +36,7 @@ sort_order: 1
 
 # Nombre que tendrá la tab
 tab_name: Serie A
+
+#Coordinación con OCECAS
+coordinado_con_ocecas: true
 ---
