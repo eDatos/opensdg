@@ -1,7 +1,40 @@
-Year,Group,Value
-2015,A,1
-2015,B,3
-2015,,2
-2016,A,1
-2016,B,3
-2016,,2
+Year,Units,Territorio,Serie,Forma de medir el empleo,Value
+2010,Porcentaje,ES70,Serie A,Personas empleadas,-0.07
+2011,Porcentaje,ES70,Serie A,Personas empleadas,-1.93
+2012,Porcentaje,ES70,Serie A,Personas empleadas,-3.45
+2013,Porcentaje,ES70,Serie A,Personas empleadas,-1.83
+2014,Porcentaje,ES70,Serie A,Personas empleadas,0.26
+2015,Porcentaje,ES70,Serie A,Personas empleadas,2.41
+2016,Porcentaje,ES70,Serie A,Personas empleadas,2.13
+2017,Porcentaje,ES70,Serie A,Personas empleadas,2.63
+2018,Porcentaje,ES70,Serie A,Personas empleadas,1.22
+2019,Porcentaje,ES70,Serie A,Personas empleadas,0.37
+2010,Porcentaje,ES70,Serie B,Horas trabajadas,3.49
+2011,Porcentaje,ES70,Serie B,Horas trabajadas,1.24
+2012,Porcentaje,ES70,Serie B,Horas trabajadas,1.78
+2013,Porcentaje,ES70,Serie B,Horas trabajadas,0.57
+2014,Porcentaje,ES70,Serie B,Horas trabajadas,0.12
+2015,Porcentaje,ES70,Serie B,Horas trabajadas,-0.43
+2016,Porcentaje,ES70,Serie B,Horas trabajadas,-1.04
+2017,Porcentaje,ES70,Serie B,Horas trabajadas,0.31
+2018,Porcentaje,ES70,Serie B,Horas trabajadas,-0.42
+2010,Porcentaje,ES,Serie B,Horas trabajadas,2.54
+2011,Porcentaje,ES,Serie B,Horas trabajadas,1.48
+2012,Porcentaje,ES,Serie B,Horas trabajadas,1.93
+2013,Porcentaje,ES,Serie B,Horas trabajadas,1.44
+2014,Porcentaje,ES,Serie B,Horas trabajadas,0.3
+2015,Porcentaje,ES,Serie B,Horas trabajadas,0.79
+2016,Porcentaje,ES,Serie B,Horas trabajadas,0.45
+2017,Porcentaje,ES,Serie B,Horas trabajadas,0.87
+2018,Porcentaje,ES,Serie B,Horas trabajadas,-0.24
+2010,Porcentaje,ES,Serie A,Personas empleadas,-0.26
+2011,Porcentaje,ES,Serie A,Personas empleadas,-1.18
+2012,Porcentaje,ES,Serie A,Personas empleadas,-3.02
+2013,Porcentaje,ES,Serie A,Personas empleadas,-1.07
+2014,Porcentaje,ES,Serie A,Personas empleadas,1.69
+2015,Porcentaje,ES,Serie A,Personas empleadas,3.94
+2016,Porcentaje,ES,Serie A,Personas empleadas,2.94
+2017,Porcentaje,ES,Serie A,Personas empleadas,2.79
+2018,Porcentaje,ES,Serie A,Personas empleadas,2
+2019,Porcentaje,ES,Serie A,Personas empleadas,1.14
+2019,Porcentaje,ES,Serie B,Horas trabajadas,0.39

@@ -30,7 +30,7 @@ graph_type: bar
 
 # Info de navegación
 sort_order: 1
-tab_name: Serie A
+tab_name: 
 
 #Coordinación con OCECAS
 coordinado_con_ocecas: true
