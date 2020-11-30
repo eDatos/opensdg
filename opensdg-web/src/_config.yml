@@ -83,6 +83,8 @@ collections:
 # Menu
 menu:
   # Use these to customise the main navigation.
+  - path: /
+    translation_key: menu.inicio
   - path: /reporting-status
     # The "translation_key" refers to the key in the SDG Translations repository.
     translation_key: menu.reporting_status
@@ -92,6 +94,7 @@ menu:
     translation_key: menu.faq
   - path: /guidance
     translation_key: menu.guidance
+
 
 # Configure the text (or "translation key") to be used on the
 # non-global metadata tab.

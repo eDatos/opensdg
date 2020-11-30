@@ -262,17 +262,7 @@ function getCombinationDescription(combination, fallback) {
     if (keys.length === 0) {
         return fallback;
     }
-    var label = keys.map(function (key) {
-        // TODO EDATOS-3208: Usar una constante para la palabra Territorio.
-        if (key != "Territorio") {
-            return translations.t(combination[key]);
-        }
-    }).join(', ');
-    
-    if ("Territorio" in combination) {
-        label += `, ${translations.t(combination["Territorio"])}`;
-        label = label.replace(/, ,/gi, ',');
-    }
+    var label = keys.map((key) => translations.t(combination[key])).join(', ');
     return label;
 }
 
