@@ -34,7 +34,7 @@ graph_type: bar
 sort_order: 1
 
 # Nombre que tendrá la tab
-tab_name: Serie A
+tab_name: 
 
 #Coordinación con OCECAS
 coordinado_con_ocecas: true
