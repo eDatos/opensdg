@@ -9,11 +9,6 @@
 # -- replace "open-sdg-site-starter" with "my-awesome-site-repo"
 # -- replace "open-sdg-data-starter" with "my-awesome-data-repo"
 
-# Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
-#data_edit_url: http://prose.io/#open-sdg/open-sdg-data-starter/edit/develop/data/indicator_[id].csv
-# URL for the "Edit Metadata" button on indicators.
-#metadata_edit_url: http://prose.io/#open-sdg/open-sdg-data-starter/edit/develop/meta/[id].md
-
 remote_theme: open-sdg/open-sdg@1.1.0
 
 # Replace this title as needed.
@@ -70,7 +65,7 @@ country:
 
 # Optionally uncomment and update the settings below to control the frontpage heading and instructions.
 #frontpage_heading: Australian data for Sustainable Development Goal indicators
-#frontpage_instructions: Click on each goal, or <span id="jump-to-search"><a>search</a></span>, for Australian statistics for Sustainable Development Goal global indicators.
+#frontpage_instructions: ""
 
 # Pages
 collections:
@@ -95,6 +90,8 @@ menu:
     translation_key: menu.about
   - path: /faq
     translation_key: menu.faq
+  - path: /guidance
+    translation_key: menu.guidance
 
 # Configure the text (or "translation key") to be used on the
 # non-global metadata tab.
@@ -103,7 +100,6 @@ non_global_metadata: indicator.national_metadata
 # The list of languages that are translated. The first one is the default.
 languages:
   - es
-  - en
 
 # This makes sure that all pages have a language.
 defaults:
@@ -112,10 +108,11 @@ defaults:
     values:
       language: "es"
       header_image: "ISTAC_ODS_3.png"
+      header_text_image: "header_text_image.png"
       texto_serie_ocecas: "Indicador calculado utilizando una metodología armonizada entre los órganos centrales de estadística de las comunidades autónomas"
-      imagen_serie_ocecas: "logo_OCECAS_cubos_5_rbv_es.png"
+      imagen_serie_ocecas: "ocecas_metadata_image.jpg"
       texto_serie: "" # TODO EDATOS-3208: Se dejará esto en blanco hasta que se defina un texto.
-      imagen_serie : "ISTAC_ODS_4_es.png"
+      imagen_serie : "ISTAC_ODS_4_es.png" # TODO EDATOS-3222: Modificar esta imagen con el logo de la C del ISTAC pero bien
 
 
 # Set a base for all goal image URLs. Note that the full goal image path will be
