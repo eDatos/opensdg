@@ -3,27 +3,35 @@
 target_id: '3.4.1'
 reporting_status: complete
 data_non_statistical: false
-indicator_sort_order: 03-04-01-1a
+indicator_sort_order: 03-04-01-aa
 national_geographical_coverage: Canarias
 
 # Info de Subindicador
-indicator_name: 'Tasa de mortalidad atribuida a las enfermedades cardiovasculares'
-nombre: 'Tasa de mortalidad atribuida a las enfermedades cardiovasculares'
-indicador_onu_global: 3.4.1 Tasa de mortalidad atribuida a las enfermedades cardiovasculares, el cáncer, la diabetes o las enfermedades respiratorias crónicas
-meta_global: 3.4 De aquí a 2030, reducir en un tercio la mortalidad prematura por enfermedades no transmisibles mediante su prevención y tratamiento, y promover la salud mental y el bienestar
-objetivo_global: 3 Garantizar una vida sana y promover el bienestar de todos a todas las edades
-definicion: 'Tasa de mortalidad atribuida a las enfermedades cardiovasculares'
-formula_teorica: x^2 + y^2 = 1
-unidad_medida: Por 100,000 habitantes
-fuentes_informacion: 
-periodicidad: 
+nombre: subindicator.3-4-1-SERIE-A-nombre
+indicador_onu_global: global_indicators.3-4-1-title
+meta_global: global_targets.3-4-title
+objetivo_global: global_goals.3-title
+definicion: subindicator.3-4-1-SERIE-A-definicion
+
+formula_teorica: '$$TM_{cardiovasculares}^{t} = \frac{D_{cardiovasculares}^{t}}{P^{t}} \cdot 100.000$$ <br>
+donde: <br>
+$D_{cardiovasculares}^{t} =$ defunciones atribuidas a enfermedades cardiovasculares (códigos I00-I99 de la CIE-10) en el año $t$ <br>
+$P^{t} =$ población a 1 de julio del año $t$'
+unidad_medida: "Tanto por 100.000"
+fuentes_informacion: "Estadística de defunciones según la causa de muerte, Instituto Nacional de Estadística<br>
+Cifras de población, Instituto Nacional de Estadística (INE)"
+periodicidad: "Anual"
 observaciones: 
 
 # Info de Gráficas
-graph_title: 'Tasa de mortalidad atribuida a las enfermedades cardiovasculares'
+graph_title: subindicator.3-4-1-SERIE-A-graph-title
 graph_type: bar
 
 # Info de navegación
 sort_order: 1
 tab_name: Serie A
+
+#Coordinación con OCECAS
+coordinado_con_ocecas: true
+
 ---

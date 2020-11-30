@@ -44,24 +44,91 @@ function getNumberOfObjetives(data) {
     return [...new Set(data.Objetivo)].length;
 }
 
-function getCanariasDataset(data) {
-    var size = data.Value.length;
+/**
+ * Devuelve los índices de un territorio dado
+ * @param {JSON} data 
+ * @param {String} territory
+ */
+function getIndexes(data, territory) {
+    return data.Territorio.map(function(territorio, index) {
+        if (territorio == territory) {
+            return index;
+        }
+    });
+}
+
+/**
+ * Devuelve los índices de Canarias
+ * @param {JSON} data 
+ */
+ function getCanariasIndexes(data) {
+    return getIndexes(data, "ES70"); // Se utiliza como territorio su código NUTS2
+}
+
+/**
+ * Devuelve los datos de canarias
+ * @param {JSON} data 
+ */
+function getCanariasData(data) {
     if (hasTerritorio(data)) {
-        size /= 2;
+        var canariasIndexes = getCanariasIndexes(data);
+        return data.Value.map(function (value, index) {
+            if (canariasIndexes.includes(index)) {
+                return value;
+            }
+        }).filter(function(x) {
+            return x !== undefined;
+        });
+    } else {
+        return data.Value;
     }
+}
+
+/**
+ * Devuelve el dataset de Canarias
+ * @param {JSON} data 
+ */
+function getCanariasDataset(data) {
     return {
         label: "{{ subindicator.unidad_medida }} Canarias",
-        data: data.Value.slice(0, size),
+        data: getCanariasData(data),
         backgroundColor: 'rgba(122,122,122,0.5)',
         borderColor: 'rgba(77,77,77,1)',
         borderWidth: 1
     };
 }
 
+/**
+ * Devuelve los índices de España
+ * @param {JSON} data 
+ */
+function getEspanaIndexes(data) {
+    return getIndexes(data, "ES"); // Se utiliza como territorio su código NUTS2
+}
+
+/**
+ * Devuelve los datos de España
+ * @param {JSON} data 
+ */
+function getEspanaData(data) {
+    var espanaIndexes = getEspanaIndexes(data);
+    return data.Value.map(function(value, index) {
+        if (espanaIndexes.includes(index)) {
+            return value;
+        }
+    }).filter(function(x) {
+        return x !== undefined;
+    });
+}
+
+/**
+ * Devuelve el dataset de España
+ * @param {JSON} data 
+ */
 function getEspanaDataset(data) {
     return {
         label: "{{ subindicator.unidad_medida }} España",
-        data: data.Value.slice((data.Value.length / 2), data.Value.length),
+        data: getEspanaData(data),
         type: 'line',
         pointRadius: 3,
         borderColor: 'rgb(0,0,255)',
@@ -71,6 +138,10 @@ function getEspanaDataset(data) {
     };
 }
 
+/**
+ * Devuelve el dataset de la media
+ * @param {JSON} data 
+ */
 function getMeanDataset(data) {
     /**
      * Calcula la media
@@ -83,14 +154,11 @@ function getMeanDataset(data) {
             return 0;
         }
     }
-    var size = data.Value.length;
-    if (hasTerritorio(data)) {
-        size /= 2;
-    }
-    var meanQuant = mean(data.Value.slice(0, size));
+    var canariasData = getCanariasData(data);
+    var meanQuant = mean(canariasData);
     return {
         label: `Media ${meanQuant.toFixed(2)} {{ subindicator.unidad_medida }}`,
-        data: new Array(size).fill(meanQuant),
+        data: new Array(canariasData.length).fill(meanQuant),
         type: 'line',
         pointRadius: 0,
         borderColor: 'rgb(255,0,0)',
@@ -99,10 +167,12 @@ function getMeanDataset(data) {
     };
 }
 
+/**
+ * Devuelve los datasets necesarios dependiendo del tipo de datos pasados en el CSV
+ * @param {JSON} data 
+ */
 function getDatasets(data) {
     var datasets = [];
-    // var numberOfTerritories = getNumberOfTerritories(data) ? hasTerritorio(data) : 0; // No se hará generalista por ahora
-    //var numberOfObjetives = getNumberOfObjetives(data) ? hasObjetivo(data) : 0; // Se evitarán los objetivos por ahora
     datasets.push(getCanariasDataset(data));
     if (hasTerritorio(data)) {
         datasets.push(getEspanaDataset(data));

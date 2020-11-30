@@ -90,9 +90,9 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
 
 function getLegendLabel(data) {
   if (data[0].Serie != undefined) {
-      return data[0].Serie
+    return data[0].Serie + ". ";
   }
-  return "Sin Serie";
+  return "";
 }
 
 /**
@@ -258,13 +258,12 @@ function getBaseDataset() {
 * @return {string} Human-readable description of combo
 */
 function getCombinationDescription(combination, fallback) {
-  var keys = Object.keys(combination).sort();
-  if (keys.length === 0) {
-      return fallback;
-  }
-  return keys.map(function (key) {
-      return translations.t(combination[key]);
-  }).join(', ');
+    var keys = Object.keys(combination).sort();
+    if (keys.length === 0) {
+        return fallback;
+    }
+    var label = keys.map((key) => translations.t(combination[key])).join(', ');
+    return label;
 }
 
 /**

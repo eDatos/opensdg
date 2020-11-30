@@ -46,6 +46,10 @@ var indicatorModel = function (options) {
    * @param {Array} edgeArray 
    */
   function fixEdges(edgeArray) {
+    if (edgeArray.length <= 1) {
+      return [];
+    }
+
     var auxEdgeArray = [].concat(edgeArray);
     for (var i = 0; i < auxEdgeArray.length; i++) {
       if (auxEdgeArray[i].To == "Serie") {

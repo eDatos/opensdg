@@ -238,8 +238,31 @@ var indicatorView = function (model, options) {
         }
     }
 
+    /**
+     * Devuelve el índice de un territorio concreto dentro de los campos de territorio.
+     * @param {Array<Object>} fieldsTerritorio 
+     * @param {String} territorio 
+     */
+    function getIndexOfTerritorioComunidad(fieldsTerritorio, territorio) {
+        return fieldsTerritorio.values.map((v) => v.value).indexOf(territorio);
+    }
+
+    /**
+     * Devuelve el índice del campo de Territorios dentro de los campos.
+     * @param {Array<Object>} fields 
+     */
+    function getIndexOfTerritorio(fields) {
+        return fields.map((f) => f.field).indexOf("Territorio");
+    }
+
     this.initialiseFields = function (args) {
         if (args.fields.length) {
+            // TODO EDATOS-3208: Aquí hacer la ordenación de los territorios para que ESPAÑA y CANARIAS aparezcan primero.
+            // var territorioIndex = getIndexOfTerritorio(args.fields);
+            // if (territorioIndex >= 0) {
+            //     console.log(args.fields);
+            // }
+
             var template = _.template($("#item_template").html());
 
             if (!$('button#clear').length) {
@@ -425,7 +448,7 @@ var indicatorView = function (model, options) {
                             text.push('<span class="swatchBar' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.pointBorderColor + '"></span>');
                         }
 
-                        text.push("<i>" + dataset.label_serie + ". " + translations.t(dataset.label) + "</i>");
+                        text.push("<i>" + dataset.label_serie + translations.t(dataset.label) + "</i>");
                         text.push('</li>');
                     });
 

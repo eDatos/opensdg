@@ -485,9 +485,9 @@
 3-7-1-graph-title: 
 3-7-1-definition:
 3-7-2-title: "Tasa de fecundidad de las adolescentes (entre 10 y 14 años y entre 15 y 19 años) por cada 1.000 mujeres de ese grupo de edad"
-3-7-2-graph-title: "Tasa de fecundidad de las adolescentes por cada 1.000 mujeres de un grupo de edad según rangos de edad"
+3-7-2-graph-title: "Tasa de fecundidad de las adolescentes según grupo de edad por cada 1.000 mujeres de ese grupo de edad"
 3-7-2-definition:
-3-8-1-title: "Cobertura de los servicios de salud esenciales (definida como la cobertura media de los servicios esenciales entre la población general y los más desfavorecidos, calculada a partir de intervenciones trazadoras como las relacionadas con la salud reproductiva, materna, neonatal e infantil, las enfermedades infecciosas, las enfermedades no transmisibles y la capacidad de los servicios y el acceso a ellos)"
+3-8-1-title: "Cobertura de los servicios de salud esenciales"
 3-8-1-graph-title: "Proporción de personas de 16 y más años con necesidad insatisfecha de atención médica"
 3-8-1-definition:
 3-8-2-title: "Proporción de la población con grandes gastos sanitarios por hogar como porcentaje del total de gastos o ingresos de los hogares"
@@ -533,7 +533,7 @@
 4-3-1-graph-title: "Tasa de participación de los jóvenes y adultos en la enseñanza y formación académica y no académica"
 4-3-1-definition:
 4-4-1-title: "Proporción de jóvenes y adultos con competencias en tecnología de la información y las comunicaciones (TIC), desglosada por tipo de competencia técnica"
-4-4-1-graph-title: "Proporción de personas que han utilizado alguna habilidad informática en los últimos 12 meses según rangos de edad"
+4-4-1-graph-title: "Proporción de personas que han utilizado alguna habilidad informática en los últimos 12 meses según grupos de edad"
 4-4-1-definition:
 4-5-1-title: "Índices de paridad (entre mujeres y hombres, zonas rurales y urbanas, quintiles de riqueza superior e inferior y grupos como los discapacitados, los pueblos indígenas y los afectados por los conflictos, a medida que se disponga de datos) para todos los indicadores educativos de esta lista que puedan desglosarse"
 4-5-1-graph-title: "Índices de paridad (entre mujeres y hombres, zonas rurales y urbanas, quintiles de riqueza superior e inferior y grupos como los discapacitados, los pueblos indígenas y los afectados por los conflictos, a medida que se disponga de datos) para todos los indicadores educativos de esta lista que puedan desglosarse"
@@ -583,9 +583,12 @@
 5-6-2-title: "Número de países con leyes y reglamentos que garantizan a los hombres y las mujeres a partir de los 15 años de edad un acceso pleno e igualitario a los servicios de salud sexual y reproductiva y a la información y educación al respecto"
 5-6-2-graph-title: 
 5-6-2-definition:
-5-a-1-title: "a) Proporción del total de la población agrícola con derechos de propiedad o derechos seguros sobre tierras agrícolas, desglosada por sexo; y b) proporción de mujeres entre los propietarios o los titulares de derechos sobre tierras agrícolas, desglosada por tipo de tenencia"
-5-a-1-graph-title: "a) Proporción de titulares de explotaciones agrícolas, respecto al total de personas trabajadoras en la agricultura, según sexo; y b) Proporción de mujeres titulares de explotaciones agrícolas, respecto al total de titulares de explotaciones agrícolas, según tipo de tenencia"
-5-a-1-definition:
+5-a-1a-title: "Proporción del total de la población agrícola con derechos de propiedad o derechos seguros sobre tierras agrícolas, desglosada por sexo"
+5-a-1a-graph-title: "Proporción de titulares de explotaciones agrícolas, respecto al total de personas trabajadoras en la agricultura, según sexo"
+5-a-1a-definition:
+5-a-1b-title: "Proporción de mujeres entre los propietarios o los titulares de derechos sobre tierras agrícolas, desglosada por tipo de tenencia"
+5-a-1b-graph-title: "Proporción de mujeres titulares de explotaciones agrícolas, respecto al total de titulares de explotaciones agrícolas, según tipo de tenencia"
+5-a-1b-definition:
 5-a-2-title: "Proporción de países cuyo ordenamiento jurídico (incluido el derecho consuetudinario) garantiza la igualdad de derechos de la mujer a la propiedad o el control de las tierras"
 5-a-2-graph-title: 
 5-a-2-definition:
