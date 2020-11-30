@@ -1,0 +1,63 @@
+{% include head.html %}
+{% include header.html %}
+
+<div id="main-content" class="container" role="main">
+
+    {% if site.frontpage_introduction_banner %}
+    <div class="site-intro spacer medium">
+        <h1>{{ site.frontpage_introduction_banner.title | t }}</h1>
+        <p class="lead-copy">{{ site.frontpage_introduction_banner.description | t }}</p>
+    </div>
+    {% endif %}
+
+    {% assign country_name = site.country.name | t %}
+    {% assign heading_default = page.t.frontpage.heading | replace: '%name', country_name %}
+    <h2 class="spacer medium">{{ site.frontpage_heading | default: heading_default | t }}</h2>
+
+    <div class='row'>
+        <div class='col-md-8'>
+            En el año 2015 la ONU aprobó la Agenda 2030 sobre el desarrollo sostenible, en la que se fijaron 17
+            objetivos y 169 metas, que incluyen desde la eliminación de la pobreza hasta el combate al cambio climático,
+            la educación, la igualdad de la mujer, la defensa del medio ambiente o el diseño de nuestras ciudades. Para
+            su seguimiento, se diseñaron 232 indicadores que pueden medirse a través de las series estadísticas que aquí
+            se recogen.
+            Las series estadísticas mostradas están armonizadas y son comparables entre las distintas autonomías al ser
+            fruto del trabajo conjunto de los diferentes Órganos Centrales de Estadística de las Comunidades Autónomas
+            (OCECAS). A su vez, en línea con la política de datos abiertos del ISTAC, las series pueden descargase en
+            formatos abiertos y reutilizarse según la licencia del Instituto.
+            A medida que se disponga de nuevos datos se incorporarán nuevas series.
+        </div>
+        <div class='col-md-3'>
+            <img id="header_text_image" src="{{ site.baseurl }}/assets/img/{{ page.header_text_image }}"/>
+        </div>
+    </div>
+    <hr><br>
+    Haga clic en cada objetivo, o busque, para consultar las estadísticas de Canarias para los indicadores globales de
+    los Objetivos de Desarrollo Sostenible.
+
+    <div class="goal-tiles">
+        {% for goal in page.goals %}
+        {% cycle 'add row' : '<div class="row no-gutters">', '', '', '', '', '' %}
+        <div class="col-xs-4 col-md-2">
+            <a href="{{ goal.url }}">
+                <img src="{{ goal.icon }}" id="goal-{{ goal.number }}"
+                    alt="{{ goal.short | escape }} - {{ page.t.general.goal }} {{ goal.number }}" />
+            </a>
+        </div>
+        {% cycle 'end row' : '', '', '', '', '', '</div>' %}
+        {% endfor %}
+        {% comment %}
+        If there were exactly 17 goals, "pad" it with 1 more, to make it come
+        out more symmetrically.
+        {% endcomment %}
+        {% if page.goals.size == 17 %}
+        <div class="col-xs-4 col-md-2">
+            <img src="{{ site.goal_image_base }}/{{ page.language }}/18.png" id="goal-18"
+                alt="The Global Goals for Sustainable Development" />
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% include components/download-all-data.html %}
+</div>
+{% include footer.html %}
