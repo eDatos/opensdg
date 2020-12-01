@@ -258,7 +258,12 @@ function getBaseDataset() {
 * @return {string} Human-readable description of combo
 */
 function getCombinationDescription(combination, fallback) {
-    var keys = Object.keys(combination).sort();
+    var keys = Object.keys(combination).sort((a,b) => {
+      if (a == "Territorio") return 1;
+      else if (b == "Territorio") return -1;
+      else return 0;
+    });
+
     if (keys.length === 0) {
         return fallback;
     }
