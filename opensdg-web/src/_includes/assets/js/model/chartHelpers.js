@@ -253,20 +253,37 @@ function getBaseDataset() {
 }
 
 /**
+ * Devuelve las claves en el orden correcto para su combinación en forma de leyenda.
+ * Se utiliza para reordenar las leyendas en caso de ser necesario.
+ * @param {Array} keys 
+ */
+function getFixedCombinationKeys(keys) {
+    var keysWhichNeedsToMove = ["Territorio"];
+    // Se hace la intersección entre los conjuntos de claves y claves que necesitan moverse.
+    if (new Set(keys).intersection(new Set(keysWhichNeedsToMove)).size > 0) {
+
+        // Se eliminan las claves que hay que mover
+        var fixedKeys = keys.filter((a) => !keysWhichNeedsToMove.includes(a))
+
+        // Se colocan las claves donde deban ir
+        fixedKeys.push("Territorio");
+        
+        return fixedKeys;
+    }
+    return keys;
+}
+
+/**
 * @param {Object} combination Key/value representation of a field combo
 * @param {string} fallback
 * @return {string} Human-readable description of combo
 */
 function getCombinationDescription(combination, fallback) {
-    var keys = Object.keys(combination).sort((a,b) => {
-      if (a == "Territorio") return 1;
-      else if (b == "Territorio") return -1;
-      else return 0;
-    });
-
+    var keys = Object.keys(combination).sort();
     if (keys.length === 0) {
         return fallback;
     }
+    keys = getFixedCombinationKeys(keys);
     var label = keys.map((key) => translations.t(combination[key])).join(', ');
     return label;
 }
