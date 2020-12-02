@@ -3,7 +3,7 @@ title: INDICADORES PARA LOS OBJETIVOS DE DESARROLLO SOSTENIBLE 2030 A NIVEL DE C
 permalink: /guidance/
 layout: page
 ---
-<p align="justify">
+<p class="justified-text">
     En el año 2015 la ONU aprobó la Agenda 2030 sobre el desarrollo sostenible, en la que se fijaron 17 objetivos, que incluyen desde la eliminación de la pobreza hasta el combate al cambio climático, la educación, la igualdad de la mujer, la defensa del medio ambiente o el diseño de nuestras ciudades. Cada uno de estos objetivos contiene una serie de metas específicas, que particularizan las acciones a desarrollar.
 
     A partir de esta aprobación, distintos organismos se han ido sumando a la misma a todos los niveles institucionales, desde organismos multinacionales a locales.
@@ -25,13 +25,4 @@ layout: page
 
 <br>
 
-<style>
-    .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-    }
-</style>
-
-<img class="center" src="{{ site.baseurl }}/assets/img/{{ page.header_text_image }}" width="400"/>
+<img class="center-image" src="{{ site.baseurl }}/assets/img/{{ page.header_text_image }}" width="400"/>
