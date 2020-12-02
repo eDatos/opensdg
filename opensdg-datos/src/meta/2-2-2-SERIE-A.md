@@ -14,14 +14,13 @@ objetivo_global: global_goals.2-title
 definicion: subindicator.2-2-2-SERIE-A-definicion
 
 # Fórmula teórica escrita en formato MathJax
-# https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
 formula_teorica: '$$PPM_{2-17}^{t} = \frac{PM_{2-17}^{t}}{P_{2-17}^{t}} \cdot 100$$ <br>
 donde: <br>
 $PPM_{2-17}^{t} =$ población entre 2 y 17 años con malnutrición en el año $t$ <br>
 $P_{2-17}^{t} =$ población entre 2 y 17 años en el año $t$'
 unidad_medida: "Porcentaje"
-fuentes_informacion: "Encuesta de condiciones de vida, Instituto Nacional de Estadística (INE)"
-periodicidad: Anual
+fuentes_informacion: "Encuesta nacional de salud, Instituto Nacional de Estadística (INE) y Ministerio de Sanidad"
+periodicidad: "Quinquenal"
 observaciones: "La población malnutrida es aquella que tiene obesidad (IMC>=30), sobrepeso (25<=IMC<30) o peso insuficiente (IMC<18,5), donde IMC es el índice de masa corporal, que se obtiene dividiento el peso (kg) por el cuadrado de la estatura (m).<br>
 La nota siguiente es variable en función de los datos que se publiquen:<br>
 Los resultados de la Encuesta nacional de salud 2011-2012 se han imputado a ambos años.<br>
@@ -33,9 +32,7 @@ graph_title: subindicator.2-2-2-SERIE-A-graph-title
 graph_type: bar
 
 # Info para las tabs
-# Orden en que se mostrará esta tab...
 sort_order: 1
-# Nombre que tendrá la tab
 tab_name: 
 
 #Coordinación con OCECAS
