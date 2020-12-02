@@ -145,11 +145,11 @@ function getEspanaDataset(data) {
 function getMeanDataset(data) {
     /**
      * Calcula la media
-     * @param {Array<Float>} value 
+     * @param {Array<Float>} data 
      */
-    function mean(value) {
-        if (value.length > 0) {
-            return Array.from(value).reduce((a, b) => a + b) / value.length;
+    function mean(data) {
+        if (data.length > 0) {
+            return Array.from(data).reduce((a, b) => a + b) / data.length;
         } else {
             return 0;
         }
@@ -158,7 +158,7 @@ function getMeanDataset(data) {
     var meanQuant = mean(canariasData);
     return {
         label: `Media ${meanQuant.toFixed(2)} {{ subindicator.unidad_medida }}`,
-        data: new Array(canariasData.length).fill(meanQuant),
+        data: new Array(canariasData.length).fill(meanQuant.toFixed(2)),
         type: 'line',
         pointRadius: 0,
         borderColor: 'rgb(255,0,0)',
