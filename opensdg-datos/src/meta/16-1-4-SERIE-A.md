@@ -14,7 +14,7 @@ meta_global: global_targets.16-1-title
 objetivo_global: global_goals.16-title
 definicion: subindicator.16-1-4-SERIE-A-definicion
 
-formula_teorica: '$$PPSSC_{16+}^{t} = \frac{PSSC_{16+}^{t}}{P_{16+}^{t}}} \cdot 100$$ <br>
+formula_teorica: '$$PPSSC_{16+}^{t} = \frac{PSSC_{16+}^{t}}{P_{16+}^{t}} \cdot 100$$ <br>
 donde: <br>
 $PSSC_{16+}^{t} =$ población de 16 y más años que se siente segura (muy o bastante segura) al caminar solaen su zona de residencia en el año $t$ <br>
 $P^{t} =$ población de 16 y más años en el año $t$'
