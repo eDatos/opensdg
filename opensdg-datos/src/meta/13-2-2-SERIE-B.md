@@ -14,7 +14,7 @@ meta_global: global_targets.13-2-title
 objetivo_global: global_goals.13-title
 definicion: subindicator.13-2-2-SERIE-B-definicion
 
-formula_teorica: '$$PPEBEGEI^{t} = \frac{EGEI^{t}}{P^{t}}}$$ <br>
+formula_teorica: '$$PPEBEGEI^{t} = \frac{EGEI^{t}}{P^{t}}$$ <br>
 donde: <br>
 $EGEI^{t} =$ emisiones totales de gases de efecto invernadero de las unidades económicas residentes en el año $t$ (se distribuye el total nacional de emisiones totales de gases de efecto invernadero de la Cuenta de emisiones a la atmósfera en función de las emisiones totales de gases de efecto invernadero por comunidades autónomas del Inventario nacional de gases de efecto invernadero (GEI))<br>
 $P^{t} =$ población a 1 de julio en el año $t$'
