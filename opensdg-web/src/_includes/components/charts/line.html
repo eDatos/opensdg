@@ -22,11 +22,6 @@ the Chart.js configuration being used, see `createPlot()` in `indicatorView.js`.
                                 minimumFractionDigits: 2
                             }).format(tooltipItems.yLabel);
                             var labelNombre = data.datasets[tooltipItems.datasetIndex].label;
-
-                            // if (labelNombre.length > 110) {
-                            //     labelNombre = labelNombre.slice(0, 110);
-                            // }
-
                             return labelNombre + ' : ' + labelNumero;
                         }
                     },
