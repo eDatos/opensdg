@@ -9,10 +9,13 @@ the Chart.js configuration being used, see `createPlot()` in `indicatorView.js`.
 
 <style>
     .dot {
-        height: 2rem;
-        width: 2rem;
+        height: 1.5rem;
+        width: 1.5rem;
         border-radius: 50%;
         display: inline-block;
+        border-width: 0.2rem;
+        background-color: whitesmoke;
+        border-style: solid;
     }
 </style>
 <script>
@@ -82,12 +85,11 @@ the Chart.js configuration being used, see `createPlot()` in `indicatorView.js`.
                             innerHtml += '</thead><tbody>';
 
                             bodyLines.forEach(function (body, i) {
+                                
                                 var colors = tooltipModel.labelColors[i];
-                                var style = 'background:' + colors.backgroundColor;
-                                style += '; border-color:' + colors.borderColor;
-                                style += '; border-width: 5px';
+                                var style = 'border-color:' + colors.borderColor;
                                 var span = '<span class="dot" style="' + style + '"></span>';
-                                innerHtml += '<tr><td>' + span + body + '</td></tr>';
+                                innerHtml += '<tr><td>' + span + "  " + body + '</td></tr>';
                             });
                             innerHtml += '</tbody>';
 
