@@ -6,18 +6,6 @@ the Chart.js configuration being used, see `createPlot()` in `indicatorView.js`.
 {% include components/charts/canvas.html %}
 {% include components/charts/graph_limits.html %}
 {% include components/charts/graph_annotations.html %}
-
-<style>
-    .dot {
-        height: 1.5rem;
-        width: 1.5rem;
-        border-radius: 50%;
-        display: inline-block;
-        border-width: 0.2rem;
-        background-color: whitesmoke;
-        border-style: solid;
-    }
-</style>
 <script>
     // For line charts, add the vertical line hover functionality.
     opensdg.chartConfigAlter(function (config, info) {

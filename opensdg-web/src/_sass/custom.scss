@@ -1155,3 +1155,13 @@ body {
 #formula_teorica_container {
   display: none;
 }
+
+.dot {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  border-width: 0.2rem;
+  background-color: whitesmoke;
+  border-style: solid;
+}
