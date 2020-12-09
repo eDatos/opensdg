@@ -1,5 +1,6 @@
 const HEADER = "HEADER";
 const FOOTER = "FOOTER";
+const DEMO = false;
 
 function renderElement(elementId, htmlCode) {
     document.getElementById(elementId).innerHTML = htmlCode;
@@ -37,7 +38,8 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '') {
                 fetch(appHtmlUrl, fetchOptions)
                     .then(res => res.text())
                     .then(html => {
-                        html.replace('<a href>', `<a href="${baseUrl}">`);
+                        html = html.replace('<a href>', `<a href="${baseUrl}">`);
+                        html = html.replace('INICIO', 'Más aplicaciones');
                         cacheHtmlCode(elementId, html);
                         renderElement(elementId, html);
                     });
@@ -45,11 +47,32 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '') {
     });
 }
 
+function setElementRutineDemo(elementType, elementId, configPath, baseUrl = '') {
+    var appHtmlUrl = `http://localhost:10000/${elementType.toLowerCase()}.html`;
+    var fetchOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'text/html',
+        }
+    }
+    fetch(appHtmlUrl, fetchOptions)
+        .then(res => res.text())
+        .then(html => {
+            html = html.replace('<a href>', `<a href="${baseUrl}">`);
+            html = html.replace('INICIO', 'Más aplicaciones');
+            renderElement(elementId, html);
+        });
+}
+
 function setElement(elementType, elementId, configPath, baseUrl = '') {
     var cachedData = sessionStorage.getItem(elementId);
-    if (cachedData != null) {
-        renderElement(elementId, cachedData);
+    if (DEMO) {
+        setElementRutineDemo(elementType, elementId, configPath, baseUrl);
     } else {
-        setElementRutine(elementType, elementId, configPath, baseUrl);
+        if (cachedData != null) {
+            renderElement(elementId, cachedData);
+        } else {
+            setElementRutine(elementType, elementId, configPath, baseUrl);
+        }
     }
 }
