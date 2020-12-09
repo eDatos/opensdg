@@ -67,9 +67,10 @@ module Jekyll::CustomFilters
         fix_data(reporting_data['overall'], filtered_indicators)
         puts get_indicators_goal(filtered_indicators, 1).map { |i| i['number'] }
         
-        for goal in 1..17 do # 17 Objetivos
+        (1..17).step(1) do |goal| # 17 Objetivos
             fix_objetive_data(reporting_data['goals'][goal - 1], filtered_indicators, goal)
         end
+        nil
     end
 end
 

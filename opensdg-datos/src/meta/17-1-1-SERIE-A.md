@@ -16,7 +16,6 @@ definicion: subindicator.17-1-1-SERIE-A-definicion
 
 formula_teorica: '$$PPIBIAP^{t} = \frac{I_{CCAA}^{t}+I_{EELL}^{T}-TC_{CCAA a EELL}^{t}-TC_{EELL a CCAA}^{t}-TK_{CCAA a EELL}^{t}-TK_{EELL a CCAA}^{t}}{PIB^{t}} \cdot 100$$ <br>
 donde: <br>
-
 $I_{CCAA}^{t} =$ ingresos (derechos reconocidos netos) en la liquidación de presupuestos consolidados de la comunidad autónoma en el año $t$ <br>
 $I_{EELL}^{T} =$ ingresos (derechos reconocidos netos) en la liquidación de presupuestos consolidados de las entidades locales de la comunidad autónoma en el año $t$ <br>
 $TC_{CCAA a EELL}{t} =$ gastos en transferencias corrientes a las entidades locales (obligaciones reconocidas netas) en la liquidación de los presupuestos consolidados de la comunidad autónoma en el año $t$ <br>
