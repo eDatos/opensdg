@@ -9,14 +9,14 @@
             <th>{{ site.data.translations[page.language].metadata_fields[indicator_metadata.name] }}</th>
 
             {% if indicator_metadata.name == 'formula_teorica' %}
-                <td id="formula_teorica_container"><p class="justified-text">{{ subindicator[indicator_metadata.name] }}</p></td>
+                <td id="formula_teorica_container{{ subindicator['number'] }}"><p class="justified-text">{{ subindicator[indicator_metadata.name] }}</p></td>
                 <script>
                     var codigoFormulaTeorica = "{{ subindicator[indicator_metadata.name] }}";
                     var numeroDeFormulasTeoricas = (codigoFormulaTeorica.match(/\$+(.*?)\$+/g) || []).length;
-                    $('#formula_teorica_container').bind('DOMNodeInserted', function() {
-                        var numeroFormulasCreadas = ($('#formula_teorica_container').html().match(/\<mjx-container/g) || []).length;
+                    $('#formula_teorica_container{{ subindicator["number"] }}').bind('DOMNodeInserted', function() {
+                        var numeroFormulasCreadas = ($('#formula_teorica_container{{ subindicator["number"] }}').html().match(/\<mjx-container/g) || []).length;
                         if (numeroFormulasCreadas >= numeroDeFormulasTeoricas) {
-                            $('#formula_teorica_container').fadeIn(1000);
+                            $('#formula_teorica_container{{ subindicator["number"] }}').fadeIn(1000);
                         }
                         return;
                     });
