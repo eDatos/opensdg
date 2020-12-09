@@ -7,6 +7,10 @@ the Chart.js configuration being used, see `createPlot()` in `indicatorView.js`.
 {% include components/charts/graph_limits.html %}
 {% include components/charts/graph_annotations.html %}
 <script>
+    // Medida extraída del ancho para las columnas md de Bootstra
+    // https://getbootstrap.com/docs/4.0/layout/grid/#grid-options
+    const MD_SCREEN_MEDIA_WIDTH = 768;
+
     // For line charts, add the vertical line hover functionality.
     opensdg.chartConfigAlter(function (config, info) {
         var overrides = {
@@ -87,7 +91,7 @@ the Chart.js configuration being used, see `createPlot()` in `indicatorView.js`.
                         tooltipEl.style.opacity = 1;
                         tooltipEl.style.position = 'absolute';
                         
-                        if (screen.width < 800) {
+                        if (screen.width <= MD_SCREEN_MEDIA_WIDTH) {
                             tooltipEl.style.left = position.left + window.pageXOffset + 'px';
                             tooltipEl.style.top = position.top + window.pageYOffset + 'px';
                         } else {
