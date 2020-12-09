@@ -4,14 +4,15 @@ permalink: /faq/
 layout: page
 ---
 
-## ¿Qué significa el estado de reporte?
+## ¿Qué significa el informe de disponibilidad de los datos general?
 <p class="justified-text">
-    Hemos utilizado tres tipos diferentes de estados de reporte para un indicador los cuales siguen, además, una estructura de colores predeterminada:
+    Hemos utilizado cuatro tipos diferentes de estados para un indicador los cuales siguen, además, una estructura de colores predeterminada:
 </p>
 
-* <p class="justified-text">Reportado online (verde) – como mínimo, los datos principales para este indicador, están disponibles en la web, pero los datos pueden no estar completamente desagregados/desglosados todavía.</p>
-* <p class="justified-text">Estadísticas en progreso (ámbar) – hemos encontrado una fuente de datos adecuada para este indicador o un proxy relevante a nivel nacional. Nos encontramos asegurando la calidad de los datos y preparándolos para su publicación.</p>
+* <p class="justified-text">Disponible (verde) – como mínimo, los datos principales para este indicador, están disponibles en la web, pero los datos pueden no estar completamente desagregados/desglosados todavía.</p>
+* <p class="justified-text">En progreso (ámbar) – hemos encontrado una fuente de datos adecuada para este indicador o un proxy relevante. Nos encontramos asegurando la calidad de los datos y preparándolos para su publicación.</p>
 * <p class="justified-text">Explorando fuentes de datos (rojo) – todavía estamos buscando una fuente de datos adecuada para este indicador.</p>
+* <p class="justified-text">No procede (gris) - Ciertos indicadores de relevancia internacional no pueden calcularse de manera significativa para Canarias o solo pueden responderse en un contexto global.</p>
 
 <p class="justified-text">Cuando exista información adicional sobre el estado de la recopilación y presentación de informes de datos de indicadores, se mostrará en la parte superior de la página correspondiente al indicador.</p>
 
@@ -23,7 +24,7 @@ layout: page
 
 
 ## ¿Cómo de accesible es esta web?
-<p class="justified-text">Nuestro objetivo es hacer esta web lo más "accesible" y "usable" posible. Estamos trabajando para conseguir un nivel AA de accesibilidad referenciado en las <a href="https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag-20">Guías de accesibilidad para contenido (WCAG 2.0)</a></p>
+<p class="justified-text">Nuestro objetivo es hacer esta web lo más "accesible" y "usable" posible. Estamos trabajando para conseguir un nivel AA de accesibilidad referenciado en las <a href="https://administracionelectronica.gob.es/pae_Home/pae_Estrategias/pae_Accesibilidad/pae_normativa/pae_eInclusion_Normas_Accesibilidad.html#.X8Uki7MWWUk">Guías de accesibilidad para contenido (WCAG 2.1)</a></p>
 
 ## ¿Qué exploradores puedo utilizar para ver esta web?
 <p class="justified-text">Nuestra web funciona con la mayoría de las últimas versiones de los exploradores más utilizados. Existen algunas incidencias conocidas al utilizar versiones antíguas de exploradores, como por ejemplo IE8. Estamos trabajando para solucionar estas incidencias lo antes posible.</p>

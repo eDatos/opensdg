@@ -1,5 +1,5 @@
 ---
-title: INDICADORES PARA LOS OBJETIVOS DE DESARROLLO SOSTENIBLE 2030 A NIVEL DE COMUNIDAD AUTÓNOMA
+title: Indicadores para los Objetivos de Desarrollo Sostenible 2030 a nivel de Comunidad Autónoma
 permalink: /guidance/
 layout: page
 ---

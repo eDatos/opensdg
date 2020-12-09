@@ -1,8 +1,8 @@
-exploring_data_sources: Explorando fuentes de datos
-overall_reporting_status: Estado general de informes
-reported_online: Reportado en línea
+overall_reporting_status: Disponibilidad general de los datos
 reporting_status: Disponibilidad de datos
-statistics_in_progress: Estadísticas en progreso
-not_applicable: No aplicable
 status_by_goal: Estados por objetivos
 status_by_field: Estado por %field
+reported_online: Disponible
+statistics_in_progress: En progreso
+exploring_data_sources: Explorando fuentes de datos
+not_applicable: No procede
