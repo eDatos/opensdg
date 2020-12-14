@@ -19,7 +19,7 @@ formula_teorica: '$$PPVAB_{manufacturero}^{t} = \frac{VAB_{manufacturero}^{t}}{P
 donde: <br>
 $VAB_{manufacturero}^{t} =$ valor añadido bruto del sector manufacturero a precios corrientes en el año $t$ <br>
 $P^{t} =$ población a 1 de julio del año $t$ '
-unidad_medida: Porcentaje
+unidad_medida: Euros
 fuentes_informacion: "Contabilidad regional de España, Instituto Nacional de Estadística (INE) <br>
 Cifras de población, Instituto Nacional de Estadística (INE)"
 periodicidad: Anual
