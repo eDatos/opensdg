@@ -15,8 +15,8 @@ definicion: subindicator.3-7-2-SERIE-B-definicion
 
 formula_teorica: '$$TF_{15-19}^{t} = \frac{N_{15-19}^{t}}{P_{mujeres,15-19}^{t}} \cdot 1.000$$ <br>
 donde: <br>
-$N_{15-19}^{t} =$ nacimientos de madres entre 10 y 14 años en el año $t$ <br>
-$P_{mujeres,15-19}^{t} =$ mujeres entre 10 y 14 años a 1 de julio del año $t$'
+$N_{15-19}^{t} =$ nacimientos de madres entre 15 y 19 años en el año $t$ <br>
+$P_{mujeres,15-19}^{t} =$ mujeres entre 15 y 19 años a 1 de julio del año $t$'
 unidad_medida: "Tanto por 1.000"
 fuentes_informacion: "Estadística de nacimientos, Instituto Nacional de Estadística (INE)<br>
 Cifras de población, Instituto Nacional de Estadística (INE)"
