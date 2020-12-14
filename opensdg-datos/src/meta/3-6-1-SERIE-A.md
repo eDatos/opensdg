@@ -13,9 +13,9 @@ meta_global: global_targets.3-6-title
 objetivo_global: global_goals.3-title
 definicion: subindicator.3-6-1-SERIE-A-definicion
 
-formula_teorica: '$$TM_{accidentes tráfico}^{t} = \frac{D_{accidentes tráfico}^{t}}{P^{t}} \cdot 100.000$$ <br>
+formula_teorica: '$$TM_{\text{accidentes tráfico}}^{t} = \frac{D_{\text{accidentes tráfico}}^{t}}{P^{t}} \cdot 100.000$$ <br>
 donde: <br>
-$D_{accidentes tráfico}^{t} =$ defunciones atribuidas a accidentes de tráfico (lista extensa de códigos de la CIE-10, que se puede consultar en la metodología de la Estadística de defunciones según la causa de muerte) en el año $t$ <br>
+$D_{\text{accidentes tráfico}}^{t} =$ defunciones atribuidas a accidentes de tráfico (lista extensa de códigos de la CIE-10, que se puede consultar en la metodología de la Estadística de defunciones según la causa de muerte) en el año $t$ <br>
 $P^{t} =$ población a 1 de julio del año $t$'
 unidad_medida: "Tanto por 100.000"
 fuentes_informacion: "Estadística de defunciones según la causa de muerte, Instituto Nacional de Estadística<br>

@@ -15,7 +15,7 @@ definicion: subindicator.5-5-2-SERIE-A-definicion
 
 # Fórmula teórica escrita en formato MathJax
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-formula_teorica: '$$PPCD_{mujeres}^{t} = \frac{PRCD_{mujeres}^{t}}{PCD^{t}} \cdot 100$$ <br>
+formula_teorica: '$$PPCD_{mujeres}^{t} = \frac{PCD_{mujeres}^{t}}{PCD^{t}} \cdot 100$$ <br>
 donde: <br>
 $PCD_{mujeres}^{t} =$ mujeres ocupadas en cargos directivos (grupo 1 de la CNO-2011) en el año $t$ <br>
 $PCD^{t} =$ personas ocupadas en cargos directivos (grupo 1 de la CNO-2011) en el año $t$ <br>

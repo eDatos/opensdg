@@ -14,7 +14,7 @@ meta_global: global_targets.8-5-title
 objetivo_global: global_goals.8-title
 definicion: subindicator.8-5-2-SERIE-A-definicion
 
-formula_teorica: '$$TD^{t} = \frac{D^{t}}{A^{t}} $$ \cdot 100<br>
+formula_teorica: '$$TD^{t} = \frac{D^{t}}{A^{t}} \cdot 100$$ <br>
 donde: <br>
 $D^{t} =$ personas desempleadas en el año $t$ <br>
 $A^{t} =$ personas económicamente activas en el año $t$ <br>
