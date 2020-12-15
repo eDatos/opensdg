@@ -18,7 +18,8 @@ definicion: subindicator.9-2-2-SERIE-A-definicion
 formula_teorica: '$$PPO_{manufacturero}^{t} = \frac{PO_{manufacturero}^{t}}{PO^{t}} \cdot 100$$ <br>
 donde: <br>
 $PO_{manufacturero}^{t} =$ población ocupada en el sector manufacturero (sección C de la CNAE-2009) en el año $t$ <br>
-$PO^{t} =$ población ocupada en el año $t$ '
+$PO^{t} =$ población ocupada en el año $t$ <br>
+teniendo en cuenta que cada una de estas poblaciones se calcula como la media aritmética de los cuatro trimestres del año'
 unidad_medida: Porcentaje
 fuentes_informacion: "Encuesta de población activa, Instituto Nacional de Estadística (INE)"
 periodicidad: Anual

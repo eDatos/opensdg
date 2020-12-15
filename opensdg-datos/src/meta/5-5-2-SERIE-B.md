@@ -15,7 +15,7 @@ definicion: subindicator.5-5-2-SERIE-B-definicion
 
 # Fórmula teórica escrita en formato MathJax
 # https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-formula_teorica: '$$PPAD_{mujeres}^{t} = \frac{PRAD_{mujeres}^{t}}{PAD^{t}} \cdot 100$$ <br>
+formula_teorica: '$$PPAD_{mujeres}^{t} = \frac{PAD_{mujeres}^{t}}{PAD^{t}} \cdot 100$$ <br>
 donde: <br>
 $PAD_{mujeres}^{t} =$ mujeres ocupadas en alta dirección (subgrupos 11, 12 y 13 de la CNO-2011) en el año $t$ <br>
 $PAD^{t} =$ personas ocupadas en alta dirección (subgrupos 11, 12 y 13 de la CNO-2011) en el año $t$ <br>
