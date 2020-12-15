@@ -1,3 +1,7 @@
+"""
+Este script sobreescribe algunas de las funcionaldiades de sdg_build para adaptarse a los requisitos del cliente.
+https://github.com/open-sdg/sdg-build
+"""
 import json
 from zipfile import ZipFile
 import humanize
@@ -13,6 +17,10 @@ from sdg.json import write_json, df_to_list_dict
 INDEX_NAME = "indice.csv"
 
 
+"""
+Sobreescritura de IndicatorExportService
+https://github.com/open-sdg/sdg-build/blob/1.0.0/sdg/IndicatorExportService.py
+"""
 class OVRIndicatorExportService(IndicatorExportService):
     def __init__(self, site_directory, indicators):
         """Constructor for IndicatorExportService.
@@ -106,6 +114,10 @@ class OVRIndicatorExportService(IndicatorExportService):
         return st.st_size
 
 
+"""
+Sobreescritura de OutputOpenSdg
+https://github.com/open-sdg/sdg-build/blob/1.0.0/sdg/outputs/OutputOpenSdg.py
+"""
 class OVROutputOpenSdg(OutputOpenSdg):
     def build(self, language=None):
         """Write the JSON output expected by Open SDG. Overrides parent."""
@@ -166,6 +178,10 @@ class OVROutputOpenSdg(OutputOpenSdg):
         return(status)
 
 
+"""
+Sobreescritura de open_sdg_prep
+https://github.com/open-sdg/sdg-build/blob/1.0.0/sdg/open_sdg.py#L156
+"""
 def ovr_open_sdg_prep(options):
     """Prepare Open SDG output for validation and builds.
 
