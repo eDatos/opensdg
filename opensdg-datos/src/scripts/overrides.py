@@ -1,11 +1,9 @@
-import datetime
 import json
 from zipfile import ZipFile
 import humanize
 import re
 import os
 import sdg
-import csv
 from sdg import open_sdg
 from sdg import IndicatorExportService
 from sdg.outputs import OutputOpenSdg
@@ -13,19 +11,6 @@ from sdg.data import write_csv
 from sdg.json import write_json, df_to_list_dict
 
 INDEX_NAME = "indice.csv"
-
-def create_index_csv():
-    """
-    Método que generará el índice para la correlación de cada serie con su nombre.
-    """
-    with open('data/%s' % INDEX_NAME, 'w', newline='', encoding="utf-8") as csv_file:
-        csv_writer = csv.writer(csv_file)
-        csv_writer.writerow(['Indicador', 'Nombre'])
-        with open('translations/es/subindicator.yml', 'r', encoding="utf-8") as translations_file:
-            for line in translations_file.readlines():
-                match = re.search(r'(.*)-nombre:\s?"(.*)"', line)
-                if match:
-                    csv_writer.writerow([str(match.groups()[0]), str(match.groups()[1])])
 
 
 class OVRIndicatorExportService(IndicatorExportService):
