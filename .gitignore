@@ -17,10 +17,11 @@ opensdg-web/src/vendor
 opensdg-datos/src/node_modules
 opensdg-datos/src/_site
 opensdg-datos/src/opensdg-datos
-opensdg-datos/src/es
-opensdg-datos/src/en
+opensdg-datos/src/scripts/__pycache__
 opensdg-datos/src/metadata_generated
 opensdg-datos/src/__pycache__
+opensdg-datos/src/data/indice.csv
+
 
 # TODO EDATOS-3208: Incluir traducciones no necesarias en .gitignore
 #opensdg-web/src/translations/ar
