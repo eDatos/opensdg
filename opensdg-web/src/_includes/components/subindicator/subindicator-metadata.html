@@ -1,11 +1,29 @@
 {% assign subindicator = include.scope %}
+<script src="{{ site.baseurl }}/assets/js/jquery-3.4.1.min.js"></script>
+
 <div class="table-responsive">
     <table class="table">
         {% for indicator_metadata in site.data.schema %}
         {% if indicator_metadata.field.scope == "subindicator" %}
         <tr>
             <th>{{ site.data.translations[page.language].metadata_fields[indicator_metadata.name] }}</th>
-            <td>{{ subindicator[indicator_metadata.name] | t }}</td>
+
+            {% if indicator_metadata.name == 'formula_teorica' %}
+                <td class="formula_teorica_container" id="formula_teorica_container{{ subindicator['slug'] }}"><p class="justified-text">{{ subindicator[indicator_metadata.name] }}</p></td>
+                <script>
+                    var codigoFormulaTeorica = "{{ subindicator[indicator_metadata.name] }}";
+                    var numeroDeFormulasTeoricas = (codigoFormulaTeorica.match(/\$+(.*?)\$+/g) || []).length;
+                    $('#formula_teorica_container{{ subindicator["slug"] }}').bind('DOMNodeInserted', function() {
+                        var numeroFormulasCreadas = ($('#formula_teorica_container{{ subindicator["slug"] }}').html().match(/\<mjx-container/g) || []).length;
+                        if (numeroFormulasCreadas >= numeroDeFormulasTeoricas) {
+                            $('#formula_teorica_container{{ subindicator["slug"] }}').fadeIn(1000);
+                        }
+                        return;
+                    });
+                </script>
+            {% else %}
+                <td><p class="justified-text">{{ subindicator[indicator_metadata.name] | t }}</p></td>
+            {% endif %}
         </tr>
         {% endif %}
         {% endfor %}

@@ -14,7 +14,7 @@ meta_global: global_targets.9-5-title
 objetivo_global: global_goals.9-title
 definicion: subindicator.9-5-1-SERIE-A-definicion
 
-formula_teorica: '$$PPIBG^{t} = \frac{G_{I+D}^{t}}{PIB^{t}} $$ \cdot 100<br>
+formula_teorica: '$$PPIBG_{I+D}^{t} = \frac{G_{I+D}^{t}}{PIB^{t}}  \cdot 100$$<br>
 donde: <br>
 $G_{I+D}^{t} =$ gasto en investigación y desarrollo en el año $t$<br>
 $PIB^{t} =$ producto interior bruto a precios corrientes en el año $t$ <br>'

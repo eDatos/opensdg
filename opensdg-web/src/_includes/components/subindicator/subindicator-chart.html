@@ -10,197 +10,210 @@
 {% if show_data %}
 <canvas height="200" id="subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}" width="400"></canvas>
 <script>
+    /**
+     * Comprueba si existen objetivos en los datos
+     * @param {JSON} data 
+     */
+    function hasObjetivo(data) {
+        return "Objetivo" in data;
+    }
 
-/**
- * Comprueba si existen objetivos en los datos
- * @param {JSON} data 
- */
-function hasObjetivo(data) {
-    return "Objetivo" in data;
-}
+    /**
+     * Comprueba si existen territorios en los datos
+     * @param {JSON} data 
+     */
+    function hasTerritorio(data) {
+        return "Territorio" in data;
+    }
 
-/**
- * Comprueba si existen territorios en los datos
- * @param {JSON} data 
- */
-function hasTerritorio(data) {
-    return "Territorio" in data;
-}
+    /**
+     * Devuelve el número de territorios. 
+     * Para el caso en que haya más de dos.
+     * @param {JSON} data 
+     */
+    function getNumberOfTerritories(data) {
+        return [...new Set(data.Territorio)].length;
+    }
 
-/**
- * Devuelve el número de territorios. 
- * Para el caso en que haya más de dos.
- * @param {JSON} data 
- */
-function getNumberOfTerritories(data) {
-    return [...new Set(data.Territorio)].length;
-}
+    /**
+     * Devuelve el número de objetivos.
+     * @param {JSON} data 
+     */
+    function getNumberOfObjetives(data) {
+        return [...new Set(data.Objetivo)].length;
+    }
 
-/**
- * Devuelve el número de objetivos.
- * @param {JSON} data 
- */
-function getNumberOfObjetives(data) {
-    return [...new Set(data.Objetivo)].length;
-}
+    /**
+     * Devuelve los índices de un territorio dado
+     * @param {JSON} data 
+     * @param {String} territory
+     */
+    function getIndexes(data, territory) {
+        return data.Territorio.map(function (territorio, index) {
+            if (territorio == territory) {
+                return index;
+            }
+        });
+    }
 
-/**
- * Devuelve los índices de un territorio dado
- * @param {JSON} data 
- * @param {String} territory
- */
-function getIndexes(data, territory) {
-    return data.Territorio.map(function(territorio, index) {
-        if (territorio == territory) {
-            return index;
+    /**
+     * Devuelve los índices de Canarias
+     * @param {JSON} data 
+     */
+    function getCanariasIndexes(data) {
+        return getIndexes(data, "ES70"); // Se utiliza como territorio su código NUTS2
+    }
+
+    /**
+     * Devuelve los datos de canarias
+     * @param {JSON} data 
+     */
+    function getCanariasData(data) {
+        if (hasTerritorio(data)) {
+            var canariasIndexes = getCanariasIndexes(data);
+            return data.Value.map(function (value, index) {
+                if (canariasIndexes.includes(index)) {
+                    return value;
+                }
+            }).filter(function (x) {
+                return x !== undefined;
+            });
+        } else {
+            return data.Value;
         }
-    });
-}
+    }
 
-/**
- * Devuelve los índices de Canarias
- * @param {JSON} data 
- */
- function getCanariasIndexes(data) {
-    return getIndexes(data, "ES70"); // Se utiliza como territorio su código NUTS2
-}
+    /**
+     * Devuelve el dataset de Canarias
+     * @param {JSON} data 
+     */
+    function getCanariasDataset(data) {
+        return {
+            label: "{{ subindicator.unidad_medida }} Canarias",
+            data: getCanariasData(data),
+            backgroundColor: 'rgba(122,122,122,0.5)',
+            borderColor: 'rgba(77,77,77,1)',
+            borderWidth: 1
+        };
+    }
 
-/**
- * Devuelve los datos de canarias
- * @param {JSON} data 
- */
-function getCanariasData(data) {
-    if (hasTerritorio(data)) {
-        var canariasIndexes = getCanariasIndexes(data);
+    /**
+     * Devuelve los índices de España
+     * @param {JSON} data 
+     */
+    function getEspanaIndexes(data) {
+        return getIndexes(data, "ES"); // Se utiliza como territorio su código NUTS2
+    }
+
+    /**
+     * Devuelve los datos de España
+     * @param {JSON} data 
+     */
+    function getEspanaData(data) {
+        var espanaIndexes = getEspanaIndexes(data);
         return data.Value.map(function (value, index) {
-            if (canariasIndexes.includes(index)) {
+            if (espanaIndexes.includes(index)) {
                 return value;
             }
-        }).filter(function(x) {
+        }).filter(function (x) {
             return x !== undefined;
         });
-    } else {
-        return data.Value;
     }
-}
 
-/**
- * Devuelve el dataset de Canarias
- * @param {JSON} data 
- */
-function getCanariasDataset(data) {
-    return {
-        label: "{{ subindicator.unidad_medida }} Canarias",
-        data: getCanariasData(data),
-        backgroundColor: 'rgba(122,122,122,0.5)',
-        borderColor: 'rgba(77,77,77,1)',
-        borderWidth: 1
-    };
-}
-
-/**
- * Devuelve los índices de España
- * @param {JSON} data 
- */
-function getEspanaIndexes(data) {
-    return getIndexes(data, "ES"); // Se utiliza como territorio su código NUTS2
-}
-
-/**
- * Devuelve los datos de España
- * @param {JSON} data 
- */
-function getEspanaData(data) {
-    var espanaIndexes = getEspanaIndexes(data);
-    return data.Value.map(function(value, index) {
-        if (espanaIndexes.includes(index)) {
-            return value;
-        }
-    }).filter(function(x) {
-        return x !== undefined;
-    });
-}
-
-/**
- * Devuelve el dataset de España
- * @param {JSON} data 
- */
-function getEspanaDataset(data) {
-    return {
-        label: "{{ subindicator.unidad_medida }} España",
-        data: getEspanaData(data),
-        type: 'line',
-        pointRadius: 3,
-        borderColor: 'rgb(0,0,255)',
-        backgroundColor: 'rgba(0,0,0,0)',
-        borderWidth: 1,
-        lineTension: 0
-    };
-}
-
-/**
- * Devuelve el dataset de la media
- * @param {JSON} data 
- */
-function getMeanDataset(data) {
     /**
-     * Calcula la media
-     * @param {Array<Float>} value 
+     * Devuelve el dataset de España
+     * @param {JSON} data 
      */
-    function mean(value) {
-        if (value.length > 0) {
-            return Array.from(value).reduce((a, b) => a + b) / value.length;
-        } else {
-            return 0;
-        }
+    function getEspanaDataset(data) {
+        return {
+            label: "{{ subindicator.unidad_medida }} España",
+            data: getEspanaData(data),
+            type: 'line',
+            pointRadius: 3,
+            borderColor: 'rgb(0,0,255)',
+            backgroundColor: 'rgba(0,0,0,0)',
+            borderWidth: 1,
+            lineTension: 0
+        };
     }
-    var canariasData = getCanariasData(data);
-    var meanQuant = mean(canariasData);
-    return {
-        label: `Media ${meanQuant.toFixed(2)} {{ subindicator.unidad_medida }}`,
-        data: new Array(canariasData.length).fill(meanQuant),
-        type: 'line',
-        pointRadius: 0,
-        borderColor: 'rgb(255,0,0)',
-        backgroundColor: 'rgba(0,0,0,0)',
-        borderWidth: 2
-    };
-}
 
-/**
- * Devuelve los datasets necesarios dependiendo del tipo de datos pasados en el CSV
- * @param {JSON} data 
- */
-function getDatasets(data) {
-    var datasets = [];
-    datasets.push(getCanariasDataset(data));
-    if (hasTerritorio(data)) {
-        datasets.push(getEspanaDataset(data));
-    }
-    datasets.push(getMeanDataset(data));
-    return datasets;
-}
-
-fetch("{{ page.remote_data_prefix }}/data/{{ subindicator.slug }}.json")
-    .then(res => res.json())
-    .then(json => {
-        var ctx = document.getElementById(`subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}`).getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: [...new Set(json.Year)],
-                datasets: getDatasets(json),
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
+    /**
+     * Devuelve el dataset de la media
+     * @param {JSON} data 
+     */
+    function getMeanDataset(data) {
+        /**
+         * Calcula la media
+         * @param {Array<Float>} data 
+         */
+        function mean(data) {
+            if (data.length > 0) {
+                return Array.from(data).reduce((a, b) => a + b) / data.length;
+            } else {
+                return 0;
             }
+        }
+        var canariasData = getCanariasData(data);
+        var meanQuant = mean(canariasData);
+        return {
+            //label: `Media ${Intl.NumberFormat("de-DE").format(meanQuant)} {{ subindicator.unidad_medida }}`,
+            label: `{{ subindicator.unidad_medida }} Media`,
+            data: new Array(canariasData.length).fill(meanQuant.toFixed(2)),
+            type: 'line',
+            pointRadius: 0,
+            borderColor: 'rgb(255,0,0)',
+            backgroundColor: 'rgba(0,0,0,0)',
+            borderWidth: 2
+        };
+    }
+
+    /**
+     * Devuelve los datasets necesarios dependiendo del tipo de datos pasados en el CSV
+     * @param {JSON} data 
+     */
+    function getDatasets(data) {
+        var datasets = [];
+        datasets.push(getCanariasDataset(data));
+        if (hasTerritorio(data)) {
+            datasets.push(getEspanaDataset(data));
+        }
+        datasets.push(getMeanDataset(data));
+        return datasets;
+    }
+
+    fetch("{{ page.remote_data_prefix }}/data/{{ subindicator.slug }}.json")
+        .then(res => res.json())
+        .then(json => {
+            var ctx = document.getElementById(`subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}`)
+                .getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [...new Set(json.Year)],
+                    datasets: getDatasets(json),
+                },
+                options: {
+                    tooltips: {
+                        intersect: false,
+                        axis: 'x',
+                        callbacks: {
+                            label: function (tooltipItems, data) {
+                                var labelNumero = Intl.NumberFormat("es-ES", { minimumFractionDigits: 2 }).format(tooltipItems.yLabel);
+                                return data.datasets[tooltipItems.datasetIndex].label + ' : ' + labelNumero;
+                            }
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                            beginAtZero: true,
+                            ticks: {
+                                callback: (value) => Intl.NumberFormat("es-ES", { minimumFractionDigits: 2 }).format(value)
+                            }
+                        }],
+                    }
+                }
+            });
         });
-    });
+
 </script>
 {% endif %}

@@ -504,7 +504,7 @@ var indicatorView = function (model, options) {
             var filename = chartInfo.indicatorId + '.png',
                 element = document.getElementById('chart-canvas'),
                 footer = document.getElementById('selectionChartFooter'),
-                height = element.clientHeight + 25 + ((footer) ? footer.clientHeight : 0),
+                height = element.clientHeight + 25 + ((footer) ? footer.clientHeight : 0) + 100,
                 width = element.clientWidth + 25;
             var options = {
                 // These options fix the height, width, and position.
@@ -760,7 +760,15 @@ var indicatorView = function (model, options) {
 
             var getHeading = function (heading, index) {
                 var span = '<span class="sort" />';
-                var span_heading = '<span>' + translations.t(heading) + '</span>';
+                var name_heading = translations.t(heading)
+                
+                if (heading.toLowerCase() == 'year') {
+                    name_heading = "Año"
+                } else if (heading.toLowerCase() == 'value') {
+                    name_heading = "Valor"
+                }
+
+                var span_heading = '<span>' + name_heading + '</span>';
                 return (!index || heading.toLowerCase() == 'units') ? span_heading + span : span + span_heading;
             };
 

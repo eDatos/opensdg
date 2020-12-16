@@ -7,38 +7,142 @@ the Chart.js configuration being used, see `createPlot()` in `indicatorView.js`.
 {% include components/charts/graph_limits.html %}
 {% include components/charts/graph_annotations.html %}
 <script>
-// For line charts, add the vertical line hover functionality.
-opensdg.chartConfigAlter(function(config, info) {
-    var overrides = {
-        options: {
-            tooltips: {
-                intersect: false,
-                axis: 'x'
-            },
-        },
-        plugins: [{
-            beforeDatasetsDraw: function(chart) {
-                if (chart.tooltip._active && chart.tooltip._active.length) {
-                    var activePoint = chart.tooltip._active[0],
-                        ctx = chart.ctx,
-                        x = activePoint.tooltipPosition().x,
-                        topY = chart.scales['y-axis-0'].top,
-                        bottomY = chart.scales['y-axis-0'].bottom;
+    // Medida extraída del ancho para las columnas md de Bootstrap
+    // https://getbootstrap.com/docs/4.0/layout/grid/#grid-options
+    const MD_SCREEN_MEDIA_WIDTH = 768;
 
-                    // draw line
-                    ctx.save();
-                    ctx.beginPath();
-                    ctx.moveTo(x, topY);
-                    ctx.lineTo(x, bottomY);
-                    ctx.lineWidth = 2;
-                    ctx.strokeStyle = '#07C';
-                    ctx.stroke();
-                    ctx.restore();
+    // For line charts, add the vertical line hover functionality.
+    opensdg.chartConfigAlter(function (config, info) {
+        var overrides = {
+            options: {
+                tooltips: {
+                    enabled: false,
+                    intersect: false,
+                    axis: 'x',
+                    caretSize: 0,
+                    callbacks: {
+                        label: function (tooltipItems, data) {
+                            var labelNumero = Intl.NumberFormat("es-ES", {
+                                minimumFractionDigits: 2
+                            }).format(tooltipItems.yLabel);
+                            var labelNombre = data.datasets[tooltipItems.datasetIndex].label;
+                            return labelNombre + ' : ' + labelNumero;
+                        }
+                    },
+                    custom: function (tooltipModel) {
+                        // Tooltip Element
+                        var tooltipEl = document.getElementById('chartjs-tooltip');
+
+                        // Create element on first render
+                        if (!tooltipEl) {
+                            tooltipEl = document.createElement('div');
+                            tooltipEl.id = 'chartjs-tooltip';
+                            tooltipEl.innerHTML = '<table></table>';
+                            document.body.appendChild(tooltipEl);
+                        }
+
+                        // Hide if no tooltip
+                        if (tooltipModel.opacity === 0) {
+                            tooltipEl.style.opacity = 0;
+                            return;
+                        }
+
+                        // Set caret Position
+                        tooltipEl.classList.remove('above', 'below', 'no-transform');
+                        if (tooltipModel.yAlign) {
+                            tooltipEl.classList.add(tooltipModel.yAlign);
+                        } else {
+                            tooltipEl.classList.add('no-transform');
+                        }
+
+                        function getBody(bodyItem) {
+                            return bodyItem.lines;
+                        }
+
+                        // Set Text
+                        if (tooltipModel.body) {
+                            var titleLines = tooltipModel.title || [];
+                            var bodyLines = tooltipModel.body.map(getBody);
+
+                            var innerHtml = '<thead>';
+
+                            titleLines.forEach(function (title) {
+                                innerHtml += '<tr><th>' + title + '</th></tr>';
+                            });
+                            innerHtml += '</thead><tbody>';
+
+                            bodyLines.forEach(function (body, i) {
+                                
+                                var colors = tooltipModel.labelColors[i];
+                                var style = 'border-color:' + colors.borderColor;
+                                var span = '<span class="dot" style="' + style + '"></span>';
+                                innerHtml += '<tr><td>' + span + "  " + body + '</td></tr>';
+                            });
+                            innerHtml += '</tbody>';
+
+                            var tableRoot = tooltipEl.querySelector('table');
+                            tableRoot.innerHTML = innerHtml;
+                        }
+
+                        // `this` will be the overall tooltip
+                        var position = this._chart.canvas.getBoundingClientRect();
+
+                        // Display, position, and set styles for font
+                        tooltipEl.style.opacity = 1;
+                        tooltipEl.style.position = 'absolute';
+                        
+                        if (screen.width <= MD_SCREEN_MEDIA_WIDTH) {
+                            tooltipEl.style.left = position.left + window.pageXOffset + 'px';
+                            tooltipEl.style.top = position.top + window.pageYOffset + 'px';
+                        } else {
+                            tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
+                            tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
+                        }
+
+                        tooltipEl.style.fontFamily = tooltipModel._bodyFontFamily;
+                        tooltipEl.style.fontSize = tooltipModel.bodyFontSize + 'px';
+                        tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
+                        tooltipEl.style.padding = tooltipModel.yPadding + 'px ' + tooltipModel.xPadding + 'px';
+                        tooltipEl.style.pointerEvents = 'none';
+                        tooltipEl.style.backgroundColor = 'rgba(0,0,0,0.8)';
+                        tooltipEl.style.color = '#FFF';
+
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            callback: (value) => Intl.NumberFormat("es-ES", {
+                                minimumFractionDigits: 2
+                            }).format(value)
+                        }
+                    }]
                 }
-            }
-        }],
-    };
-    // Add these overrides onto the normal config, and return it.
-    $.extend(true, config, overrides);
-});
+            },
+            plugins: [{
+                beforeDatasetsDraw: function (chart) {
+                    if (chart.tooltip._active && chart.tooltip._active.length) {
+                        var activePoint = chart.tooltip._active[0],
+                            ctx = chart.ctx,
+                            x = activePoint.tooltipPosition().x,
+                            topY = chart.scales['y-axis-0'].top,
+                            bottomY = chart.scales['y-axis-0'].bottom;
+
+                        // draw line
+                        ctx.save();
+                        ctx.beginPath();
+                        ctx.moveTo(x, topY);
+                        ctx.lineTo(x, bottomY);
+                        ctx.lineWidth = 2;
+                        ctx.strokeStyle = '#07C';
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                }
+            }],
+        };
+        // Add these overrides onto the normal config, and return it.
+        $.extend(true, config, overrides);
+    });
+
 </script>
