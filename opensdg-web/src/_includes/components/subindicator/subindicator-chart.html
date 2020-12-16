@@ -157,7 +157,7 @@
         var meanQuant = mean(canariasData);
         return {
             //label: `Media ${Intl.NumberFormat("de-DE").format(meanQuant)} {{ subindicator.unidad_medida }}`,
-            label: `{{ subindicator.unidad_medida }} Media`,
+            label: `{{ subindicator.unidad_medida }} Media Canarias`,
             data: new Array(canariasData.length).fill(meanQuant.toFixed(2)),
             type: 'line',
             pointRadius: 0,

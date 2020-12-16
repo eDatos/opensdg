@@ -17,11 +17,6 @@
         <dd>{{ uniqSources }}</dd>
         {% endif %}
 
-        {% if page.indicator.national_geographical_coverage and page.indicator.national_geographical_coverage != "" %}
-        <dt>{{ page.t.indicator.geographical_area }}:</dt>
-        <dd>{{ page.indicator.national_geographical_coverage }}</dd>
-        {% endif %}
-
         {% if page.indicator.computation_units and page.indicator.computation_units != "" %}
         <dt>{{ page.t.indicator.unit_of_measurement }}:</dt>
         <dd>{{ page.indicator.computation_units }}</dd>
