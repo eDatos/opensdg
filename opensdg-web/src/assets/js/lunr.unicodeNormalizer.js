@@ -1,8 +1,6 @@
 /*!
- * lunr.unicodeNormalizer
- * by Chris Van <cvan>, 2014
- * Extension for lunr.js <http://lunrjs.com/>
- * Includes code from https://github.com/dodo/node-slug/blob/master/slug.js
+ * This code is based on lunr.unicodeNormalizer by Chris Van <cvan>, 2014
+ * https://github.com/cvan/lunr-unicode-normalizer
  */
 
 (function(lunr) {
