@@ -1,26 +1,74 @@
+// Variables
 $vanilla: #fff;
 $main-background-color: #eaeaea;
 
 .danger {
-  background-color: #E27874;
+  background-color: #FFB8B8;
 }
 .warning {
-  background-color: #f0ad4e;
+  background-color: #FBF274;
 }
 .success {
-  background-color: #5cb85c;
+  background-color: #75FF9F;
 }
 .notapplicable {
-  background-color: #B7B7B7;
+  background-color: #EAEAE6;
+  background-image: none;
 }
 .notstarted {
-  background-color: #E27874;
+  background-color: #FFB8B8;
 }
 .inprogress {
-  background-color: #f0ad4e;
+  background-color: #FBF274;
 }
 .complete {
-  background-color: #5cb85c;
+  background-color: #75FF9F;
+}
+
+// Cajas de Reporting Status
+#main-content .statuses > div .status.complete {
+  border: 1px solid black;
+  color: #333;
+  font-weight: bold;
+}
+
+#main-content .statuses > div .status.inprogress {
+  border: 1px solid black;
+  color: #333;
+  font-weight: bold;
+}
+
+#main-content .statuses > div .status.notstarted {
+  border: 1px solid black;
+  color: #333;
+  font-weight: bold;
+}
+
+#main-content .statuses > div .status.notapplicable {
+  border: 1px solid black;
+  color: #333;
+  font-weight: bold;
+}
+
+// Cajas de Indicadores
+#main-content.goal-indicators .indicator-cards span.status.complete {
+  border: 1px solid black;
+  color: #333;
+}
+
+#main-content.goal-indicators .indicator-cards span.status.inprogress {
+  border: 1px solid black;
+  color: #333;
+}
+
+#main-content.goal-indicators .indicator-cards span.status.notstarted {
+  border: 1px solid black;
+  color: #333;
+}
+
+#main-content.goal-indicators .indicator-cards span.status.notapplicable {
+  border: 1px solid black;
+  color: #333;
 }
 
 #main-content.goal-indicators .indicator-cards a {
@@ -1164,4 +1212,8 @@ body {
   border-width: 0.2rem;
   background-color: whitesmoke;
   border-style: solid;
+}
+
+.goal-indicator {
+  margin-bottom: 3rem;
 }

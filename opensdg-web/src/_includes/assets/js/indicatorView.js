@@ -238,31 +238,8 @@ var indicatorView = function (model, options) {
         }
     }
 
-    /**
-     * Devuelve el índice de un territorio concreto dentro de los campos de territorio.
-     * @param {Array<Object>} fieldsTerritorio 
-     * @param {String} territorio 
-     */
-    function getIndexOfTerritorioComunidad(fieldsTerritorio, territorio) {
-        return fieldsTerritorio.values.map((v) => v.value).indexOf(territorio);
-    }
-
-    /**
-     * Devuelve el índice del campo de Territorios dentro de los campos.
-     * @param {Array<Object>} fields 
-     */
-    function getIndexOfTerritorio(fields) {
-        return fields.map((f) => f.field).indexOf("Territorio");
-    }
-
     this.initialiseFields = function (args) {
         if (args.fields.length) {
-            // TODO EDATOS-3208: Aquí hacer la ordenación de los territorios para que ESPAÑA y CANARIAS aparezcan primero.
-            // var territorioIndex = getIndexOfTerritorio(args.fields);
-            // if (territorioIndex >= 0) {
-            //     console.log(args.fields);
-            // }
-
             var template = _.template($("#item_template").html());
 
             if (!$('button#clear').length) {
@@ -335,8 +312,6 @@ var indicatorView = function (model, options) {
 
         view_obj.updateChartDownloadButton(chartInfo.selectionsTable);
     };
-
-
 
     this.createPlot = function (chartInfo) {
 
@@ -651,7 +626,6 @@ var indicatorView = function (model, options) {
         this.createSourceButton(chartInfo.shortIndicatorId, '#selectionsTable');
     };
 
-
     this.createDownloadButton = function (table, name, indicatorId, el) {
         if (window.Modernizr.blobconstructor) {
             var downloadKey = 'download_csv';
@@ -816,7 +790,6 @@ var indicatorView = function (model, options) {
 
         $(el).append(footdiv);
     };
-
 
     this.sortFieldGroup = function (fieldGroupElement) {
         var sortLabels = function (a, b) {

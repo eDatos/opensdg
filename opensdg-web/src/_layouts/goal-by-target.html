@@ -38,14 +38,14 @@
     {% assign goal_indicators = page.indicators | where: 'goal_number', page.goal.number | sort: 'indicator_sort_order' | group_by: 'target_number' %}
     {% for group in goal_indicators %}
         {% assign target = group.name | sdg_lookup %}
-        <div class="indicator-cards target goal-target col-md-6">
+        <div class="indicator-cards target goal-target col-md-6 pt-5 pb-5">
             <span>
                 <label class="hidden-md hidden-lg">{{ page.t.general.target }}</label>
                 {{ target.number }}
             </span>
             {{ target.name }}
         </div>
-        <div class="indicator-cards col-md-6 row no-gutters">
+        <div class="indicator-cards col-md-6 row no-gutters pt-5 pb-5">
             {% for indicator in group.items %}
                 {% assign indicator_number_splited = indicator.number | split: "." %}
                 {% if indicator_number_splited.size <= 3 %}
