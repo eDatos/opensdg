@@ -16,26 +16,27 @@
 
 <header role="banner">
     <div class="container">
-        <div class="logo-and-mobile-widgets">
-            <a class="navbar-brand sustainable-brand" href="{{ page.baseurl }}" id="home">
-                <img src="{{ site.baseurl }}/assets/img/{{ page.header_image }}" alt="{{ page.t.general.sdg }} - {{ page.t.header.tag_line }}"/>
-            </a>
+        <div class="row">
+            <div class="logo-and-mobile-widgets col-md-4">
+                <a class="navbar-brand sustainable-brand" href="{{ page.baseurl }}" id="home">
+                    <img src="{{ site.baseurl }}/assets/img/{{ page.header_image }}" alt="{{ page.t.general.sdg }} - {{ page.t.header.tag_line }}"/>
+                </a>
+            </div>
+    
+            <nav class="navbar navbar-default col-md-8" id="main-nav">
+                <ul class="top-level">
+                    <li aria-label="Menu toggle. Click to expand or collapse the menu." aria-haspopup="true" id="menuToggle">
+                        <button aria-expanded="false" data-target="menu-mobile">{{ page.t.menu.menu }}</button>
+                        {% include navigation.html id="menu-mobile" %}
+                    </li>
+                    <li aria-label="Search toggle. Click to expand or collapse the search bar." aria-haspopup="true" id="searchToggle">
+                        <button aria-expanded="false" data-target="search-mobile">{{ page.t.search.search }}</button>
+                        {% include search.html id="search-mobile" %}
+                    </li>
+                </ul>
+    
+                {% include navigation.html id="menu" %}
+            </nav>
         </div>
-
-        <nav class="navbar navbar-default" id="main-nav">
-            <ul class="top-level">
-                <li aria-label="Menu toggle. Click to expand or collapse the menu." aria-haspopup="true" id="menuToggle">
-                    <button aria-expanded="false" data-target="menu-mobile">{{ page.t.menu.menu }}</button>
-                    {% include navigation.html id="menu-mobile" %}
-                </li>
-                <li aria-label="Search toggle. Click to expand or collapse the search bar." aria-haspopup="true" id="searchToggle">
-                    <button aria-expanded="false" data-target="search-mobile">{{ page.t.search.search }}</button>
-                    {% include search.html id="search-mobile" %}
-                </li>
-            </ul>
-
-            {% include search.html id="search" %}
-            {% include navigation.html id="menu" %}
-        </nav>
     </div>
 </header>

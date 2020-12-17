@@ -35,14 +35,19 @@
                 A medida que se disponga de nuevos datos se incorporarán nuevas series.
             </p>
         </div>
-        
         <div class='col-md-3'>
-            <img id="header_text_image" src="{{ site.baseurl }}/assets/img/{{ page.header_text_image }}" alt="Logo OCECAS | ODS"/>
+            <div class="row">
+                <img id="header_text_image" src="{{ site.baseurl }}/assets/img/{{ page.header_text_image }}" alt="Logo OCECAS | ODS"/>
+            </div>
         </div>
     </div>
+
+    <br>
     
-    Haga clic en cada objetivo, o busque, para consultar las estadísticas de Canarias para los indicadores globales de
-    los Objetivos de Desarrollo Sostenible.
+    <p class="justified-text">
+        Haga clic en cada objetivo, o busque, para consultar las estadísticas de Canarias para los indicadores globales de
+        los Objetivos de Desarrollo Sostenible.
+    </p>
 
     <div class="goal-tiles">
         {% for goal in page.goals %}

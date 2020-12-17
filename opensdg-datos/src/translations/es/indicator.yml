@@ -4,8 +4,8 @@ clear_selections: Borrar selecciones
 data_not_available: Esta información no está disponible. Elija datos alternativos para mostrar.
 dataset_size_warning: Hay demasiados conjuntos de datos para mostrar en el gráfico.
   No todo se mostrará hasta que elimine algunas selecciones.
-download_chart: Descargar CSV de gráfico
-download_csv: Descargar CSV
+download_chart: Descargar CSV de Selección
+download_csv: Descargar CSV Completo
 download_csv_title: Descargar como CSV
 download_headline: Descargar CSV global
 download_headline_title: Descargar datos globales como CSV
