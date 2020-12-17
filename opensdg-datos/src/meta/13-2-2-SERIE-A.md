@@ -8,7 +8,7 @@ indicator_sort_order: 13-02-02-aa
 national_geographical_coverage: Canarias
 
 # Info de Subindicador
-nombre: subindicator.13-2-1-SERIE-A-nombre
+nombre: subindicator.13-2-2-SERIE-A-nombre
 indicador_onu_global: global_indicators.13-2-2-title
 meta_global: global_targets.13-2-title
 objetivo_global: global_goals.13-title
