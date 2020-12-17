@@ -12,7 +12,7 @@ $main-background-color: #eaeaea;
   background-color: #75FF9F;
 }
 .notapplicable {
-  background-color: #EAEAE6;
+  background-color: #404040;
   background-image: none;
 }
 .notstarted {
@@ -26,6 +26,11 @@ $main-background-color: #eaeaea;
 }
 
 // Cajas de Reporting Status
+
+#main-content .goal .total, #main-content .statuses > div .status {
+  font-size: 1rem;
+}
+
 #main-content .statuses > div .status.complete {
   border: 1px solid black;
   color: #333;
@@ -46,7 +51,7 @@ $main-background-color: #eaeaea;
 
 #main-content .statuses > div .status.notapplicable {
   border: 1px solid black;
-  color: #333;
+  color:white;
   font-weight: bold;
 }
 
@@ -68,7 +73,7 @@ $main-background-color: #eaeaea;
 
 #main-content.goal-indicators .indicator-cards span.status.notapplicable {
   border: 1px solid black;
-  color: #333;
+  color: white;
 }
 
 #main-content.goal-indicators .indicator-cards a {
@@ -936,6 +941,7 @@ body.contrast-high {
   #main-content .nav-tabs .nav-item.active a { background: yellow; color: black; border-color: yellow; }
 
   a.nav-link:focus { background: white; color: black; }
+  
 
   caption {
     color: white;
@@ -1164,6 +1170,9 @@ figcaption {
 }
 
 body {
+  font-weight: 300;
+  font-size: 14px;
+  font-family: Roboto,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;
   background: white;
 }
 
@@ -1186,7 +1195,7 @@ body {
 .logo-and-mobile-widgets .navbar-brand.sustainable-brand {
   max-width: 400px;
   width: 100%;
-  padding-top: 3rem;
+  // padding-top: 3rem;
 }
 
 .justified-text {
@@ -1194,6 +1203,7 @@ body {
 }
 
 .center-image {
+  margin-top: 2rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -1216,4 +1226,59 @@ body {
 
 .goal-indicator {
   margin-bottom: 3rem;
+}
+
+.navbar #search input { 
+  padding-left: 1rem;
+  margin-top: 0px;
+}
+
+.navbar #search form { 
+  padding-left: 1rem;
+  padding-top: 0px;
+}
+
+.navbar #search button { 
+  font-size: 1.5rem;
+}
+
+.navbar #search {
+  margin-bottom: 0px;
+}
+
+.navbar {
+  margin-bottom: 5px;
+}
+
+header .container {
+  min-height: auto;
+}
+
+html {
+  font-weight: 300;
+  font-size: 14px;
+  font-family: Roboto,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.btn-download {
+  display: inline-block;
 }
