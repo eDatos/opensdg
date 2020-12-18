@@ -1,5 +1,4 @@
 var indicatorSearch = function () {
-
     var urlParams = new URLSearchParams(window.location.search);
     var searchTerms = urlParams.get('q');
     if (searchTerms !== null) {
@@ -24,7 +23,7 @@ var indicatorSearch = function () {
 
         var searchIndex = lunr(function () {
             this.use(lunr.es);
-            
+
             this.ref('url');
             // Index the expected fields.
             this.field('title', getSearchFieldOptions('title'));
@@ -37,8 +36,10 @@ var indicatorSearch = function () {
                 this.field(extraField, getSearchFieldOptions(extraField));
             }
             // Index all the documents.
-            for (var ref in opensdg.searchItems) {
-                this.add(opensdg.searchItems[ref]);
+            var itemsToSearch = _.pick(opensdg.searchItems, (value) => opensdg.completedIndicators.includes(value['id']));
+            
+            for (var ref in itemsToSearch) {
+                this.add(itemsToSearch[ref]);
             };
         });
 
@@ -137,7 +138,6 @@ var indicatorSearch = function () {
 };
 
 $(function () {
-
     var $el = $('#indicator_search');
     $('#jump-to-search').show();
     $('#jump-to-search a').click(function () {
@@ -146,6 +146,5 @@ $(function () {
         }
         $el.focus();
     });
-
     indicatorSearch();
 });
