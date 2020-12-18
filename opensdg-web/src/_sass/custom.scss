@@ -1236,10 +1236,12 @@ body {
 .navbar #search form { 
   padding-left: 1rem;
   padding-top: 0px;
+  transform: translate(0px, -0.5rem);
 }
 
 .navbar #search button { 
   font-size: 1.5rem;
+  transform: translate(0px, 3px);
 }
 
 .navbar #search {
@@ -1281,4 +1283,14 @@ h3 {
 
 .btn-download {
   display: inline-block;
+}
+
+.faq-box {
+  padding: 0.2rem;
+  border: 1px black solid;
+  font-weight: bold;
+}
+
+.faq-box.status.notapplicable {
+  color: white;
 }
