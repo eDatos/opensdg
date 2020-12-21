@@ -16,7 +16,7 @@ title: Indicadores para los Objetivos de Desarrollo Sostenible
 # Replace the baseurl with the name of this repository.
 baseurl: "/aplicaciones/appsistac/ods"
 #url: ""
-data_dir: data
+data_dir: _data
 environment: production
 # Replace "open-sdg" with the name of your GitHub organization, and
 # "open-sdg-data-starter" with the name of your data repository.

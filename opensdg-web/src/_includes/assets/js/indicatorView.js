@@ -238,7 +238,28 @@ var indicatorView = function (model, options) {
         }
     }
 
+    /**
+     * Función que activa todos los filtros exceptuando los de territorio.
+     */
+    function checkAllFields() {
+        var selectorDesagregaciones = ".variable-options label input[type=checkbox]";
+
+        $(selectorDesagregaciones).prop("checked", false);
+        $(selectorDesagregaciones).each(function (index) {
+            var isTerritorio = $(this).data('field') == "Territorio";
+            var isCanarias = $(this).val() == "Canarias";
+
+            if ((isTerritorio && isCanarias) || !isTerritorio) {
+                $(this).trigger("click");
+            }
+        });
+    }
+
     this.initialiseFields = function (args) {
+        function isCustomField(field) {
+            return !["Serie", "Territorio", "Units", "Value", "Year"].includes(field);
+        }
+
         if (args.fields.length) {
             var template = _.template($("#item_template").html());
 
@@ -246,13 +267,26 @@ var indicatorView = function (model, options) {
                 $('<button id="clear" aria-disabled="true" class="disabled">' + translations.indicator.clear_selections + ' <i class="fa fa-remove"></i></button>').insertBefore('#fields');
             }
 
+            // Se hace deep copy para no modificar el array original.
+            // También se puede resolver de la siguiente forma:
+            // var auxFields = $.extend(true, [], args.fields);
+            var auxFields = JSON.parse(JSON.stringify(args.fields))
+
+            auxFields.forEach((field) => {
+                if (isCustomField(field['field'])) {
+                    field['values'] = field['values'].filter((value) => value.visible);
+                }
+            })
+
             $('#fields').html(template({
-                fields: args.fields,
+                fields: auxFields,
                 allowedFields: args.allowedFields,
                 edges: args.edges
             }));
 
             $(this._rootElement).removeClass('no-fields');
+
+            checkAllFields();
 
         } else {
             $(this._rootElement).addClass('no-fields');
@@ -317,7 +351,7 @@ var indicatorView = function (model, options) {
 
         var that = this;
         var gridColor = that.getGridColor();
-        var tickColor = that.getTickColor();        
+        var tickColor = that.getTickColor();
         var chartConfig = {
             type: this._model.graphType,
             data: chartInfo,
@@ -362,7 +396,7 @@ var indicatorView = function (model, options) {
                      * Función que implementa la intersección de conjuntos
                      * @param {Set} otroSet 
                      */
-                    Set.prototype.intersection = function(otroSet) {
+                    Set.prototype.intersection = function (otroSet) {
                         var intersectionSet = new Set();
                         for (var elem of otroSet) {
                             if (this.has(elem)) {
@@ -735,7 +769,7 @@ var indicatorView = function (model, options) {
             var getHeading = function (heading, index) {
                 var span = '<span class="sort" />';
                 var name_heading = translations.t(heading)
-                
+
                 if (heading.toLowerCase() == 'year') {
                     name_heading = "Año"
                 } else if (heading.toLowerCase() == 'value') {

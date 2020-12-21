@@ -72,6 +72,16 @@ module Jekyll::CustomFilters
         end
         nil
     end
+
+
+    ##
+    # Función que convierte un hash de ruby en JSON que Javascript pueda manejar.
+    # Params:
+    # +ruby_hash+:: Hash de Ruby que se va a convertir.
+    def parse_json(ruby_hash)
+        ruby_hash.to_json
+    end
+
 end
 
 Liquid::Template.register_filter(Jekyll::CustomFilters)
