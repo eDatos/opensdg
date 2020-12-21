@@ -1,6 +1,8 @@
 <script>
     // This is where we initialise any global variables, namespaced in "opensdg".
     var opensdg = {
+        csvData: {{ site.data.csv | parse_json }},
+        currentIndicator: '{{ page.indicator.slug }}',
         completedIndicators: getCompletedIndicators(),
         // A base URL for asynchronous calls to SDG data.
         remoteDataBaseUrl: '{{ page.remote_data_prefix }}',

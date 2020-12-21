@@ -14,6 +14,7 @@ opensdg-web/src/deploy_key*
 opensdg-web/src/deploy_key*.pub
 opensdg-web/src/*.keybase
 opensdg-web/src/vendor
+opensdg-web/src/_data/csv/*.csv
 opensdg-datos/src/node_modules
 opensdg-datos/src/_site
 opensdg-datos/src/opensdg-datos
@@ -21,13 +22,3 @@ opensdg-datos/src/scripts/__pycache__
 opensdg-datos/src/metadata_generated
 opensdg-datos/src/__pycache__
 opensdg-datos/src/data/indice.csv
-
-
-# TODO EDATOS-3208: Incluir traducciones no necesarias en .gitignore
-#opensdg-web/src/translations/ar
-#opensdg-web/src/translations/de
-#opensdg-web/src/translations/fr
-#opensdg-web/src/translations/hy
-#opensdg-web/src/translations/kk
-#opensdg-web/src/translations/ru
-#opensdg-web/src/translations/zh-Hans

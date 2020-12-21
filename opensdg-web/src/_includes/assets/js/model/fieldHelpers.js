@@ -161,7 +161,69 @@ function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dat
     });
   }
   sortFieldsForView(states, edges);
-  return states;
+  return getModifiedStates(states, selectedUnit);
+}
+
+
+/**
+ * Función que devuelve True si el campo es un campo añadido y False en caso contrario.
+ * @param {String} field
+ */
+function isCustomField(field) {
+  return !["Serie", "Territorio", "Units", "Value", "Year"].includes(field);
+}
+
+/**
+ * Devuelve los campos disponibles dependiendo de la unidad seleccionada.
+ * @param {String} selectedUnit
+ */
+function getAvailableFields(selectedUnit) {
+  var indicatorData = opensdg.csvData[opensdg.currentIndicator].filter((dataRow) => dataRow['Units'] == selectedUnit);
+  var estatisticalKeys = Object.keys(indicatorData[0]).filter((value) => isCustomField(value));
+  var availableFields = [];
+
+  indicatorData.forEach((dataRow) => {
+    estatisticalKeys.forEach((key) => {
+      if (dataRow[key] != null && !availableFields.includes(dataRow[key])) {
+        availableFields.push(dataRow[key]);
+      }
+    });
+  });
+
+  return availableFields;
+}
+
+/**
+ * Función que modifica los estados para añadir aquellos que son visibles con una unidad concreta.
+ * @param {Array<Object>} states 
+ */
+function getModifiedStates(states, selectedUnit) {
+  var auxStates = getFixedTerritorioStates(states);
+  var availableFieldsByUnit = getAvailableFields(selectedUnit);
+
+  auxStates.forEach((state) => {
+    if (isCustomField(state['field'])) {
+      state['values'].forEach((value) => value['visible'] = availableFieldsByUnit.includes(value['value']))
+    }
+  });
+
+  return auxStates;
+}
+
+/**
+ * Función que desplaza el filtro de territorio al final de los estados.
+ * @param {Array<Object>} states 
+ */
+function getFixedTerritorioStates(states) {
+  var auxStates = states;
+  if (auxStates.length > 1) {
+    var territorioIndex = auxStates.findIndex((value) => value['field'] == "Territorio");
+    var territorioState = auxStates[territorioIndex];
+    auxStates.splice(territorioIndex, 1);
+    auxStates.push(territorioState)
+  }
+  
+  return auxStates;
 }
 
 /**
