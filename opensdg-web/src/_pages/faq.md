@@ -29,7 +29,7 @@ layout: page
 ## ¿Qué exploradores puedo utilizar para ver esta web?
 <p class="justified-text">Nuestra web funciona con la mayoría de las últimas versiones de los exploradores más utilizados. Existen algunas incidencias conocidas al utilizar versiones antíguas de exploradores, como por ejemplo IE8. Estamos trabajando para solucionar estas incidencias lo antes posible.</p>
 
-## Pueden otros organismos copiar este sitio web 
+## ¿Pueden otros organismos copiar este sitio web?
 
 Sí. Este sitio web está desarrollado utilizando software y servicios 100% libres por lo que, cualquier organismo podrá reutilizar nuestro código de forma gratuita. El código de este proyecto está disponible en su [repositorio github](https://github.com/eDatos/opensdg). 
 
