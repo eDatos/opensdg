@@ -112,8 +112,8 @@ defaults:
       header_text_image: "header_text_image.png"
       texto_serie_ocecas: "Indicador calculado utilizando una metodología armonizada entre los órganos centrales de estadística de las comunidades autónomas"
       imagen_serie_ocecas: "ocecas_metadata_image.jpg"
-      texto_serie: "" # TODO EDATOS-3208: Se dejará esto en blanco hasta que se defina un texto.
-      imagen_serie : "metadata_image.jpg" # TODO EDATOS-3222: Modificar esta imagen con el logo de la C del ISTAC pero bien
+      texto_serie: ""
+      imagen_serie : "metadata_image.jpg"
 
 
 # Set a base for all goal image URLs. Note that the full goal image path will be
