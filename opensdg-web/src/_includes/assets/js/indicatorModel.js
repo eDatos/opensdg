@@ -317,7 +317,6 @@ var indicatorModel = function (options) {
 
     this.onFieldsStatusUpdated.notify({
       data: this.fieldItemStates,
-      // TODO: Why is selectionStates not used?
       selectionStates: []
     });
     this.onDataComplete.notify({
