@@ -1106,6 +1106,9 @@ body.contrast-high {
 
     }
 
+.navbar .top-level li {
+  width: 100%;
+}
 
 //for images in agenda
 figure {
@@ -1294,3 +1297,21 @@ h3 {
 .faq-box.status.notapplicable {
   color: white;
 }
+
+
+#search-mobile-btn {
+  width: 20%;
+  margin-right: 0.3rem;
+  display: inline;
+}
+
+#indicator_search-mobile {
+  width: 75%;
+  margin-left: 0.3rem;
+  display: inline;
+}
+
+#indicator_search, #search-btn {
+  display: inline;
+}
+
