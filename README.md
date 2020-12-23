@@ -37,7 +37,13 @@ $ rbenv global 2.5.5
 
 $ sudo apt-get install python=3.8
 
+$ cd opensdg-web/src
+
 $ gem install bundler
+
+$ cd assets/js
+
+$ npm install
 
 ````
 

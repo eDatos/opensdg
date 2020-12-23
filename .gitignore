@@ -15,6 +15,7 @@ opensdg-web/src/deploy_key*.pub
 opensdg-web/src/*.keybase
 opensdg-web/src/vendor
 opensdg-web/src/_data/csv/*.csv
+opensdg-web/src/assets/js/node_modules
 opensdg-datos/src/node_modules
 opensdg-datos/src/_site
 opensdg-datos/src/opensdg-datos
