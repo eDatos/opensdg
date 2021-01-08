@@ -112,6 +112,22 @@ header {
 
 @media only screen and (max-width: 768px) {
 
+  header .container .row {
+    margin-right: 0px !important;
+  }
+
+  .container .row #main-nav {
+    padding-right: 0px !important;
+  }
+
+  #main-content .tab-content #imagen_serie {
+    width: 10% !important;
+  }
+
+  #main-content div p img {
+    width: 100% !important;
+  }
+
   .navbar {
     .top-level {
       li {
