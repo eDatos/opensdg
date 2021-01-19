@@ -186,7 +186,6 @@
                         axis: 'x',
                         callbacks: {
                             label: function (tooltipItems, data) {
-                                console.log(tooltipItems.yLabel);
                                 if (!tooltipItems.yLabel) {
                                     return data.datasets[tooltipItems.datasetIndex].label + ' : Valor no disponible';
                                 } else {
