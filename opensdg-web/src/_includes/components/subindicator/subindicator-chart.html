@@ -27,23 +27,6 @@
     }
 
     /**
-     * Devuelve el número de territorios. 
-     * Para el caso en que haya más de dos.
-     * @param {JSON} data 
-     */
-    function getNumberOfTerritories(data) {
-        return [...new Set(data.Territorio)].length;
-    }
-
-    /**
-     * Devuelve el número de objetivos.
-     * @param {JSON} data 
-     */
-    function getNumberOfObjetives(data) {
-        return [...new Set(data.Objetivo)].length;
-    }
-
-    /**
      * Devuelve los índices de un territorio dado
      * @param {JSON} data 
      * @param {String} territory
@@ -54,6 +37,21 @@
                 return index;
             }
         });
+    }
+
+    function getData(data, indexes) {
+        if (hasTerritorio(data)) {
+            var years = getYears(data);
+            var dataset = new Array(years.length).fill(null);
+
+            indexes.forEach(index => {
+                var datasetIndex = years.indexOf(data.Year[index]);
+                dataset[datasetIndex] = data.Value[index];
+            })
+            return dataset;
+        } else {
+            return data.Value;
+        }
     }
 
     /**
@@ -69,18 +67,7 @@
      * @param {JSON} data 
      */
     function getCanariasData(data) {
-        if (hasTerritorio(data)) {
-            var canariasIndexes = getCanariasIndexes(data);
-            return data.Value.map(function (value, index) {
-                if (canariasIndexes.includes(index)) {
-                    return value;
-                }
-            }).filter(function (x) {
-                return x !== undefined;
-            });
-        } else {
-            return data.Value;
-        }
+        return getData(data, getCanariasIndexes(data));
     }
 
     /**
@@ -110,14 +97,7 @@
      * @param {JSON} data 
      */
     function getEspanaData(data) {
-        var espanaIndexes = getEspanaIndexes(data);
-        return data.Value.map(function (value, index) {
-            if (espanaIndexes.includes(index)) {
-                return value;
-            }
-        }).filter(function (x) {
-            return x !== undefined;
-        });
+        return getData(data, getEspanaIndexes(data));
     }
 
     /**
@@ -181,15 +161,24 @@
         return datasets;
     }
 
+    /**
+     * Devuelve un array con los años que aparecen en el dataset.
+     * @param {JSON} data 
+     */
+    function getYears(data) {
+        return [...new Set(data.Year)].sort()
+    }
+
     fetch("{{ page.remote_data_prefix }}/data/{{ subindicator.slug }}.json")
         .then(res => res.json())
         .then(json => {
+            console.log(json);
             var ctx = document.getElementById(`subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}`)
                 .getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: [...new Set(json.Year)],
+                    labels: getYears(json),
                     datasets: getDatasets(json),
                 },
                 options: {
