@@ -172,7 +172,6 @@
     fetch("{{ page.remote_data_prefix }}/data/{{ subindicator.slug }}.json")
         .then(res => res.json())
         .then(json => {
-            console.log(json);
             var ctx = document.getElementById(`subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}`)
                 .getContext('2d');
             var myChart = new Chart(ctx, {
