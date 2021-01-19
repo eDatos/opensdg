@@ -185,8 +185,12 @@
                         axis: 'x',
                         callbacks: {
                             label: function (tooltipItems, data) {
-                                var labelNumero = Intl.NumberFormat("es-ES", { minimumFractionDigits: 2 }).format(tooltipItems.yLabel);
-                                return data.datasets[tooltipItems.datasetIndex].label + ' : ' + labelNumero;
+                                if (!tooltipItems.yLabel) {
+                                    return data.datasets[tooltipItems.datasetIndex].label + ' : Valor no disponible';
+                                } else {
+                                    var labelNumero = Intl.NumberFormat("es-ES", { minimumFractionDigits: 2 }).format(tooltipItems.yLabel);
+                                    return data.datasets[tooltipItems.datasetIndex].label + ' : ' + labelNumero;
+                                }
                             }
                         }
                     },
