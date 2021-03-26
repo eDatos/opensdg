@@ -9,168 +9,168 @@
 {% if show_data %}
 <canvas height="200" id="subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}" width="400"></canvas>
 <script>
-    /**
-     * Comprueba si existen objetivos en los datos
-     * @param {JSON} data 
-     */
-    function hasObjetivo(data) {
-        return "Objetivo" in data;
-    }
-
-    /**
-     * Comprueba si existen territorios en los datos
-     * @param {JSON} data 
-     */
-    function hasTerritorio(data) {
-        return "Territorio" in data;
-    }
-
-    /**
-     * Devuelve los índices de un territorio dado
-     * @param {JSON} data 
-     * @param {String} territory
-     */
-    function getIndexes(data, territory) {
-        return data.Territorio.map(function (territorio, index) {
-            if (territorio == territory) {
-                return index;
-            }
-        });
-    }
-
-    function getData(data, indexes) {
-        if (hasTerritorio(data)) {
-            var years = getYears(data);
-            var dataset = new Array(years.length).fill(null);
-
-            indexes.forEach(index => {
-                var datasetIndex = years.indexOf(data.Year[index]);
-                dataset[datasetIndex] = data.Value[index];
-            })
-            return dataset;
-        } else {
-            return data.Value;
-        }
-    }
-
-    /**
-     * Devuelve los índices de Canarias
-     * @param {JSON} data 
-     */
-    function getCanariasIndexes(data) {
-        return getIndexes(data, "ES70"); // Se utiliza como territorio su código NUTS2
-    }
-
-    /**
-     * Devuelve los datos de canarias
-     * @param {JSON} data 
-     */
-    function getCanariasData(data) {
-        return getData(data, getCanariasIndexes(data));
-    }
-
-    /**
-     * Devuelve el dataset de Canarias
-     * @param {JSON} data 
-     */
-    function getCanariasDataset(data) {
-        return {
-            label: "{{ subindicator.unidad_medida }} Canarias",
-            data: getCanariasData(data),
-            backgroundColor: 'rgba(122,122,122,0.5)',
-            borderColor: 'rgba(77,77,77,1)',
-            borderWidth: 1
-        };
-    }
-
-    /**
-     * Devuelve los índices de España
-     * @param {JSON} data 
-     */
-    function getEspanaIndexes(data) {
-        return getIndexes(data, "ES"); // Se utiliza como territorio su código NUTS2
-    }
-
-    /**
-     * Devuelve los datos de España
-     * @param {JSON} data 
-     */
-    function getEspanaData(data) {
-        return getData(data, getEspanaIndexes(data));
-    }
-
-    /**
-     * Devuelve el dataset de España
-     * @param {JSON} data 
-     */
-    function getEspanaDataset(data) {
-        return {
-            label: "{{ subindicator.unidad_medida }} España",
-            data: getEspanaData(data),
-            type: 'line',
-            pointRadius: 3,
-            borderColor: 'rgb(0,0,255)',
-            backgroundColor: 'rgba(0,0,0,0)',
-            borderWidth: 1,
-            lineTension: 0
-        };
-    }
-
-    /**
-     * Devuelve el dataset de la media
-     * @param {JSON} data 
-     */
-    function getMeanDataset(data) {
-        /**
-         * Calcula la media
-         * @param {Array<Float>} data 
-         */
-        function mean(data) {
-            if (data.length > 0) {
-                return Array.from(data).reduce((a, b) => a + b) / data.length;
-            } else {
-                return 0;
-            }
-        }
-        var canariasData = getCanariasData(data);
-        var meanQuant = mean(canariasData);
-        return {
-            //label: `Media ${Intl.NumberFormat("de-DE").format(meanQuant)} {{ subindicator.unidad_medida }}`,
-            label: `{{ subindicator.unidad_medida }} Media Canarias`,
-            data: new Array(canariasData.length).fill(meanQuant.toFixed(2)),
-            type: 'line',
-            pointRadius: 0,
-            borderColor: 'rgb(255,0,0)',
-            backgroundColor: 'rgba(0,0,0,0)',
-            borderWidth: 2
-        };
-    }
-
-    /**
-     * Devuelve los datasets necesarios dependiendo del tipo de datos pasados en el CSV
-     * @param {JSON} data 
-     */
-    function getDatasets(data) {
-        var datasets = [];
-        datasets.push(getCanariasDataset(data));
-        if (hasTerritorio(data)) {
-            datasets.push(getEspanaDataset(data));
-        }
-        datasets.push(getMeanDataset(data));
-        return datasets;
-    }
-
-    /**
-     * Devuelve un array con los años que aparecen en el dataset.
-     * @param {JSON} data 
-     */
-    function getYears(data) {
-        return [...new Set(data.Year)].sort()
-    }
-
     fetch("{{ page.remote_data_prefix }}/data/{{ subindicator.slug }}.json")
         .then(res => res.json())
         .then(json => {
+            /**
+             * Comprueba si existen objetivos en los datos
+             * @param {JSON} data 
+             */
+            function hasObjetivo(data) {
+                return "Objetivo" in data;
+            }
+
+            /**
+             * Comprueba si existen territorios en los datos
+             * @param {JSON} data 
+             */
+            function hasTerritorio(data) {
+                return "Territorio" in data;
+            }
+
+            /**
+             * Devuelve los índices de un territorio dado
+             * @param {JSON} data 
+             * @param {String} territory
+             */
+            function getIndexes(data, territory) {
+                return data.Territorio.map(function (territorio, index) {
+                    if (territorio == territory) {
+                        return index;
+                    }
+                });
+            }
+
+            function getData(data, indexes) {
+                if (hasTerritorio(data)) {
+                    var years = getYears(data);
+                    var dataset = new Array(years.length).fill(null);
+
+                    indexes.forEach(index => {
+                        var datasetIndex = years.indexOf(data.Year[index]);
+                        dataset[datasetIndex] = data.Value[index];
+                    })
+                    return dataset;
+                } else {
+                    return data.Value;
+                }
+            }
+
+            /**
+             * Devuelve los índices de Canarias
+             * @param {JSON} data 
+             */
+            function getCanariasIndexes(data) {
+                return getIndexes(data, "ES70"); // Se utiliza como territorio su código NUTS2
+            }
+
+            /**
+             * Devuelve los datos de canarias
+             * @param {JSON} data 
+             */
+            function getCanariasData(data) {
+                return getData(data, getCanariasIndexes(data));
+            }
+
+            /**
+             * Devuelve el dataset de Canarias
+             * @param {JSON} data 
+             */
+            function getCanariasDataset(data) {
+                return {
+                    label: "{{ subindicator.unidad_medida }} Canarias",
+                    data: getCanariasData(data),
+                    backgroundColor: 'rgba(122,122,122,0.5)',
+                    borderColor: 'rgba(77,77,77,1)',
+                    borderWidth: 1
+                };
+            }
+
+            /**
+             * Devuelve los índices de España
+             * @param {JSON} data 
+             */
+            function getEspanaIndexes(data) {
+                return getIndexes(data, "ES"); // Se utiliza como territorio su código NUTS2
+            }
+
+            /**
+             * Devuelve los datos de España
+             * @param {JSON} data 
+             */
+            function getEspanaData(data) {
+                return getData(data, getEspanaIndexes(data));
+            }
+
+            /**
+             * Devuelve el dataset de España
+             * @param {JSON} data 
+             */
+            function getEspanaDataset(data) {
+                return {
+                    label: "{{ subindicator.unidad_medida }} España",
+                    data: getEspanaData(data),
+                    type: 'line',
+                    pointRadius: 3,
+                    borderColor: 'rgb(0,0,255)',
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    borderWidth: 1,
+                    lineTension: 0
+                };
+            }
+
+            /**
+             * Devuelve el dataset de la media
+             * @param {JSON} data 
+             */
+            function getMeanDataset(data) {
+                /**
+                 * Calcula la media
+                 * @param {Array<Float>} data 
+                 */
+                function mean(data) {
+                    if (data.length > 0) {
+                        return Array.from(data).reduce((a, b) => a + b) / data.length;
+                    } else {
+                        return 0;
+                    }
+                }
+                var canariasData = getCanariasData(data);
+                var meanQuant = mean(canariasData);
+                return {
+                    //label: `Media ${Intl.NumberFormat("de-DE").format(meanQuant)} {{ subindicator.unidad_medida }}`,
+                    label: `{{ subindicator.unidad_medida }} Media Canarias`,
+                    data: new Array(canariasData.length).fill(meanQuant.toFixed(2)),
+                    type: 'line',
+                    pointRadius: 0,
+                    borderColor: 'rgb(255,0,0)',
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    borderWidth: 2
+                };
+            }
+
+            /**
+             * Devuelve los datasets necesarios dependiendo del tipo de datos pasados en el CSV
+             * @param {JSON} data 
+             */
+            function getDatasets(data) {
+                var datasets = [];
+                datasets.push(getCanariasDataset(data));
+                if (hasTerritorio(data)) {
+                    datasets.push(getEspanaDataset(data));
+                }
+                datasets.push(getMeanDataset(data));
+                return datasets;
+            }
+
+            /**
+             * Devuelve un array con los años que aparecen en el dataset.
+             * @param {JSON} data 
+             */
+            function getYears(data) {
+                return [...new Set(data.Year)].sort()
+            }
+
             var ctx = document.getElementById(`subindicator-chart-{{ subindicator.slug | replace: '_', '-' }}`)
                 .getContext('2d');
             var myChart = new Chart(ctx, {
@@ -186,10 +186,14 @@
                         callbacks: {
                             label: function (tooltipItems, data) {
                                 if (!tooltipItems.yLabel) {
-                                    return data.datasets[tooltipItems.datasetIndex].label + ' : Valor no disponible';
+                                    return data.datasets[tooltipItems.datasetIndex].label +
+                                        ' : Valor no disponible';
                                 } else {
-                                    var labelNumero = Intl.NumberFormat("es-ES", { minimumFractionDigits: 2 }).format(tooltipItems.yLabel);
-                                    return data.datasets[tooltipItems.datasetIndex].label + ' : ' + labelNumero;
+                                    var labelNumero = Intl.NumberFormat("es-ES", {
+                                        minimumFractionDigits: 2
+                                    }).format(tooltipItems.yLabel);
+                                    return data.datasets[tooltipItems.datasetIndex].label + ' : ' +
+                                        labelNumero;
                                 }
                             }
                         }
@@ -198,7 +202,9 @@
                         yAxes: [{
                             beginAtZero: true,
                             ticks: {
-                                callback: (value) => Intl.NumberFormat("es-ES", { minimumFractionDigits: 2 }).format(value)
+                                callback: (value) => Intl.NumberFormat("es-ES", {
+                                    minimumFractionDigits: 2
+                                }).format(value)
                             }
                         }],
                     }
