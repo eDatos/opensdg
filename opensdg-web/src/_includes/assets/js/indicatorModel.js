@@ -155,7 +155,7 @@ var indicatorModel = function (options) {
   this.updateSelectedUnit = function(selectedUnit) {
     this.selectedUnit = selectedUnit;
     this.getData({
-      updateFields: this.dataHasUnitSpecificFields
+      updateFields: true // Se fuerza la actualización para tener en cuenta siempre el filtro de campos.
     });
     this.onUnitsSelectedChanged.notify(selectedUnit);
   };
