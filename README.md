@@ -31,19 +31,13 @@ $ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 
 $ source ~/.bashrc
 
-$ rbenv install 2.5.5
-
-$ rbenv global 2.5.5
+$ rbenv install 2.5.5 & rbenv global 2.5.5
 
 $ sudo apt-get install python=3.8
 
-$ cd opensdg-web/src
+$ cd opensdg-web/src & gem install bundler & bundle install
 
-$ gem install bundler
-
-$ cd assets/js
-
-$ npm install
+$ cd assets/js & npm install & cd -
 
 ````
 
@@ -65,7 +59,7 @@ python scripts/build_data.py
 Este directorio habrá que renombrarlo a **opensdg-datos** y, una vez renombrado, habrá que mover este directorio a **opensdg-web/src**, para esto ejecutamos lo siguiente dentro del directorio **opensdg-datos/src**:
 
 ```` 
-mv _site opensdg-datos & mv opensdg-datos ../../opensdg-web
+mv _site opensdg-datos & mv opensdg-datos ../../opensdg-web/src
 ```` 
 
 3) Tras generar y mover los datos tendremos que desplazarnos al directorio **opensdg-web/src** y ejecutar lo siguiente:
