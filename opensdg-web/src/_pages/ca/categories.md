@@ -1,6 +1,6 @@
 ---
 layout: categories
-permalink: en/categories/
+permalink: ca/categories/
 title: Categories
 ---
 ## Posts by Category
