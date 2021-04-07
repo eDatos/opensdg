@@ -1,5 +1,7 @@
 """
-Script que descarga las imágenes en un idioma concreto
+Script que descarga las imágenes en un idioma concreto.
+Los idiomas pueden ser ar, de, en, es, fr, hy, kk, ru o zh-Hans.
+Estas imágenes deberán ser ubicadas en opensdg-web/src/assets/img/ods_images
 """
 
 import requests
