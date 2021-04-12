@@ -287,9 +287,48 @@ prose:
           label: Coordinado con Ocecas
           translation_key: subindicator.coordinado_con_ocecas
           scope: nota
-      
+
       ######### FIN Subindicator Metadata #########
-      
+
+      ######### Info para mapas #########
+      - name: "show_map"
+        field:
+          element: checkbox
+          label: Mostrar mapa
+          translation_key: subindicator.show_map
+      - name: "colorBins"
+        field:
+          element: text
+          label: Cantidad de colores en el degradado del region mapping
+          translation_key: subindicator.colorBins
+      - name: "geojson"
+        field:
+          element: text
+          label: URL de la que se consume el geojson
+          translation_key: subindicator.geojson
+      - name: "geocode_ref"
+        field:
+          element: text
+          label: Nombre de la columna del CSV que representará el geocode
+          translation_key: subindicator.geocode_ref
+      - name: "territory_geocode"
+        field:
+          element: text
+          label: NUTS del territorio que se ha de mapear con Geocode
+          translation_key: subindicator.territory_geocode
+      - name: "base_color"
+        field:
+          element: text
+          label: Color base para el degradado del region mapping
+          translation_key: subindicator.base_color
+      - name: "end_color"
+        field:
+          element: text
+          label: Color final para el degradado del region mapping
+          translation_key: subindicator.end_color
+
+      ######### FIN Info para mapas #########
+
       ######### Data Info #########
       - name: "reporting_status"
         field:
