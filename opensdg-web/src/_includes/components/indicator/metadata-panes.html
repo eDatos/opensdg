@@ -28,13 +28,35 @@
     {% endif %}
     
     {% if page.indicator.reporting_status != 'notstarted' %}
+        <!-- <script>
+            function openMap(slug) {
+                document.getElementById(`chart-wrapper-${slug}`).style.display = "none";
+                document.getElementById(`map-wrapper-${slug}`).style.display = "block";
+            }
+
+            function openChart(slug) {
+                document.getElementById(`chart-wrapper-${slug}`).style.display = "block";
+                document.getElementById(`map-wrapper-${slug}`).style.display = "none";
+            }
+        </script> -->
         {% assign sorted_indicators = page.indicators | where: 'target_id', page.indicator.number | sort: 'sort_order' %}
         {% for s in sorted_indicators%}
             <div class="tab-pane {% if forloop.first %}active{% endif %}" id="subindicator{{ s.number | replace: '.', '' }}" role="tabpanel">
+                <!-- <div class="btn-group" role="group" aria-label="Selección mapa o gráfico">
+                    <button onclick="openChart('{{ s.slug }}')" type="button" class="btn btn-secondary">Gráfico</button>
+                    <button onclick="openMap('{{ s.slug }}')" type="button" class="btn btn-secondary">Mapa</button>
+                </div> -->
+
                 <div class="mb-2 text-center"><h3><b>{{ s.graph_title | t }}</b></h3></div>
-                <div class="chart">
+
+                <div id="chart-wrapper-{{ s.slug }}" class="chart">
                     {% include components/subindicator/subindicator-chart.html scope=s %}
                 </div>
+                {% if s.show_map %}
+                <div id="map-wrapper-{{ s.slug }}" class="map">
+                    {% include components/subindicator/subindicator-map.html scope=s %}
+                </div>
+                {% endif %}
                 
                 <div class="metadata">
                     {% include components/subindicator/subindicator-metadata.html scope=s %}
