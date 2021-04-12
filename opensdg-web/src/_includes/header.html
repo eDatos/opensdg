@@ -18,7 +18,11 @@
     <div class="container">
         <div class="row">
             <div class="logo-and-mobile-widgets col-md-4">
+                {% if page.language == site.languages[0] %}
                 <a class="navbar-brand sustainable-brand" href="{{ page.baseurl }}" id="home">
+                {% else %}
+                <a class="navbar-brand sustainable-brand" href="{{ page.baseurl }}/{{ page.language }}" id="home">
+                {% endif %}
                     <img src="{{ site.baseurl }}/assets/img/{{ page.header_image }}"
                         alt="{{ page.t.general.sdg }} - {{ page.t.header.tag_line }}" />
                 </a>
