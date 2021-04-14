@@ -26,38 +26,40 @@
     {% else %}
         {% include components/indicator/metadata-panes-default.html %}
     {% endif %}
-    
-    {% if page.indicator.reporting_status != 'notstarted' %}
-        <!-- <script>
-            function openMap(slug) {
-                document.getElementById(`chart-wrapper-${slug}`).style.display = "none";
-                document.getElementById(`map-wrapper-${slug}`).style.display = "block";
-            }
 
-            function openChart(slug) {
-                document.getElementById(`chart-wrapper-${slug}`).style.display = "block";
-                document.getElementById(`map-wrapper-${slug}`).style.display = "none";
-            }
-        </script> -->
+    {% if page.indicator.reporting_status != 'notstarted' %}
         {% assign sorted_indicators = page.indicators | where: 'target_id', page.indicator.number | sort: 'sort_order' %}
         {% for s in sorted_indicators%}
             <div class="tab-pane {% if forloop.first %}active{% endif %}" id="subindicator{{ s.number | replace: '.', '' }}" role="tabpanel">
-                <!-- <div class="btn-group" role="group" aria-label="Selección mapa o gráfico">
-                    <button onclick="openChart('{{ s.slug }}')" type="button" class="btn btn-secondary">Gráfico</button>
-                    <button onclick="openMap('{{ s.slug }}')" type="button" class="btn btn-secondary">Mapa</button>
-                </div> -->
 
-                <div class="mb-2 text-center"><h3><b>{{ s.graph_title | t }}</b></h3></div>
+                <div class="mb-2 text-center">
+                    <h3><b>{{ s.graph_title | t }}</b></h3>
+                </div>
 
-                <div id="chart-wrapper-{{ s.slug }}" class="chart">
-                    {% include components/subindicator/subindicator-chart.html scope=s %}
+                <div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#grafico-{{ s.slug }}" aria-controls="home" role="tab" data-toggle="tab">Gráfico</a></li>
+                        {% if s.show_map %}
+                        <li role="presentation"><a onclick="window.dispatchEvent(new Event('resize'));" href="#mapa-{{ s.slug }}" aria-controls="profile" role="tab" data-toggle="tab">Mapa</a></li>
+                        {% endif %}
+                    </ul>
+                    
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="grafico-{{ s.slug }}">
+                            <div class="chart" id="chart-wrapper-{{ s.slug }}">
+                                {% include components/subindicator/subindicator-chart.html scope=s %}
+                            </div>
+                        </div>
+                        {% if s.show_map %}
+                        <div role="tabpanel" class="tab-pane" id="mapa-{{ s.slug }}">
+                            <div class="map" id="map-wrapper-{{ s.slug }}">
+                                {% include components/subindicator/subindicator-map.html scope=s %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
-                {% if s.show_map %}
-                <div id="map-wrapper-{{ s.slug }}" class="map">
-                    {% include components/subindicator/subindicator-map.html scope=s %}
-                </div>
-                {% endif %}
-                
+
                 <div class="metadata">
                     {% include components/subindicator/subindicator-metadata.html scope=s %}
                 </div>

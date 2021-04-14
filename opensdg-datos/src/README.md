@@ -77,6 +77,7 @@ source_url_text_N|Texto que aparecerá como enlace para la web de la fuente N|Te
 computation_units|Unidad de medida del indicador|Texto entre comillas
 prev_indicator|Indicador previo. Utilizado para la navegación entre indicadores|Número de indicador con el formato [**\$M-\$O-\$I**](#nombre-de-los-metadatos)
 next_indicator|Indicador siguiente. Utilizado para la navegación entre indicadores|Número de indicador con el formato [**\$M-\$O-\$I**](#nombre-de-los-metadatos)
+show_map|Metadato que se utiliza para mostrar o no el mapa|Valores booleanos (true, false)|
 
 #### Metadatos de Serie
 
