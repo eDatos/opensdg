@@ -151,13 +151,14 @@
     updateColors: function() {
       var plugin = this;
       this.getAllLayers().eachLayer(function(layer) {
-        layer.setStyle(function(feature) {
+          // Modificación EDATOS-3320: Se establece el fondo como transparente cuando no hay datos.
+          layer.setStyle(function(feature) {
           let color = plugin.getColor(feature.properties);
           return {
-            fillColor: color,
-            fillOpacity: color.toUpperCase() === "#F0F0F0" ? 0 : 0.9,
+              fillColor: color,
+              fillOpacity: color.toUpperCase() === "#F0F0F0" ? 0 : 0.9,
           }
-        });
+          });
       });
     },
     
