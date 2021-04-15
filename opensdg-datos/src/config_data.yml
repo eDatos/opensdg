@@ -87,10 +87,21 @@ reporting_status_extra_fields: []
 # below and adjust if you would like to use the Open SDG mapping functionality.
 # Note that the GeoJSON files can either be remote (as in the example below) or
 # local, relative to the src_dir specified above.
-#map_layers:
-#  - geojson_file: https://geoportal1-ons.opendata.arcgis.com/datasets/4fcca2a47fed4bfaa1793015a18537ac_4.geojson
-#    name_property: rgn17nm
-#    id_property: rgn17cd
+
+# Ejemplo de map_options
+# map_options:
+#   # If you would like to use tile (background) imagery, use these:
+#   tileURL: https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}
+#   tileOptions:
+#     id: mapbox/streets-v11
+#     accessToken: pk.eyJ1IjoianJvZGNvciIsImEiOiJja240bjEwdjMwa3EwMnZvMDdjejF6MXQ3In0.rwgQT9lyjU77AT7fSJD2vw
+#     attribution: Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>
+
+# Ejemplo de map_layer
+# map_layers:
+#  - geojson_file: https://datos.canarias.es/catalogos/estadisticas/dataset/6dd8baf4-14f4-43a3-88b2-984d034c965c/resource/d31b5422-df3b-4eae-b0eb-b4acbecb8ef0/download/municipios_20170101_generalizado.json
+#    name_property: etiqueta
+#    id_property: geocode
 #    output_subfolder: regions
 #    filename_prefix: indicator_
 

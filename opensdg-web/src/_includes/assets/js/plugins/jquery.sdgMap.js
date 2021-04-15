@@ -151,14 +151,11 @@
     updateColors: function() {
       var plugin = this;
       this.getAllLayers().eachLayer(function(layer) {
-          // Modificación EDATOS-3320: Se establece el fondo como transparente cuando no hay datos.
-          layer.setStyle(function(feature) {
-          let color = plugin.getColor(feature.properties);
+        layer.setStyle(function(feature) {
           return {
-              fillColor: color,
-              fillOpacity: color.toUpperCase() === "#F0F0F0" ? 0 : 0.9,
+            fillColor: plugin.getColor(feature.properties),
           }
-          });
+        });
       });
     },
     
@@ -433,7 +430,24 @@
   $.fn['sdgMap'] = function(options) {
     return this.each(function() {
       if (!$.data(this, 'plugin_sdgMap')) {
-        $.data(this, 'plugin_sdgMap', new Plugin(this, options));
+        /* Modificación EDATOS-3320
+         * Se sobreescribe la función updateColors para que los colores sin datos
+         * se vean transparentes en lugar de grises.
+         */
+        let plugin = new Plugin(this, options);
+        plugin.updateColors = function () {
+            var plugin = this;
+            this.getAllLayers().eachLayer(function(layer) {
+                layer.setStyle(function(feature) {
+                    let color = plugin.getColor(feature.properties);
+                    return {
+                        fillColor: color,
+                        fillOpacity: color.toUpperCase() === "#F0F0F0" ? 0 : 0.9,
+                    }
+                });
+            });
+        }
+        $.data(this, 'plugin_sdgMap', plugin);
       }
     });
   };

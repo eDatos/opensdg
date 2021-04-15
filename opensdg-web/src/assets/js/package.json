@@ -14,7 +14,7 @@
     "file-saver": "^2.0.2",
     "font-awesome": "^4.5.0",
     "html2canvas": "^1.0.0-rc.3",
-    "iso8601-js-period": "^0.2.1",
+    "iso8601-js-period": "github:nezasa/iso8601-js-period",
     "jquery": "^3.4.1",
     "leaflet": "^1.7.1",
     "leaflet-fullscreen": "^1.0.1",
