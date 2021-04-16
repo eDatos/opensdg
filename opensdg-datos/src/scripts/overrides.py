@@ -8,9 +8,11 @@ import humanize
 import re
 import os
 import sdg
+import copy
+
 from sdg import open_sdg
 from sdg import IndicatorExportService
-from sdg.outputs import OutputOpenSdg
+from sdg.outputs import OutputOpenSdg, OutputGeoJson
 from sdg.data import write_csv
 from sdg.json import write_json, df_to_list_dict
 
@@ -179,6 +181,43 @@ class OVROutputOpenSdg(OutputOpenSdg):
 
 
 """
+Sobreescritura de OutputGeoJson
+https://github.com/open-sdg/sdg-build/blob/1.0.0/sdg/outputs/OutputGeoJson.py
+"""
+class OVROutputGeoJson(OutputGeoJson):
+    def get_series_by_geocodes(self, indicator):
+        """Get a dict of lists of Series objects, keyed by geocode ids.
+
+        Parameters
+        ----------
+        indicator : Indicator
+            An instance of the Indicator class.
+
+        Returns
+        -------
+        dict
+            Lists of instances of the Series class, keyed by geocode id.
+        """
+        series_by_geocodes = {}
+        for series in indicator.get_all_series():
+            if series.has_disaggregation(self.id_column):
+                geocode = series.get_disaggregation(self.id_column)
+                geocode = self.replace_geocode(geocode)
+
+                # Se corrige el error que surge cuando usamos geocodes numéricos.
+                try:
+                    geocode = str(int(geocode))
+                except:
+                    if geocode[-2:] == ".0":
+                        geocode = geocode[:-2]
+
+                if geocode not in series_by_geocodes:
+                    series_by_geocodes[geocode] = []
+                series_by_geocodes[geocode].append(series)
+        return series_by_geocodes
+
+
+"""
 Sobreescritura de open_sdg_prep
 https://github.com/open-sdg/sdg-build/blob/1.0.0/sdg/open_sdg.py#L156
 """
@@ -242,8 +281,7 @@ def ovr_open_sdg_prep(options):
             geojson_file = os.path.join(options['src_dir'], geojson_kwargs['geojson_file'])
             geojson_kwargs['geojson_file'] = geojson_file
         # Create the output.
-        outputs.append(sdg.outputs.OutputGeoJson(**geojson_kwargs))
-
+        outputs.append(OVROutputGeoJson(**geojson_kwargs))
     return outputs
 
 open_sdg.open_sdg_prep = ovr_open_sdg_prep

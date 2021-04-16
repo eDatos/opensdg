@@ -7,7 +7,7 @@ if [[ -d opensdg-web/src/_site ]]; then rm -fr opensdg-web/src/_site; fi
 if [[ -d opensdg-web/src/opensdg-datos ]]; then rm -fr opensdg-web/src/opensdg-datos; fi
 
 # Borramos el directorio web en caso de que existiese
-rm -fr web
+if [[ -d web ]]; then rm -fr web; fi
 
 # Construimos los datos
 cd opensdg-datos/src || exit

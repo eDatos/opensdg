@@ -287,9 +287,18 @@ prose:
           label: Coordinado con Ocecas
           translation_key: subindicator.coordinado_con_ocecas
           scope: nota
-      
+
       ######### FIN Subindicator Metadata #########
-      
+
+      ######### Info para mapas #########
+      - name: "show_map"
+        field:
+          element: checkbox
+          label: Mostrar mapa
+          translation_key: subindicator.show_map
+
+      ######### FIN Info para mapas #########
+
       ######### Data Info #########
       - name: "reporting_status"
         field:
