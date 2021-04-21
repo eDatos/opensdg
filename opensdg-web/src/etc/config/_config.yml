@@ -14,15 +14,15 @@ remote_theme: open-sdg/open-sdg@1.1.0
 # Replace this title as needed.
 title: Indicadores para los Objetivos de Desarrollo Sostenible
 # Replace the baseurl with the name of this repository.
-baseurl: "/aplicaciones/appsistac/ods"
+baseurl: ""
 #url: ""
 data_dir: _data
 environment: production
 # Replace "open-sdg" with the name of your GitHub organization, and
 # "open-sdg-data-starter" with the name of your data repository.
 
-# remote_data_prefix: "http://localhost:5000"
-remote_data_prefix: "./opensdg-datos"
+remote_data_prefix: "http://localhost:5000"
+# remote_data_prefix: "./opensdg-datos"
 
 # Automatically create indicator pages, goal pages,
 # and some other required pages.
@@ -118,7 +118,7 @@ defaults:
 
 # Set a base for all goal image URLs. Note that the full goal image path will be
 # the base below, completed with: /[language]/[number].png (eg, /fr/6.png).
-goal_image_base: https://open-sdg.github.io/sdg-translations/assets/img/goals
+goal_image_base: https://estadisticas.arte-consultores.com/aplicaciones/appsistac/ods/assets/img/ods_images
 
 # Tell Jekyll to use the Remote Theme plugin.
 plugins:
