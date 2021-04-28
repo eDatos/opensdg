@@ -1,7 +1,7 @@
 # Replace this title as needed.
-title: Indicadores para los Objetivos de Desarrollo Sostenible BALEARES
+title: Indicadores para los Objetivos de Desarrollo Sostenible
 # Replace the baseurl with the name of this repository.
-baseurl: "/aplicaciones/appsistac/ods" # TODO: Esto probablemente haya que cambiarlo
+baseurl: "/ods"
 #url: ""
 # Replace "open-sdg" with the name of your GitHub organization, and
 # "open-sdg-data-starter" with the name of your data repository.
@@ -29,7 +29,7 @@ menu:
   - path: /guidance
     translation_key: menu.guidance
 
-goal_image_base: "https://ibestat.edatos.io/aplicaciones/appsistac/ods/assets/img/ods_images"
+goal_image_base: "https://ibestat.edatos.io/ods/assets/img/ods_images"
 
 # The list of languages that are translated. The first one is the default.
 languages:
