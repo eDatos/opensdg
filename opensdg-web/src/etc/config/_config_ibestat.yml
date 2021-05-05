@@ -29,6 +29,19 @@ menu:
   - path: /guidance
     translation_key: menu.guidance
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      language: "es"
+      header_image: "header.png"
+      header_text_image: "header_text_image.png"
+      texto_serie_ocecas: "Indicador calculado utilizando una metodología armonizada entre los órganos centrales de estadística de las comunidades autónomas"
+      imagen_serie_ocecas: "ocecas_metadata_image.jpg"
+      texto_serie: ""
+      imagen_serie : "metadata_image.jpg"
+      nuts_local: "ES53"
+
 goal_image_base: "https://ibestat.edatos.io/ods/assets/img/ods_images"
 
 # The list of languages that are translated. The first one is the default.
