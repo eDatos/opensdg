@@ -247,9 +247,9 @@ var indicatorView = function (model, options) {
         $(selectorDesagregaciones).prop("checked", false);
         $(selectorDesagregaciones).each(function (index) {
             var isTerritorio = $(this).data('field') == "Territorio";
-            var isCanarias = $(this).val() == "Canarias";
+            var isLocal = $(this).val() !== "España";
 
-            if ((isTerritorio && isCanarias) || !isTerritorio) {
+            if ((isTerritorio && isLocal) || !isTerritorio) {
                 $(this).trigger("click");
             }
         });
