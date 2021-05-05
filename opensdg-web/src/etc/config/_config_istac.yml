@@ -26,6 +26,19 @@ menu:
   - path: /guidance
     translation_key: menu.guidance
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      language: "es"
+      header_image: "header.png"
+      header_text_image: "header_text_image.png"
+      texto_serie_ocecas: "Indicador calculado utilizando una metodología armonizada entre los órganos centrales de estadística de las comunidades autónomas"
+      imagen_serie_ocecas: "ocecas_metadata_image.jpg"
+      texto_serie: ""
+      imagen_serie : "metadata_image.jpg"
+      nuts_local: "ES70"
+
 # Set a base for all goal image URLs. Note that the full goal image path will be
 # the base below, completed with: /[language]/[number].png (eg, /fr/6.png).
 goal_image_base: "https://www3.gobiernodecanarias.org/aplicaciones/appsistac/ods/assets/img/ods_images"

@@ -57,29 +57,29 @@
             }
 
             /**
-             * Devuelve los índices de Canarias
+             * Devuelve los índices locales
              * @param {JSON} data 
              */
-            function getCanariasIndexes(data) {
-                return getIndexes(data, "ES70"); // Se utiliza como territorio su código NUTS2
+            function getLocalIndexes(data) {
+                return getIndexes(data, "{{ page.nuts_local }}"); // Se utiliza como territorio su código NUTS2
             }
 
             /**
-             * Devuelve los datos de canarias
+             * Devuelve los datos locales
              * @param {JSON} data 
              */
-            function getCanariasData(data) {
-                return getData(data, getCanariasIndexes(data));
+            function getLocalData(data) {
+                return getData(data, getLocalIndexes(data));
             }
 
             /**
-             * Devuelve el dataset de Canarias
+             * Devuelve el dataset locales
              * @param {JSON} data 
              */
-            function getCanariasDataset(data) {
+            function getLocalDataset(data) {
                 return {
-                    label: "{{ subindicator.unidad_medida }} Canarias",
-                    data: getCanariasData(data),
+                    label: "{{ subindicator.unidad_medida }} {{ site.country.name }}",
+                    data: getLocalData(data),
                     backgroundColor: 'rgba(122,122,122,0.5)',
                     borderColor: 'rgba(77,77,77,1)',
                     borderWidth: 1
@@ -135,12 +135,12 @@
                         return 0;
                     }
                 }
-                var canariasData = getCanariasData(data);
-                var meanQuant = mean(canariasData);
+                var localData = getLocalData(data);
+                var meanQuant = mean(localData);
                 return {
                     //label: `Media ${Intl.NumberFormat("de-DE").format(meanQuant)} {{ subindicator.unidad_medida }}`,
-                    label: `{{ subindicator.unidad_medida }} Media Canarias`,
-                    data: new Array(canariasData.length).fill(meanQuant.toFixed(2)),
+                    label: `{{ subindicator.unidad_medida }} Media {{ site.country.name }}`,
+                    data: new Array(localData.length).fill(meanQuant.toFixed(2)),
                     type: 'line',
                     pointRadius: 0,
                     borderColor: 'rgb(255,0,0)',
@@ -155,7 +155,7 @@
              */
             function getDatasets(data) {
                 var datasets = [];
-                datasets.push(getCanariasDataset(data));
+                datasets.push(getLocalDataset(data));
                 if (hasTerritorio(data)) {
                     datasets.push(getEspanaDataset(data));
                 }
