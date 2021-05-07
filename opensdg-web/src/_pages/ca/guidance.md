@@ -1,7 +1,9 @@
 ---
-title: Indicadores para los Objetivos de Desarrollo Sostenible 2030 a nivel de Comunidad Autónoma
-permalink: /guidance/
 layout: page
+title: Indicadores para los Objetivos de Desarrollo Sostenible 2030 a nivel de Comunidad Autónoma
+language: ca
+permalink: /ca/guidance/
+
 ---
 <p class="justified-text">
     En el año 2015 la ONU aprobó la Agenda 2030 sobre el desarrollo sostenible, en la que se fijaron 17 objetivos, que incluyen desde la eliminación de la pobreza hasta el combate al cambio climático, la educación, la igualdad de la mujer, la defensa del medio ambiente o el diseño de nuestras ciudades. Cada uno de estos objetivos contiene una serie de metas específicas, que particularizan las acciones a desarrollar.

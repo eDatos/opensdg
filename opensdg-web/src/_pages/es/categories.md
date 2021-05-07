@@ -1,6 +1,7 @@
 ---
 layout: categories
 permalink: /categories/
+language: es
 title: Categories
 ---
 ## Posts by Category

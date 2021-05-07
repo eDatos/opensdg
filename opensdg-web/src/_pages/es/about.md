@@ -1,5 +1,6 @@
 ---
 title: Acerca de esta web
+language: es
 permalink: /about/
 layout: page
 ---
