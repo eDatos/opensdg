@@ -1,6 +1,6 @@
 ---
 title: Guidance
-permalink: en/guidance/
+permalink: /guidance/
 layout: page
 ---
 

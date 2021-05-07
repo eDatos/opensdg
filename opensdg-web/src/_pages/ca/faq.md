@@ -1,6 +1,6 @@
 ---
 title: Preguntas Frecuentes (FAQ)
-permalink: ca/faq/
+permalink: /faq/
 layout: page
 ---
 

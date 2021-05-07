@@ -1,6 +1,6 @@
 ---
 title: Acerca de esta web
-permalink: ca/about/
+permalink: /about/
 layout: page
 ---
 
