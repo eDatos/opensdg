@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Admin
+language: es
 permalink: /admin/
 ---
 

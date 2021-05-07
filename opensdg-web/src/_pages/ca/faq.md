@@ -1,7 +1,8 @@
 ---
-title: Preguntas Frecuentes (FAQ)
-permalink: /faq/
 layout: page
+title: Preguntas Frecuentes (FAQ)
+language: ca
+permalink: /ca/faq/
 ---
 
 ## ¿Qué significa el informe de disponibilidad de los datos general?

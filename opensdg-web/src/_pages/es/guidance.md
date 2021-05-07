@@ -1,5 +1,6 @@
 ---
 title: Indicadores para los Objetivos de Desarrollo Sostenible 2030 a nivel de Comunidad Autónoma
+language: es
 permalink: /guidance/
 layout: page
 ---
