@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Admin
-permalink: ca/admin/
+permalink: /admin/
 ---
 
 The National Reporting Platform is managed through GitHub. To submit updates for review, please first login to GitHub.

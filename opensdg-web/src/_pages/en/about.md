@@ -1,7 +1,6 @@
 ---
 title: About
-language: en
-permalink: en/about/
+permalink: /about/
 layout: page
 ---
 
