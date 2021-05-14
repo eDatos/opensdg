@@ -13,7 +13,7 @@ layout: page
 * <p class="justified-text"><span class="faq-box status complete">Disponible</span> – como mínimo, los datos principales para este indicador, están disponibles en la web, pero los datos pueden no estar completamente desagregados/desglosados todavía.</p>
 * <p class="justified-text"><span class="faq-box status inprogress">En progreso</span> – hemos encontrado una fuente de datos adecuada para este indicador o un proxy relevante. Nos encontramos asegurando la calidad de los datos y preparándolos para su publicación.</p>
 * <p class="justified-text"><span class="faq-box status notstarted">Explorando fuentes de datos</span> – todavía estamos buscando una fuente de datos adecuada para este indicador.</p>
-* <p class="justified-text"><span class="faq-box status notapplicable">No procede</span> - Ciertos indicadores de relevancia internacional no pueden calcularse de manera significativa para Canarias o solo pueden responderse en un contexto global.</p>
+* <p class="justified-text"><span class="faq-box status notapplicable">No procede</span> - Ciertos indicadores de relevancia internacional no pueden calcularse de manera significativa para nuestro territorio o solo pueden responderse en un contexto global.</p>
 
 <p class="justified-text">Cuando exista información adicional sobre el estado de la recopilación y presentación de informes de datos de indicadores, se mostrará en la parte superior de la página correspondiente al indicador.</p>
 
@@ -21,7 +21,7 @@ layout: page
 <p class="justified-text">La actualización de las series disponibles se realizará de manera trimestral, en función de la actualización de cada una de las fuentes de datos de partida de cada indicador.</p>
 
 ## ¿Qué se está haciendo para completar los indicadores?
-<p class="justified-text">Las series estadísticas mostradas están armonizadas y son comparables entre las distintas autonomías al ser fruto del trabajo conjunto de los diferentes Órganos Centrales de Estadística de las Comunidades Autónomas (OCECAS). A su vez, en línea con la política de datos abiertos del ISTAC, las series pueden descargase en formatos abiertos y reutilizarse según la licencia del Instituto.</p>
+<p class="justified-text">Las series estadísticas mostradas están armonizadas y son comparables entre las distintas autonomías al ser fruto del trabajo conjunto de los diferentes Órganos Centrales de Estadística de las Comunidades Autónomas (OCECAS). A su vez, en línea con la política de datos abiertos, las series pueden descargase en formatos abiertos y reutilizarse según la licencia del Instituto.</p>
 
 
 ## ¿Cómo de accesible es esta web?
