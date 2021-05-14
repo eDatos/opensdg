@@ -42,6 +42,22 @@ defaults:
       imagen_serie : "metadata_image.jpg"
       nuts_local: "ES53"
 
+# Ejemplo de map_options
+map_options:
+  # If you would like to use tile (background) imagery, use these:
+  tileURL: http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}
+  tileOptions:
+    id: mapbox/streets-v11
+    accessToken: pk.eyJ1IjoianJvZGNvciIsImEiOiJja240bjEwdjMwa3EwMnZvMDdjejF6MXQ3In0.rwgQT9lyjU77AT7fSJD2vw
+    attribution: <p>Attribution Example</p>
+
+map_layers:
+ - geojson_file: maps/islasBaleares.json
+   name_property: NOM
+   id_property: CODNUT3
+   output_subfolder: regions
+   filename_prefix: indicator_
+
 goal_image_base: "https://ibestat.edatos.io/ods/assets/img/ods_images"
 
 # The list of languages that are translated. The first one is the default.
