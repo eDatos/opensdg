@@ -15,7 +15,11 @@
     <h2 class="spacer medium">{{ site.frontpage_heading | default: heading_default | t }}</h2> -->
 
     <div class='row'>
-        {{ page.t.frontpage.texto_pagina_inicio }}
+        <div class='col-md-9'>
+            <p class='justified-text'>{{ page.t.frontpage.texto_pagina_inicio_1 }}</p>
+            <p class='justified-text'>{{ page.t.frontpage.texto_pagina_inicio_2 }}</p>
+            <p class='justified-text'>{{ page.t.frontpage.texto_pagina_inicio_3 }}</p>
+        </div>
         
         <div class='col-md-3'>
             <div class='row'>
