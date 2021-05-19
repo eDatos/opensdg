@@ -1,64 +1,64 @@
 ---
-layout: page
-title: Preguntas Frecuentes (FAQ)
-language: ca
+title: Preguntes freqüents (PMF)
 permalink: /ca/faq/
+layout: page
+language: ca
 ---
 
-## ¿Qué significa el informe de disponibilidad de los datos general?
+## Què significa l’informe de disponibilitat de les dades general?
 <p class="justified-text">
-    Hemos utilizado cuatro tipos diferentes de estados para un indicador los cuales siguen, además, una estructura de colores predeterminada:
+    Hem utilitzat quatre tipus diferents d’estats per a un indicador, que a més segueixen una estructura de colors predeterminada:
 </p>
 
-* <p class="justified-text"><span class="faq-box status complete">Disponible</span> – como mínimo, los datos principales para este indicador, están disponibles en la web, pero los datos pueden no estar completamente desagregados/desglosados todavía.</p>
-* <p class="justified-text"><span class="faq-box status inprogress">En progreso</span> – hemos encontrado una fuente de datos adecuada para este indicador o un proxy relevante. Nos encontramos asegurando la calidad de los datos y preparándolos para su publicación.</p>
-* <p class="justified-text"><span class="faq-box status notstarted">Explorando fuentes de datos</span> – todavía estamos buscando una fuente de datos adecuada para este indicador.</p>
-* <p class="justified-text"><span class="faq-box status notapplicable">No procede</span> - Ciertos indicadores de relevancia internacional no pueden calcularse de manera significativa para nuestro territorio o solo pueden responderse en un contexto global.</p>
+* <p class="justified-text"><span class="faq-box status complete">Disponible</span>: com a mínim, les dades principals per a aquest indicador estan disponibles a la web, però pot ser que les dades encara no estiguin completament desagregades o desglossades.</p>
+* <p class="justified-text"><span class="faq-box status inprogress">En curs</span>: hem trobat una font de dades adequada per a aquest indicador o un proxy rellevant. Estem comprovant la qualitat de les dades i preparant-les per a la publicació.</p>
+* <p class="justified-text"><span class="faq-box status notstarted">S’estan explorant les fonts de dades</span>: encara estem buscant una font de dades adequada per a aquest indicador.</p>
+* <p class="justified-text"><span class="faq-box status notapplicable">No procedeix</span>: certs indicadors de rellevància internacional no poden calcular-se de manera significativa per a Canàries o només es poden respondre en un context global.</p>
 
-<p class="justified-text">Cuando exista información adicional sobre el estado de la recopilación y presentación de informes de datos de indicadores, se mostrará en la parte superior de la página correspondiente al indicador.</p>
+<p class="justified-text">Quan hi hagi informació addicional sobre l’estat de la recopilació i presentació d’informes de dades d’indicadors, es mostrarà a la part superior de la pàgina corresponent a l’indicador.</p>
 
-## ¿Con qué frecuencia se añadirán datos nuevos a esta web?
-<p class="justified-text">La actualización de las series disponibles se realizará de manera trimestral, en función de la actualización de cada una de las fuentes de datos de partida de cada indicador.</p>
+## Amb quina freqüència s’afegiran dades noves a aquesta web?
+<p class="justified-text">L’actualització de les sèries disponibles es farà trimestralment, en funció de l’actualització de cadascuna de les fonts de dades de partida de cada indicador.</p>
 
-## ¿Qué se está haciendo para completar los indicadores?
-<p class="justified-text">Las series estadísticas mostradas están armonizadas y son comparables entre las distintas autonomías al ser fruto del trabajo conjunto de los diferentes Órganos Centrales de Estadística de las Comunidades Autónomas (OCECAS). A su vez, en línea con la política de datos abiertos, las series pueden descargase en formatos abiertos y reutilizarse según la licencia del Instituto.</p>
+## Què s’està fent per completar els indicadors?
+<p class="justified-text">Les sèries estadístiques mostrades estan harmonitzades i són comparables entre les diferents autonomies en ser fruit del treball conjunt dels diferents Òrgans Centrals d’Estadística de les Comunitats Autònomes (OCECA). Al mateix temps, en línia amb la política de dades obertes de l’ISTAC, les sèries poden descarregar-se en formats oberts i reutilitzar-se segons la llicència de l’Institut.</p>
 
 
-## ¿Cómo de accesible es esta web?
-<p class="justified-text">Nuestro objetivo es hacer esta web lo más "accesible" y "usable" posible. Estamos trabajando para conseguir un nivel AA de accesibilidad referenciado en las <a href="https://administracionelectronica.gob.es/pae_Home/pae_Estrategias/pae_Accesibilidad/pae_normativa/pae_eInclusion_Normas_Accesibilidad.html#.X8Uki7MWWUk">Guías de accesibilidad para contenido (WCAG 2.1)</a></p>
+## Com n’és d’accessible la web?
+<p class="justified-text">El nostre objectiu és fer aquesta web tant "accessible" i "usable" com sigui possible. Estem treballant per aconseguir un nivell AA d’accessibilitat tal com s’esmenta a les <a href="https://administracionelectronica.gob.es/pae_Home/pae_Estrategias/pae_Accesibilidad/pae_normativa/pae_eInclusion_Normas_Accesibilidad.html?idioma=ca#.YJwxIKEp7IU">Guies d’accessibilitat per a contingut (WCAG 2.1)</a></p>
 
-## ¿Qué exploradores puedo utilizar para ver esta web?
-<p class="justified-text">Nuestra web funciona con la mayoría de las últimas versiones de los exploradores más utilizados. Existen algunas incidencias conocidas al utilizar versiones antíguas de exploradores, como por ejemplo IE8. Estamos trabajando para solucionar estas incidencias lo antes posible.</p>
+## Quins navegadors puc fer servir per veure aquesta web?
+<p class="justified-text">La nostra web funciona amb la majoria de les versions més recents dels navegadors més utilitzats. Existeixen certes incidències conegudes en utilitzar versions antigues de navegadors, com, per exemple, l’IE8. Estem treballant per solucionar aquestes incidències tan aviat com sigui possible.</p>
 
-## ¿Pueden otros organismos copiar este sitio web?
+## Poden altres organismes copiar aquest lloc web?
 
-Sí. Este sitio web está desarrollado utilizando software y servicios 100% libres por lo que, cualquier organismo podrá reutilizar nuestro código de forma gratuita. El código de este proyecto está disponible en su [repositorio github](https://github.com/eDatos/opensdg). 
+Sí. Aquest lloc web està desenvolupat mitjançant software i serveis 100 % lliures, de manera que qualsevol organisme podrà reutilitzar el nostre codi de franc. El codi d’aquest projecte està disponible al seu [repositori github](https://github.com/eDatos/opensdg). 
 
-El proyecto está basado en el [proyecto base de OpenSDG](https://github.com/open-sdg/open-sdg). Sobre esta base se ha llevado a cabo el siguiente conjunto de mejoras: 
+El projecte es basa en el [projecte base d’OpenSDG](https://github.com/open-sdg/open-sdg). Sobre aquesta base s’ha dut a terme el conjunt de millores següent: 
 
-* Adaptación a los acuerdos tomados por los Órganos Centrales de Estadística de las Comunidades Autónomas (OCECAS). 
-  * Modificación de la descripción del proyecto en la página de inicio.
-  * Añadida página de Información relativa al proyecto.
-  * Adaptadas las fichas de metadatos a las fichas metodológicas consensuadas.
-  * Añadidas las series acordadas para cada uno de los indicadores.
-    * En consecuencia a esto, se han filtrado las series para tener en cuenta únicamente los indicadores en el informe presentado en el menú Disponibilidad de datos
-  * Posibilidad de visualizar todas las series de un indicador de manera conjunta (para poder realizar comparaciones) pero también un gráfico independiente para cada una de ellas. 
-	* Definidas dimensiones de desagregación para facilitar la visualización, comprensión y comparación de series temporales.
-  * Añadida una dimensión territorial para incluir datos de diferentes territorios.
-    * Añadida configuración para uso de códigos NUTS para identificar el territorio.
-  * Añadida configuración para diferenciar cada serie que compone un indicador utilizando la nomenclatura SERIE-N, siendo N una letra que identifica la serie en cuestión. Esta nomenclatura se utiliza tanto en la leyenda del indicador como en las fichas de metadatos.
-* Integración con los estilos corporativos del proyecto eDatos. 
-* Modificaciones estéticas varias entre las que se encuentran: 
-  * Modificación de los estilos de las gráficas y leyendas de estas para evitar que los títulos se corten cuando son muy largos. 
-  * Modificación de los colores de las etiquetas de estado de los indicadores para conseguir un mejor contraste. 
-  * Modificación del menú principal para conseguir un aspecto más compacto. 
-* En la página de inicio, añadido un botón para descargar la metodología. 
-* En las páginas de detalle de un indicador, añadidos botones para navegar al indicador previo o el indicador siguiente de una forma más sencilla e intuitiva. 
-* Mejoras relacionadas con la gestión de indicadores sin datos publicados: 
-  * En las búsquedas no se devuelven resultados de indicadores que no contengan datos. 
-  * No se puede navegar a indicadores que no tengan datos. 
-* En las páginas de detalle de un indicador, implementados filtros dinámicos en función de la unidad de medida seleccionada. Esto es, no se da la opción de seleccionar series que no contengan datos para la unidad de medida seleccionada.
-* Adaptación del contenido del FAQ. 
-* Mejora de la traducción al español. 
-* Actualización del listado de indicadores con la última versión publicada por Naciones Unidas (Global indicator framework adopted by the General Assembly (A/RES/71/313), annual refinements contained in E/CN.3/2018/2 (Annex II), E/CN.3/2019/2 (Annex II), and 2020 Comprehensive Review changes (Annex II) and annual refinements (Annex III) contained in E/CN.3/2020/2).
-* Actualizada la accesibilidad a las Guías de Accesibilidad para contenido (WCAG 2.1)
+* Adaptació als acords presos pels Òrgans Centrals d’Estadística de les Comunitats Autònomes (OCECA). 
+  * Modificació de la descripció del projecte a la pàgina d’inici.
+  * Addició de la pàgina Informació relativa al projecte.
+  * Adaptació de les fitxes de metadades a les fitxes metodològiques consensuades.
+  * Addició de les sèries acordades per a cadascun dels indicadors.
+    * Com a conseqüència, s’han filtrat les sèries perquè tinguin en compte únicament els indicadors a l’informe presentat en el menú Disponibilitat de dades.
+  * Possibilitat de visualitzar totes les sèries d’un indicador de manera conjunta (per poder fer comparacions) però també un gràfic independent per a cadascuna. 
+	* Definició de dimensions de desagregació per facilitar la visualització, comprensió i comparació de sèries temporals.
+  * Addició d’una dimensió territorial per incloure dades de diferents territoris.
+    * Addició de la configuració per a ús de codis NUTS per identificar el territori.
+  * Addició de la configuració per diferenciar cada sèrie que compon un indicador mitjançant la nomenclatura SERIE-N, on N és una lletra que identifica la sèrie en qüestió. Aquesta nomenclatura s’utilitza tant a la llegenda de l’indicador com a les fitxes de metadades.
+* Integració amb els estils corporatius del projecte eDatos. 
+* Modificacions estètiques diverses, entre les quals: 
+  * Modificació dels estils de les gràfiques i llegendes corresponents per evitar que els títols es tallin quan són molt llargs. 
+  * Modificació dels colors de les etiquetes d’estat dels indicadors per aconseguir un millor contrast. 
+  * Modificació del menú principal per obtenir un aspecte més compacte. 
+* A la pàgina d’inici, s’ha afegit un botó per descarregar la metodologia. 
+* A les pàgines de detall d’un indicador, s’han afegit botons per navegar a l’indicador previ o l’indicador següent d’una manera més senzilla i intuïtiva. 
+* Millores relacionades amb la gestió d’indicadors sense dades publicades: 
+  * A les cerques no es retornen resultats d’indicadors que no continguin dades. 
+  * No es pot navegar a indicadors que no tinguin dades. 
+* A les pàgines de detall d’un indicador, s’han implementat filtres dinàmics en funció de la unitat de mesura seleccionada. És a dir, no hi ha l’opció de seleccionar sèries que no continguin dades per a la unitat de mesura seleccionada.
+* Adaptació del contingut de les PMF. 
+* Millora de la traducció a espanyol. 
+* Actualització del llistat d’indicadors amb l’última versió publicada per les Nacions Unides (Global indicator framework adopted by the General Assembly (A/RES/71/313), annual refinements contained in E/CN.3/2018/2 (Annex II), E/CN.3/2019/2 (Annex II), and 2020 Comprehensive Review changes (Annex II) and annual refinements (Annex III) contained in E/CN.3/2020/2).
+* Actualització de l’accessibilitat a les Guies d’accessibilitat per a contingut (WCAG 2.1)
