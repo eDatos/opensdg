@@ -216,8 +216,9 @@ function getModifiedStates(states, selectedUnit) {
  */
 function getFixedTerritorioStates(states) {
   var auxStates = states;
-  if (auxStates.length > 1) {
-    var territorioIndex = auxStates.findIndex((value) => value['field'] == "Territorio");
+  var territorioIndex = auxStates.findIndex((value) => value['field'] == "Territorio")
+  
+  if (auxStates.length > 1 && territorioIndex >= 0) {
     var territorioState = auxStates[territorioIndex];
     auxStates.splice(territorioIndex, 1);
     auxStates.push(territorioState)
