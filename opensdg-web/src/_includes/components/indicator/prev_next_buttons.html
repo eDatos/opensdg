@@ -2,7 +2,7 @@
     <div class="col-md-6">
         {% if page.indicator["prev_indicator"] and page.indicator["prev_indicator"] != "" %}
             <a href="{{ page.baseurl }}/{{ page.indicator['prev_indicator'] }}" class="prev_next_button btn btn-primary btn-block G{{ page.indicator['sdg_goal'] }}-background">
-                <b><i class="glyphicon glyphicon-menu-left"></i> {{ page.t.general.idnicador_anterior }} [{{ page.indicator['prev_indicator'] | | replace: '-', '.' }}]</b>
+                <b><i class="glyphicon glyphicon-menu-left"></i> {{ page.t.general.indicador_anterior }} [{{ page.indicator['prev_indicator'] | | replace: '-', '.' }}]</b>
             </a>
         {% endif %}
     </div>
