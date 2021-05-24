@@ -108,7 +108,7 @@
              */
             function getEspanaDataset(data) {
                 return {
-                    label: "{{ subindicator.unidad_medida }} España",
+                    label: `{{ subindicator.unidad_medida }} {{ page.t.general.espana }}`,
                     data: getEspanaData(data),
                     type: 'line',
                     pointRadius: 3,
@@ -138,8 +138,7 @@
                 var localData = getLocalData(data);
                 var meanQuant = mean(localData);
                 return {
-                    //label: `Media ${Intl.NumberFormat("de-DE").format(meanQuant)} {{ subindicator.unidad_medida }}`,
-                    label: `{{ subindicator.unidad_medida }} Media {{ site.country.name }}`,
+                    label: `{{ subindicator.unidad_medida }} {{ page.t.general.media }} {{ site.country.name }}`,
                     data: new Array(localData.length).fill(meanQuant.toFixed(2)),
                     type: 'line',
                     pointRadius: 0,

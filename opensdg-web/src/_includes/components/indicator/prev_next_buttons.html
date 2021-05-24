@@ -1,16 +1,16 @@
 <div class="row">
     <div class="col-md-6">
         {% if page.indicator["prev_indicator"] and page.indicator["prev_indicator"] != "" %}
-            <a href="{{ site.baseurl }}/{{ page.indicator['prev_indicator'] }}" class="prev_next_button btn btn-primary btn-block G{{ page.indicator['sdg_goal'] }}-background">
-                <b><i class="glyphicon glyphicon-menu-left"></i> Indicador Anterior [{{ page.indicator['prev_indicator'] | | replace: '-', '.' }}]</b>
+            <a href="{{ page.baseurl }}/{{ page.indicator['prev_indicator'] }}" class="prev_next_button btn btn-primary btn-block G{{ page.indicator['sdg_goal'] }}-background">
+                <b><i class="glyphicon glyphicon-menu-left"></i> {{ page.t.general.idnicador_anterior }} [{{ page.indicator['prev_indicator'] | | replace: '-', '.' }}]</b>
             </a>
         {% endif %}
     </div>
 
     <div class="col-md-6">
         {% if page.indicator["next_indicator"] and page.indicator["next_indicator"] != "" %}
-            <a href="{{ site.baseurl }}/{{ page.indicator['next_indicator'] }}" class="prev_next_button btn btn-primary btn-block G{{ page.indicator['sdg_goal'] }}-background">
-                <b>Indicador Siguiente [{{ page.indicator['next_indicator'] | | replace: '-', '.' }}] <i class="glyphicon glyphicon-menu-right"></i></b>
+            <a href="{{ page.baseurl }}/{{ page.indicator['next_indicator'] }}" class="prev_next_button btn btn-primary btn-block G{{ page.indicator['sdg_goal'] }}-background">
+                <b>{{ page.t.general.indicador_siguiente }} [{{ page.indicator['next_indicator'] | | replace: '-', '.' }}] <i class="glyphicon glyphicon-menu-right"></i></b>
             </a>
         {% endif %}
     </div>
