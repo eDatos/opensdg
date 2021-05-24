@@ -247,7 +247,7 @@ var indicatorView = function (model, options) {
         $(selectorDesagregaciones).prop("checked", false);
         $(selectorDesagregaciones).each(function (index) {
             var isTerritorio = $(this).data('field') == "Territorio";
-            var isLocal = $(this).val() !== "España";
+            var isLocal = $(this).val() !== opensdg.nacional[opensdg.language];
 
             if ((isTerritorio && isLocal) || !isTerritorio) {
                 $(this).trigger("click");
