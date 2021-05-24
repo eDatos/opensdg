@@ -178,7 +178,7 @@ function isCustomField(field) {
  * @param {String} selectedUnit
  */
 function getAvailableFields(selectedUnit) {
-  var indicatorData = opensdg.csvData[opensdg.currentIndicator].filter((dataRow) => dataRow['Units'] == selectedUnit);
+  var indicatorData = opensdg.csvData[opensdg.language][opensdg.currentIndicator].filter((dataRow) => dataRow['Units'] == selectedUnit);
   var estatisticalKeys = Object.keys(indicatorData[0]).filter((value) => isCustomField(value));
   var availableFields = [];
 
