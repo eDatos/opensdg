@@ -62,23 +62,28 @@ Este directorio habrá que renombrarlo a **opensdg-datos** y, una vez renombrado
 mv _site opensdg-datos & mv opensdg-datos ../../opensdg-web/src
 ```` 
 
-3) Tras generar y mover los datos tendremos que desplazarnos al directorio **opensdg-web/src** y añadir los CSV de los datos generados al directorio _data para el correcto funcionamiento del filtro de unidades:
+3) Tras generar y mover los datos tendremos que desplazarnos al directorio **opensdg-web/src** y añadir los CSV de los datos generados al directorio _data para el correcto funcionamiento del filtro de unidades. Los datos deberán ser copiados para cada idioma utilizado en la aplicación:
 
 ````
-cp opensdg-datos/es/data/*.csv _data/csv
+# Supuesto utilizando datos en Español y Catalán
+cp opensdg-datos/es/data/*.csv _data/csv/es
+cp opensdg-datos/ca/data/*.csv _data/csv/ca
 ````
 
-4) Una vez hecho esto ya se puede proceder a construir la web utilizando la siguiente instrucción:
+4) Una vez hecho esto ya se puede proceder a construir la web utilizando la siguiente instrucción. Para poder construir correctamente será necesario pasar uno o varios archivos de configuración.
+El patrón usado para este proyecto es tener un archivo de configuración general y varios archivos de configuración para cada entorno que se pasarán junto con este archivo general:
 
 
 ```` 
-bundle exec jekyll build
+# Ejemplo de ejecución con la configuración para el ISTAC
+bundle exec jekyll build --config etc/config/_config.yml,etc/config/_config_istac.yml
 ````
 
 &emsp;&emsp;También es posible servir directamente la web sin necesidad de pasar por el paso de build o de utilizar un servidor propio, esto es especialmente útil para pruebas en local. Para esto, bastará con ejecutar el siguiente comando:
 
 ````
-bundle exec jekyll serve
+# Ejemplo de ejecución con la configuración para el ISTAC
+bundle exec jekyll serve --config etc/config/_config.yml,etc/config/_config_istac.yml
 ```` 
 
 5) Si todo ha salido bien se habrá generado un directorio **_site**, este directorio contendrá la web estática así como los datos ya incluidos dentro de ella. Este directorio **_site** se podrá servir estáticamente mediante un servidor web HTTP, por ejemplo Apache.
