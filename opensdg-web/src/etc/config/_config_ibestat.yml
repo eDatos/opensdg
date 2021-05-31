@@ -44,15 +44,14 @@ defaults:
 
 # Ejemplo de map_options
 map_options:
-  # If you would like to use tile (background) imagery, use these:
-  tileURL: http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}
+  tileURL: https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}
   tileOptions:
     id: mapbox/streets-v11
-    accessToken: pk.eyJ1IjoianJvZGNvciIsImEiOiJja240bjEwdjMwa3EwMnZvMDdjejF6MXQ3In0.rwgQT9lyjU77AT7fSJD2vw
+    accessToken: pk.eyJ1IjoicGJhdXphIiwiYSI6ImNrb3d0bm8xNDA5ajAyb29hbzdzdm9xMTQifQ.aYKi8teq4dkvzQbqcOUIww
     attribution: <p>Attribution Example</p>
 
 map_layers:
- - geojson_file: maps/islasBaleares.json
+ - geojson_file: maps/ConsellsInsulars.json
    name_property: NOM
    id_property: CODNUT3
    output_subfolder: regions
