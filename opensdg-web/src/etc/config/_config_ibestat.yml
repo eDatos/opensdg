@@ -63,3 +63,7 @@ goal_image_base: "https://ibestat.edatos.io/ods/assets/img/ods_images"
 languages:
   - es
   - ca
+
+map_lat: 39.2455942
+map_lon: 2.1943349
+map_zoom: 7

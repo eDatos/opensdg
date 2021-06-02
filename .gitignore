@@ -14,7 +14,8 @@ opensdg-web/src/deploy_key*
 opensdg-web/src/deploy_key*.pub
 opensdg-web/src/*.keybase
 opensdg-web/src/vendor
-opensdg-web/src/_data/csv/*.csv
+opensdg-web/src/_data/csv/es/*.csv
+opensdg-web/src/_data/csv/ca/*.csv
 opensdg-datos/src/_site
 opensdg-datos/src/opensdg-datos
 opensdg-datos/src/scripts/__pycache__
