@@ -193,7 +193,11 @@
         maxZoom: this.options.maxZoom,
         zoomControl: false,
       });
-      this.map.setView([0, 0], 0);
+      lat = (opensdg.map.lat !== 'undefined') ? opensdg.map.lat : 0;
+      lon = (opensdg.map.lon !== 'undefined') ? opensdg.map.lon : 0;
+      zoom = (opensdg.map.zoom !== 'undefined') ? opensdg.map.zoom : 0;
+
+      this.map.setView([lat, lon], zoom);
       this.dynamicLayers = new ZoomShowHide();
       this.dynamicLayers.addTo(this.map);
       this.staticLayers = new ZoomShowHide();
