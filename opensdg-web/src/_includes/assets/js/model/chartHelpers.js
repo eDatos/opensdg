@@ -60,14 +60,14 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   }, this);
 
   datasets.sort((a,b) => {
-      if (/Serie ([a-zA-Z])/igm.test(a.label_serie) & /Serie ([a-zA-Z])/igm.test(b.label_serie)) {
-          var aValue = /Serie ([a-zA-Z])/igm.exec(a.label_serie)[1];
-          var bValue = /Serie ([a-zA-Z])/igm.exec(b.label_serie)[1];
-          if (aValue > bValue) return 1;
-          if (aValue < bValue) return -1;
-      }
-      
-      return 0;
+    var regex = new RegExp(`${translations.t("general.serie")} ([a-zA-Z])`);
+    var aValue = a.label_serie.match(regex);
+    var bValue = b.label_serie.match(regex);
+    if (aValue !== null && bValue !== null) {
+      if (aValue[1] > bValue[1]) return 1;
+      if (aValue[1] < bValue[1]) return -1;
+    }
+    return 0;
   });
   
   datasets.forEach(d => {

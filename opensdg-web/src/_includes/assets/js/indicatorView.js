@@ -771,9 +771,9 @@ var indicatorView = function (model, options) {
                 var name_heading = translations.t(heading)
 
                 if (heading.toLowerCase() == 'year') {
-                    name_heading = "Año"
+                    name_heading = translations.t("general.year");
                 } else if (heading.toLowerCase() == 'value') {
-                    name_heading = "Valor"
+                    name_heading = translations.t("general.value");
                 }
 
                 var span_heading = '<span>' + name_heading + '</span>';
