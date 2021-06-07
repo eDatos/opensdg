@@ -9,3 +9,6 @@ var YEAR_COLUMN = 'Year';
 var VALUE_COLUMN = 'Value';
 var HEADLINE_COLOR = '#777777';
 var SERIES_TOGGLE = {{ site.series_toggle | default: false }};
+
+// Se obtiene un array con el orden que deben respetar los territorios.
+opensdg.orden_territorio = "{{ site.orden_territorio }}".split(",");

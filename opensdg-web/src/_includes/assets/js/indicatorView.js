@@ -276,6 +276,13 @@ var indicatorView = function (model, options) {
                 if (isCustomField(field['field'])) {
                     field['values'] = field['values'].filter((value) => value.visible);
                 }
+
+                if (field['field'] === "Territorio") { // No es necesario i18n ya que siempre llegará en Español.
+                    let ordenTerritorio = opensdg.orden_territorio.map((t) => translations.t(`nuts.${t}`));
+                    field['values'] = field['values'].sort((a,b) => {
+                        return (ordenTerritorio.indexOf(a) < ordenTerritorio.indexOf(b)) ? -1 : 1;
+                    });
+                }
             })
 
             $('#fields').html(template({
