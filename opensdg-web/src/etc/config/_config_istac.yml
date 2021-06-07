@@ -48,5 +48,6 @@ map_lon: -16.0290619
 map_zoom: 7
 
 # Lista CSV sin espacios de códigos de CL_AREA_ES53
+# TODO EDATOS-3361: Cambiar este enlace al equivalente en ISTAC
 # https://ibestat.edatos.io/structural-resources-internal/#structuralResources/codelists/codelist;id=IBESTAT%253ACL_AREA_ES53(01.000)
 orden_territorio: "ES,ES70"
