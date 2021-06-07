@@ -280,7 +280,7 @@ var indicatorView = function (model, options) {
                 if (field['field'] === "Territorio") { // No es necesario i18n ya que siempre llegará en Español.
                     let ordenTerritorio = opensdg.orden_territorio.map((t) => translations.t(`nuts.${t}`));
                     field['values'] = field['values'].sort((a,b) => {
-                        return (ordenTerritorio.indexOf(a) < ordenTerritorio.indexOf(b)) ? -1 : 1;
+                        return (ordenTerritorio.indexOf(a.value) < ordenTerritorio.indexOf(b.value)) ? -1 : 1;
                     });
                 }
             })
