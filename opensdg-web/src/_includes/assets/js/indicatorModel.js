@@ -52,7 +52,7 @@ var indicatorModel = function (options) {
 
     var auxEdgeArray = [].concat(edgeArray);
     for (var i = 0; i < auxEdgeArray.length; i++) {
-      if (auxEdgeArray[i].To == "Serie") {
+      if (auxEdgeArray[i].To == translations.t("general.serie")) {
         auxEdgeArray[i].To = auxEdgeArray[i+1].From;
         break;
       }
@@ -66,7 +66,7 @@ var indicatorModel = function (options) {
   this.data = helpers.convertJsonFormatToRows(options.data);
   this.data = translateNUTCodes(this.data);
   this.edgesData = helpers.convertJsonFormatToRows(options.edgesData);
-  this.edgesData.splice(getIndexOfEdgeFrom("Serie", this.edgesData), 1);
+  this.edgesData.splice(getIndexOfEdgeFrom(translations.t("general.serie"), this.edgesData), 1);
   this.edgesData = fixEdges(this.edgesData);
 
   this.hasHeadline = true;
