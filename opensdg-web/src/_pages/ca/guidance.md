@@ -29,4 +29,4 @@ language: ca
 
     Després d’una tasca intensa, cada Comunitat Autònoma disposa d’una primera bateria d’indicadors comuna i homogènia i una fitxa metodològica estàndard que els organismes estadístics difondran a les respectives pàgines web.
 </p>
-<img class="center-image" src="{{ site.baseurl }}/assets/img/{{ page.header_text_image }}" width="400"/>
+<img class="center-image" src="{{ site.baseurl }}/assets/img/ca/{{ page.header_text_image }}" width="400"/>

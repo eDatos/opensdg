@@ -29,4 +29,4 @@ layout: page
 
     Después de un trabajo intenso, cada Comunidad Autónoma dispone de una primera batería de indicadores común y homogénea y una ficha metodológica estándar que los organismos estadísticos van a difundir en sus respectivas páginas web.
 </p>
-<img class="center-image" src="{{ site.baseurl }}/assets/img/{{ page.header_text_image }}" width="400"/>
+<img class="center-image" src="{{ site.baseurl }}/assets/img/es/{{ page.header_text_image }}" width="400"/>

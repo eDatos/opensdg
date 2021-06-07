@@ -1,5 +1,5 @@
 ---
-title: Preguntes freqüents (PMF)
+title: Preguntes freqüents (FAQ)
 permalink: /ca/faq/
 layout: page
 language: ca
@@ -58,7 +58,7 @@ El projecte es basa en el [projecte base d’OpenSDG](https://github.com/open-sd
   * A les cerques no es retornen resultats d’indicadors que no continguin dades. 
   * No es pot navegar a indicadors que no tinguin dades. 
 * A les pàgines de detall d’un indicador, s’han implementat filtres dinàmics en funció de la unitat de mesura seleccionada. És a dir, no hi ha l’opció de seleccionar sèries que no continguin dades per a la unitat de mesura seleccionada.
-* Adaptació del contingut de les PMF. 
+* Adaptació del contingut de les FAQ.
 * Millora de la traducció a espanyol. 
 * Actualització del llistat d’indicadors amb l’última versió publicada per les Nacions Unides (Global indicator framework adopted by the General Assembly (A/RES/71/313), annual refinements contained in E/CN.3/2018/2 (Annex II), E/CN.3/2019/2 (Annex II), and 2020 Comprehensive Review changes (Annex II) and annual refinements (Annex III) contained in E/CN.3/2020/2).
 * Actualització de l’accessibilitat a les Guies d’accessibilitat per a contingut (WCAG 2.1)
