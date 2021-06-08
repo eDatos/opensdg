@@ -21,8 +21,8 @@ var indicatorModel = function (options) {
   function translateNUTCodes(data) {
     var auxData = [].concat(data);
     for (var i = 0; i < auxData.length; i++) {
-      if (auxData[i].Territorio) {
-        auxData[i].Territorio = translations.t('nuts.' + auxData[i].Territorio);
+      if (auxData[i][translations.t("general.territorio")]) {
+        auxData[i][translations.t("general.territorio")] = translations.t('nuts.' + auxData[i][translations.t("general.territorio")]);
       }
     }
     return auxData;
