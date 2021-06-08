@@ -258,7 +258,7 @@ function getBaseDataset() {
  * @param {Array} keys 
  */
 function getFixedCombinationKeys(keys) {
-    var keysWhichNeedsToMove = ["Territorio"];
+    var keysWhichNeedsToMove = [translations.t("general.territorio")];
     // Se hace la intersección entre los conjuntos de claves y claves que necesitan moverse.
     if (new Set(keys).intersection(new Set(keysWhichNeedsToMove)).size > 0) {
 
@@ -266,7 +266,7 @@ function getFixedCombinationKeys(keys) {
         var fixedKeys = keys.filter((a) => !keysWhichNeedsToMove.includes(a))
 
         // Se colocan las claves donde deban ir
-        fixedKeys.push("Territorio");
+        fixedKeys.push(translations.t("general.territorio"));
         
         return fixedKeys;
     }

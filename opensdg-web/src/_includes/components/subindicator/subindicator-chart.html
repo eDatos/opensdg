@@ -25,7 +25,7 @@
              * @param {JSON} data 
              */
             function hasTerritorio(data) {
-                return "Territorio" in data;
+                return "{{ page.t.general.territorio }}" in data;
             }
 
             /**
@@ -34,7 +34,7 @@
              * @param {String} territory
              */
             function getIndexes(data, territory) {
-                return data.Territorio.map(function (territorio, index) {
+                return data["{{ page.t.general.territorio }}"].map(function (territorio, index) {
                     if (territorio == territory) {
                         return index;
                     }

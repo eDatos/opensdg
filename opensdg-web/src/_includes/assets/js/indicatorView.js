@@ -246,7 +246,7 @@ var indicatorView = function (model, options) {
 
         $(selectorDesagregaciones).prop("checked", false);
         $(selectorDesagregaciones).each(function (index) {
-            var isTerritorio = $(this).data('field') == "Territorio";
+            var isTerritorio = $(this).data('field') == translations.t("general.territorio");
             var isLocal = $(this).val() !== translations.t("general.espana");
 
             if ((isTerritorio && isLocal) || !isTerritorio) {
@@ -257,7 +257,7 @@ var indicatorView = function (model, options) {
 
     this.initialiseFields = function (args) {
         function isCustomField(field) {
-            return !["Serie", "Territorio", "Units", "Value", "Year"].includes(field);
+            return !["Serie", translations.t("general.territorio"), "Units", "Value", "Year"].includes(field);
         }
 
         if (args.fields.length) {
@@ -277,7 +277,7 @@ var indicatorView = function (model, options) {
                     field['values'] = field['values'].filter((value) => value.visible);
                 }
 
-                if (field['field'] === "Territorio") { // No es necesario i18n ya que siempre llegará en Español.
+                if (field['field'] === translations.t("general.territorio")) {
                     let ordenTerritorio = opensdg.orden_territorio.map((t) => translations.t(`nuts.${t}`));
                     field['values'] = field['values'].sort((a,b) => {
                         return (ordenTerritorio.indexOf(a.value) < ordenTerritorio.indexOf(b.value)) ? -1 : 1;

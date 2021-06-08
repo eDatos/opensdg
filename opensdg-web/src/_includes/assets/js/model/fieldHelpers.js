@@ -170,7 +170,7 @@ function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dat
  * @param {String} field
  */
 function isCustomField(field) {
-  return !["Serie", "Territorio", "Units", "Value", "Year"].includes(field);
+  return !["Serie", translations.t("general.territorio"), "Units", "Value", "Year"].includes(field);
 }
 
 /**
@@ -216,7 +216,7 @@ function getModifiedStates(states, selectedUnit) {
  */
 function getFixedTerritorioStates(states) {
   var auxStates = states;
-  var territorioIndex = auxStates.findIndex((value) => value['field'] == "Territorio")
+  var territorioIndex = auxStates.findIndex((value) => value['field'] == translations.t("general.territorio"))
   
   if (auxStates.length > 1 && territorioIndex >= 0) {
     var territorioState = auxStates[territorioIndex];
