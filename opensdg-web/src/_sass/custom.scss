@@ -1504,3 +1504,9 @@ h3 {
     display: block;
   }
 }
+
+.navbar #search {
+  @media screen and (max-width: 1024px) {
+    padding-left: 5rem;
+  }
+}
