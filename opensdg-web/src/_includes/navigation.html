@@ -15,8 +15,11 @@
         <li class="nav-link">{% include search.html id="search" %}</li>
     {%- endif -%}
     {%- if site.languages.size > 1 and site.header_language_toggle != 'none' -%}
+        <li class="nav-link">
+            {% include components/language-toggle-mobile.html %}
+        </li>
         <li class="language-toggle-menu-header">
-            {% include components/language-toggle.html %}
+            {% include components/language-toggle-dropdown.html %}
         </li>
     {%- endif -%}
 </ul>

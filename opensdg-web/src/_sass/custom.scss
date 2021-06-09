@@ -1474,3 +1474,33 @@ h3 {
   display: inline;
 }
 
+.language-toggle-mobile {
+  padding-top: 0px;
+  padding-right: 0px;
+  float: left;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
+.language-toggle-button {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 769px) {
+    display: block;
+  }
+}
+
+.language-options {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 769px) {
+    display: block;
+  }
+}
