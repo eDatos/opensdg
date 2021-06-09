@@ -1,0 +1,7 @@
+<ul class="language-toggle-mobile">
+    {%- for language in site.languages -%}
+        {%- if language != page.language -%}
+            <li><a href="{{ page.url_by_language[language] }}">{{ page.t.languages[language] }}</a></li>
+        {%- endif -%}
+    {%- endfor -%}
+</ul>
