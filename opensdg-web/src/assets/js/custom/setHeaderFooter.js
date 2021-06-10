@@ -28,16 +28,17 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '') {
             .then(htmlUrl => {
                 var fetchOptions = {
                     method: 'GET',
-                    //mode: 'cors',
                     headers: {
                         'Content-Type': 'text/html',
                     }
                 }
-                var appHtmlUrl = `${htmlUrl.value}?appName=${json.metadata.appName}`
+                let appHtmlUrl = `${htmlUrl.value}`;
+                appHtmlUrl += `?appName=${translations.t(general.nombre_aplicacion)}`;
+                appHtmlUrl += `&appUrl=${baseUrl}`;
+                appHtmlUrl += `&lang=${opensdg.language}`;
                 fetch(appHtmlUrl, fetchOptions)
                     .then(res => res.text())
                     .then(html => {
-                        html = html.replace('<a href>', `<a href="${baseUrl}">`);
                         cacheHtmlCode(elementId, html);
                         renderElement(elementId, html);
                     });
