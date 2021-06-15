@@ -33,7 +33,7 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '') {
                     }
                 }
                 let appHtmlUrl = `${htmlUrl.value}`;
-                appHtmlUrl += `?appName=${translations.t(general.nombre_aplicacion)}`;
+                appHtmlUrl += `?appName=${translations.t("general.nombre_aplicacion")}`;
                 appHtmlUrl += `&appUrl=${baseUrl}`;
                 appHtmlUrl += `&lang=${opensdg.language}`;
                 fetch(appHtmlUrl, fetchOptions)
