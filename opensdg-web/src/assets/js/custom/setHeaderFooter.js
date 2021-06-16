@@ -5,8 +5,18 @@ function renderElement(elementId, htmlCode) {
     document.getElementById(elementId).innerHTML = htmlCode;
 }
 
-function cacheHtmlCode(elementId, htmlCode) {
+function cacheHtmlCode(elementId, htmlCode, language='') {
     sessionStorage.setItem(elementId, htmlCode);
+    if (language !== '') {
+        sessionStorage.setItem(`${elementId}-${language}`, language);
+    }
+}
+
+function removeCacheHtmlCode(elementId, language='') {
+    sessionStorage.removeItem(elementId);
+    if (language !== '') {
+        sessionStorage.removeItem(`${elementId}-${language}`);
+    }
 }
 
 function setElementRutine(elementType, elementId, configPath, baseUrl = '', appName = '', language = '') {
@@ -39,7 +49,7 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '', appN
                 fetch(appHtmlUrl, fetchOptions)
                     .then(res => res.text())
                     .then(html => {
-                        cacheHtmlCode(elementId, html);
+                        cacheHtmlCode(elementId, html, language);
                         renderElement(elementId, html);
                     });
             });
