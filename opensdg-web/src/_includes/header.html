@@ -5,9 +5,9 @@
 
 <script>
     // Insertamos el Header
-    let configPath = '{{ site.baseurl }}/assets/configuration.json';
-    let appName = '{{ page.t.general.nombre_aplicacion }}';
-    let language = '{{ page.language }}';
+    var configPath = '{{ site.baseurl }}/assets/configuration.json';
+    var appName = '{{ page.t.general.nombre_aplicacion }}';
+    var language = '{{ page.language }}';
     setElement(HEADER, "istac-header-wrapper", configPath, "{{ site.baseurl }}", appName, language);
 
     fetch(configPath)
