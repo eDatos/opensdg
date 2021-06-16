@@ -9,11 +9,11 @@ function cacheHtmlCode(elementId, htmlCode) {
     sessionStorage.setItem(elementId, htmlCode);
 }
 
-function setElementRutine(elementType, elementId, configPath, baseUrl = '') {
+function setElementRutine(elementType, elementId, configPath, baseUrl = '', appName = '', language = '') {
     fetch(configPath)
     .then(res => res.json())
     .then(json => {
-        var type = null
+        var type = null;
         switch (elementType) {
             case HEADER:
                 type = json.metadata.navbarPathKey;
@@ -33,9 +33,9 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '') {
                     }
                 }
                 let appHtmlUrl = `${htmlUrl.value}`;
-                appHtmlUrl += `?appName=${translations.t("general.nombre_aplicacion")}`;
+                appHtmlUrl += `?appName=${appName}`;
                 appHtmlUrl += `&appUrl=${baseUrl}`;
-                appHtmlUrl += `&lang=${opensdg.language}`;
+                appHtmlUrl += `&lang=${language}`;
                 fetch(appHtmlUrl, fetchOptions)
                     .then(res => res.text())
                     .then(html => {
@@ -46,11 +46,11 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '') {
     });
 }
 
-function setElement(elementType, elementId, configPath, baseUrl = '') {
+function setElement(elementType, elementId, configPath, baseUrl = '', appName='', language='') {
     var cachedData = sessionStorage.getItem(elementId);
     if (cachedData != null) {
         renderElement(elementId, cachedData);
     } else {
-        setElementRutine(elementType, elementId, configPath, baseUrl);
+        setElementRutine(elementType, elementId, configPath, baseUrl, appName, language);
     }
 }
