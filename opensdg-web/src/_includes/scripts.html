@@ -121,19 +121,20 @@
   opensdg['map']['lon'] = {{ site.map_lon }};
   opensdg['map']['zoom'] = {{ site.map_zoom }};
 
-
   var configPath = '{{ site.baseurl }}/assets/configuration.json'
   var appName = translations.t("general.nombre_aplicacion");
   var language = opensdg.language;
+  var footerElementId = "istac-footer-wrapper";
+  var headerElementId = "istac-header-wrapper";
 
-  if (localStorage.getItem(`${HEADER_WRAPPER}-${language}`) !== language) {
-    removeCacheHtmlCode(HEADER_WRAPPER, language);
+  if (localStorage.getItem(`${headerElementId}-${language}`) !== language) {
+    removeCacheHtmlCode(headerElementId, language);
   }
 
-  if (localStorage.getItem(`${FOOTER_WRAPPER}-${language}`) !== language) {
-    removeCacheHtmlCode(FOOTER_WRAPPER, language);
+  if (localStorage.getItem(`${footerElementId}-${language}`) !== language) {
+    removeCacheHtmlCode(footerElementId, language);
   }
 
-  setElement(FOOTER, FOOTER_WRAPPER, configPath, '', '', language);
-  setElement(HEADER, HEADER_WRAPPER, configPath, "{{ site.baseurl }}", appName, language);
+  setElement(FOOTER, footerElementId, configPath, '', '', language);
+  setElement(HEADER, headerElementId, configPath, "{{ site.baseurl }}", appName, language);
 </script>
