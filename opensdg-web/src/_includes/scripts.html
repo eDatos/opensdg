@@ -5,6 +5,7 @@
 <script src="{{ site.baseurl }}/assets/js/node_modules/datatables-bootstrap/js/dataTables.bootstrap.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/node_modules/datatables-fixedcolumns/js/dataTables.fixedColumns.js"></script>
 <script src="{{ site.baseurl }}/assets/js/node_modules/underscore/underscore-min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/custom/setHeaderFooter.js"></script>
 <script src="{{ site.baseurl }}/assets/js/node_modules/chart.js/dist/Chart.bundle.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/node_modules/patternomaly/dist/patternomaly.js"></script>
 <script>
@@ -121,4 +122,9 @@
   opensdg['map']['lon'] = {{ site.map_lon }};
   opensdg['map']['zoom'] = {{ site.map_zoom }};
 
+  var configPath = '{{ site.baseurl }}/assets/configuration.json'
+  var appName = '{{ page.t.general.nombre_aplicacion }}';
+  var language = '{{ page.language }}';
+  setElement(FOOTER, "istac-footer-wrapper", configPath, '', '', language);
+  setElement(HEADER, "istac-header-wrapper", configPath, "{{ site.baseurl }}", appName, language);
 </script>
