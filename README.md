@@ -66,8 +66,8 @@ mv _site opensdg-datos & mv opensdg-datos ../../opensdg-web/src
 
 ````
 # Supuesto utilizando datos en Español y Catalán
-cp opensdg-datos/es/data/*.csv _data/csv/es
-cp opensdg-datos/ca/data/*.csv _data/csv/ca
+cp -fr opensdg-datos/es/data/*.csv _data/csv/es
+cp -fr opensdg-datos/ca/data/*.csv _data/csv/ca
 ````
 
 4) Una vez hecho esto ya se puede proceder a construir la web utilizando la siguiente instrucción. Para poder construir correctamente será necesario pasar uno o varios archivos de configuración.
