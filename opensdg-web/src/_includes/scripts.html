@@ -123,8 +123,8 @@
   opensdg['map']['zoom'] = {{ site.map_zoom }};
 
   var configPath = '{{ site.baseurl }}/assets/configuration.json'
-  var appName = '{{ page.t.general.nombre_aplicacion }}';
-  var language = '{{ page.language }}';
+  var appName = translations.t("general.nombre_aplicacion");
+  var language = opensdg.language;
   setElement(FOOTER, "istac-footer-wrapper", configPath, '', '', language);
   setElement(HEADER, "istac-header-wrapper", configPath, "{{ site.baseurl }}", appName, language);
 </script>
