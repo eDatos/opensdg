@@ -1,14 +1,15 @@
 {% include multilingual-js.html key="header" %}
-{% include scripts.html %}
 
 <div id="istac-header-wrapper"></div>
-
 <script src="{{ site.baseurl }}/assets/js/custom/setHeaderFooter.js"></script>
 
 <script>
     // Insertamos el Header
-    var configPath = '{{ site.baseurl }}/assets/configuration.json'
-    setElement(HEADER, "istac-header-wrapper", configPath, "{{ site.baseurl }}");
+    let configPath = '{{ site.baseurl }}/assets/configuration.json';
+    let appName = '{{ page.t.general.nombre_aplicacion }}';
+    let language = '{{ page.language }}';
+    setElement(HEADER, "istac-header-wrapper", configPath, "{{ site.baseurl }}", appName, language);
+
     fetch(configPath)
         .then((res => res.json()))
         .then(json => {
