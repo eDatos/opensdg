@@ -279,8 +279,18 @@ var indicatorView = function (model, options) {
 
                 if (field['field'] === translations.t("general.territorio")) {
                     let ordenTerritorio = opensdg.orden_territorio.map((t) => translations.t(`nuts.${t}`));
-                    field['values'] = field['values'].sort((a,b) => {
-                        return (ordenTerritorio.indexOf(a.value) < ordenTerritorio.indexOf(b.value)) ? -1 : 1;
+                    field['values'] = field['values'].sort((a, b) => {
+                        var indexA = ordenTerritorio.indexOf(a.value);
+                        var indexB = ordenTerritorio.indexOf(b.value);
+                        if (indexA !== -1 && indexB !== -1) {
+                            return indexA < indexB ? -1 : 1; // si los valores existen en el array orden_territorio, mantener la ordenación que se haya definido en dicho array
+                        } else if (indexA !== -1 && indexB === -1) {
+                            return -1; // los elementos definidos en orden_territorio deben mostrarse primero sobre todos los demás
+                        } else if (indexA === -1 && indexB !== -1) {
+                            return 1; // los elementos definidos en orden_territorio deben mostrarse primero sobre todos los demás
+                        } else {
+                            return 0;
+                        }
                     });
                 }
             })
