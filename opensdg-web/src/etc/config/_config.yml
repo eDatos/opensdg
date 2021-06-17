@@ -106,6 +106,7 @@ languages:
 # (lines 24-25). Available presets are 'default' (used when this config is not set); 'sdg', which has a lot more colors;
 # and 'custom', which requires a list of colors to be set on the property 'graph_color_list'
 graph_color_set: custom
+graph_color_number: 12
 graph_color_list:
   - AA6544
   - B55380
