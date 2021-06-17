@@ -5,7 +5,7 @@
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
 
-<ul class="language-options language-toggle" style="display: none;">
+<ul class="language-options language-toggle">
 {%- for language in site.languages -%}
   {%- if language != page.language -%}
     <li><a href="{{ page.url_by_language[language] }}">{{ page.t.languages[language] }}</a></li>
