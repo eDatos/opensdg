@@ -69,8 +69,11 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
     }
     return 0;
   });
-  
+
+  index = 0;
   datasets.forEach(d => {
+      updateDatasetColor(d, colors, index);
+      index++;
       if (/.*Objetivo.*/igm.test(d.label)) {
           var relatedDataset = getRelatedDataset(datasets, d);
           if (relatedDataset != null) {
@@ -86,6 +89,16 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       datasets.unshift(dataset);
   }
   return datasets;
+}
+
+function updateDatasetColor(dataset, colors, index) {
+  const color = getColor(index, colors);
+  const background = getBackground(index, colors);
+  const border = getBorderDash(index, colors);
+  dataset.borderColor = color;
+  dataset.backgroundColor = background;
+  dataset.pointBorderColor = color;
+  dataset.borderDash = border;
 }
 
 function getLegendLabel(data) {
@@ -153,12 +166,9 @@ function getDataMatchingCombination(data, combination, selectableFields) {
 * @return Color from a list
 */
 function getColor(datasetIndex, colors) {
-  if (datasetIndex >= colors.length) {
-      // Support double the number of colors, because we'll use striped versions.
-      return '#' + colors[datasetIndex - colors.length];
-  } else {
-      return '#' + colors[datasetIndex];
-  }
+  // Support double the number of colors, because we'll use striped versions.
+  var n = colors.length;
+  return '#' + colors[(datasetIndex % n + n) % n];
 }
 
 /**

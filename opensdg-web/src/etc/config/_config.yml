@@ -104,23 +104,24 @@ languages:
 
 # Color set to be used for graphs, see file https://github.com/open-sdg/open-sdg/blob/1.1.0-dev/_includes/assets/js/chartColors.js
 # (lines 24-25). Available presets are 'default' (used when this config is not set); 'sdg', which has a lot more colors;
-# and 'custom', which requires a list of colors to be set on the property 'graph_color_list'
+# and 'custom', which requires a list of colors to be set on the property 'graph_color_list' and can be limited with
+# the property 'graph_color_number'.
 graph_color_set: custom
-graph_color_number: 12
+graph_color_number: 6
 graph_color_list:
-  - AA6544
-  - B55380
-  - 657893
-  - E52727
-  - 7B6079
-  - 3A6351
-  - 3EA679
-  - 85603F
-  - AD932A
-  - DD69CC
-  - BF4C4B
-  - 5D5D5D
-  - 09A5A9
+  - "AA6544"
+  - "B55380"
+  - "657893"
+  - "E52727"
+  - "7B6079"
+  - "3A6351"
+  - "3EA679"
+  - "85603F"
+  - "AD932A"
+  - "DD69CC"
+  - "BF4C4B"
+  - "5D5D5D"
+  - "09A5A9"
 
 # This makes sure that all pages have a language.
 defaults:
