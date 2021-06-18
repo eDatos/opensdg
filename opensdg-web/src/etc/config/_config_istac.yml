@@ -50,3 +50,5 @@ map_zoom: 7
 # Lista CSV sin espacios de códigos de CL_AREA_ES53
 # https://www3.gobiernodecanarias.net/aplicaciones/structural-resources-internal-istac/#structuralResources/codelists/codelist;id=ISTAC%3ACL_AREA_ES(03.000)
 orden_territorio: "ES,ES70"
+
+documento_metodologia: "IDS-canarias-metodologia-v1.pdf"
