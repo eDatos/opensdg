@@ -23,3 +23,4 @@ opensdg-datos/src/metadata_generated
 opensdg-datos/src/__pycache__
 opensdg-datos/src/data/indice.csv
 node_modules
+.idea
