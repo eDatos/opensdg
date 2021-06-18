@@ -153,12 +153,9 @@ function getDataMatchingCombination(data, combination, selectableFields) {
 * @return Color from a list
 */
 function getColor(datasetIndex, colors) {
-  if (datasetIndex >= colors.length) {
-      // Support double the number of colors, because we'll use striped versions.
-      return '#' + colors[datasetIndex - colors.length];
-  } else {
-      return '#' + colors[datasetIndex];
-  }
+  // Support double the number of colors, because we'll use striped versions.
+  var n = colors.length;
+  return '#' + colors[(datasetIndex % n + n) % n];
 }
 
 /**
