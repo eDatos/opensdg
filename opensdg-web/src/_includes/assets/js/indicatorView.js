@@ -546,6 +546,9 @@ var indicatorView = function (model, options) {
                 onclone: function (clone) {
                     // Add a body class so that the screenshot style can be custom.
                     clone.body.classList.add('image-download-in-progress');
+                    // Delete the text that appear under the canvas, since in Firefox it does generate the
+                    // with it on top of the canvas.
+                    clone.getElementById('chart').children[1].textContent = "";
                 },
                 // Decide which elements to skip.
                 ignoreElements: function (el) {
