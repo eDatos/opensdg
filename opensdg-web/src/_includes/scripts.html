@@ -137,4 +137,9 @@
 
   setElement(FOOTER, footerElementId, configPath, '', '', language);
   setElement(HEADER, headerElementId, configPath, "{{ site.baseurl }}", appName, language);
+
+  const documentoMetodologiaBtn = $('#documento-metodologia-btn');
+  if(documentoMetodologiaBtn && documentoMetodologiaBtn.data("hidden").length === 0) {
+      documentoMetodologiaBtn.hide();
+  }
 </script>
