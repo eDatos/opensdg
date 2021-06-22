@@ -1,3 +1,37 @@
+<script>
+  const AVAILABLE_LANGS = {{ site.languages | jsonify }}.map(lang => lang.toLowerCase());
+  const userPreferredLang = navigator.languages[0].toLowerCase();
+  const storedLang = localStorage.getItem("language");
+
+  // El lenguaje por defecto se sirve eln la ruta /ods, mientras que el resto
+  // lo hace en /ods/{language}
+  function isDefaultLanguage(lang) {
+    return lang === AVAILABLE_LANGS[0];
+  }
+
+  function redirectToCorrectLanguage(language) {
+    // Redirige solamente si OpenSDG dispone de una versión en ese idioma
+    if (AVAILABLE_LANGS.includes(language)) {
+        // Hay que tener en cuenta el idioma por defecto ya que la url no termina en /<idioma_defecto>
+        let currentUrlFragment = "{{ site.baseurl }}";
+        let newUrlFragment = "{{ site.baseurl }}";
+        if (!isDefaultLanguage(opensdg.language)) {
+            currentUrlFragment += `/${opensdg.language}`;
+        }
+        if (!isDefaultLanguage(language)) {
+            newUrlFragment += `/${language}`
+        }
+        window.location.href = window.location.href.replace(currentUrlFragment, newUrlFragment);
+    }
+  }
+
+  if (storedLang === null && opensdg.language !== userPreferredLang) {
+    localStorage.setItem("language", userPreferredLang);
+    redirectToCorrectLanguage(userPreferredLang);
+  } else if (storedLang !== null && opensdg.language !== storedLang) {
+    redirectToCorrectLanguage(storedLang);
+  }
+</script>
 <script src="{{ site.baseurl }}/assets/js/node_modules/jquery/dist/jquery.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/node_modules/tether/dist/js/tether.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
