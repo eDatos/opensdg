@@ -26,7 +26,6 @@
   }
 
   if (storedLang === null && opensdg.language !== userPreferredLang) {
-    localStorage.setItem("language", userPreferredLang);
     redirectToCorrectLanguage(userPreferredLang);
   } else if (storedLang !== null && opensdg.language !== storedLang) {
     redirectToCorrectLanguage(storedLang);
