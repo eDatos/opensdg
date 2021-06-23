@@ -109,17 +109,17 @@ languages:
 graph_color_set: custom
 graph_color_number: 6
 graph_color_list:
+  - "3EA679"
   - "AA6544"
-  - "B55380"
   - "657893"
   - "E52727"
   - "7B6079"
   - "3A6351"
-  - "3EA679"
+  - "DD69CC"
   - "85603F"
   - "AD932A"
-  - "DD69CC"
   - "BF4C4B"
+  - "B55380"
   - "5D5D5D"
   - "09A5A9"
 
