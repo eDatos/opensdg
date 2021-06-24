@@ -3,7 +3,7 @@
   const userPreferredLang = navigator.languages[0].toLowerCase();
   const storedLang = localStorage.getItem("language");
 
-  // El lenguaje por defecto se sirve eln la ruta /ods, mientras que el resto
+  // El lenguaje por defecto se sirve en la ruta /ods, mientras que el resto
   // lo hace en /ods/{language}
   function isDefaultLanguage(lang) {
     return lang === AVAILABLE_LANGS[0];
