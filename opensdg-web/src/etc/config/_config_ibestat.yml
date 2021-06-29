@@ -75,6 +75,6 @@ map_zoom: 6
 
 # Lista CSV sin espacios de códigos de CL_AREA_ES53
 # https://ibestat.edatos.io/structural-resources-internal/#structuralResources/codelists/codelist;id=IBESTAT%253ACL_AREA_ES53(01.000)
-orden_territorio: "ES,ES53,ES530,ES531,ES531_071,ES531_072,ES532,ES533"
+orden_territorio: "ES,ES53,ES532,ES533,ES530,ES531_072,ES531_071"
 
 documento_metodologia: ~
