@@ -48,7 +48,10 @@ map_options:
   tileOptions:
     id: mapbox/streets-v11
     accessToken: pk.eyJ1IjoicGJhdXphIiwiYSI6ImNrb3d0bm8xNDA5ajAyb29hbzdzdm9xMTQifQ.aYKi8teq4dkvzQbqcOUIww
-    attribution: <p>Attribution Example</p>
+    attribution: >-
+      <a href="https://www.mapbox.com/about/maps/">&#169; Mapbox</a> |
+      <a href="https://www.openstreetmap.org/about/">&#169; OpenStreetMap</a> |
+      <a href="https://ibestat.caib.es/ibestat/page?p=aviso_legal">CC 3.0 IBESTAT</a>
 
 map_layers:
  - geojson_file: maps/ConsellsInsulars.json
@@ -69,9 +72,9 @@ languages:
   - es
   - ca
 
-map_lat: 39.2455942
-map_lon: 2.1943349
-map_zoom: 6
+map_lat: "39.417543"
+map_lon: "2.887368"
+map_zoom: 7.5
 
 # Lista CSV sin espacios de códigos de CL_AREA_ES53
 # https://ibestat.edatos.io/structural-resources-internal/#structuralResources/codelists/codelist;id=IBESTAT%253ACL_AREA_ES53(01.000)

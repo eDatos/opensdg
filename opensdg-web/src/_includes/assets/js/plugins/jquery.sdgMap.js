@@ -98,7 +98,7 @@
       if (!layer.getTooltip()) {
         var tooltipContent = layer.feature.properties.name;
         var tooltipData = this.getData(layer.feature.properties);
-        if (tooltipData) {
+        if (tooltipData != null && !Number.isNaN(tooltipData)) {
           tooltipContent += ': ' + tooltipData;
         }
         layer.bindTooltip(tooltipContent, {
@@ -189,18 +189,19 @@
 
     // Initialize the map itself.
     init: function() {
+      const lat = (opensdg.map.lat !== 'undefined') ? opensdg.map.lat : 0;
+      const lon = (opensdg.map.lon !== 'undefined') ? opensdg.map.lon : 0;
+      const zoom = (opensdg.map.zoom !== 'undefined') ? opensdg.map.zoom : 0;
 
       // Create the map.
       this.map = L.map(this.element, {
         minZoom: this.options.minZoom,
         maxZoom: this.options.maxZoom,
         zoomControl: false,
+        zoomSnap: zoom,
       });
-      lat = (opensdg.map.lat !== 'undefined') ? opensdg.map.lat : 0;
-      lon = (opensdg.map.lon !== 'undefined') ? opensdg.map.lon : 0;
-      zoom = (opensdg.map.zoom !== 'undefined') ? opensdg.map.zoom : 0;
 
-      this.map.setView([lat, lon], zoom);
+      this.map.setView([lat, lon], 0);
       this.dynamicLayers = new ZoomShowHide();
       this.dynamicLayers.addTo(this.map);
       this.staticLayers = new ZoomShowHide();
