@@ -98,7 +98,7 @@
       if (!layer.getTooltip()) {
         var tooltipContent = layer.feature.properties.name;
         var tooltipData = this.getData(layer.feature.properties);
-        if (tooltipData) {
+        if (tooltipData != null && !Number.isNaN(tooltipData)) {
           tooltipContent += ': ' + tooltipData;
         }
         layer.bindTooltip(tooltipContent, {
