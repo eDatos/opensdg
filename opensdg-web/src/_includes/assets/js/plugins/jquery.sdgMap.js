@@ -198,7 +198,6 @@
         minZoom: this.options.minZoom,
         maxZoom: this.options.maxZoom,
         zoomControl: false,
-        zoomSnap: zoom,
       });
 
       this.map.setView([lat, lon], 0);
@@ -340,7 +339,6 @@
         plugin.map.addControl(plugin.searchControl);
         // The search plugin messes up zoomShowHide, so we have to reset that
         // with this hacky method. Is there a better way?
-        var zoom = plugin.map.getZoom();
         plugin.map.setZoom(plugin.options.maxZoom);
         plugin.map.setZoom(zoom);
 
