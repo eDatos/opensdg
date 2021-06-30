@@ -161,7 +161,10 @@
     
     // Get the data from a feature's properties, according to the current year.
     getData: function(props) {
-      if (props.values && props.values.length && props.values[this.currentDisaggregation][this.currentYear]) {
+      if (props.values
+          && props.values.length
+          && props.values[this.currentDisaggregation][this.currentYear] != null
+          && !Number.isNaN(props.values[this.currentDisaggregation][this.currentYear])) {
         return props.values[this.currentDisaggregation][this.currentYear];
       }
       return false;
@@ -170,7 +173,7 @@
     // Choose a color for a GeoJSON feature.
     getColor: function(props) {
       var data = this.getData(props);
-      if (data) {
+      if (typeof data === 'number') {
         return this.colorScale(data).hex();
       }
       else {
@@ -266,15 +269,17 @@
           // Add the layer to the ZoomShowHide group.
           plugin.dynamicLayers.addLayer(layer);
 
-          // Add a download button below the map.
-          var downloadLabel = translations.t(plugin.mapLayers[i].label)
-          var downloadButton = $('<a></a>')
-            .attr('href', plugin.getGeoJsonUrl(plugin.mapLayers[i].subfolder))
-            .attr('download', '')
-            .attr('class', 'btn btn-primary btn-download')
-            .attr('title', translations.indicator.download_geojson_title + ' - ' + downloadLabel)
-            .text(translations.indicator.download_geojson + ' - ' + downloadLabel);
-          $(plugin.element).parent().append(downloadButton);
+          if($(plugin.element).parent().find("[download]").length === 0) {
+            // Add a download button below the map.
+            var downloadLabel = translations.t(plugin.mapLayers[i].label)
+            var downloadButton = $('<a></a>')
+              .attr('href', plugin.getGeoJsonUrl(plugin.mapLayers[i].subfolder))
+              .attr('download', '')
+              .attr('class', 'btn btn-primary btn-download')
+              .attr('title', translations.indicator.download_geojson_title + ' - ' + downloadLabel)
+              .text(translations.indicator.download_geojson + ' - ' + downloadLabel);
+            $(plugin.element).parent().append(downloadButton);
+          }
 
           // Keep track of the minimums and maximums.
           _.each(geoJson.features, function(feature) {
