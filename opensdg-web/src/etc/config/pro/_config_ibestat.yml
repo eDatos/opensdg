@@ -1,0 +1,83 @@
+# Replace this title as needed.
+title: Indicadores para los Objetivos de Desarrollo Sostenible
+# Replace the baseurl with the name of this repository.
+baseurl: "/ods"
+#url: ""
+# Replace "open-sdg" with the name of your GitHub organization, and
+# "open-sdg-data-starter" with the name of your data repository.
+remote_data_prefix: "./opensdg-datos"
+
+# Replace this value as needed.
+org_name: ibestat
+
+# International Support
+# Eg name: Australia and adjective: Australian
+country:
+  name: Illes Balears
+  adjective: Balear
+
+# Menu
+menu:
+  # Use these to customise the main navigation.
+  - path: /
+    translation_key: menu.inicio
+  - path: /reporting-status
+    # The "translation_key" refers to the key in the SDG Translations repository.
+    translation_key: menu.reporting_status
+  - path: /faq
+    translation_key: menu.faq
+  - path: /guidance
+    translation_key: menu.guidance
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      language: "es"
+      header_image: "header.png"
+      header_text_image: "header_text_image.png"
+      texto_serie_ocecas: "Indicador calculado utilizando una metodología armonizada entre los órganos centrales de estadística de las comunidades autónomas"
+      imagen_serie_ocecas: "ocecas_metadata_image.jpg"
+      texto_serie: ""
+      imagen_serie : "metadata_image.jpg"
+      nuts_local: "ES53"
+
+# Ejemplo de map_options
+map_options:
+  tileURL: https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}
+  tileOptions:
+    id: mapbox/streets-v11
+    accessToken: pk.eyJ1IjoiaWJlc3RhdCIsImEiOiJja293dHg1OHIwOW5uMnhvNzNrbTl0MjR5In0.MVXpQKXGywxtD7m_e6HPfA
+    attribution: >-
+      <a href="https://www.mapbox.com/about/maps/">&#169; Mapbox</a> |
+      <a href="https://www.openstreetmap.org/about/">&#169; OpenStreetMap</a> |
+      <a href="https://ibestat.caib.es/ibestat/page?p=aviso_legal">CC 3.0 IBESTAT</a>
+
+map_layers:
+ - geojson_file: maps/ConsellsInsulars.json
+   name_property: NOM
+   id_property: CODNUT3
+   output_subfolder: regions
+   filename_prefix: indicator_
+ - geojson_file: maps/islas4IB_4326_definitivo.geojson
+   name_property: NOM
+   id_property: CODNUT3
+   output_subfolder: regions
+   filename_prefix: indicator_
+
+goal_image_base: "https://ibestat.edatos.io/ods/assets/img/ods_images"
+
+# The list of languages that are translated. The first one is the default.
+languages:
+  - es
+  - ca
+
+map_lat: "39.417543"
+map_lon: "2.887368"
+map_zoom: 7.5
+
+# Lista CSV sin espacios de códigos de CL_AREA_ES53
+# https://ibestat.edatos.io/structural-resources-internal/#structuralResources/codelists/codelist;id=IBESTAT%253ACL_AREA_ES53(01.000)
+orden_territorio: "ES,ES53,ES532,ES533,ES530,ES531_072,ES531_071"
+
+documento_metodologia: ~
