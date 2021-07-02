@@ -93,7 +93,7 @@ pasos que se detallaran a continuación.
 
    ```bash
    # Ejemplo de ejecución con la configuración para el ISTAC (entorno pre)
-   bundle exec jekyll build --config etc/config/_config.yml,etc/config/pre/_config_istac.yml
+   bundle exec jekyll build --config etc/config/_config.yml,etc/config/istac/_config.yml,etc/config/istac/pre/_config.yml
    ```
 
    También es posible servir directamente la web sin necesidad de pasar por el paso de build o de utilizar un servidor
@@ -101,7 +101,7 @@ pasos que se detallaran a continuación.
 
    ```bash
    # Ejemplo de ejecución con la configuración para el ISTAC (entorno pre)
-   bundle exec jekyll serve --config etc/config/_config.yml,etc/config/pre/_config_istac.yml
+   bundle exec jekyll serve --config etc/config/_config.yml,etc/config/istac/_config.yml,etc/config/istac/pre/_config.yml
    ```
 
 5) Si todo ha salido bien se habrá generado un directorio **_site**, este directorio contendrá la web estática así como
