@@ -69,15 +69,6 @@ var indicatorModel = function (options) {
   this.edgesData.splice(getIndexOfEdgeFrom("Serie", this.edgesData), 1);
   this.edgesData = fixEdges(this.edgesData);
 
-  /*
-   * This array usually ends up empty after calls to the above functions. However,
-   * when there are several disaggregation dimensions, the array ends up with
-   * some values that cause an error when displaying the graphs.
-   *
-   * This is a temp fix that appears to cause no other effect.
-   */
-  this.edgesData = [];
-
   this.hasHeadline = true;
   this.country = options.country;
   this.indicatorId = options.indicatorId;

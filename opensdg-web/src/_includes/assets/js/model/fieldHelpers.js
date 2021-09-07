@@ -450,26 +450,28 @@ function validParentsByChild(edges, fieldItemStates, rows) {
   var childFields = getChildFieldNames(edges);
   var validParentsByChild = {};
   childFields.forEach(function(childField, fieldIndex) {
-    var fieldItemState = fieldItemStates.find(function(fis) {
-      return fis.field === childField;
-    });
-    var childValues = fieldItemState.values.map(function(value) {
-      return value.value;
-    });
-    var parentField = parentFields[fieldIndex];
-    validParentsByChild[childField] = {};
-    childValues.forEach(function(childValue) {
-      var rowsWithParentValues = rows.filter(function(row) {
-        var childMatch = row[childField] == childValue;
-        var parentNotEmpty = row[parentField];
-        return childMatch && parentNotEmpty;
+    if (childField !== 'Serie') {
+      var fieldItemState = fieldItemStates.find(function (fis) {
+        return fis.field === childField;
       });
-      var parentValues = rowsWithParentValues.map(function(row) {
-        return row[parentField];
+      var childValues = fieldItemState.values.map(function (value) {
+        return value.value;
       });
-      parentValues = parentValues.filter(isElementUniqueInArray);
-      validParentsByChild[childField][childValue] = parentValues;
-    });
+      var parentField = parentFields[fieldIndex];
+      validParentsByChild[childField] = {};
+      childValues.forEach(function (childValue) {
+        var rowsWithParentValues = rows.filter(function (row) {
+          var childMatch = row[childField] == childValue;
+          var parentNotEmpty = row[parentField];
+          return childMatch && parentNotEmpty;
+        });
+        var parentValues = rowsWithParentValues.map(function (row) {
+          return row[parentField];
+        });
+        parentValues = parentValues.filter(isElementUniqueInArray);
+        validParentsByChild[childField][childValue] = parentValues;
+      });
+    }
   });
   return validParentsByChild;
 }
