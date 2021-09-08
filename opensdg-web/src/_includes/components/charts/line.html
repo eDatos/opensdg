@@ -112,6 +112,7 @@ the Chart.js configuration being used, see `createPlot()` in `indicatorView.js`.
                 scales: {
                     yAxes: [{
                         ticks: {
+                            beginAtZero: true,
                             callback: (value) => Intl.NumberFormat("es-ES", {
                                 minimumFractionDigits: 2
                             }).format(value)

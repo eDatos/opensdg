@@ -199,8 +199,8 @@
                     },
                     scales: {
                         yAxes: [{
-                            beginAtZero: true,
                             ticks: {
+                                beginAtZero: true,
                                 callback: (value) => Intl.NumberFormat("es-ES", {
                                     minimumFractionDigits: 2
                                 }).format(value)
