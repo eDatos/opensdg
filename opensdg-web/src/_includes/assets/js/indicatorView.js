@@ -411,7 +411,7 @@ var indicatorView = function (model, options) {
 
                     /**
                      * Función que implementa la intersección de conjuntos
-                     * @param {Set} otroSet 
+                     * @param {Set} otroSet
                      */
                     Set.prototype.intersection = function (otroSet) {
                         var intersectionSet = new Set();
@@ -425,9 +425,9 @@ var indicatorView = function (model, options) {
 
                     /**
                      * Encontrar el dataset al que hace referencia un objetivo para luego poder utilizar su color.
-                     * 
-                     * @param {Array<Dataset>} datasets 
-                     * @param {Dataset} target 
+                     *
+                     * @param {Array<Dataset>} datasets
+                     * @param {Dataset} target
                      */
                     function getRelatedDataset(datasets, target) {
                         var targetSplited = target.label.split(', ');
@@ -606,7 +606,7 @@ var indicatorView = function (model, options) {
             var line = [];
 
             _.each(headings, function (heading, index) {
-                line.push(dataValues[index]);
+                line.push(dataValues[index].toFixed(2));
             });
 
             lines.push(line.join(','));
