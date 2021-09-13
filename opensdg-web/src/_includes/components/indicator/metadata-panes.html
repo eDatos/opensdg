@@ -1,4 +1,4 @@
-<div class="tab-content">
+<div id="subindicator-metadata" class="tab-content">
     {% if site.metadata_tabs %}
         {% for tab in site.metadata_tabs %}
             {% comment %} @deprecated start {% endcomment %}
@@ -36,14 +36,14 @@
                     <h3><b>{{ s.graph_title | t }}</b></h3>
                 </div>
 
-                <div>
+                <div id="metadata-graph">
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#grafico-{{ s.slug }}" aria-controls="home" role="tab" data-toggle="tab">{{ page.t.general.grafico }}</a></li>
                         {% if s.show_map %}
                         <li role="presentation"><a onclick="window.dispatchEvent(new Event('resize'));" href="#mapa-{{ s.slug }}" aria-controls="profile" role="tab" data-toggle="tab">{{ page.t.general.mapa }}</a></li>
                         {% endif %}
                     </ul>
-                    
+
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="grafico-{{ s.slug }}">
                             <div class="chart" id="chart-wrapper-{{ s.slug }}">
@@ -72,4 +72,10 @@
             {% include components/indicator/edit-buttons.html %}
         </div>
     {% endif %}
+
+    <div id="metadataDownload" class="clearfix">
+        <button id="btnSaveMetadata" title="{{ page.t.indicator.download_metadata_title }}" class='btn btn-primary btn-download'>
+            {{ page.t.indicator.download_metadata }}
+        </button>
+    </div>
 </div>
