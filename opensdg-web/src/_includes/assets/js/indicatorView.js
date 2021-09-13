@@ -820,9 +820,9 @@ var indicatorView = function (model, options) {
                     row_html += (isYear || isUnits ? '' : ' class="table-value"');
                     row_html += '>';
                     if (data[index] !== null) {
-                        row_html += isYear || isUnits
-                                    ? data[index]
-                                    : data[index].toFixed(2)
+                        row_html += (isYear || isUnits
+                                    ? data[index].toString()
+                                    : data[index].toFixed(2)).replaceAll(".", ",");
                     } else {
                         row_html += '-';
                     }
