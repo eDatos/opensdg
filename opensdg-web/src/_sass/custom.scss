@@ -1100,7 +1100,7 @@ body.contrast-high {
   #main-content .nav-tabs .nav-item.active a { background: yellow; color: black; border-color: yellow; }
 
   a.nav-link:focus { background: white; color: black; }
-  
+
 
   caption {
     color: white;
@@ -1390,18 +1390,18 @@ body {
   margin-bottom: 3rem;
 }
 
-.navbar #search input { 
+.navbar #search input {
   padding-left: 1rem;
   margin-top: 0px;
 }
 
-.navbar #search form { 
+.navbar #search form {
   padding-left: 1rem;
   padding-top: 0px;
   transform: translate(0px, -0.5rem);
 }
 
-.navbar #search button { 
+.navbar #search button {
   font-size: 1.5rem;
   transform: translate(0px, 3px);
 }
@@ -1512,5 +1512,34 @@ h3 {
 .navbar #search {
   @media screen and (max-width: 1024px) {
     padding-left: 5rem;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  header,
+  .data-view,
+  .heading,
+  .breadcrumb,
+  .breadcrumb + .row,
+  .indicator-sidebar,
+  .nav.nav-tabs.spacer.medium,
+  #metadataDownload {
+    display: none;
+  }
+
+  #subindicator-metadata,
+  #subindicator-metadata * {
+    visibility: visible;
+  }
+
+  #subindicator-metadata {
+    border: none !important;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }

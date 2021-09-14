@@ -576,18 +576,7 @@ var indicatorView = function (model, options) {
         });
 
         $("#metadataDownload").click(() => {
-            $("#metadata-graph").hide();
-            $("#btnSaveMetadata").hide();
-            $("#subindicator-metadata").printThis({
-                importCSS: true,
-                importStyle: true,
-                removeScripts: false,
-                removeInline: false
-            });
-            setTimeout(() => {
-                $("#metadata-graph").show();
-                $("#btnSaveMetadata").show();
-            }, 1000)
+            window.print();
         });
 
         $(this._legendElement).html(view_obj._chartInstance.generateLegend());
