@@ -576,6 +576,10 @@ var indicatorView = function (model, options) {
         });
 
         $("#metadataDownload").click(() => {
+            $("#metadata-graph > .tab-content > .tab-pane:nth-child(2)").removeClass("active");
+            $("#metadata-graph > .tab-content > .tab-pane:nth-child(1)").addClass("active");
+            $("#metadata-graph > .nav-tabs > li:nth-child(2)").removeClass("active");
+            $("#metadata-graph > .nav-tabs > li:nth-child(1)").addClass("active");
             window.print();
         });
 
