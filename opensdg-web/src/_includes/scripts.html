@@ -148,6 +148,8 @@
 
     var switcher = new accessibilitySwitcher();
   });
+
+  opensdg.indicator_preselected_fields = {{ page.indicator.preselected_fields | jsonify }};
   
   opensdg['map'] = {};
   opensdg['map']['lat'] = {{ site.map_lat }};

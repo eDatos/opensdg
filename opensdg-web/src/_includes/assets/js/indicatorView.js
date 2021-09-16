@@ -241,15 +241,20 @@ var indicatorView = function (model, options) {
     /**
      * Función que activa todos los filtros exceptuando los de territorio.
      */
-    function checkAllFields() {
-        var selectorDesagregaciones = ".variable-options label input[type=checkbox]";
+        function checkAllFields() {
+        const selectorDesagregaciones = ".variable-options label input[type=checkbox]";
+        const preselectedFields =  opensdg.indicator_preselected_fields;
 
         $(selectorDesagregaciones).prop("checked", false);
         $(selectorDesagregaciones).each(function (index) {
-            var isTerritorio = $(this).data('field') == translations.t("general.territorio");
-            var isLocal = $(this).val() !== translations.t("general.espana");
+            const isTerritorio = $(this).data('field') === translations.t("general.territorio");
+            const isLocal = $(this).val() !== translations.t("general.espana");
 
-            if ((isTerritorio && isLocal) || !isTerritorio) {
+            const selectedDimension = preselectedFields && preselectedFields.map(el => el.dimension).includes($(this).data('field'));
+
+            if (!selectedDimension && ((isTerritorio && isLocal) || !isTerritorio)) {
+                $(this).trigger("click");
+            } else if (selectedDimension && preselectedFields.filter(el => el.dimension === $(this).data('field')).flatMap(el => el.fields).includes($(this).val())) {
                 $(this).trigger("click");
             }
         });
