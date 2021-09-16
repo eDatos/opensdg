@@ -242,15 +242,30 @@ var indicatorView = function (model, options) {
      * Función que activa todos los filtros exceptuando los de territorio.
      */
     function checkAllFields() {
-        var selectorDesagregaciones = ".variable-options label input[type=checkbox]";
+        const selectorDesagregaciones = ".variable-options label input[type=checkbox]";
+        const preselectedFields = opensdg.indicator_preselected_fields;
 
         $(selectorDesagregaciones).prop("checked", false);
         $(selectorDesagregaciones).each(function (index) {
-            var isTerritorio = $(this).data('field') == translations.t("general.territorio");
-            var isLocal = $(this).val() !== translations.t("general.espana");
+            const dimension = $(this).data('field');
+            const field = $(this).val();
 
-            if ((isTerritorio && isLocal) || !isTerritorio) {
-                $(this).trigger("click");
+            if (preselectedFields && preselectedFields.map(el => el.dimension).includes(dimension)) {
+                // if the dimension has configured preselected fields, then find if the present field has to be selected
+                const isPreselectedField = preselectedFields.filter(el => el.dimension === dimension).flatMap(el => el.fields).includes(field);
+                if (isPreselectedField) {
+                    $(this).trigger("click");
+                }
+            } else {
+                // otherwise, if the dimension doesn't have any configuration referring to preselected fields, then
+                // default to selecting all fields of the dimension except the territory one, where the Spain field
+                // remains unselected
+                const isTerritory = dimension === translations.t("general.territorio");
+                const isLocalTerritory = field !== translations.t("general.espana");
+
+                if ((isTerritory && isLocalTerritory) || !isTerritory) {
+                    $(this).trigger("click");
+                }
             }
         });
     }
@@ -575,6 +590,14 @@ var indicatorView = function (model, options) {
             });
         });
 
+        $("#metadataDownload").click(() => {
+            $("#metadata-graph > .tab-content > .tab-pane:nth-child(2)").removeClass("active");
+            $("#metadata-graph > .tab-content > .tab-pane:nth-child(1)").addClass("active");
+            $("#metadata-graph > .nav-tabs > li:nth-child(2)").removeClass("active");
+            $("#metadata-graph > .nav-tabs > li:nth-child(1)").addClass("active");
+            window.print();
+        });
+
         $(this._legendElement).html(view_obj._chartInstance.generateLegend());
     };
 
@@ -820,9 +843,9 @@ var indicatorView = function (model, options) {
                     row_html += (isYear || isUnits ? '' : ' class="table-value"');
                     row_html += '>';
                     if (data[index] !== null) {
-                        row_html += isYear || isUnits
-                                    ? data[index]
-                                    : data[index].toFixed(2)
+                        row_html += (isYear || isUnits
+                                    ? data[index].toString()
+                                    : data[index].toFixed(2)).replaceAll(".", ",");
                     } else {
                         row_html += '-';
                     }
