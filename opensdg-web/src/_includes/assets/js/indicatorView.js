@@ -241,21 +241,31 @@ var indicatorView = function (model, options) {
     /**
      * Función que activa todos los filtros exceptuando los de territorio.
      */
-        function checkAllFields() {
+    function checkAllFields() {
         const selectorDesagregaciones = ".variable-options label input[type=checkbox]";
-        const preselectedFields =  opensdg.indicator_preselected_fields;
+        const preselectedFields = opensdg.indicator_preselected_fields;
 
         $(selectorDesagregaciones).prop("checked", false);
         $(selectorDesagregaciones).each(function (index) {
-            const isTerritorio = $(this).data('field') === translations.t("general.territorio");
-            const isLocal = $(this).val() !== translations.t("general.espana");
+            const dimension = $(this).data('field');
+            const field = $(this).val();
 
-            const selectedDimension = preselectedFields && preselectedFields.map(el => el.dimension).includes($(this).data('field'));
+            if (preselectedFields && preselectedFields.map(el => el.dimension).includes(dimension)) {
+                // if the dimension has configured preselected fields, then find if the present field has to be selected
+                const isPreselectedField = preselectedFields.filter(el => el.dimension === dimension).flatMap(el => el.fields).includes(field);
+                if (isPreselectedField) {
+                    $(this).trigger("click");
+                }
+            } else {
+                // otherwise, if the dimension doesn't have any configuration referring to preselected fields, then
+                // default to selecting all fields of the dimension except the territory one, where the Spain field
+                // remains unselected
+                const isTerritory = dimension === translations.t("general.territorio");
+                const isLocalTerritory = field !== translations.t("general.espana");
 
-            if (!selectedDimension && ((isTerritorio && isLocal) || !isTerritorio)) {
-                $(this).trigger("click");
-            } else if (selectedDimension && preselectedFields.filter(el => el.dimension === $(this).data('field')).flatMap(el => el.fields).includes($(this).val())) {
-                $(this).trigger("click");
+                if ((isTerritory && isLocalTerritory) || !isTerritory) {
+                    $(this).trigger("click");
+                }
             }
         });
     }
