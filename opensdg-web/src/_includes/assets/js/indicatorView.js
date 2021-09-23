@@ -629,7 +629,11 @@ var indicatorView = function (model, options) {
             var line = [];
 
             _.each(headings, function (heading, index) {
-                line.push(dataValues[index].toFixed(2));
+                if (heading.toLowerCase() !== '"year"') {
+                    line.push(dataValues[index].toFixed(2));
+                } else {
+                    line.push(dataValues[index]);
+                }
             });
 
             lines.push(line.join(','));
