@@ -1516,6 +1516,11 @@ h3 {
 }
 
 @media print {
+  body {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
   body * {
     visibility: hidden;
   }
@@ -1537,15 +1542,18 @@ h3 {
   }
 
   #subindicator-metadata {
+    padding: 0 !important;
     border: none !important;
     position: absolute;
     left: 0;
     top: 0;
   }
 
+  h3 {
+    margin-top: 0;
+  }
 
   #metadata-graph > .nav-tabs * {
     visibility: hidden !important;
   }
-
 }
