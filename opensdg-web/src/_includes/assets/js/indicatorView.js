@@ -630,7 +630,7 @@ var indicatorView = function (model, options) {
 
             _.each(headings, function (heading, index) {
                 if (heading.toLowerCase() !== '"year"') {
-                    line.push(dataValues[index].toFixed(2));
+                    line.push(dataValues[index]?.toFixed(2));
                 } else {
                     line.push(dataValues[index]);
                 }
