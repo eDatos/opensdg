@@ -1517,12 +1517,12 @@ h3 {
 
 @media print {
   body {
-    margin-top: 0;
-    padding-top: 0;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
   body * {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   header,
@@ -1533,27 +1533,35 @@ h3 {
   .indicator-sidebar,
   .nav.nav-tabs.spacer.medium,
   #metadataDownload {
-    display: none;
+    display: none !important;
   }
 
   #subindicator-metadata,
   #subindicator-metadata * {
-    visibility: visible;
+    visibility: visible !important;
   }
 
   #subindicator-metadata {
     padding: 0 !important;
     border: none !important;
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
   }
 
   h3 {
-    margin-top: 0;
+    margin-top: 0 !important;
+  }
+
+  #main-content {
+    margin-top: 0 !important;
   }
 
   #metadata-graph > .nav-tabs * {
     visibility: hidden !important;
+  }
+
+  #istac-header-wrapper {
+    display: none;
   }
 }
