@@ -11,11 +11,11 @@
             {% if indicator_metadata.name == 'formula_teorica' %}
                 <td class="formula_teorica_container" id="formula_teorica_container{{ subindicator['slug'] }}"><p class="justified-text">{{ subindicator[indicator_metadata.name] }}</p></td>
                 <script>
-                    var codigoFormulaTeorica = "{{ subindicator[indicator_metadata.name] }}";
-                    var numeroDeFormulasTeoricas = (codigoFormulaTeorica.match(/\$+(.*?)\$+/g) || []).length;
+                    const codigoFormulaTeorica{{ subindicator["sort"] }} = "{{ subindicator[indicator_metadata.name] }}";
+                    const numeroDeFormulasTeoricas{{ subindicator["sort"] }} = (codigoFormulaTeorica{{ subindicator["sort"] }}.match(/\$+(.*?)\$+/g) || []).length;
                     $('#formula_teorica_container{{ subindicator["slug"] }}').bind('DOMNodeInserted', function() {
-                        var numeroFormulasCreadas = ($('#formula_teorica_container{{ subindicator["slug"] }}').html().match(/\<mjx-container/g) || []).length;
-                        if (numeroFormulasCreadas >= numeroDeFormulasTeoricas) {
+                        const numeroFormulasCreadas{{ subindicator["sort"] }} = ($('#formula_teorica_container{{ subindicator["slug"] }}').html().match(/\<mjx-container/g) || []).length;
+                        if (numeroFormulasCreadas{{ subindicator["sort"] }} >= numeroDeFormulasTeoricas{{ subindicator["sort"] }}) {
                             $('#formula_teorica_container{{ subindicator["slug"] }}').fadeIn(1000);
                         }
                         return;
