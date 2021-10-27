@@ -1,3 +1,10 @@
+<style>
+  #mapview > [role="tabpanel"]:not(.active) {
+    display: none;
+  }
+</style>
+
+
 <div class="tab-content data-view">
   <div role="tabpanel" class="tab-pane active" id="chartview">
     {% include components/charts/chart.html graph_type=page.indicator.graph_type %}
@@ -8,11 +15,35 @@
     </div>
     {% include components/indicator/table.html %}
   </div>
+
   {%- if page.indicator.data_show_map -%}
-  <div role="tabpanel" class="tab-pane" id="mapview" class="map">
-    {% include components/indicator/map.html %}
+  <div role="tabpanel" class="tab-pane" id="mapview">
+    {% if page.indicator.reporting_status != 'notstarted' %}
+    {% assign sorted_indicators = page.indicators | where: 'target_id', page.indicator.number | sort: 'sort_order' %}
+    {% for s in sorted_indicators%}
+    <div class="tab-pane hid map-2-wrapper {% if forloop.first %}active{% endif %}" id="subindicator-2{{ s.number | replace: '.', '' }}" role="tabpanel">
+      {% if s.show_map %}
+      <div role="tabpanel" class="tab-pane" id="mapa-2-{{ s.slug }}">
+        <div class="map" id="map-2-wrapper-{{ s.slug }}">
+          {% include components/subindicator/series-subindicator-map.html scope=s sorted_indicators=sorted_indicators index=forloop.index %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
+    <div>
+      <h3>Leyenda</h3>
+      {% for s in sorted_indicators%}
+        - Serie {{ s.slug | split: "" | last }}: {{ s.graph_title }} <br>
+      {% endfor %}
+    </div>
   </div>
   {%- endif -%}
+
+
   {% if page.indicator.embedded_feature_url or page.indicator.embedded_feature_html %}
   <div role="tabpanel" class="tab-pane" id="embeddedmapview" class="embedded-map">
     {% include components/indicator/embedded-feature.html %}

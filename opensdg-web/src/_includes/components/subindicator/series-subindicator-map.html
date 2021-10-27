@@ -20,7 +20,7 @@
 
 {% if show_data %}
 
-<div class="subindicator_map" id="map-{{ subindicator.slug }}">
+<div class="subindicator_map" id="map-2-{{ subindicator.slug }}">
     <img src="{{ site.baseurl }}/assets/img/loading.gif" alt="{{ page.t.indicator.loading_map }}" />
 </div>
 
@@ -31,10 +31,12 @@
         {%- include assets/js/plugins/jquery.sdgMap.js -%}
 
         $('.map').show();
-        $('#map-{{ subindicator.slug }}').sdgMap({
+        $('#map-2-{{ subindicator.slug }}').sdgMap({
             indicatorId: "indicator_{{ subindicator.slug }}",
             mapOptions: {{ site.map_options | jsonify }},
             mapLayers: {{ site.map_layers | jsonify }},
+            sortedIndicators: {{ include.sorted_indicators | jsonify }},
+            index: {{ include.index | jsonify }},
         });
     });
 </script>

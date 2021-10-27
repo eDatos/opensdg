@@ -76,7 +76,7 @@
     this._defaults = defaults;
     this._name = 'sdgMap';
 
-    this.init();
+    this.init(options);
   }
 
   Plugin.prototype = {
@@ -158,7 +158,7 @@
         });
       });
     },
-    
+
     // Get the data from a feature's properties, according to the current year.
     getData: function(props) {
       if (props.values
@@ -188,7 +188,7 @@
     },
 
     // Initialize the map itself.
-    init: function() {
+    init: function(options) {
       const lat = (opensdg.map.lat !== 'undefined') ? opensdg.map.lat : 0;
       const lon = (opensdg.map.lon !== 'undefined') ? opensdg.map.lon : 0;
       const zoom = (opensdg.map.zoom !== 'undefined') ? opensdg.map.zoom : 0;
@@ -342,6 +342,35 @@
         plugin.map.setZoom(plugin.options.maxZoom);
         plugin.map.setZoom(zoom);
 
+        plugin.startExp = 0;
+
+        const command = L.control({position: 'bottomleft'});
+        command.onAdd = function (map) {
+          const div = L.DomUtil.create('div', 'command');
+          let code = '<form>';
+          for (let index = 0; index < options.sortedIndicators?.length; index++) {
+            const elem = options.sortedIndicators[index];
+            const serieLetter = elem.slug.match(/SERIE-(.)/i)
+            const serieName = "Serie " + serieLetter[1];
+            if (index === plugin.startExp) {
+              code += '<label onclick="updateRadioButton(\'' + elem.number.replaceAll(".", "") + '\', ' + index +')" ' +
+                  'style="background-color: #ECECEC; padding-right: 6px; padding-left: 4px; font-size: 14px"><input id="command' + Math.random().toString() + '" type="radio" name="serie" value="' + index + '" checked> ' + serieName + ' </label><br>';
+            } else {
+              code += '<label onclick="updateRadioButton(\'' + elem.number.replaceAll(".", "") + '\', ' + index +')" ' +
+                  'style="background-color: #ECECEC; padding-right: 6px; padding-left: 4px; font-size: 14px"><input id="command' + Math.random().toString() + '" type="radio" name="serie" value="' + index + '"> ' + serieName + ' </label><br>';
+            }
+          }
+          code += '</form>';
+          div.innerHTML = code;
+          return div;
+
+        };
+        command.addTo(plugin.map);
+
+        $('.map-2-wrapper input[type="radio"]').on('click change', function(e) {
+          plugin.map.setZoom(zoom);
+        });
+
         // The list of handlers to apply to each feature on a GeoJson layer.
         function onEachFeature(feature, layer) {
           if (plugin.featureShouldDisplay(feature)) {
@@ -460,3 +489,11 @@
     });
   };
 })(jQuery);
+
+
+function updateRadioButton(subindicatorId, index) {
+  window.dispatchEvent(new Event('resize'));
+  document.querySelectorAll('.map-2-wrapper').forEach(elem => elem.classList.remove('active'));
+  document.getElementById('subindicator-2' + subindicatorId).classList.add('active');
+  document.querySelectorAll('#subindicator-2' + subindicatorId + ' input[type="radio"]')[index].checked = true;
+}

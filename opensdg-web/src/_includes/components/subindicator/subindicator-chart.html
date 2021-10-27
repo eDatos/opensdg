@@ -34,7 +34,7 @@
              * @param {String} territory
              */
             function getIndexes(data, territory) {
-                return data["{{ page.t.general.territorio }}"].map(function (territorio, index) {
+                return data["{{ page.t.general.territorio }}"]?.map(function (territorio, index) {
                     if (territorio == territory) {
                         return index;
                     }
@@ -129,7 +129,7 @@
                  * @param {Array<Float>} data 
                  */
                 function mean(data) {
-                    if (data.length > 0) {
+                    if (data?.length > 0) {
                         return Array.from(data).reduce((a, b) => a + b) / data.length;
                     } else {
                         return 0;
@@ -139,7 +139,7 @@
                 var meanQuant = mean(localData);
                 return {
                     label: `{{ subindicator.unidad_medida }} {{ page.t.general.media }} {{ site.country.name }}`,
-                    data: new Array(localData.length).fill(meanQuant.toFixed(2)),
+                    data: new Array(localData?.length).fill(meanQuant.toFixed(2)),
                     type: 'line',
                     pointRadius: 0,
                     borderColor: 'rgb(255,0,0)',
