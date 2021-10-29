@@ -28,7 +28,7 @@ language: ca
 <p class="justified-text">El nostre objectiu és fer aquesta web tant "accessible" i "usable" com sigui possible. Estem treballant per aconseguir un nivell AA d’accessibilitat tal com s’esmenta a les <a href="https://administracionelectronica.gob.es/pae_Home/pae_Estrategias/pae_Accesibilidad/pae_normativa/pae_eInclusion_Normas_Accesibilidad.html?idioma=ca#.YJwxIKEp7IU">Guies d’accessibilitat per a contingut (WCAG 2.1)</a></p>
 
 ## Quins navegadors puc fer servir per veure aquesta web?
-<p class="justified-text">La nostra web funciona amb la majoria de les versions més recents dels navegadors més utilitzats. Existeixen certes incidències conegudes en utilitzar versions antigues de navegadors, com, per exemple, l’IE8. Estem treballant per solucionar aquestes incidències tan aviat com sigui possible.</p>
+<p class="justified-text">La nostra web funciona amb la majoria de les últimes versions dels exploradors més utilitzats. Si no pot visualitzar correctament les dades, consulti si està utilitzant l'última versió del seu navegador.</p>
 
 ## Poden altres organismes copiar aquest lloc web?
 
