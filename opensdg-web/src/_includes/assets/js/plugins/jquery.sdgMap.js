@@ -367,7 +367,7 @@
         };
         command.addTo(plugin.map);
 
-        $('.map-2-wrapper input[type="radio"]').on('click change', function(e) {
+        $(document).on('click change', '.map-2-wrapper input[type="radio"]', function(e) {
           plugin.map.setZoom(zoom);
         });
 
