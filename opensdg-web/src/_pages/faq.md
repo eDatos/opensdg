@@ -28,7 +28,7 @@ layout: page
 <p class="justified-text">Nuestro objetivo es hacer esta web lo más "accesible" y "usable" posible. Estamos trabajando para conseguir un nivel AA de accesibilidad referenciado en las <a href="https://administracionelectronica.gob.es/pae_Home/pae_Estrategias/pae_Accesibilidad/pae_normativa/pae_eInclusion_Normas_Accesibilidad.html#.X8Uki7MWWUk">Guías de accesibilidad para contenido (WCAG 2.1)</a></p>
 
 ## ¿Qué exploradores puedo utilizar para ver esta web?
-<p class="justified-text">Nuestra web funciona con la mayoría de las últimas versiones de los exploradores más utilizados. Existen algunas incidencias conocidas al utilizar versiones antíguas de exploradores, como por ejemplo IE8. Estamos trabajando para solucionar estas incidencias lo antes posible.</p>
+<p class="justified-text">Nuestra web funciona con la mayoría de las últimas versiones de los exploradores más utilizados. Si no puede visualizar correctamente los datos, consulte si está utilizando la última versión de su navegador.</p>
 
 ## ¿Pueden otros organismos copiar este sitio web?
 
