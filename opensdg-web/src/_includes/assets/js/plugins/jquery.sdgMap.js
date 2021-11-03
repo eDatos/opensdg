@@ -371,6 +371,10 @@
           plugin.map.setZoom(zoom);
         });
 
+        $(document).on('click', '#metadata-graph  li:nth-of-type(2)', function(e) {
+          plugin.map.setZoom(zoom);
+        });
+
         // The list of handlers to apply to each feature on a GeoJson layer.
         function onEachFeature(feature, layer) {
           if (plugin.featureShouldDisplay(feature)) {
