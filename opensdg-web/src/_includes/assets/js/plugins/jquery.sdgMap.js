@@ -269,6 +269,16 @@
           // Add the layer to the ZoomShowHide group.
           plugin.dynamicLayers.addLayer(layer);
 
+          if ($(plugin.element).parent().find("#legend").length === 0) {
+            let legend = '<ul id="legend" class="map-legend">';
+            for (let index = 0; index < options.sortedIndicators?.length; index++) {
+              const indicator = options.sortedIndicators[index];
+              legend += '<li><span class="swatchTsr" style="border-color: #7B6079"> </span> <strong>Serie ' + indicator.slug[indicator.slug.length - 1] + '. </strong>' + indicator.graph_title + '</li>'
+            }
+            legend += '</ul>';
+            $(plugin.element).parent().append(legend);
+          }
+
           if($(plugin.element).parent().find("[download]").length === 0) {
             // Add a download button below the map.
             var downloadLabel = translations.t(plugin.mapLayers[i].label)

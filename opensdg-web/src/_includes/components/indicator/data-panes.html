@@ -32,14 +32,6 @@
     </div>
     {% endfor %}
     {% endif %}
-
-
-    <div>
-      <h3>Leyenda</h3>
-      {% for s in sorted_indicators%}
-        - Serie {{ s.slug | split: "" | last }}: {{ s.graph_title }} <br>
-      {% endfor %}
-    </div>
   </div>
   {%- endif -%}
 
