@@ -99,7 +99,7 @@
         var tooltipContent = layer.feature.properties.name;
         var tooltipData = this.getData(layer.feature.properties);
         if (tooltipData != null && !Number.isNaN(tooltipData)) {
-          tooltipContent += ': ' + tooltipData;
+          tooltipContent += ': ' + tooltipData.toFixed(2).replaceAll(".", ","); // i18n
         }
         layer.bindTooltip(tooltipContent, {
           permanent: true,
@@ -302,9 +302,10 @@
         }
 
         // Calculate the ranges of values, years and colors.
-        plugin.valueRange = [_.min(minimumValues), _.max(maximumValues)];
+        const values = [_.min(minimumValues), _.max(maximumValues)];
+        plugin.valueRange = values.map(val => val.toFixed(2).replaceAll('.', ',')); // i18n
         plugin.colorScale = chroma.scale(plugin.options.colorRange)
-          .domain(plugin.valueRange)
+          .domain(values)
           .classes(plugin.options.colorRange.length);
         plugin.years = _.uniq(availableYears).sort();
         plugin.currentYear = plugin.years[0];
