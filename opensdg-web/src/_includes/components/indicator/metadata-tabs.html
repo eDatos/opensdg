@@ -1,4 +1,5 @@
-<ul class="nav nav-tabs spacer medium" role="tablist">
+{% assign sorted_indicators = page.indicators | where: 'target_id', page.indicator.number | sort: 'sort_order' %}
+<ul class="nav nav-tabs spacer medium{% if sorted_indicators.size > 10 %} many-tabs{% endif %}" role="tablist">
     {% if site.metadata_tabs %}
         {% for tab in site.metadata_tabs %}
             {% comment %} @deprecated start {% endcomment %}
@@ -19,7 +20,6 @@
         {% include components/indicator/metadata-tabs-default.html %}
     {% endif %}
 
-    {% assign sorted_indicators = page.indicators | where: 'target_id', page.indicator.number | sort: 'sort_order' %}
     {% for s in sorted_indicators %}
         <li class="nav-item {% if forloop.first %}active{% endif %}" role="presentation">
             <a  onclick="window.dispatchEvent(new Event('resize'));"

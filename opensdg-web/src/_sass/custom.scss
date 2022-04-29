@@ -1515,6 +1515,27 @@ h3 {
   }
 }
 
+.many-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .nav-item {
+    margin-right: 0.3em;
+    .nav-link {
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 4px;
+      margin-bottom: 0.3em;
+    }
+
+    &.active .nav-link {
+      border-bottom: 1px solid #888 !important;
+      padding: 9px 14px;
+    }
+  }
+}
+
 @media print {
   body {
     margin-top: 0 !important;
