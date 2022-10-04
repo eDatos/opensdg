@@ -171,15 +171,10 @@
                 if (hasTerritorio(data)) {
                     datasets.push(getEspanaDataset(data));
                 }
-                datasets.push(getMeanDataset(data));
-                datasets.forEach((dataset) => {
-                    dataset.data = dataset.data.map(value => {
-                        if (value == null) {
-                            return Number.NaN;
-                        }
-                        return value;
-                    })
-                })
+                var meanDataset = getMeanDataset(data);
+                if (meanDataset.data.every(element => element != null)) {
+                    datasets.push(meanDataset);
+                }
                 return datasets;
             }
 
