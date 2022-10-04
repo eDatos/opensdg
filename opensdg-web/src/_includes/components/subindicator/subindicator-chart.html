@@ -82,7 +82,8 @@
                     data: getLocalData(data),
                     backgroundColor: 'rgba(122,122,122,0.5)',
                     borderColor: 'rgba(77,77,77,1)',
-                    borderWidth: 1
+                    borderWidth: 1,
+                    spanGaps: true
                 };
             }
 
@@ -115,7 +116,8 @@
                     borderColor: 'rgb(0,0,255)',
                     backgroundColor: 'rgba(0,0,0,0)',
                     borderWidth: 1,
-                    lineTension: 0
+                    lineTension: 0,
+                    spanGaps: true
                 };
             }
 
@@ -130,21 +132,32 @@
                  */
                 function mean(data) {
                     if (data?.length > 0) {
-                        return Array.from(data).reduce((a, b) => a + b) / data.length;
+                        var dataArray = Array.from(data);
+                        if (dataArray.some((value) => !Number.isFinite(value))) {
+                            return null;
+                        }
+                        return dataArray.reduce((a, b) => a + b) / data.length;
                     } else {
                         return 0;
                     }
                 }
                 var localData = getLocalData(data);
                 var meanQuant = mean(localData);
+                var meanArray;
+                if (Number.isFinite(meanQuant)) {
+                    meanArray = new Array(localData?.length).fill(meanQuant.toFixed(2));
+                } else {
+                    meanArray = new Array(localData?.length).fill(null);
+                }
                 return {
                     label: `{{ subindicator.unidad_medida }} {{ page.t.general.media }} {{ site.country.name }}`,
-                    data: new Array(localData?.length).fill(meanQuant.toFixed(2)),
+                    data: meanArray,
                     type: 'line',
                     pointRadius: 0,
                     borderColor: 'rgb(255,0,0)',
                     backgroundColor: 'rgba(0,0,0,0)',
-                    borderWidth: 2
+                    borderWidth: 2,
+                    spanGaps: true
                 };
             }
 
@@ -159,6 +172,14 @@
                     datasets.push(getEspanaDataset(data));
                 }
                 datasets.push(getMeanDataset(data));
+                datasets.forEach((dataset) => {
+                    dataset.data = dataset.data.map(value => {
+                        if (value == null) {
+                            return Number.NaN;
+                        }
+                        return value;
+                    })
+                })
                 return datasets;
             }
 
@@ -180,20 +201,17 @@
                 },
                 options: {
                     tooltips: {
+                        enabled: true,
                         intersect: false,
                         axis: 'x',
                         mode: 'index',
                         callbacks: {
                             label: function (tooltipItems, data) {
-                                if (tooltipItems.yLabel === undefined || tooltipItems.yLabel === null || Number.isNaN(tooltipItems.yLabel)) {
-                                    return data.datasets[tooltipItems.datasetIndex].label +
-                                        ' : Valor no disponible';
+                                if (!Number.isFinite(tooltipItems.yLabel)) {
+                                    return data.datasets[tooltipItems.datasetIndex].label + ': Valor no disponible';
                                 } else {
-                                    var labelNumero = Intl.NumberFormat("es-ES", {
-                                        minimumFractionDigits: 2
-                                    }).format(tooltipItems.yLabel);
-                                    return data.datasets[tooltipItems.datasetIndex].label + ' : ' +
-                                        labelNumero;
+                                    var labelNumero = Intl.NumberFormat("es-ES", {minimumFractionDigits: 2}).format(tooltipItems.yLabel);
+                                    return data.datasets[tooltipItems.datasetIndex].label + ': ' + labelNumero;
                                 }
                             }
                         }
