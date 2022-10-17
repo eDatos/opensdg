@@ -5,7 +5,8 @@
         "footerPathKey": "metamac.app.style.footer.url",
         "appName": "Indicadores de Desarrollo Sostenible de Canarias",
         "siteName": "https://estadisticas.arte-consultores.com/aplicaciones/appsistac/ods/",
-        "googleAnalytics": "metamac.analytics.google.tracking_id"
+        "googleAnalytics": "metamac.analytics.google.tracking_id",
+        "internationalizationCookieId": "metamac.internationalization.cookieId"
     },
 
     "demo": {
