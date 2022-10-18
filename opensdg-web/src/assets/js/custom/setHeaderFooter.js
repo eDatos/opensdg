@@ -44,7 +44,7 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '', appN
                         'Content-Type': 'text/html',
                     }
                 }
-                let appHtmlUrl = HEADER === elementType ? "http://localhost:8070/complementos-apps/organisations/istac/common/header/header.html" :`${htmlUrl.value}`; // cambio sólo para pruebas en local
+                let appHtmlUrl = `${htmlUrl.value}`;
                 appHtmlUrl += `?appName=${appName}`;
                 appHtmlUrl += `&appUrl=${baseUrl}`;
                 appHtmlUrl += language ? `&${internationalizationParamId}=${language}` : `&${internationalizationParamId}=${navigator.languages[0].toLowerCase()}`;
