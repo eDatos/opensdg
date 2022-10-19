@@ -2,24 +2,26 @@ const HEADER = "HEADER";
 const FOOTER = "FOOTER";
 
 function renderElement(elementId, htmlCode) {
-    document.getElementById(elementId).innerHTML = htmlCode;
+    var element = document.getElementById(elementId);
+    element.innerHTML = htmlCode;
+    reinsertScripts(element);
 }
 
-function cacheHtmlCode(elementId, htmlCode, language='') {
-    sessionStorage.setItem(elementId, htmlCode);
-    if (language !== '') {
-        sessionStorage.setItem(`${elementId}-${language}`, language);
+function reinsertScripts(el) {
+    const scriptList = el.getElementsByTagName('script');
+    for (const script of scriptList) {
+        const scriptCopy = document.createElement('script');
+        if (script.innerHTML) {
+            scriptCopy.innerHTML = script.innerHTML;
+        } else if (script.src) {
+            scriptCopy.src = script.src;
+        }
+        scriptCopy.async = false;
+        script.parentNode.replaceChild(scriptCopy, script);
     }
 }
 
-function removeCacheHtmlCode(elementId, language='') {
-    sessionStorage.removeItem(elementId);
-    if (language !== '') {
-        sessionStorage.removeItem(`${elementId}-${language}`);
-    }
-}
-
-function setElementRutine(elementType, elementId, configPath, baseUrl = '', appName = '', language = '') {
+function setElementRutine(elementType, elementId, configPath, baseUrl = '', appName = '', language = '', internationalizationParamId='') {
     fetch(configPath)
     .then(res => res.json())
     .then(json => {
@@ -45,22 +47,21 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '', appN
                 let appHtmlUrl = `${htmlUrl.value}`;
                 appHtmlUrl += `?appName=${appName}`;
                 appHtmlUrl += `&appUrl=${baseUrl}`;
-                appHtmlUrl += `&lang=${language}`;
+                appHtmlUrl += language ? `&${internationalizationParamId}=${language}` : `&${internationalizationParamId}=${navigator.languages[0].toLowerCase()}`;
                 fetch(appHtmlUrl, fetchOptions)
                     .then(res => res.text())
                     .then(html => {
-                        cacheHtmlCode(elementId, html, language);
                         renderElement(elementId, html);
                     });
             });
     });
 }
 
-function setElement(elementType, elementId, configPath, baseUrl = '', appName='', language='') {
+function setElement(elementType, elementId, configPath, baseUrl = '', appName='', language='', internationalizationParamId='') {
     var cachedData = sessionStorage.getItem(elementId);
     if (cachedData != null) {
         renderElement(elementId, cachedData);
     } else {
-        setElementRutine(elementType, elementId, configPath, baseUrl, appName, language);
+        setElementRutine(elementType, elementId, configPath, baseUrl, appName, language, internationalizationParamId);
     }
 }
