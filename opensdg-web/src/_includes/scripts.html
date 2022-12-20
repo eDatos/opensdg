@@ -1,8 +1,8 @@
 <script>
   function readCookie(cookieName) {
     return document.cookie
-        .split('; ')
-        .find((row) => row.startsWith(`${cookieName}=`))
+        .split(';')
+        .find((row) => row.trim().startsWith(`${cookieName}=`))
         ?.split('=')[1];
   }
 
