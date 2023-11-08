@@ -1,4 +1,4 @@
-goal_image_base: "https://pre-ibestat.edatos.io/edatos/apps/ods/assets/img/ods_images"
+goal_image_base: "https://pre.ibestat.cat/edatos/apps/ods/assets/img/ods_images"
 map_options:
   tileOptions:
     accessToken: pk.eyJ1IjoicGJhdXphIiwiYSI6ImNrb3d0bm8xNDA5ajAyb29hbzdzdm9xMTQifQ.aYKi8teq4dkvzQbqcOUIww
