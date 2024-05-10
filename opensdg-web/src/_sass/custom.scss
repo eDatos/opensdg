@@ -1319,7 +1319,7 @@ figcaption {
 }
 
 #istac-footer-wrapper footer {
-  height: auto
+  /*height: auto*/ // fix error with footer showing over content
 }
 
 #istacNavbarId div div ul.navbar-nav {
