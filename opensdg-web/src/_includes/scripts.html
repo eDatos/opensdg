@@ -164,6 +164,7 @@
   opensdg['map']['zoom'] = {{ site.map_zoom }};
 
   var configPath = '{{ site.baseurl }}/assets/configuration.json'
+  var appId = "opensdg";
   var appName = translations.t("general.nombre_aplicacion");
   var language = opensdg.language;
   var footerElementId = "istac-footer-wrapper";
@@ -179,7 +180,7 @@
                   redirectToCorrectLanguage(opensdg.language, userSelectedLang, browserLang);
 
                   setElement(FOOTER, footerElementId, configPath, '', '', userSelectedLang, internationalizationCookieId.value);
-                  setElement(HEADER, headerElementId, configPath, "{{ site.baseurl }}", appName, userSelectedLang, internationalizationCookieId.value);
+                  setElement(HEADER, headerElementId, configPath, "{{ site.baseurl }}", appId, appName, userSelectedLang, internationalizationCookieId.value);
               });
       });
 
