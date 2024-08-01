@@ -21,7 +21,7 @@ function reinsertScripts(el) {
     }
 }
 
-function setElementRutine(elementType, elementId, configPath, baseUrl = '', appName = '', language = '', internationalizationParamId='') {
+function setElementRutine(elementType, elementId, configPath, baseUrl = '', appId = '', appName = '', language = '', internationalizationParamId='') {
     fetch(configPath)
     .then(res => res.json())
     .then(json => {
@@ -45,6 +45,7 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '', appN
                     }
                 }
                 let appHtmlUrl = `${htmlUrl.value}`;
+                appHtmlUrl += `?appId=${appId}`;
                 appHtmlUrl += `?appName=${appName}`;
                 appHtmlUrl += `&appUrl=${baseUrl}`;
                 appHtmlUrl += language ? `&${internationalizationParamId}=${language}` : `&${internationalizationParamId}=${navigator.languages[0].toLowerCase()}`;
@@ -57,11 +58,11 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '', appN
     });
 }
 
-function setElement(elementType, elementId, configPath, baseUrl = '', appName='', language='', internationalizationParamId='') {
+function setElement(elementType, elementId, configPath, baseUrl = '', appId = '', appName='', language='', internationalizationParamId='') {
     var cachedData = sessionStorage.getItem(elementId);
     if (cachedData != null) {
         renderElement(elementId, cachedData);
     } else {
-        setElementRutine(elementType, elementId, configPath, baseUrl, appName, language, internationalizationParamId);
+        setElementRutine(elementType, elementId, configPath, baseUrl, appId, appName, language, internationalizationParamId);
     }
 }
