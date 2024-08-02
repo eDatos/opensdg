@@ -13,13 +13,19 @@
                 <script>
                     const codigoFormulaTeorica{{ subindicator["sort"] }} = "{{ subindicator[indicator_metadata.name] }}";
                     const numeroDeFormulasTeoricas{{ subindicator["sort"] }} = (codigoFormulaTeorica{{ subindicator["sort"] }}.match(/\$+(.*?)\$+/g) || []).length;
-                    $('#formula_teorica_container{{ subindicator["slug"] }}').bind('DOMNodeInserted', function() {
-                        const numeroFormulasCreadas{{ subindicator["sort"] }} = ($('#formula_teorica_container{{ subindicator["slug"] }}').html().match(/\<mjx-container/g) || []).length;
+                    const targetNode{{ subindicator["sort"] }} = document.getElementById('formula_teorica_container{{ subindicator["slug"] }}');
+                    const config{{ subindicator["sort"] }} = { childList: true, subtree: true };
+
+                    const callback{{ subindicator["sort"] }} = function(mutationsList, observer) {
+                        const numeroFormulasCreadas{{ subindicator["sort"] }} = (targetNode{{ subindicator["sort"] }}.innerHTML.match(/\<mjx-container/g) || []).length;
                         if (numeroFormulasCreadas{{ subindicator["sort"] }} >= numeroDeFormulasTeoricas{{ subindicator["sort"] }}) {
-                            $('#formula_teorica_container{{ subindicator["slug"] }}').fadeIn(1000);
+                            $(targetNode{{ subindicator["sort"] }}).fadeIn(1000);
+                            observer.disconnect();
                         }
-                        return;
-                    });
+                    };
+
+                    const observer{{ subindicator["sort"] }} = new MutationObserver(callback{{ subindicator["sort"] }});
+                    observer{{ subindicator["sort"] }}.observe(targetNode{{ subindicator["sort"] }}, config{{ subindicator["sort"] }});
                 </script>
             {% else %}
                 <td><p class="justified-text">{{ subindicator[indicator_metadata.name] | t }}</p></td>
