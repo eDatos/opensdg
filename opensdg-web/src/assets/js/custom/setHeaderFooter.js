@@ -46,7 +46,7 @@ function setElementRutine(elementType, elementId, configPath, baseUrl = '', appI
                 }
                 let appHtmlUrl = `${htmlUrl.value}`;
                 appHtmlUrl += `?appId=${appId}`;
-                appHtmlUrl += `?appName=${appName}`;
+                appHtmlUrl += `&appName=${appName}`;
                 appHtmlUrl += `&appUrl=${baseUrl}`;
                 appHtmlUrl += language ? `&${internationalizationParamId}=${language}` : `&${internationalizationParamId}=${navigator.languages[0].toLowerCase()}`;
                 fetch(appHtmlUrl, fetchOptions)
